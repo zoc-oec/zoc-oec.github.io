@@ -8,7 +8,9 @@ author_profile: true
 Our multidisciplinary team integrates expertise in clinical ophthalmology, epidemiology, and artificial intelligence to tackle blinding eye diseases.
 
 ## Principal Investigator (PI)
+
 <img src="/images/wangwei.png" width="140" align="left" style="margin-right: 20px; margin-bottom: 20px; border-radius: 8px;">
+
 ### Prof. Wei Wang (M.D., Ph.D.)
 **Principal Investigator / Associate Chief Physician**  
 **State Key Laboratory of Ophthalmology, Zhongshan Ophthalmic Center, Sun Yat-sen University**
@@ -30,36 +32,47 @@ Recognized globally for his outstanding contributions, Prof. Wang has been named
 * He serves on the editorial board of the *Asia-Pacific Journal of Ophthalmology* and acts as a reviewer for leading journals including *The Lancet Global Health* and *Ophthalmology*[cite: 1].
 
 <div style="clear: both;"></div>
+
 ---
 
 ## Core Team Members
+
 <img src="/images/huangwenyong.jpg" width="140" align="left" style="margin-right: 20px; margin-bottom: 20px; border-radius: 8px;">
+
 ### Prof. Wenyong Huang (M.D., Ph.D.)
 **Chief Physician / Professor / Ph.D. Supervisor**  
 **Deputy Director of the Office of Blindness Prevention**
 Prof. Huang is a leading expert in ophthalmic epidemiology, blindness prevention in rural areas, and surgical treatment of cataracts[cite: 5]. He has published over 70 academic papers and serves as the Chinese principal investigator for multiple international collaborative projects, including partnerships with Queen's University Belfast and Orbis International[cite: 5]. He is also the Deputy Leader of the National Blindness Prevention Technical Guidance Group[cite: 5].
 * **Key Achievements:** Co-recipient of the National Science and Technology Progress Award (Second Class) and the Guangdong Provincial Science and Technology Progress Award (First Class)[cite: 5].
+
 <div style="clear: both;"></div>
 
 <img src="/images/chenshida.jpg" width="140" align="left" style="margin-right: 20px; margin-bottom: 20px; border-radius: 8px;">
+
 ### Dr. Shida Chen (M.D., Ph.D.)
 **Associate Chief Physician / Master's Supervisor**
 Dr. Chen specializes in fundus diseases, with extensive clinical experience in pathological myopia, diabetic retinopathy, retinal detachment, and macular diseases[cite: 2]. His research focuses on the pathogenesis and early prevention of pathological myopia and diabetic retinopathy[cite: 2]. He completed a one-year postdoctoral fellowship at the National Eye Institute (NEI), NIH, USA[cite: 2]. He is the Principal Investigator for 8 research grants, including the NSFC Youth Fund, and has published over 40 SCI-indexed papers as first or corresponding author[cite: 2].
 * **Key Achievements:** Recipient of the ARVO and WGC International Travel Grants; holds 2 invention patents and 1 software copyright[cite: 2].
+
 <div style="clear: both;"></div>
 
 <img src="/images/gaoxinbo.png" width="140" align="left" style="margin-right: 20px; margin-bottom: 20px; border-radius: 8px;">
+
 ### Dr. Xinbo Gao (M.D., Ph.D.)
 **Associate Chief Physician**
 Dr. Gao has over 10 years of clinical experience in ophthalmology, with a specific focus on laser treatments for glaucoma, minimally invasive glaucoma surgery (MIGS), and the structural and functional study of the human ocular glymphatic system and Schlemm's canal[cite: 3]. He was a visiting scholar at the University of Illinois Chicago (UIC) and served as the Medical Director for the Health Express (2025)[cite: 3]. He leads 6 provincial and ministerial-level grants and has authored multiple high-impact SCI papers in journals like *IOVS*, *Clin Exp Ophthalmol*, and *J Glaucoma*[cite: 3].
 * **Key Achievements:** Served in the 10th batch of Guangdong aid doctors to Xinjiang, where he was recognized as an "Outstanding Teaching Expert" and an "Outstanding Cadre/Talent"[cite: 3].
+
 <div style="clear: both;"></div>
 
 <img src="/images/hechang.png" width="140" align="left" style="margin-right: 20px; margin-bottom: 20px; border-radius: 8px;">
+
 ### Dr. Chang He (M.D., Ph.D.)
 **Associate Chief Physician / Master's Supervisor**  
 **Deputy Director of the Science and Technology Division**
 Dr. He's research primarily targets ocular immunology, cataracts, and retinal diseases[cite: 4]. She is a highly accomplished researcher, supported by the prestigious NSFC Excellent Young Scientists Fund and the Guangdong Provincial Natural Science Foundation Outstanding Youth Fund[cite: 4]. She has published 24 SCI-indexed papers as first or corresponding author, including 11 papers with an Impact Factor over 10 in top journals such as *Science Advances*, *Nature Communications*, and *PNAS*[cite: 4].
 * **Key Achievements:** Recognized as a Pearl River S&T Nova of Guangzhou; holds 1 authorized invention patent[cite: 4].
+
 <div style="clear: both;"></div>
+
 ---
