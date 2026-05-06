@@ -24,7 +24,7 @@ author:
   # Biographic information
 author:
   name     : "ZOC-OEC"
-  avatar   : "images/zoc_logo.png"
+  avatar   : "/images/zoc_logo.png"
   bio      : "Zhongshan Ophthalmic Center Ocular Epidemiology Consortium. Integrating clinical expertise and AI to tackle blinding eye diseases."
   location : "Guangzhou, China"
   employer : "Zhongshan Ophthalmic Center"
