@@ -22,14 +22,12 @@ repository               : "zoc-oec/zoc-oec.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
-  name             : "ZOC-OEC"
-  pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Zhongshan Ophthalmic Center"
-  employer         : "Sun Yat-sen University"
-  uri              : # URL
-  email            : "none@example.org" 
+author:
+  name     : "ZOC-OEC"
+  avatar   : "/images/zoc_logo.png"
+  bio      : "Zhongshan Ophthalmic Center Ocular Epidemiology Consortium. Integrating clinical expertise and AI to tackle blinding eye diseases."
+  location : "Guangzhou, China"
+  employer : "Zhongshan Ophthalmic Center"
 
   # Academic websites
   academia         : # URL
