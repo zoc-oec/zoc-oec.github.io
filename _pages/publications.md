@@ -26,7 +26,7 @@ Welcome to our publication repository. Our scientific output is driven by three 
   <!-- ZHMC 队列卡片 -->
   <div style="flex: 1; min-width: 220px; border: 1px solid #eee; border-radius: 8px; padding: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; background-color: #fafafa;">
     <h2 style="margin-top: 0; color: #2c3e50; border-bottom: none;">ZHMC</h2>
-    <p style="font-size: 0.9em; color: #666; margin-bottom: 20px;">Zhongshan Myopia Cohort</p>
+    <p style="font-size: 0.9em; color: #666; margin-bottom: 20px;">Zhongshan High Myopia Cohort</p>
     <a href="/publications/zhmc/" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">View Papers</a>
   </div>
 
