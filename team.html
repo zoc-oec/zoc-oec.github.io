@@ -71,39 +71,16 @@
             }
         }
 
-        /* 合照横幅：无蒙版，完整显示比例 12:5 */
+        /* 合照横幅：只显示背景图，无文字 */
         .team-hero {
             position: relative;
             width: 100%;
-            aspect-ratio: 12 / 5;           /* 固定宽高比 12:5 */
+            aspect-ratio: 12 / 5;
             background-image: url('/images/team.png');
-            background-size: contain;       /* 完整显示，不裁剪 */
+            background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
-            background-color: #ffffff;      /* 背景色可设白色或与图片边缘色一致，避免露白 */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-        }
-
-        /* 文字标题：无蒙版，仅用文字阴影保证可读性 */
-        .team-hero h1 {
-            position: relative;
-            z-index: 2;
-            font-size: 3.5rem;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-            margin: 0;
-            padding: 0 20px;
-            background-color: transparent;   /* 确保无背景层 */
-        }
-
-        @media (max-width: 768px) {
-            .team-hero h1 {
-                font-size: 2.2rem;
-            }
+            background-color: #ffffff;
         }
 
         /* 主内容区 */
@@ -206,10 +183,8 @@
     </div>
 </div>
 
-<!-- 合照横幅：无蒙版、完整显示、比例 12:5 -->
-<div class="team-hero">
-    <h1>Our Team</h1>
-</div>
+<!-- 合照横幅：仅图像，无文字 -->
+<div class="team-hero"></div>
 
 <div class="page-content">
     <p>Our multidisciplinary team integrates expertise in clinical ophthalmology, epidemiology, and artificial intelligence to tackle blinding eye diseases.</p>
