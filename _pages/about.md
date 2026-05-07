@@ -7,7 +7,16 @@ redirect_from:
   - /about.html
 ---
 
-The ZOC Ocular Epidemiology Consortium (ZOC-OEC) is a research alliance based at Zhongshan Ophthalmic Center, Sun Yat-sen University. We bring together three major population-based cohorts to advance the understanding, prediction, and prevention of blinding eye diseases.
+<div style="display: flex; flex-wrap: wrap; background-color: #1c2229; color: white; border-radius: 8px; overflow: hidden; margin-bottom: 40px; box-shadow: 0 10px 20px rgba(0,0,0,0.15);">
+  <div style="flex: 1.5; min-width: 300px; padding: 40px; display: flex; flex-direction: column; justify-content: center;">
+    <h1 style="margin-top: 0; color: white; font-size: 2.2em; line-height: 1.2; border-bottom: none;">Advancing Ocular Epidemiology Through Data & AI</h1>
+    <p style="font-size: 1.1em; color: #d0d7de; line-height: 1.6;">The ZOC Ocular Epidemiology Consortium (ZOC-OEC) is a research alliance based at Zhongshan Ophthalmic Center, Sun Yat-sen University. We bring together three major population-based cohorts to advance the understanding, prediction, and prevention of blinding eye diseases.</p>
+    <a href="#our-core-cohorts" style="margin-top: 20px; display: inline-block; padding: 10px 20px; background-color: white; color: #1c2229; text-decoration: none; border-radius: 4px; font-weight: bold; width: max-content;">Explore Our Cohorts ➔</a>
+  </div>
+  <div style="flex: 1; min-width: 250px;">
+    <img src="https://zoc-oec.github.io/images/cover.png" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+  </div>
+</div>
 
 Our work integrates classical epidemiological methods with cutting-edge approaches — including AI prediction models, Transformer architectures, multimodal data fusion, and proteomics — to generate globally impactful insights in ocular epidemiology.
 
@@ -28,7 +37,7 @@ GDES integrates retinal imaging, systemic biomarker profiling, and longitudinal 
 **Key focus areas:** diabetic retinopathy · retinal imaging biomarkers · risk prediction · systemic-ocular interactions
 
 ### 3. ZHMC — Zhongshan Myopia Cohort
-The Zhongshan Myopia Cohort (ZHMC) is a longitudinal population-based study designed to investigate the onset, progression, and complications of myopia in [children / young adults / a general Chinese population]. ZHMC systematically characterizes the structural and functional ocular changes associated with myopia development, with a particular focus on high myopia and its vision-threatening sequelae.
+The Zhongshan Myopia Cohort (ZHMC) is a longitudinal population-based study designed to investigate the onset, progression, and complications of myopia. ZHMC systematically characterizes the structural and functional ocular changes associated with myopia development, with a particular focus on high myopia and its vision-threatening sequelae.
 
 A central research priority of ZHMC is elucidating the mechanisms underlying High Myopic Optic Neuropathy (HMON), including the roles of choroidal ischemia and Bruch's membrane injury in driving irreversible optic nerve damage. The cohort leverages advanced multimodal imaging and longitudinal biomarker data to build prediction models for myopia progression and complication risk.
 
@@ -45,6 +54,6 @@ A central research priority of ZHMC is elucidating the mechanisms underlying Hig
 ## Contact / Collaboration Inquiry
 We welcome collaboration proposals from researchers, postdoctoral fellows, and PhD students worldwide.
 
-**Email:** wangwei@gzzoc.com 
+**Email:** wangwei@gzzoc.com  
 **Website:** https://zoc-oec.github.io/  
 **Location:** Zhongshan Ophthalmic Center, Sun Yat-sen University, Guangzhou, China
