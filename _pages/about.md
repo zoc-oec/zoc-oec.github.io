@@ -7,6 +7,7 @@ redirect_from:
   - /about.html
 ---
 
+
 <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; background-image: url('https://zoc-oec.github.io/images/Cover.png'); background-size: cover; background-position: center; margin-bottom: 40px; box-shadow: 0 15px 30px rgba(0,0,0,0.2);">
   
   <div style="background: linear-gradient(to right, #050b14 0%, rgba(5,11,20, 0.85) 45%, rgba(5,11,20, 0) 100%); padding: 60px 40px; width: 100%; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; min-height: 420px;">
