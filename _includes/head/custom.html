@@ -1,42 +1,30 @@
 <style>
-  /* 1. 铺设深色底色：给最外层容器强行上深蓝/黑色 */
-  .masthead {
-    background: #1c2229 !important;
-    border-bottom: none !important;
+  /* 1. 外墙深空蓝 */
+  .masthead { 
+    background-color: #1c2229 !important; 
+    border-bottom: none !important; 
   }
 
-  /* 2. 暴力抽空白底：利用最高权重的 ID 选择器 (#site-nav)，强行剥离所有内层白块 */
+  /* 2. 终极核弹：强制剥夺导航栏里【所有嵌套元素】的背景色，统统透明！字统统变白！ */
   .masthead__inner-wrap,
   .masthead__menu,
-  nav#site-nav.greedy-nav,
-  ul.visible-links,
-  .masthead .site-title {
+  .greedy-nav,
+  .greedy-nav * {
     background-color: transparent !important;
-    background-image: none !important;
     background: transparent !important;
-  }
-
-  /* 3. 字体强制变白：同样使用最高权重，避免字被隐藏 */
-  .masthead .site-title,
-  nav#site-nav.greedy-nav a,
-  ul.visible-links a {
     color: #ffffff !important;
   }
 
-  /* 4. 鼠标悬停时的浅灰色 */
-  nav#site-nav.greedy-nav a:hover,
-  ul.visible-links a:hover {
-    color: #cccccc !important;
+  /* 3. 保护机制1：那个“汉堡包”按钮的横线必须有白底，否则看不见 */
+  .greedy-nav__toggle .navicon,
+  .greedy-nav__toggle .navicon::before,
+  .greedy-nav__toggle .navicon::after {
+    background-color: #ffffff !important;
   }
 
-  /* 5. 手机/窄屏模式下的三道杠汉堡按钮修复 */
-  .greedy-nav__toggle {
-    background: transparent !important;
-    border: none !important;
-  }
-  .greedy-nav__toggle .navicon,
-  .greedy-nav__toggle .navicon:before,
-  .greedy-nav__toggle .navicon:after {
-    background: #ffffff !important;
+  /* 4. 保护机制2：如果有人在手机上点开下拉菜单，菜单底色设为深蓝，防止字混在一起 */
+  .greedy-nav .hidden-links,
+  .greedy-nav .hidden-links * {
+    background-color: #1c2229 !important;
   }
 </style>
