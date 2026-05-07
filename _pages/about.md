@@ -1,24 +1,31 @@
 ---
 permalink: /
-title: "Welcome to ZOC Ocular Epidemiology Consortium"
-author_profile: true
+layout: single
+classes: wide
+author_profile: false
 redirect_from: 
   - /about/
   - /about.html
 ---
 
+<style>
+  /* 隐藏默认自带的灰色页面标题，让封面图直接顶在最上面 */
+  h1.page__title {
+    display: none !important;
+  }
+</style>
 
-<div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; background-image: url('https://zoc-oec.github.io/images/Cover.png'); background-size: cover; background-position: center; margin-bottom: 40px; box-shadow: 0 15px 30px rgba(0,0,0,0.2);">
+<div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; background-image: url('https://zoc-oec.github.io/images/Cover.png'); background-size: cover; background-position: center right; margin-bottom: 40px; box-shadow: 0 15px 30px rgba(0,0,0,0.2); display: flex; min-height: 480px;">
   
-  <div style="background: linear-gradient(to right, #050b14 0%, rgba(5,11,20, 0.85) 45%, rgba(5,11,20, 0) 100%); padding: 60px 40px; width: 100%; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; min-height: 420px;">
+  <div style="background: linear-gradient(to right, rgba(5,11,20, 1) 0%, rgba(5,11,20, 0.95) 50%, rgba(5,11,20, 0) 100%); padding: 60px 50px; width: 55%; min-width: 450px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center;">
 
-    <div style="max-width: 550px;">
-      <h1 style="color: white; font-size: 2.6em; line-height: 1.2; margin-top: 0; border-bottom: none; font-weight: 700;">
-        Advancing Ocular Epidemiology <br>Through <span style="color: #00bfa5;">Data & AI</span>
+    <div style="max-width: 600px;">
+      <h1 style="color: white; font-size: 2.8em; line-height: 1.2; margin-top: 0; border-bottom: none; font-weight: 700;">
+        Advancing Vision Science <br>Through Longitudinal Data <br>and <span style="color: #00bfa5;">Foundation AI</span>
       </h1>
 
-      <p style="color: #d0d7de; font-size: 1.1em; line-height: 1.6; margin: 20px 0;">
-        The ZOC Ocular Epidemiology Consortium (ZOC-OEC) is a research alliance based at Zhongshan Ophthalmic Center, Sun Yat-sen University. We bring together three major population-based cohorts to advance the understanding, prediction, and prevention of blinding eye diseases.
+      <p style="color: #d0d7de; font-size: 1.15em; line-height: 1.6; margin: 20px 0;">
+        The ZOC Ocular Epidemiology Consortium (ZOC-OEC) integrates longitudinal cohorts, multimodal imaging, multi-omics and AI to advance the understanding, prediction, and prevention of blinding eye diseases.
       </p>
 
       <div style="margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap;">
