@@ -1,69 +1,63 @@
 <style>
-  /* 1. 极致深空背景 */
-  .masthead { 
-    background-color: #050b14 !important; 
-    border-bottom: none !important; 
+  /* ===== 顶部导航整体背景 ===== */
+  .masthead {
+    background-color: #050b14 !important;
+    border-bottom: none !important;
   }
 
-  /* 2. 保持透明与基础白字 */
+  /* ===== 导航栏整体透明 ===== */
   .masthead__inner-wrap,
   .masthead__menu,
   .greedy-nav,
   .greedy-nav * {
     background-color: transparent !important;
     background: transparent !important;
-    color: #ffffff !important;
     text-decoration: none !important;
   }
 
-  /* 3. 菜单项常规排版 */
+  /* ===== 导航文字默认白色 ===== */
   .greedy-nav a {
-    padding-bottom: 6px !important; 
-    border-bottom: 2px solid transparent !important; 
-    transition: all 0.3s ease !important; 
+    color: #ffffff !important;
+    padding-bottom: 6px !important;
+    border-bottom: 2px solid transparent !important;
+    transition: all 0.25s ease !important;
   }
 
-  /* 4. 鼠标悬停时的效果 */
+  /* ===== 鼠标悬停效果 ===== */
   .greedy-nav a:hover {
-    color: #00bfa5 !important; 
-    border-bottom: 2px solid #00bfa5 !important; 
+    color: #00e0c6 !important;
+    border-bottom: 2px solid #00e0c6 !important;
+    box-shadow: inset 0 -2px 0 #00e0c6;
   }
 
-  /* 5. 手机端保护机制 */
+  /* ===== 当前页面高亮（最关键）===== */
+  .greedy-nav .active a,
+  .greedy-nav a.active,
+  .masthead__menu-item.active a {
+    color: #00e0c6 !important;
+    border-bottom: 2px solid #00e0c6 !important;
+    box-shadow: inset 0 -2px 0 #00e0c6;
+  }
+
+  /* ===== 手机端菜单按钮 ===== */
   .greedy-nav__toggle .navicon,
   .greedy-nav__toggle .navicon::before,
   .greedy-nav__toggle .navicon::after {
     background-color: #ffffff !important;
   }
+
+  /* ===== 手机端展开菜单背景 ===== */
   .greedy-nav .hidden-links,
   .greedy-nav .hidden-links * {
-    background-color: #050b14 !important; 
-    border-bottom: none !important; 
+    background-color: #050b14 !important;
+    border-bottom: none !important;
   }
+
+  .greedy-nav .hidden-links a {
+    color: #ffffff !important;
+  }
+
   .greedy-nav .hidden-links a:hover {
-    color: #00bfa5 !important;
+    color: #00e0c6 !important;
   }
 </style>
-
-<script>
-  // 等网页加载完毕后立刻执行
-  document.addEventListener("DOMContentLoaded", function() {
-    // 1. 获取浏览器当前真实的网址路径 (主页就是 "/")
-    var currentPath = window.location.pathname;
-
-    // 2. 找到顶部导航栏里的所有按钮
-    var navLinks = document.querySelectorAll(".greedy-nav a");
-
-    // 3. 挨个检查：哪个按钮的链接跟当前网址对得上，就强行给谁上色！
-    navLinks.forEach(function(link) {
-      var linkPath = new URL(link.href).pathname;
-      
-      // 如果完全匹配，或者处理特殊的 index.html 情况
-      if (linkPath === currentPath || (currentPath === '/' && linkPath === '/index.html')) {
-        // 强行注入最高优先级的内联样式：青色发光！
-        link.style.setProperty("color", "#00bfa5", "important");
-        link.style.setProperty("border-bottom", "2px solid #00bfa5", "important");
-      }
-    });
-  });
-</script>
