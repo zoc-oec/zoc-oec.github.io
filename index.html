@@ -1,8 +1,12 @@
+---
+layout: none
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZOC Ocular Epidemiology Consortium</title>
     <style>
         * {
@@ -11,20 +15,12 @@
             box-sizing: border-box;
         }
 
-        body, html {
-            width: 100%;
-            overflow-x: hidden;
-            background-color: #ffffff;  /* 整个页面背景改为白色，下半部分自然白 */
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            scroll-behavior: smooth;
+        body {
+            background: white;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
-        /* 移除主题额外元素 */
-        body::before, body::after, .main, .page, .wrapper, .masthead {
-            display: none !important;
-        }
-
-        /* 导航栏（半透明深色，在封面区域可见） */
+        /* 导航栏（保持与之前一致） */
         .navbar {
             position: sticky;
             top: 0;
@@ -42,7 +38,6 @@
             justify-content: space-between;
             align-items: center;
             min-height: 64px;
-            gap: 20px;
             flex-wrap: wrap;
         }
         .logo a {
@@ -54,14 +49,12 @@
         .nav-links {
             display: flex;
             gap: 2rem;
-            flex-wrap: wrap;
             list-style: none;
         }
         .nav-links li a {
             color: #f0f0f0;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.2s;
         }
         .nav-links li a:hover {
             color: #00bfa5;
@@ -77,59 +70,66 @@
             }
         }
 
-        /* 封面容器：深蓝色背景 + 背景图，与白色 body 分割 */
-        .hero-section {
+        /* 封面容器：固定宽高比，相对定位 */
+        .hero-container {
+            position: relative;
             width: 100%;
-            background-image: url('https://zoc-oec.github.io/images/Cover.png');
-            background-size: contain;
-            background-position: center top;
-            background-repeat: no-repeat;
-            background-color: #0a1428;  /* 与图片边缘一致，深蓝色 */
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            margin-bottom: 0;  /* 与下方白色区域紧贴 */
+            aspect-ratio: 16 / 9;  /* 根据您的图片比例调整 */
+            background-color: #0a1428;
         }
 
-        /* 文字区：完全透明，直接浮在图片上 */
-        .hero-content {
-            width: 55%;
-            min-width: 500px;
-            padding: 80px 8% 120px 8%;
-            background-color: transparent !important;
-            box-sizing: border-box;
+        /* 背景图片（作为普通 img 铺满容器） */
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;   /* 保持图片完整，不裁剪 */
+            object-position: center bottom;
         }
 
-        .hero-content h1 {
+        /* 文字区域：绝对定位，相对于容器百分比，永远贴在图片左侧 */
+        .hero-text {
+            position: absolute;
+            left: 8%;
+            top: 20%;
+            width: 45%;
             color: white;
-            font-size: 3em;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+            pointer-events: none;  /* 让文字下方的按钮无法点击？后面会覆盖按钮区域，所以需要单独处理按钮 */
+        }
+
+        .hero-text h1 {
+            font-size: 3.5vw;    /* 相对于视口宽度，但整体容器缩放时，百分比也会跟随容器宽度变化 */
             line-height: 1.2;
-            font-weight: 700;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+            margin-bottom: 1rem;
         }
 
-        .hero-content p {
-            color: white;
-            font-size: 1.15em;
-            line-height: 1.6;
-            margin: 20px 0;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+        .hero-text p {
+            font-size: 1.2vw;
+            line-height: 1.5;
+            margin-bottom: 2rem;
         }
 
+        /* 按钮单独定位（可点击） */
         .hero-buttons {
-            margin-top: 35px;
+            position: absolute;
+            left: 8%;
+            top: 65%;
             display: flex;
             gap: 15px;
-            flex-wrap: wrap;
+            pointer-events: auto;
         }
 
         .btn-primary, .btn-secondary {
             display: inline-block;
-            padding: 12px 28px;
+            padding: 10px 28px;
             border-radius: 30px;
             font-weight: bold;
             text-decoration: none;
             transition: all 0.3s;
+            font-size: 1rem;
         }
         .btn-primary {
             background-color: #00bfa5;
@@ -147,81 +147,77 @@
             background-color: rgba(255,255,255,0.1);
         }
 
-        /* 正文容器：白色背景，左右自动留白（两侧白色由 body 提供） */
+        /* 移动端调整文字大小和位置 */
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 6vw;
+            }
+            .hero-text p {
+                font-size: 3vw;
+            }
+            .hero-text {
+                top: 15%;
+                width: 80%;
+            }
+            .hero-buttons {
+                top: 60%;
+            }
+            .btn-primary, .btn-secondary {
+                padding: 8px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* 正文白色卡片区域 */
         .content-wrap {
             max-width: 1200px;
-            margin: 0 auto;          /* 上下边距靠内部元素控制 */
-            padding: 40px 40px 60px 40px;
-            background-color: #ffffff;
-            /* 不加阴影，白色背景自然过渡 */
+            margin: 50px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
-
-        /* 内部元素样式 */
-        .content-wrap p, .content-wrap li {
-            color: #1e2a3a;
-            line-height: 1.6;
-        }
-        .content-wrap h2 {
-            color: #0a192f;
-            margin: 1.5em 0 0.5em;
-        }
-        .content-wrap h3 {
-            color: #1e3a5f;
-            margin: 1.2em 0 0.5em;
-        }
-        .content-wrap ul {
-            margin-left: 1.5em;
-        }
-
-        /* 响应式 */
         @media (max-width: 768px) {
-            .hero-content {
-                width: 90%;
-                min-width: auto;
-                padding: 50px 5% 80px 5%;
-            }
-            .hero-content h1 {
-                font-size: 2em;
-            }
             .content-wrap {
-                padding: 30px 20px;
+                margin: 30px 20px;
+                padding: 25px;
             }
         }
+        .content-wrap h2 { color: #0a192f; margin-top: 1.5em; }
+        .content-wrap p, .content-wrap li { color: #1e2a3a; line-height: 1.6; }
     </style>
 </head>
 <body>
 
-<!-- 导航栏 -->
 <div class="navbar">
     <div class="nav-container">
         <div class="logo"><a href="/">ZOC‑OEC</a></div>
         <ul class="nav-links">
             <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/pub_gdes">Publications</a></li>
-            <li><a href="/data_access">Data Access</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/publications.html">Publications</a></li>
+            <li><a href="/data_access.html">Data Access</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
 </div>
 
-<!-- 封面区域（深蓝色背景） -->
-<div class="hero-section">
-    <div class="hero-content">
+<!-- 封面：图片和文字作为一个整体等比缩放 -->
+<div class="hero-container">
+    <img class="hero-bg" src="https://zoc-oec.github.io/images/Cover.png" alt="Cover">
+    <div class="hero-text">
         <h1>Advancing Vision Science <br>Through Longitudinal Data <br>and <span style="color: #00bfa5;">Foundation AI</span></h1>
-        <p>The ZOC Ocular Epidemiology Consortium (ZOC-OEC) integrates longitudinal cohorts, multimodal imaging, multi-omics and AI to advance the understanding, prediction, and prevention of blinding eye diseases.</p>
-        <div class="hero-buttons">
-            <a href="#our-core-cohorts" class="btn-primary">Explore Our Research ➔</a>
-            <a href="#our-core-cohorts" class="btn-secondary">Our Cohorts</a>
-        </div>
+        <p>The ZOC Ocular Epidemiology Consortium integrates longitudinal cohorts, multimodal imaging, multi-omics and AI to advance the understanding, prediction, and prevention of blinding eye diseases.</p>
+    </div>
+    <div class="hero-buttons">
+        <a href="#our-core-cohorts" class="btn-primary">Explore Our Research ➔</a>
+        <a href="#our-core-cohorts" class="btn-secondary">Our Cohorts</a>
     </div>
 </div>
 
-<!-- 纯白色正文区域（下半部分全白） -->
+<!-- 正文内容（不变） -->
 <div class="content-wrap" id="our-core-cohorts">
-    <p style="font-size:1.1em; line-height:1.6; margin-bottom:30px;">
-        Our work integrates classical epidemiological methods with cutting-edge approaches — including AI prediction models, Transformer architectures, multimodal data fusion, and proteomics — to generate globally impactful insights in ocular epidemiology.
-    </p>
+    <p style="font-size:1.1em; margin-bottom:30px;">Our work integrates classical epidemiological methods with cutting-edge approaches — including AI prediction models, Transformer architectures, multimodal data fusion, and proteomics — to generate globally impactful insights in ocular epidemiology.</p>
 
     <h2>Our Core Cohorts</h2>
     <h3>1. ZAP — Zhongshan Angle Closure Prevention Trial</h3>
@@ -239,16 +235,13 @@
     <h2>What We Do</h2>
     <ul>
         <li><strong>Data-Driven Discovery:</strong> We apply rigorous statistical methods — including longitudinal analysis, restricted cubic spline modeling, and Mendelian randomization — to uncover disease patterns across our cohorts.</li>
-        <li><strong>AI & Multimodal Modeling:</strong> We develop deep learning and Transformer-based models integrating retinal imaging, proteomics, and clinical data to predict disease onset, progression, and treatment response.</li>
-        <li><strong>Global Collaboration:</strong> We actively partner with international research groups, including UK Biobank (UKB), AI-READI, and SERI, to conduct cross-ethnic and cross-population studies of ocular disease.</li>
-        <li><strong>Open Science:</strong> We are committed to responsible data sharing. Collaboration and data access inquiries are welcome — please see our Data Access Policy or contact us directly.</li>
+        <li><strong>AI & Multimodal Modeling:</strong> We develop deep learning and Transformer-based models integrating retinal imaging, proteomics, and clinical data.</li>
+        <li><strong>Global Collaboration:</strong> We actively partner with international research groups, including UK Biobank, AI-READI, and SERI.</li>
+        <li><strong>Open Science:</strong> Collaboration and data access inquiries are welcome.</li>
     </ul>
 
     <h2 id="contact">Contact / Collaboration Inquiry</h2>
-    <p>We welcome collaboration proposals from researchers, postdoctoral fellows, and PhD students worldwide.</p>
-    <p><strong>Email:</strong> wangwei@gzzoc.com<br>
-    <strong>Website:</strong> https://zoc-oec.github.io/<br>
-    <strong>Location:</strong> Zhongshan Ophthalmic Center, Sun Yat-sen University, Guangzhou, China</p>
+    <p>Email: wangwei@gzzoc.com<br>Location: Zhongshan Ophthalmic Center, Sun Yat-sen University, Guangzhou, China</p>
 </div>
 
 </body>
