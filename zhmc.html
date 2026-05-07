@@ -19,6 +19,7 @@
             scroll-behavior: smooth;
         }
 
+        /* 导航栏 —— 与首页完全一致 */
         .navbar {
             position: sticky;
             top: 0;
@@ -36,7 +37,6 @@
             justify-content: space-between;
             align-items: center;
             min-height: 64px;
-            gap: 20px;
             flex-wrap: wrap;
         }
         .logo a {
@@ -48,7 +48,6 @@
         .nav-links {
             display: flex;
             gap: 2rem;
-            flex-wrap: wrap;
             list-style: none;
         }
         .nav-links li a {
@@ -67,10 +66,12 @@
             }
             .nav-links {
                 gap: 1rem;
+                flex-wrap: wrap;
                 justify-content: center;
             }
         }
 
+        /* 主要内容容器 */
         .page-content {
             max-width: 1100px;
             margin: 50px auto;
@@ -80,25 +81,54 @@
             box-shadow: 0 5px 25px rgba(0,0,0,0.05);
         }
 
-        h1 {
-            color: #0a192f;
-            font-size: 2.2rem;
-            margin-bottom: 0.25rem;
+        /* 顶部 flex 区域：左队名+图标，右返回按钮 */
+        .cohort-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
             border-bottom: 3px solid #00bfa5;
-            display: inline-block;
-            padding-bottom: 5px;
+            padding-bottom: 10px;
         }
-
-        .back-link {
+        .cohort-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .cohort-title img {
+            height: 50px;
+            width: auto;
+        }
+        .cohort-title h1 {
+            color: #0a192f;
+            font-size: 2rem;
+            margin: 0;
+            border-bottom: none;
             display: inline-block;
-            margin-top: 10px;
-            margin-bottom: 20px;
+            padding: 0;
+        }
+        .back-link-top {
             color: #00bfa5;
             text-decoration: none;
             font-weight: 500;
+            font-size: 1rem;
+            padding: 6px 12px;
+            border: 1px solid #00bfa5;
+            border-radius: 30px;
+            transition: all 0.2s;
         }
-        .back-link:hover {
-            text-decoration: underline;
+        .back-link-top:hover {
+            background-color: #00bfa5;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* 正文段落说明 */
+        .cohort-description {
+            margin-bottom: 2rem;
+            color: #1e2a3a;
+            line-height: 1.6;
         }
 
         h2 {
@@ -141,8 +171,15 @@
                 margin: 20px;
                 padding: 20px;
             }
-            h1 { font-size: 1.8rem; }
-            h2 { font-size: 1.4rem; }
+            .cohort-title h1 {
+                font-size: 1.5rem;
+            }
+            .cohort-title img {
+                height: 40px;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
@@ -162,9 +199,18 @@
 </div>
 
 <div class="page-content">
-    <a href="/publications.html" class="back-link">⬅️ Back to All Cohorts</a>
-    <h1>ZHMC Cohort Publications</h1>
-    <p>Here is the complete list of publications derived from the <strong>Zhongshan High Myopia Cohort (ZHMC)</strong>, organized by year.</p>
+    <!-- 顶部：左（图标 + 队列名），右（返回按钮） -->
+    <div class="cohort-header">
+        <div class="cohort-title">
+            <img src="/images/zhmc_icon.png" alt="ZHMC Icon">
+            <h1>ZHMC Cohort Publications</h1>
+        </div>
+        <a href="/publications.html" class="back-link-top">⬅️ Back to All Cohorts</a>
+    </div>
+
+    <div class="cohort-description">
+        <p>Here is the complete list of publications derived from the <strong>Zhongshan High Myopia Cohort (ZHMC)</strong>, organized by year.</p>
+    </div>
 
     <!-- 2026 -->
     <h2>2026</h2>
