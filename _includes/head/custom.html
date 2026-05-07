@@ -1,102 +1,75 @@
 <style>
-/* 1. 极致深空背景 */
-.masthead {
-  background-color: #050b14 !important;
-  border-bottom: none !important;
-}
+  /* 1. 极致深空背景 */
+  .masthead {
+    background-color: #050b14 !important;
+    border-bottom: none !important;
+  }
 
-/* 2. 保持透明与基础白字 */
-.masthead__inner-wrap,
-.masthead__menu,
-.greedy-nav,
-.greedy-nav * {
-  background-color: transparent !important;
-  background: transparent !important;
-  color: #ffffff !important;
-  text-decoration: none !important;
-}
+  /* 2. 保持透明与基础白字 */
+  .masthead__inner-wrap,
+  .masthead__menu,
+  .greedy-nav,
+  .greedy-nav * {
+    background-color: transparent !important;
+    background: transparent !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+  }
 
-/* 3. 菜单项常规排版 */
-.greedy-nav a {
-  padding-bottom: 6px !important;
-  border-bottom: 2px solid transparent !important;
-  transition: all 0.3s ease !important;
-}
+  /* 3. 菜单项常规排版 */
+  .greedy-nav a {
+    padding-bottom: 6px !important;
+    border-bottom: 2px solid transparent !important;
+    transition: all 0.3s ease !important;
+  }
 
-/* 4. 鼠标悬停时的效果 */
-.greedy-nav a:hover {
-  color: #00bfa5 !important;
-  border-bottom: 2px solid #00bfa5 !important;
-}
+  /* 4. 鼠标悬停时的效果 */
+  .greedy-nav a:hover {
+    color: #00bfa5 !important;
+    border-bottom: 2px solid #00bfa5 !important;
+  }
 
-/* 5. 手机端保护机制 */
-.greedy-nav__toggle .navicon,
-.greedy-nav__toggle .navicon::before,
-.greedy-nav__toggle .navicon::after {
-  background-color: #ffffff !important;
-}
-.greedy-nav .hidden-links,
-.greedy-nav .hidden-links * {
-  background-color: #050b14 !important;
-  border-bottom: none !important;
-}
-.greedy-nav .hidden-links a:hover {
-  color: #00bfa5 !important;
-}
-
-/* ───── 新增加：当前菜单项「常亮」高亮 ───── */
-.greedy-nav a.current-highlight {
-  color: #00bfa5 !important;
-  border-bottom: 2px solid #00bfa5 !important;
-}
+  /* 5. 手机端保护机制 */
+  .greedy-nav__toggle .navicon,
+  .greedy-nav__toggle .navicon::before,
+  .greedy-nav__toggle .navicon::after {
+    background-color: #ffffff !important;
+  }
+  .greedy-nav .hidden-links,
+  .greedy-nav .hidden-links * {
+    background-color: #050b14 !important;
+    border-bottom: none !important;
+  }
+  .greedy-nav .hidden-links a:hover {
+    color: #00bfa5 !important;
+  }
 </style>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  // 标准化路径：去除末尾斜杠、/index.html、/index
-  function normalizePath(path) {
-    if (!path) return '/';
-    let normalized = path.replace(/\/$/, '');
-    if (normalized.endsWith('/index.html')) {
-      normalized = normalized.slice(0, -11);
-    } else if (normalized.endsWith('/index')) {
-      normalized = normalized.slice(0, -6);
-    }
-    return normalized === '' ? '/' : normalized;
-  }
+  // 1. 获取当前浏览器地址栏的【完整绝对网址】(如 https://zoc-oec.github.io/)，并强行切掉多余的锚点#和参数?
+  var currentUrl = window.location.href.split('#')[0].split('?')[0];
+  
+  // 强行补齐末尾斜杠，统一格式，避免 / 和 /index.html 导致的不匹配
+  if (!currentUrl.endsWith('/')) { currentUrl += '/'; }
+  currentUrl = currentUrl.replace('index.html/', '');
 
-  var currentPath = window.location.pathname;
-  var normalizedCurrent = normalizePath(currentPath);
+  // 2. 抓取顶部所有的菜单链接
+  var navLinks = document.querySelectorAll(".masthead__menu a");
 
-  var navLinks = document.querySelectorAll(".greedy-nav a");
-
+  // 3. 挨个比对
   navLinks.forEach(function(link) {
-    var href = link.getAttribute("href");
-    if (!href || href === "#" || href.startsWith("javascript:")) return;
+    // 获取菜单按钮里藏着的【完整绝对网址】
+    var linkUrl = link.href.split('#')[0].split('?')[0];
+    
+    // 同样补齐斜杠统一格式
+    if (!linkUrl.endsWith('/')) { linkUrl += '/'; }
+    linkUrl = linkUrl.replace('index.html/', '');
 
-    var linkUrl;
-    try {
-      linkUrl = new URL(href, window.location.origin);
-    } catch(e) {
-      return;
-    }
-
-    var linkPath = linkUrl.pathname;
-    var normalizedLink = normalizePath(linkPath);
-
-    var isMatch = false;
-    if (normalizedLink === normalizedCurrent) {
-      isMatch = true;
-    } else if (normalizedCurrent === '/' && normalizedLink === '/') {
-      isMatch = true;
-    } else if (normalizedCurrent === '/' && normalizedLink === '/index.html') {
-      isMatch = true;
-    } else if (normalizedLink === '/' && (normalizedCurrent === '' || normalizedCurrent === '/index.html')) {
-      isMatch = true;
-    }
-
-    if (isMatch) {
-      link.classList.add("current-highlight");
+    // 4. 如果当前网址和菜单网址一模一样，直接用 JS 暴力注入不可覆盖的样式！
+    if (currentUrl === linkUrl) {
+      link.style.setProperty("color", "#00bfa5", "important");
+      link.style.setProperty("border-bottom", "2px solid #00bfa5", "important");
     }
   });
 });
