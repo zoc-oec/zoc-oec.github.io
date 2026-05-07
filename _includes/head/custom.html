@@ -1,45 +1,32 @@
-{% include base_path %}
-
-<!-- start custom head snippets -->
-
-<!-- Support for Academicons -->
-<link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
-
-<!-- favicon from https://commons.wikimedia.org/wiki/File:OOjs_UI_icon_academic-progressive.svg -->
-<link rel="apple-touch-icon" sizes="180x180" href="{{ base_path }}/images/apple-touch-icon-180x180.png"/>
-<link rel="icon" type="image/svg+xml" href="{{ base_path }}/images/favicon.svg"/>
-<link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-32x32.png" sizes="32x32"/>
-<link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-192x192.png" sizes="192x192"/>
-<link rel="manifest" href="{{ base_path }}/images/manifest.json"/>
-<link rel="icon" href="/images/favicon.ico"/>
-<meta name="theme-color" content="#ffffff"/>
-
-<!-- end custom head snippets -->
 <style>
-  /* 1. 整个导航栏的背景变蓝 */
-  .masthead {
-    background-color: #1c2229 !important; /* 这里我用了和您 Nature 封面一致的深空蓝，也可以换成亮蓝色 #0056b3 */
+  /* 1. 彻底把导航栏的“外墙”和“内墙”都刷成深蓝色 */
+  .masthead, .masthead__inner-wrap {
+    background-color: #1c2229 !important;
     border-bottom: none !important;
   }
-  
-  /* 2. 左侧的联盟名字变白 */
+
+  /* 2. 核心修复：把装菜单的“盒子”底色抽空，让深蓝色透出来 */
+  .greedy-nav {
+    background: transparent !important;
+  }
+
+  /* 3. 左侧的联盟名字变白 */
   .masthead .site-title {
     color: #ffffff !important;
-    border-bottom: none !important;
   }
-  
-  /* 3. 右侧的菜单文字变白 */
-  .masthead__menu-item a {
+
+  /* 4. 右侧的所有菜单文字变白 */
+  .greedy-nav a {
     color: #ffffff !important;
   }
-  
-  /* 4. 鼠标悬停在菜单上时的颜色（变成浅灰色，增加交互感） */
-  .masthead__menu-item a:hover {
+
+  /* 5. 鼠标悬停在菜单上时的颜色（浅灰） */
+  .greedy-nav a:hover {
     color: #cccccc !important;
   }
-  
-  /* 5. 最右侧的设置/齿轮小图标变白 */
-  .nav__toggle-theme, .greedy-nav__toggle {
+
+  /* 6. 最右侧的折叠图标/齿轮变白 */
+  .greedy-nav__toggle {
     color: #ffffff !important;
   }
 </style>
