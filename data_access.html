@@ -19,7 +19,7 @@
             scroll-behavior: smooth;
         }
 
-        /* 导航栏（与首页一致） */
+        /* 导航栏 —— 与 index.html 完全一致 */
         .navbar {
             position: sticky;
             top: 0;
@@ -37,7 +37,6 @@
             justify-content: space-between;
             align-items: center;
             min-height: 64px;
-            gap: 20px;
             flex-wrap: wrap;
         }
         .logo a {
@@ -49,7 +48,6 @@
         .nav-links {
             display: flex;
             gap: 2rem;
-            flex-wrap: wrap;
             list-style: none;
         }
         .nav-links li a {
@@ -69,10 +67,11 @@
             .nav-links {
                 gap: 1rem;
                 justify-content: center;
+                flex-wrap: wrap;  /* 移动端允许换行 */
             }
         }
 
-        /* 页面主容器 */
+        /* 页面主容器（保持不变） */
         .page-content {
             max-width: 1000px;
             margin: 50px auto;
