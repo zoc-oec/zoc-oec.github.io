@@ -20,12 +20,12 @@ layout: none
             width: 100%;
             max-width: 100%;
             overflow-x: hidden;
-            background-color: #0a192f;  /* 深蓝色背景，贯穿全身 */
+            background-color: #0a192f;  /* 深蓝色背景，仅在上半部分可见，下半部分被白色卡片覆盖 */
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             scroll-behavior: smooth;
         }
 
-        /* 移除可能的多余元素 */
+        /* 移除主题可能插入的多余元素 */
         body::before, body::after, .main, .page, .wrapper, .masthead {
             display: none !important;
         }
@@ -36,7 +36,6 @@ layout: none
             top: 0;
             width: 100%;
             background-color: #0a192f;
-            backdrop-filter: blur(0px);
             z-index: 1000;
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
@@ -85,13 +84,13 @@ layout: none
             }
         }
 
-        /* 封面区域：深蓝色背景 + 背景图，底部对齐 */
+        /* 封面区域：背景图覆盖，顶部对齐防止遮挡标题 */
         .hero-section {
             width: 100%;
-            background-color: #0a192f;  /* 与整体背景一致 */
+            background-color: #0a192f;
             background-image: url('https://zoc-oec.github.io/images/Cover.png');
-            background-size: cover;
-            background-position: center bottom;
+            background-size: cover;          /* 始终保持覆盖整个区域 */
+            background-position: center top; /* 图片顶部始终可见，避免裁剪关键文字 */
             background-repeat: no-repeat;
             min-height: 560px;
             display: flex;
@@ -100,13 +99,14 @@ layout: none
             padding: 0;
         }
 
-        /* 左侧文字区：纯深蓝色（无渐变） */
+        /* 左侧文字区：半透明深蓝色蒙版，让背景图透出来 */
         .hero-content {
             width: 55%;
             min-width: 500px;
             padding: 60px 8%;
-            background-color: #0a192f;   /* 纯色，去掉渐变 */
+            background-color: rgba(10, 25, 47, 0.75);  /* 半透明，可见背景图 */
             box-sizing: border-box;
+            border-radius: 0 20px 20px 0;             /* 右侧轻微圆角，美观 */
         }
 
         .hero-content h1 {
@@ -120,10 +120,11 @@ layout: none
         }
 
         .hero-content p {
-            color: #d0d7de;
+            color: #f0f6ff;
             font-size: 1.15em;
             line-height: 1.6;
             margin: 20px 0;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
         }
 
         .hero-buttons {
@@ -166,25 +167,26 @@ layout: none
             background-color: rgba(255,255,255,0.1);
         }
 
-        /* 正文容器：白色背景，圆角，两侧自动留白 */
+        /* 正文容器：纯白色背景，圆角，两侧自动留白 */
         .content-wrap {
             max-width: 1200px;
             margin: 50px auto;
             padding: 40px 40px;
-            background-color: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background-color: #ffffff;   /* 纯白色 */
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
         /* 小屏幕适配 */
         @media (max-width: 768px) {
             .hero-section {
-                min-height: 400px;
+                min-height: 420px;
             }
             .hero-content {
                 width: 90%;
                 min-width: auto;
                 padding: 40px 5%;
+                background-color: rgba(10, 25, 47, 0.85); /* 移动端稍加深提升可读性 */
             }
             .hero-content h1 {
                 font-size: 2em;
@@ -195,7 +197,7 @@ layout: none
             }
         }
 
-        /* 正文内部样式（保持可读性） */
+        /* 正文内部样式（确保白色背景下文字清晰） */
         .content-wrap h2 {
             color: #0a192f;
             margin-top: 1.5em;
@@ -211,6 +213,13 @@ layout: none
         }
         .content-wrap ul {
             margin-left: 1.5em;
+        }
+        .content-wrap a {
+            color: #00bfa5;
+            text-decoration: none;
+        }
+        .content-wrap a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -230,7 +239,7 @@ layout: none
     </div>
 </div>
 
-<!-- 封面区域 -->
+<!-- 封面区域（深蓝半透明蒙版 + 背景图） -->
 <div class="hero-section">
     <div class="hero-content">
         <h1>Advancing Vision Science <br>Through Longitudinal Data <br>and <span style="color: #00bfa5;">Foundation AI</span></h1>
@@ -242,7 +251,7 @@ layout: none
     </div>
 </div>
 
-<!-- 白色背景的正文区域 -->
+<!-- 纯白色正文区域（所有核心内容） -->
 <div class="content-wrap" id="our-core-cohorts">
     <p style="font-size:1.1em; line-height:1.6; margin-bottom:30px;">
         Our work integrates classical epidemiological methods with cutting-edge approaches — including AI prediction models, Transformer architectures, multimodal data fusion, and proteomics — to generate globally impactful insights in ocular epidemiology.
