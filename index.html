@@ -1,3 +1,7 @@
+---
+layout: none
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>ZOC Ocular Epidemiology Consortium</title>
     <style>
-        /* 全局重置 —— 彻底消灭所有可能的白边 */
+        /* 全局重置 */
         * {
             margin: 0;
             padding: 0;
@@ -21,19 +25,12 @@
             scroll-behavior: smooth;
         }
 
-        /* 隐藏主题自带的页面标题（如果有） */
-        h1.page__title, .page__title, .archive__subtitle {
+        /* 强制移除任何可能的外边距/内边距 */
+        body::before, body::after, .main, .page, .wrapper, .masthead {
             display: none !important;
         }
 
-        /* 强制内容容器无外边距/内边距 */
-        .main, .page, .inner, .wrapper, .masthead, .initial-content, .page__inner-wrap {
-            margin: 0 !important;
-            padding: 0 !important;
-            max-width: 100% !important;
-        }
-
-        /* ========= 导航栏样式 ========= */
+        /* 导航栏 */
         .navbar {
             position: sticky;
             top: 0;
@@ -77,7 +74,6 @@
         .nav-links li a:hover {
             color: #00bfa5;
         }
-        /* 移动端菜单 */
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
@@ -89,15 +85,15 @@
             }
         }
 
-        /* ========= 原有封面样式 ========= */
+        /* 封面区域：背景图铺满整个宽度，不留白 */
         .hero-section {
             width: 100%;
             background-color: #050b14;
             background-image: url('https://zoc-oec.github.io/images/Cover.png');
-            background-size: contain;
-            background-position: center bottom;
+            background-size: cover;        /* 改为 cover，填满整个区域，不留白 */
+            background-position: center center;  /* 居中显示 */
             background-repeat: no-repeat;
-            min-height: 520px;
+            min-height: 600px;
             display: flex;
             align-items: center;
             margin: 0;
@@ -179,11 +175,10 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
 
-        /* 小屏幕适配 */
         @media (max-width: 768px) {
             .hero-section {
                 min-height: 400px;
-                background-size: contain;
+                background-size: cover;
             }
             .hero-content {
                 width: 90%;
@@ -207,7 +202,6 @@
             <li><a href="/about">About</a></li>
             <li><a href="/pub_gdes">Publications</a></li>
             <li><a href="/data_access">Data Access</a></li>
-            <!-- 如果需要更多页面，可自行增加，例如 Team / Contact（可以指向某个锚点或独立页） -->
             <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
@@ -238,11 +232,11 @@
     <p><strong>Key focus areas:</strong> angle closure progression · laser iridotomy outcomes · anterior segment biometry · long-term glaucoma risk</p>
 
     <h3>2. GDES — Guangzhou Diabetic Eye Study</h3>
-    <p>The Guangzhou Diabetic Eye Study (GDES) is a comprehensive population-based cohort dedicated to understanding the ocular complications of diabetes in a Chinese population. The study captures a broad spectrum of diabetic eye disease, from early subclinical changes to sight-threatening complications.</p>
+    <p>The Guangzhou Diabetic Eye Study (GDES) is a comprehensive population-based cohort dedicated to understanding the ocular complications of diabetes in a Chinese population.</p>
     <p><strong>Key focus areas:</strong> diabetic retinopathy · retinal imaging biomarkers · risk prediction · systemic-ocular interactions</p>
 
     <h3>3. ZHMC — Zhongshan Myopia Cohort</h3>
-    <p>The Zhongshan Myopia Cohort (ZHMC) is a longitudinal population-based study designed to investigate the onset, progression, and complications of myopia. ZHMC systematically characterizes the structural and functional ocular changes associated with myopia development, with a particular focus on high myopia and its vision-threatening sequelae.</p>
+    <p>The Zhongshan Myopia Cohort (ZHMC) is a longitudinal population-based study designed to investigate the onset, progression, and complications of myopia.</p>
     <p><strong>Key focus areas:</strong> myopia progression · high myopia complications · HMON mechanisms · choroidal imaging · prediction modeling</p>
 
     <h2>What We Do</h2>
