@@ -29,19 +29,11 @@ author:
   location : "Guangzhou, China"
   employer : "Zhongshan Ophthalmic Center"
 
-  # Academic websites
-  academia         : # URL
-  arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
-  inspire-hep      : # URL
-  impactstory      : # URL
-  orcid            : "https://orcid.org/yourorcidurl"
-  semantic         : # URL
-  ssrn             : # URL
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  researchgate     : # URL
-  scopus           : # URL
-  zotero           : # URL
+email         : "wangwei@gzzoc.com"
+  googlescholar : "https://scholar.google.com/citations?hl=zh-TW&user=cfrO1nsAAAAJ"
+  orcid         : "https://orcid.org/0000-0002-5273-3332"
+  Scopus        : "https://www.scopus.com/authid/detail.uri?authorId=56923845200"
+  Web of science: "https://webofscience.clarivate.cn/wos/author/record/69055731"
 
 
   # Repositories and software development
