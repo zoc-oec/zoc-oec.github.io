@@ -1,11 +1,11 @@
 <style>
-  /* 1. 极致深空背景：采用接近黑色的极深藏青色 (参考截图底色) */
+  /* 1. 极致深空背景 */
   .masthead { 
     background-color: #050b14 !important; 
     border-bottom: none !important; 
   }
 
-  /* 2. 保持透明与基础白字：防止主题白块死灰复燃 */
+  /* 2. 保持透明与基础白字 */
   .masthead__inner-wrap,
   .masthead__menu,
   .greedy-nav,
@@ -13,23 +13,27 @@
     background-color: transparent !important;
     background: transparent !important;
     color: #ffffff !important;
-    text-decoration: none !important; /* 强制去除默认丑陋下划线 */
+    text-decoration: none !important;
   }
 
-  /* 3. 菜单项常规排版：为底部的下划线预留空间 */
+  /* 3. 菜单项常规排版 */
   .greedy-nav a {
-    padding-bottom: 6px !important; /* 撑开底部空间 */
-    border-bottom: 2px solid transparent !important; /* 预埋一根透明的线，防止鼠标滑过时画面抖动 */
-    transition: all 0.3s ease !important; /* 添加极其丝滑的渐变动画 */
+    padding-bottom: 6px !important; 
+    border-bottom: 2px solid transparent !important; 
+    transition: all 0.3s ease !important; 
   }
 
-  /* 4. ✨ 核心灵魂：鼠标悬停时的“青色高亮+下划线”效果 ✨ */
-  .greedy-nav a:hover {
-    color: #00bfa5 !important; /* 截图同款亮青色 */
-    border-bottom: 2px solid #00bfa5 !important; /* 底部亮出青色横线 */
+  /* 4. ✨ 核心灵魂：鼠标悬停 (:hover) + 当前页面常亮 (.active) ✨ */
+  /* 把 active 状态和 hover 状态绑在一起，都显示亮青色 */
+  .greedy-nav a:hover,
+  .greedy-nav a.active,
+  .greedy-nav li.active > a,
+  .masthead__menu-item.active > a {
+    color: #00bfa5 !important; 
+    border-bottom: 2px solid #00bfa5 !important; 
   }
 
-  /* 5. 保护机制：手机端/窄屏模式的汉堡包按钮和下拉菜单 */
+  /* 5. 保护机制：手机端和下拉菜单 */
   .greedy-nav__toggle .navicon,
   .greedy-nav__toggle .navicon::before,
   .greedy-nav__toggle .navicon::after {
@@ -37,10 +41,12 @@
   }
   .greedy-nav .hidden-links,
   .greedy-nav .hidden-links * {
-    background-color: #050b14 !important; /* 下拉菜单也保持深色 */
-    border-bottom: none !important; /* 下拉菜单不需要横线 */
+    background-color: #050b14 !important; 
+    border-bottom: none !important; 
   }
-  .greedy-nav .hidden-links a:hover {
+  .greedy-nav .hidden-links a:hover,
+  .greedy-nav .hidden-links a.active,
+  .greedy-nav .hidden-links li.active > a {
     color: #00bfa5 !important;
   }
 </style>
