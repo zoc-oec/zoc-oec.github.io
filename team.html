@@ -19,7 +19,7 @@
             scroll-behavior: smooth;
         }
 
-        /* 导航栏（与首页样式统一） */
+        /* 导航栏 */
         .navbar {
             position: sticky;
             top: 0;
@@ -71,46 +71,36 @@
             }
         }
 
-        /* 合照横幅 Hero 区域 */
+        /* 合照横幅：无蒙版，完整显示比例 12:5 */
         .team-hero {
             position: relative;
             width: 100%;
-            min-height: 400px;
+            aspect-ratio: 12 / 5;           /* 固定宽高比 12:5 */
             background-image: url('/images/team.png');
-            background-size: cover;
-            background-position: center center;
+            background-size: contain;       /* 完整显示，不裁剪 */
+            background-position: center;
             background-repeat: no-repeat;
+            background-color: #ffffff;      /* 背景色可设白色或与图片边缘色一致，避免露白 */
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
-            margin-bottom: 30px;
         }
-        /* 半透明遮罩，增强文字可读性（可选） */
-        .team-hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.4);
-            z-index: 1;
-        }
+
+        /* 文字标题：无蒙版，仅用文字阴影保证可读性 */
         .team-hero h1 {
             position: relative;
             z-index: 2;
             font-size: 3.5rem;
             letter-spacing: 2px;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
             margin: 0;
             padding: 0 20px;
+            background-color: transparent;   /* 确保无背景层 */
         }
+
         @media (max-width: 768px) {
-            .team-hero {
-                min-height: 250px;
-            }
             .team-hero h1 {
                 font-size: 2.2rem;
             }
@@ -119,20 +109,15 @@
         /* 主内容区 */
         .page-content {
             max-width: 1100px;
-            margin: 50px auto;
+            margin: 80px auto 50px auto;
             padding: 40px 40px;
             background: white;
             border-radius: 24px;
             box-shadow: 0 5px 25px rgba(0,0,0,0.05);
         }
 
-        h1:not(.team-hero h1) {
-            color: #0a192f;
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            border-bottom: 3px solid #00bfa5;
-            display: inline-block;
-            padding-bottom: 5px;
+        .team-member:first-of-type {
+            margin-top: 20px;
         }
 
         h2 {
@@ -147,7 +132,6 @@
             margin: 0 0 5px 0;
         }
 
-        /* 团队成员条目 */
         .team-member {
             display: flex;
             align-items: flex-start;
@@ -190,7 +174,7 @@
 
         @media (max-width: 768px) {
             .page-content {
-                margin: 20px;
+                margin: 60px 20px 30px 20px;
                 padding: 25px 20px;
             }
             h2 {
@@ -222,13 +206,12 @@
     </div>
 </div>
 
-<!-- 合照横幅区域 -->
+<!-- 合照横幅：无蒙版、完整显示、比例 12:5 -->
 <div class="team-hero">
     <h1>Our Team</h1>
 </div>
 
 <div class="page-content">
-    <!-- 此处不再重复大标题，因为横幅已包含 -->
     <p>Our multidisciplinary team integrates expertise in clinical ophthalmology, epidemiology, and artificial intelligence to tackle blinding eye diseases.</p>
 
     <h2>Principal Investigator (PI)</h2>
