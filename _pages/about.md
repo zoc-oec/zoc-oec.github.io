@@ -13,8 +13,8 @@ redirect_from:
     <p style="font-size: 1.1em; color: #d0d7de; line-height: 1.6;">The ZOC Ocular Epidemiology Consortium (ZOC-OEC) is a research alliance based at Zhongshan Ophthalmic Center, Sun Yat-sen University. We bring together three major population-based cohorts to advance the understanding, prediction, and prevention of blinding eye diseases.</p>
     <a href="#our-core-cohorts" style="margin-top: 20px; display: inline-block; padding: 10px 20px; background-color: white; color: #1c2229; text-decoration: none; border-radius: 4px; font-weight: bold; width: max-content;">Explore Our Cohorts ➔</a>
   </div>
-  <div style="flex: 1; min-width: 250px;">
-    <img src="https://zoc-oec.github.io/images/Cover.png" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+  <div style="flex: 1; min-width: 250px; background-color: #ffffff; display: flex; align-items: center; justify-content: center; padding: 10px;">
+    <img src="https://zoc-oec.github.io/images/Cover.png" style="width: 100%; height: 100%; object-fit: contain; display: block;">
   </div>
 </div>
 
