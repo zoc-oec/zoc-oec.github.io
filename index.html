@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>ZOC Ocular Epidemiology Consortium</title>
+    <style>
+        /* 全局重置 —— 彻底消灭所有可能的白边 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+            background-color: #050b14;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* 隐藏主题自带的页面标题（如果有） */
+        h1.page__title, .page__title, .archive__subtitle {
+            display: none !important;
+        }
+
+        /* 强制内容容器无外边距/内边距 */
+        .main, .page, .inner, .wrapper, .masthead, .initial-content, .page__inner-wrap {
+            margin: 0 !important;
+            padding: 0 !important;
+            max-width: 100% !important;
+        }
+
+        /* ========= 导航栏样式 ========= */
+        .navbar {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background-color: rgba(5, 11, 20, 0.92);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 64px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .logo a {
+            color: #00bfa5;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: -0.3px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            list-style: none;
+        }
+        .nav-links li a {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+            font-size: 1rem;
+        }
+        .nav-links li a:hover {
+            color: #00bfa5;
+        }
+        /* 移动端菜单 */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 12px 5%;
+            }
+            .nav-links {
+                gap: 1rem;
+                justify-content: center;
+            }
+        }
+
+        /* ========= 原有封面样式 ========= */
+        .hero-section {
+            width: 100%;
+            background-color: #050b14;
+            background-image: url('https://zoc-oec.github.io/images/Cover.png');
+            background-size: contain;
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero-content {
+            width: 55%;
+            min-width: 500px;
+            padding: 60px 8%;
+            background: linear-gradient(to right, rgba(5,11,20, 1) 0%, rgba(5,11,20, 0.92) 45%, rgba(5,11,20, 0) 100%);
+            box-sizing: border-box;
+        }
+
+        .hero-content h1 {
+            color: white;
+            font-size: 3em;
+            line-height: 1.2;
+            margin-top: 0;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            border-bottom: none;
+        }
+
+        .hero-content p {
+            color: #d0d7de;
+            font-size: 1.15em;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: #00bfa5;
+            color: #020713;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #00a08b;
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        /* 正文容器 */
+        .content-wrap {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        /* 小屏幕适配 */
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 400px;
+                background-size: contain;
+            }
+            .hero-content {
+                width: 90%;
+                min-width: auto;
+                padding: 40px 5%;
+            }
+            .hero-content h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- 导航栏 -->
+<div class="navbar">
+    <div class="nav-container">
+        <div class="logo"><a href="/">ZOC‑OEC</a></div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/pub_gdes">Publications</a></li>
+            <li><a href="/data_access">Data Access</a></li>
+            <!-- 如果需要更多页面，可自行增加，例如 Team / Contact（可以指向某个锚点或独立页） -->
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- 全宽封面 -->
+<div class="hero-section">
+    <div class="hero-content">
+        <h1>Advancing Vision Science <br>Through Longitudinal Data <br>and <span style="color: #00bfa5;">Foundation AI</span></h1>
+        <p>The ZOC Ocular Epidemiology Consortium (ZOC-OEC) integrates longitudinal cohorts, multimodal imaging, multi-omics and AI to advance the understanding, prediction, and prevention of blinding eye diseases.</p>
+        <div class="hero-buttons">
+            <a href="#our-core-cohorts" class="btn-primary">Explore Our Research ➔</a>
+            <a href="#our-core-cohorts" class="btn-secondary">Our Cohorts</a>
+        </div>
+    </div>
+</div>
+
+<!-- 正文区域 -->
+<div class="content-wrap" id="our-core-cohorts">
+    <p style="font-size:1.1em; line-height:1.6; margin-bottom:30px;">
+        Our work integrates classical epidemiological methods with cutting-edge approaches — including AI prediction models, Transformer architectures, multimodal data fusion, and proteomics — to generate globally impactful insights in ocular epidemiology.
+    </p>
+
+    <h2>Our Core Cohorts</h2>
+
+    <h3>1. ZAP — Zhongshan Angle Closure Prevention Trial</h3>
+    <p>The ZAP cohort is a landmark randomized controlled trial and long-term prospective study examining the natural history and prevention of primary angle closure glaucoma (PACG). With over 18 years of follow-up, ZAP represents one of the world's longest-running trials in glaucoma epidemiology.</p>
+    <p><strong>Key focus areas:</strong> angle closure progression · laser iridotomy outcomes · anterior segment biometry · long-term glaucoma risk</p>
+
+    <h3>2. GDES — Guangzhou Diabetic Eye Study</h3>
+    <p>The Guangzhou Diabetic Eye Study (GDES) is a comprehensive population-based cohort dedicated to understanding the ocular complications of diabetes in a Chinese population. The study captures a broad spectrum of diabetic eye disease, from early subclinical changes to sight-threatening complications.</p>
+    <p><strong>Key focus areas:</strong> diabetic retinopathy · retinal imaging biomarkers · risk prediction · systemic-ocular interactions</p>
+
+    <h3>3. ZHMC — Zhongshan Myopia Cohort</h3>
+    <p>The Zhongshan Myopia Cohort (ZHMC) is a longitudinal population-based study designed to investigate the onset, progression, and complications of myopia. ZHMC systematically characterizes the structural and functional ocular changes associated with myopia development, with a particular focus on high myopia and its vision-threatening sequelae.</p>
+    <p><strong>Key focus areas:</strong> myopia progression · high myopia complications · HMON mechanisms · choroidal imaging · prediction modeling</p>
+
+    <h2>What We Do</h2>
+    <ul>
+        <li><strong>Data-Driven Discovery:</strong> We apply rigorous statistical methods — including longitudinal analysis, restricted cubic spline modeling, and Mendelian randomization — to uncover disease patterns across our cohorts.</li>
+        <li><strong>AI & Multimodal Modeling:</strong> We develop deep learning and Transformer-based models integrating retinal imaging, proteomics, and clinical data to predict disease onset, progression, and treatment response.</li>
+        <li><strong>Global Collaboration:</strong> We actively partner with international research groups, including UK Biobank (UKB), AI-READI, and SERI, to conduct cross-ethnic and cross-population studies of ocular disease.</li>
+        <li><strong>Open Science:</strong> We are committed to responsible data sharing. Collaboration and data access inquiries are welcome — please see our Data Access Policy or contact us directly.</li>
+    </ul>
+
+    <h2 id="contact">Contact / Collaboration Inquiry</h2>
+    <p>We welcome collaboration proposals from researchers, postdoctoral fellows, and PhD students worldwide.</p>
+    <p><strong>Email:</strong> wangwei@gzzoc.com<br>
+    <strong>Website:</strong> https://zoc-oec.github.io/<br>
+    <strong>Location:</strong> Zhongshan Ophthalmic Center, Sun Yat-sen University, Guangzhou, China</p>
+</div>
+
+</body>
+</html>
