@@ -1,33 +1,37 @@
 <style>
-  /* 1. 把最外层导航栏统一变成深色 */
+  /* 1. 铺设深色底色：给最外层容器强行上深蓝/黑色 */
   .masthead {
-    background-color: #1c2229 !important;
+    background: #1c2229 !important;
     border-bottom: none !important;
   }
 
-  /* 2. 核心修复：强制抽空标题和所有内层盒子的背景色，消除白块 */
+  /* 2. 暴力抽空白底：利用最高权重的 ID 选择器 (#site-nav)，强行剥离所有内层白块 */
   .masthead__inner-wrap,
   .masthead__menu,
-  .greedy-nav,
-  .site-title {
+  nav#site-nav.greedy-nav,
+  ul.visible-links,
+  .masthead .site-title {
     background-color: transparent !important;
-    background: none !important; 
+    background-image: none !important;
+    background: transparent !important;
   }
 
-  /* 3. 强制让左侧标题和右侧菜单的文字变成纯白色 */
+  /* 3. 字体强制变白：同样使用最高权重，避免字被隐藏 */
   .masthead .site-title,
-  .greedy-nav a {
+  nav#site-nav.greedy-nav a,
+  ul.visible-links a {
     color: #ffffff !important;
   }
 
-  /* 4. 鼠标悬停文字时的交互颜色 */
-  .greedy-nav a:hover {
+  /* 4. 鼠标悬停时的浅灰色 */
+  nav#site-nav.greedy-nav a:hover,
+  ul.visible-links a:hover {
     color: #cccccc !important;
   }
 
-  /* 5. 窄屏模式下，右侧菜单折叠按钮的底色抽空，三根横线变白 */
+  /* 5. 手机/窄屏模式下的三道杠汉堡按钮修复 */
   .greedy-nav__toggle {
-    background-color: transparent !important;
+    background: transparent !important;
     border: none !important;
   }
   .greedy-nav__toggle .navicon,
