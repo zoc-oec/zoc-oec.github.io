@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Our Team - ZOC Ocular Epidemiology Consortium</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            width: 100%;
+            overflow-x: hidden;
+            background-color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* 导航栏 */
+        .navbar {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background-color: rgba(10, 20, 40, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 64px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .logo a {
+            color: #00bfa5;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            list-style: none;
+        }
+        .nav-links li a {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links li a:hover {
+            color: #00bfa5;
+        }
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 12px 5%;
+            }
+            .nav-links {
+                gap: 1rem;
+                justify-content: center;
+            }
+        }
+
+        /* 主内容区 */
+        .page-content {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 40px 40px;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            color: #0a192f;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #00bfa5;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        h2 {
+            color: #1e3a5f;
+            font-size: 1.8rem;
+            margin: 1.8rem 0 1.2rem;
+        }
+
+        h3 {
+            color: #0a192f;
+            font-size: 1.4rem;
+            margin: 0 0 5px 0;
+        }
+
+        /* 团队成员条目（flex 布局） */
+        .team-member {
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+            margin-bottom: 45px;
+            flex-wrap: wrap;
+        }
+        .team-member img {
+            width: 140px;
+            flex-shrink: 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            background-color: #f8f9fc;
+        }
+        .member-info {
+            flex: 1;
+        }
+        .member-info p {
+            color: #1e2a3a;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        .member-info ul {
+            margin: 10px 0 0 20px;
+        }
+        .member-info li {
+            color: #1e2a3a;
+            line-height: 1.6;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #6c757d;
+            font-size: 0.85rem;
+            border-top: 1px solid #e9ecef;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .page-content {
+                margin: 20px;
+                padding: 25px 20px;
+            }
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.5rem; }
+            .team-member {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .member-info ul {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="nav-container">
+        <div class="logo"><a href="/">ZOC‑OEC</a></div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/team.html">Team</a></li>
+            <li><a href="/publications.html">Publications</a></li>
+            <li><a href="/data_access.html">Data Access</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="page-content">
+    <h1>Our Team</h1>
+    <p>Our multidisciplinary team integrates expertise in clinical ophthalmology, epidemiology, and artificial intelligence to tackle blinding eye diseases.</p>
+
+    <h2>Principal Investigator (PI)</h2>
+    <div class="team-member">
+        <img src="/images/wangwei.png" alt="Prof. Wei Wang">
+        <div class="member-info">
+            <h3>Prof. Wei Wang (M.D., Ph.D.)</h3>
+            <p><strong>Principal Investigator / Associate Chief Physician<br>State Key Laboratory of Ophthalmology, Zhongshan Ophthalmic Center, Sun Yat-sen University</strong></p>
+            <p>Prof. Wei Wang is a highly acclaimed ophthalmologist, Principal Investigator (PI) at the State Key Laboratory of Ophthalmology, and Director of the Development Planning Office at Zhongshan Ophthalmic Center. He also served as a visiting scholar at the National Ophthalmic Center in Australia.</p>
+            <p>Recognized globally for his outstanding contributions, Prof. Wang has been named one of the <strong>"Asia-Pacific 100 Most Influential Ophthalmologists"</strong> and listed among the <strong>"World's Top 2% Scientists"</strong> by Stanford University for five consecutive years. According to Expertscape, he ranks in the top 0.1% of glaucoma experts globally, specifically within the top 20 worldwide for angle-closure and neovascular glaucoma.</p>
+            <ul>
+                <li><strong>Glaucoma Prevention:</strong> Led the extended Zhongshan Angle-Closure Prevention (ZAP-Ex) trial, establishing population risk stratification standards and identifying abnormal uveal hemodynamics.</li>
+                <li><strong>High Myopia Cohort:</strong> Established the world's longest-running and most comprehensive high myopia evolution cohort, defining international standards that were incorporated into the International Myopia Institute (IMI) 2025 White Paper.</li>
+                <li><strong>Diabetic Eye Disease:</strong> Innovated a preventive research framework by revealing key metabolic-proteomic signatures for diabetic retinopathy.</li>
+                <li><strong>"Eye-Heart-Brain-Kidney Axis":</strong> Proposed a groundbreaking cross-disciplinary model utilizing large-scale cohort data and advanced algorithms, highlighted as a Hot Topic by the American Academy of Ophthalmology (AAO).</li>
+            </ul>
+            <p><strong>Academic Excellence:</strong> He has published <strong>310 SCI-indexed papers</strong> (166 as first/corresponding author in top-tier journals like <em>Ophthalmology</em>, <em>Nature Communications</em>, and <em>JAMA Ophthalmology</em>), with over 20,000 citations and an H-index of 69.</p>
+        </div>
+    </div>
+
+    <h2>Core Team Members</h2>
+
+    <div class="team-member">
+        <img src="/images/huangwenyong.jpg" alt="Prof. Wenyong Huang">
+        <div class="member-info">
+            <h3>Prof. Wenyong Huang (M.D., Ph.D.)</h3>
+            <p><strong>Chief Physician / Professor / Ph.D. Supervisor<br>Deputy Director of the Office of Blindness Prevention</strong></p>
+            <p>Prof. Huang is a leading expert in ophthalmic epidemiology, blindness prevention in rural areas, and surgical treatment of cataracts. He has published over 70 academic papers and serves as the Chinese principal investigator for multiple international collaborative projects, including partnerships with Queen's University Belfast and Orbis International. He is also the Deputy Leader of the National Blindness Prevention Technical Guidance Group.</p>
+            <ul>
+                <li><strong>Key Achievements:</strong> Co-recipient of the National Science and Technology Progress Award (Second Class) and the Guangdong Provincial Science and Technology Progress Award (First Class).</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="team-member">
+        <img src="/images/chenshida.jpg" alt="Dr. Shida Chen">
+        <div class="member-info">
+            <h3>Dr. Shida Chen (M.D., Ph.D.)</h3>
+            <p><strong>Associate Chief Physician / Master's Supervisor</strong></p>
+            <p>Dr. Chen specializes in fundus diseases, with extensive clinical experience in pathological myopia, diabetic retinopathy, retinal detachment, and macular diseases. His research focuses on the pathogenesis and early prevention of pathological myopia and diabetic retinopathy. He completed a one-year postdoctoral fellowship at the National Eye Institute (NEI), NIH, USA. He is the Principal Investigator for 8 research grants, including the NSFC Youth Fund, and has published over 40 SCI-indexed papers as first or corresponding author.</p>
+            <ul>
+                <li><strong>Key Achievements:</strong> Recipient of the ARVO and WGC International Travel Grants; holds 2 invention patents and 1 software copyright.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="team-member">
+        <img src="/images/gaoxinbo.png" alt="Dr. Xinbo Gao (Bruce)">
+        <div class="member-info">
+            <h3>Dr. Xinbo Gao (Bruce) (M.D., Ph.D.)</h3>
+            <p><strong>Associate Chief Physician</strong></p>
+            <p>Dr. Gao has over 10 years of clinical experience in ophthalmology, with a specific focus on laser treatments for glaucoma, minimally invasive glaucoma surgery (MIGS), and the structural and functional study of the human ocular glymphatic system and Schlemm's canal. He was a visiting scholar at the University of Illinois Chicago (UIC) and served as the Medical Director for the Health Express (2025). He leads 6 provincial and ministerial-level grants and has authored multiple high-impact SCI papers in journals like <em>IOVS</em>, <em>Clin Exp Ophthalmol</em>, and <em>J Glaucoma</em>.</p>
+            <ul>
+                <li><strong>Key Achievements:</strong> Served in the 10th batch of Guangdong aid doctors to Xinjiang, where he was recognized as an "Outstanding Teaching Expert" and an "Outstanding Cadre/Talent".</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="team-member">
+        <img src="/images/hechang.png" alt="Dr. Chang He">
+        <div class="member-info">
+            <h3>Dr. Chang He (M.D., Ph.D.)</h3>
+            <p><strong>Associate Chief Physician / Master's Supervisor<br>Deputy Director of the Science and Technology Division</strong></p>
+            <p>Dr. He's research primarily targets ocular immunology, cataracts, and retinal diseases. She is a highly accomplished researcher, supported by the prestigious NSFC Excellent Young Scientists Fund and the Guangdong Provincial Natural Science Foundation Outstanding Youth Fund. She has published 24 SCI-indexed papers as first or corresponding author, including 11 papers with an Impact Factor over 10 in top journals such as <em>Science Advances</em>, <em>Nature Communications</em>, and <em>PNAS</em>.</p>
+            <ul>
+                <li><strong>Key Achievements:</strong> Recognized as a Pearl River S&T Nova of Guangzhou; holds 1 authorized invention patent.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="team-member">
+        <img src="/images/chengweijing.png" alt="Dr. Weijing Cheng">
+        <div class="member-info">
+            <h3>Dr. Weijing Cheng (Ph.D.)</h3>
+            <p><strong>Associate Researcher</strong></p>
+            <p>Dr. Cheng is a core member at the State Key Laboratory of Ophthalmology, focusing on the intersection of environmental eye health and microcirculation metabolism. Relying on registered clinical cohorts, he pioneered standardized quantitative methods for choriocapillaris microcirculation and established a normative database for the Chinese population, ranking in the top 2.9% globally in Expertscape's "Expertise in Choroid". His work on establishing an SS-OCT in vivo imaging quality control system for the lacrimal gland was featured as the Editor's Choice in the <em>British Journal of Ophthalmology</em>.</p>
+            <ul>
+                <li><strong>Key Achievements:</strong> Principal Investigator for the NSFC Youth Fund. He has published 16 papers as first/corresponding author in the past 3 years in top-tier journals including <em>Nature Communications</em>, <em>American Journal of Ophthalmology</em>, and <em>British Journal of Ophthalmology</em>. Holds 1 utility patent and 2 software copyrights.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy; 2025 ZOC Ocular Epidemiology Consortium — Zhongshan Ophthalmic Center, Sun Yat-sen University
+</footer>
+
+</body>
+</html>
