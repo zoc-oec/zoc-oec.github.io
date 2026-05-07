@@ -7,15 +7,21 @@ redirect_from:
   - /about.html
 ---
 
-<div style="display: flex; flex-wrap: wrap; background-color: #1c2229; color: white; border-radius: 8px; overflow: hidden; margin-bottom: 40px; box-shadow: 0 10px 20px rgba(0,0,0,0.15);">
-  <div style="flex: 1.5; min-width: 300px; padding: 40px; display: flex; flex-direction: column; justify-content: center;">
+<div style="background-color: #1c2229; color: white; border-radius: 8px; overflow: hidden; margin-bottom: 40px; box-shadow: 0 10px 20px rgba(0,0,0,0.15);">
+  
+  <div style="position: relative; width: 100%; display: block; line-height: 0;">
+    <img src="https://zoc-oec.github.io/images/Cover.png" style="width: 100%; display: block; object-fit: contain;">
+    
+    <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100px; background: linear-gradient(to bottom, rgba(28, 34, 41, 0) 0%, rgba(28, 34, 41, 1) 100%); pointer-events: none;">
+    </div>
+  </div>
+  
+  <div style="padding: 40px;">
     <h1 style="margin-top: 0; color: white; font-size: 2.2em; line-height: 1.2; border-bottom: none;">Advancing Ocular Epidemiology Through Data & AI</h1>
     <p style="font-size: 1.1em; color: #d0d7de; line-height: 1.6;">The ZOC Ocular Epidemiology Consortium (ZOC-OEC) is a research alliance based at Zhongshan Ophthalmic Center, Sun Yat-sen University. We bring together three major population-based cohorts to advance the understanding, prediction, and prevention of blinding eye diseases.</p>
     <a href="#our-core-cohorts" style="margin-top: 20px; display: inline-block; padding: 10px 20px; background-color: white; color: #1c2229; text-decoration: none; border-radius: 4px; font-weight: bold; width: max-content;">Explore Our Cohorts ➔</a>
   </div>
-  <div style="flex: 1; min-width: 250px; background-color: #ffffff; display: flex; align-items: center; justify-content: center; padding: 10px;">
-    <img src="https://zoc-oec.github.io/images/Cover.png" style="width: 100%; height: 100%; object-fit: contain; display: block;">
-  </div>
+
 </div>
 
 Our work integrates classical epidemiological methods with cutting-edge approaches — including AI prediction models, Transformer architectures, multimodal data fusion, and proteomics — to generate globally impactful insights in ocular epidemiology.
