@@ -87,19 +87,19 @@ layout: none
         }
 
         /* 封面区域：背景图铺满整个宽度，不留白 */
-        .hero-section {
-            width: 100%;
-            background-color: #050b14;
-            background-image: url('https://zoc-oec.github.io/images/Cover.png');
-            background-size: cover;        /* 改为 cover，填满整个区域，不留白 */
-            background-position: center center;  /* 居中显示 */
-            background-repeat: no-repeat;
-            min-height: 600px;
-            display: flex;
-            align-items: center;
-            margin: 0;
-            padding: 0;
-        }
+.hero-section {
+    width: 100%;
+    background-color: #050b14;
+    background-image: url('https://zoc-oec.github.io/images/Cover.png');
+    background-size: cover;
+    background-position: center bottom;   /* 关键是这里：底部对齐 */
+    background-repeat: no-repeat;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
 
         .hero-content {
             width: 55%;
