@@ -23,17 +23,20 @@
     transition: all 0.3s ease !important; 
   }
 
-  /* 4. ✨ 核心灵魂：鼠标悬停 (:hover) + 当前页面常亮 (.active) ✨ */
-  /* 把 active 状态和 hover 状态绑在一起，都显示亮青色 */
-  .greedy-nav a:hover,
-  .greedy-nav a.active,
-  .greedy-nav li.active > a,
-  .masthead__menu-item.active > a {
+  /* 4. 鼠标悬停时的效果 */
+  .greedy-nav a:hover {
     color: #00bfa5 !important; 
     border-bottom: 2px solid #00bfa5 !important; 
   }
 
-  /* 5. 保护机制：手机端和下拉菜单 */
+  /* 5. ✨ 终极绝杀：利用系统变量，强制当前页面网址对应的菜单常亮 ✨ */
+  .greedy-nav a[href="{{ page.url }}"],
+  .greedy-nav a[href="{{ page.url | remove: 'index.html' }}"] {
+    color: #00bfa5 !important; 
+    border-bottom: 2px solid #00bfa5 !important; 
+  }
+
+  /* 6. 手机端保护机制 */
   .greedy-nav__toggle .navicon,
   .greedy-nav__toggle .navicon::before,
   .greedy-nav__toggle .navicon::after {
@@ -44,9 +47,7 @@
     background-color: #050b14 !important; 
     border-bottom: none !important; 
   }
-  .greedy-nav .hidden-links a:hover,
-  .greedy-nav .hidden-links a.active,
-  .greedy-nav .hidden-links li.active > a {
+  .greedy-nav .hidden-links a:hover {
     color: #00bfa5 !important;
   }
 </style>
