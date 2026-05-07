@@ -9,7 +9,6 @@ layout: none
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>ZOC Ocular Epidemiology Consortium</title>
     <style>
-        /* 全局重置 */
         * {
             margin: 0;
             padding: 0;
@@ -18,24 +17,24 @@ layout: none
 
         body, html {
             width: 100%;
-            max-width: 100%;
             overflow-x: hidden;
-            background-color: #0a192f;  /* 深蓝色背景，仅在上半部分可见，下半部分被白色卡片覆盖 */
+            background-color: #0a192f; /* 深蓝色，与图片背景融合 */
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             scroll-behavior: smooth;
         }
 
-        /* 移除主题可能插入的多余元素 */
+        /* 强制移除任何额外元素 */
         body::before, body::after, .main, .page, .wrapper, .masthead {
             display: none !important;
         }
 
-        /* 导航栏（深蓝色） */
+        /* 导航栏 */
         .navbar {
             position: sticky;
             top: 0;
             width: 100%;
-            background-color: #0a192f;
+            background-color: rgba(10, 25, 47, 0.9); /* 半透明以保证文字可读，但非蒙版 */
+            backdrop-filter: blur(4px);
             z-index: 1000;
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
@@ -55,7 +54,6 @@ layout: none
             font-size: 1.5rem;
             font-weight: 700;
             text-decoration: none;
-            letter-spacing: -0.3px;
         }
         .nav-links {
             display: flex;
@@ -68,7 +66,6 @@ layout: none
             text-decoration: none;
             font-weight: 500;
             transition: color 0.2s;
-            font-size: 1rem;
         }
         .nav-links li a:hover {
             color: #00bfa5;
@@ -84,47 +81,43 @@ layout: none
             }
         }
 
-        /* 封面区域：背景图覆盖，顶部对齐防止遮挡标题 */
+        /* 封面容器：高度由内容撑开，背景图完整显示 */
         .hero-section {
             width: 100%;
             background-color: #0a192f;
             background-image: url('https://zoc-oec.github.io/images/Cover.png');
-            background-size: cover;          /* 始终保持覆盖整个区域 */
-            background-position: center top; /* 图片顶部始终可见，避免裁剪关键文字 */
+            background-size: contain;      /* 关键：保证图片完整显示，不裁剪 */
+            background-position: center center;
             background-repeat: no-repeat;
-            min-height: 560px;
+            /* 不设 min-height，让内容自然撑开高度 */
             display: flex;
             align-items: center;
-            margin: 0;
-            padding: 0;
+            justify-content: flex-start;   /* 文字左对齐 */
         }
 
-        /* 左侧文字区：半透明深蓝色蒙版，让背景图透出来 */
+        /* 文字区：无背景色，直接浮在图片上 */
         .hero-content {
             width: 55%;
             min-width: 500px;
-            padding: 60px 8%;
-            background-color: rgba(10, 25, 47, 0.75);  /* 半透明，可见背景图 */
+            padding: 80px 8% 120px 8%;    /* 上下留足空间，让背景图底部完整露出 */
+            background-color: transparent;  /* 完全透明，无蒙版 */
             box-sizing: border-box;
-            border-radius: 0 20px 20px 0;             /* 右侧轻微圆角，美观 */
         }
 
         .hero-content h1 {
             color: white;
             font-size: 3em;
             line-height: 1.2;
-            margin-top: 0;
             font-weight: 700;
-            letter-spacing: -0.5px;
-            border-bottom: none;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5); /* 增加文字阴影，防止浅色背景时看不清 */
         }
 
         .hero-content p {
-            color: #f0f6ff;
+            color: white;
             font-size: 1.15em;
             line-height: 1.6;
             margin: 20px 0;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
         }
 
         .hero-buttons {
@@ -134,59 +127,45 @@ layout: none
             flex-wrap: wrap;
         }
 
-        .btn-primary {
+        .btn-primary, .btn-secondary {
             display: inline-block;
             padding: 12px 28px;
-            background-color: #00bfa5;
-            color: #020713;
-            text-decoration: none;
             border-radius: 30px;
             font-weight: bold;
-            font-size: 1em;
+            text-decoration: none;
             transition: all 0.3s;
         }
-
+        .btn-primary {
+            background-color: #00bfa5;
+            color: #020713;
+        }
         .btn-primary:hover {
             background-color: #00a08b;
         }
-
         .btn-secondary {
-            display: inline-block;
-            padding: 12px 28px;
             background-color: transparent;
             color: white;
             border: 1px solid white;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            font-size: 1em;
-            transition: all 0.3s;
         }
-
         .btn-secondary:hover {
             background-color: rgba(255,255,255,0.1);
         }
 
-        /* 正文容器：纯白色背景，圆角，两侧自动留白 */
+        /* 正文容器：纯白色背景卡片 */
         .content-wrap {
             max-width: 1200px;
             margin: 50px auto;
             padding: 40px 40px;
-            background-color: #ffffff;   /* 纯白色 */
+            background-color: #ffffff;
             border-radius: 24px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
-        /* 小屏幕适配 */
         @media (max-width: 768px) {
-            .hero-section {
-                min-height: 420px;
-            }
             .hero-content {
                 width: 90%;
                 min-width: auto;
-                padding: 40px 5%;
-                background-color: rgba(10, 25, 47, 0.85); /* 移动端稍加深提升可读性 */
+                padding: 50px 5% 80px 5%;
             }
             .hero-content h1 {
                 font-size: 2em;
@@ -197,35 +176,14 @@ layout: none
             }
         }
 
-        /* 正文内部样式（确保白色背景下文字清晰） */
-        .content-wrap h2 {
-            color: #0a192f;
-            margin-top: 1.5em;
-            margin-bottom: 0.5em;
-        }
-        .content-wrap h3 {
-            color: #1e3a5f;
-            margin-top: 1.2em;
-        }
-        .content-wrap p, .content-wrap li {
-            color: #1e2a3a;
-            line-height: 1.6;
-        }
-        .content-wrap ul {
-            margin-left: 1.5em;
-        }
-        .content-wrap a {
-            color: #00bfa5;
-            text-decoration: none;
-        }
-        .content-wrap a:hover {
-            text-decoration: underline;
-        }
+        .content-wrap h2 { color: #0a192f; margin-top: 1.5em; }
+        .content-wrap h3 { color: #1e3a5f; margin-top: 1.2em; }
+        .content-wrap p, .content-wrap li { color: #1e2a3a; line-height: 1.6; }
+        .content-wrap ul { margin-left: 1.5em; }
     </style>
 </head>
 <body>
 
-<!-- 导航栏 -->
 <div class="navbar">
     <div class="nav-container">
         <div class="logo"><a href="/">ZOC‑OEC</a></div>
@@ -239,7 +197,7 @@ layout: none
     </div>
 </div>
 
-<!-- 封面区域（深蓝半透明蒙版 + 背景图） -->
+<!-- 封面：无蒙版，背景图完整显示 -->
 <div class="hero-section">
     <div class="hero-content">
         <h1>Advancing Vision Science <br>Through Longitudinal Data <br>and <span style="color: #00bfa5;">Foundation AI</span></h1>
@@ -251,14 +209,12 @@ layout: none
     </div>
 </div>
 
-<!-- 纯白色正文区域（所有核心内容） -->
 <div class="content-wrap" id="our-core-cohorts">
     <p style="font-size:1.1em; line-height:1.6; margin-bottom:30px;">
         Our work integrates classical epidemiological methods with cutting-edge approaches — including AI prediction models, Transformer architectures, multimodal data fusion, and proteomics — to generate globally impactful insights in ocular epidemiology.
     </p>
 
     <h2>Our Core Cohorts</h2>
-
     <h3>1. ZAP — Zhongshan Angle Closure Prevention Trial</h3>
     <p>The ZAP cohort is a landmark randomized controlled trial and long-term prospective study examining the natural history and prevention of primary angle closure glaucoma (PACG). With over 18 years of follow-up, ZAP represents one of the world's longest-running trials in glaucoma epidemiology.</p>
     <p><strong>Key focus areas:</strong> angle closure progression · laser iridotomy outcomes · anterior segment biometry · long-term glaucoma risk</p>
