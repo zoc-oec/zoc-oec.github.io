@@ -9,11 +9,11 @@ redirect_from:
 ---
 
 <style>
-  /* 1. 隐藏默认自带的页面标题 */
+  /* 隐藏默认自带的页面标题 */
   h1.page__title {
     display: none !important;
   }
-  /* 2. 彻底消灭 Windows 电脑上因为 100vw 撑满而产生的底部横向滚动条和右侧白边 */
+  /* 彻底消灭横向滚动条和白边 */
   body {
     overflow-x: hidden !important;
   }
@@ -25,16 +25,17 @@ redirect_from:
   margin-right: calc(50% - 50vw); 
   max-width: 100vw; 
   position: relative; 
-  background-color: #020713; /* 核心修复：深空蓝打底，填补任何可能的白边，与图片左侧无缝融合 */
+  background-color: #050b14; /* 核心修复：纯黑/极深藏青色兜底，确保上下左右露出来的都是黑色 */
   background-image: url('https://zoc-oec.github.io/images/Cover.png'); 
-  background-size: cover; 
-  background-position: center bottom; /* 核心修复：将图片锚定在底部，保护底部的文字和图标不被切掉 */
+  background-size: contain; /* 核心修改：改为 contain，确保在缩放时，图片始终完整显示，不拉伸裁切 */
+  background-position: center bottom; /* 核心修改：锚定在底部，保护底部文字 */
+  background-repeat: no-repeat; /* 核心修改：不重复 */
   margin-bottom: 50px; 
   display: flex; 
-  min-height: 560px; /* 稍微加高一点，给图片更多展示空间 */
+  min-height: 520px; /* 稍微加高一点 */
 ">
   
-  <div style="background: linear-gradient(to right, rgba(2,7,19, 1) 0%, rgba(2,7,19, 0.92) 45%, rgba(2,7,19, 0) 100%); padding: 60px 8%; width: 55%; min-width: 500px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center;">
+  <div style="background: linear-gradient(to right, rgba(5,11,20, 1) 0%, rgba(5,11,20, 0.92) 45%, rgba(5,11,20, 0) 100%); padding: 60px 8%; width: 55%; min-width: 500px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center;">
 
     <div style="max-width: 650px;">
       <h1 style="color: white; font-size: 3em; line-height: 1.2; margin-top: 0; border-bottom: none; font-weight: 700; letter-spacing: -0.5px;">
