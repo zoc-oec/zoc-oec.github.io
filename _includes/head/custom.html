@@ -1,32 +1,32 @@
 <style>
-  /* 1. 彻底把导航栏的“外墙”和“内墙”都刷成深蓝色 */
-  .masthead, .masthead__inner-wrap {
+  /* 1. 导航栏外墙彻底深蓝化 */
+  .masthead, .masthead__inner-wrap, .masthead__menu {
     background-color: #1c2229 !important;
     border-bottom: none !important;
   }
 
-  /* 2. 核心修复：把装菜单的“盒子”底色抽空，让深蓝色透出来 */
-  .greedy-nav {
-    background: transparent !important;
-  }
-
-  /* 3. 左侧的联盟名字变白 */
+  /* 2. 绝杀左侧白块：强制抽空标题和容器的所有背景色 */
+  .greedy-nav,
+  .greedy-nav a,
   .masthead .site-title {
+    background-color: transparent !important;
     color: #ffffff !important;
   }
 
-  /* 4. 右侧的所有菜单文字变白 */
-  .greedy-nav a {
-    color: #ffffff !important;
-  }
-
-  /* 5. 鼠标悬停在菜单上时的颜色（浅灰） */
+  /* 3. 鼠标悬停变灰 */
   .greedy-nav a:hover {
     color: #cccccc !important;
   }
 
-  /* 6. 最右侧的折叠图标/齿轮变白 */
+  /* 4. 绝杀右侧菜单白块：去掉按钮的白色背景底座 */
   .greedy-nav__toggle {
-    color: #ffffff !important;
+    background-color: transparent !important;
+  }
+  
+  /* 5. 把右侧菜单的“三条横线”强制变成白色 */
+  .greedy-nav__toggle .navicon, 
+  .greedy-nav__toggle .navicon:before, 
+  .greedy-nav__toggle .navicon:after {
+    background: #ffffff !important; 
   }
 </style>
