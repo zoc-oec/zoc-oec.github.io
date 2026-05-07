@@ -29,14 +29,7 @@
     border-bottom: 2px solid #00bfa5 !important; 
   }
 
-  /* 5. ✨ 终极绝杀：利用系统变量，强制当前页面网址对应的菜单常亮 ✨ */
-  .greedy-nav a[href="{{ page.url }}"],
-  .greedy-nav a[href="{{ page.url | remove: 'index.html' }}"] {
-    color: #00bfa5 !important; 
-    border-bottom: 2px solid #00bfa5 !important; 
-  }
-
-  /* 6. 手机端保护机制 */
+  /* 5. 手机端保护机制 */
   .greedy-nav__toggle .navicon,
   .greedy-nav__toggle .navicon::before,
   .greedy-nav__toggle .navicon::after {
@@ -51,3 +44,26 @@
     color: #00bfa5 !important;
   }
 </style>
+
+<script>
+  // 等网页加载完毕后立刻执行
+  document.addEventListener("DOMContentLoaded", function() {
+    // 1. 获取浏览器当前真实的网址路径 (主页就是 "/")
+    var currentPath = window.location.pathname;
+
+    // 2. 找到顶部导航栏里的所有按钮
+    var navLinks = document.querySelectorAll(".greedy-nav a");
+
+    // 3. 挨个检查：哪个按钮的链接跟当前网址对得上，就强行给谁上色！
+    navLinks.forEach(function(link) {
+      var linkPath = new URL(link.href).pathname;
+      
+      // 如果完全匹配，或者处理特殊的 index.html 情况
+      if (linkPath === currentPath || (currentPath === '/' && linkPath === '/index.html')) {
+        // 强行注入最高优先级的内联样式：青色发光！
+        link.style.setProperty("color", "#00bfa5", "important");
+        link.style.setProperty("border-bottom", "2px solid #00bfa5", "important");
+      }
+    });
+  });
+</script>
