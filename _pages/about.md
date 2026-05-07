@@ -9,29 +9,35 @@ redirect_from:
 ---
 
 <style>
-  /* 隐藏默认自带的页面标题 */
+  /* 1. 隐藏默认自带的页面标题 */
   h1.page__title {
     display: none !important;
+  }
+  /* 2. 彻底消灭 Windows 电脑上因为 100vw 撑满而产生的底部横向滚动条和右侧白边 */
+  body {
+    overflow-x: hidden !important;
   }
 </style>
 
 <div style="
   width: 100vw; 
   margin-left: calc(50% - 50vw); 
+  margin-right: calc(50% - 50vw); 
   max-width: 100vw; 
   position: relative; 
+  background-color: #020713; /* 核心修复：深空蓝打底，填补任何可能的白边，与图片左侧无缝融合 */
   background-image: url('https://zoc-oec.github.io/images/Cover.png'); 
   background-size: cover; 
-  background-position: center right; 
+  background-position: center bottom; /* 核心修复：将图片锚定在底部，保护底部的文字和图标不被切掉 */
   margin-bottom: 50px; 
   display: flex; 
-  min-height: 520px;
+  min-height: 560px; /* 稍微加高一点，给图片更多展示空间 */
 ">
   
-  <div style="background: linear-gradient(to right, rgba(5,11,20, 1) 0%, rgba(5,11,20, 0.95) 50%, rgba(5,11,20, 0) 100%); padding: 60px 8%; width: 55%; min-width: 500px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center;">
+  <div style="background: linear-gradient(to right, rgba(2,7,19, 1) 0%, rgba(2,7,19, 0.92) 45%, rgba(2,7,19, 0) 100%); padding: 60px 8%; width: 55%; min-width: 500px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center;">
 
-    <div style="max-width: 600px;">
-      <h1 style="color: white; font-size: 2.8em; line-height: 1.2; margin-top: 0; border-bottom: none; font-weight: 700;">
+    <div style="max-width: 650px;">
+      <h1 style="color: white; font-size: 3em; line-height: 1.2; margin-top: 0; border-bottom: none; font-weight: 700; letter-spacing: -0.5px;">
         Advancing Vision Science <br>Through Longitudinal Data <br>and <span style="color: #00bfa5;">Foundation AI</span>
       </h1>
 
@@ -39,14 +45,15 @@ redirect_from:
         The ZOC Ocular Epidemiology Consortium (ZOC-OEC) integrates longitudinal cohorts, multimodal imaging, multi-omics and AI to advance the understanding, prediction, and prevention of blinding eye diseases.
       </p>
 
-      <div style="margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap;">
-        <a href="#our-core-cohorts" style="display: inline-block; padding: 12px 28px; background-color: #00bfa5; color: #050b14; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1em; transition: all 0.3s;">Explore Our Research ➔</a>
+      <div style="margin-top: 35px; display: flex; gap: 15px; flex-wrap: wrap;">
+        <a href="#our-core-cohorts" style="display: inline-block; padding: 12px 28px; background-color: #00bfa5; color: #020713; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1em; transition: all 0.3s;">Explore Our Research ➔</a>
         <a href="#our-core-cohorts" style="display: inline-block; padding: 12px 28px; background-color: transparent; color: white; border: 1px solid white; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1em; transition: all 0.3s;">Our Cohorts</a>
       </div>
     </div>
 
   </div>
 </div>
+
 
 Our work integrates classical epidemiological methods with cutting-edge approaches — including AI prediction models, Transformer architectures, multimodal data fusion, and proteomics — to generate globally impactful insights in ocular epidemiology.
 
