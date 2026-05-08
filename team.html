@@ -44,20 +44,16 @@ body{
     z-index:1000;
 
     background:rgba(5,12,28,0.78);
-
     backdrop-filter:blur(10px);
-
     border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
 .nav-container{
     max-width:1400px;
     margin:auto;
-
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     padding:18px 6%;
 }
 
@@ -269,6 +265,7 @@ section{
     border-radius:24px;
 
     object-fit:cover;
+    object-position:50% 20%;  /* 让人物脸部更完整 */
 }
 
 .leader-content h2{
@@ -327,7 +324,7 @@ section{
 }
 
 /* =========================
-   TEAM GRID
+   TEAM GRID (优化图片显示)
 ========================= */
 
 .team-grid{
@@ -371,6 +368,8 @@ section{
     height:280px;
 
     object-fit:cover;
+    object-position:50% 20%;   /* 调整垂直位置，避免脸部被裁剪 */
+    background:#eef2f8;         /* 背景色填充余白 */
 }
 
 .team-info{
@@ -822,7 +821,7 @@ footer{
 
 </section>
 
-<!-- TEAM -->
+<!-- TEAM (包含 He Chang) -->
 
 <section>
 
@@ -921,6 +920,42 @@ footer{
                 <div class="team-focus">
 
                     Glaucoma · MIGS · ocular glymphatic system
+
+                </div>
+
+                <div class="team-links">
+
+                    <a href="#">
+                        Scholar
+                    </a>
+
+                    <a href="#">
+                        Email
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="team-card">
+
+            <img src="/images/hechang.png">
+
+            <div class="team-info">
+
+                <h3>
+                    Chang He
+                </h3>
+
+                <div class="team-role">
+                    Associate Chief Physician
+                </div>
+
+                <div class="team-focus">
+
+                    Ocular immunology · cataract · retinal diseases
 
                 </div>
 
