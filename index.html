@@ -131,46 +131,40 @@
             object-position: center bottom;
         }
 
+        /* 增加宽度，减小字体，让所有内容自然排列不换行乱 */
         .hero-text {
             position: absolute;
             left: 5%;
             top: 12%;
-            width: 60%;
+            width: 70%;        /* 更宽，给文字更多空间 */
             color: white;
             text-shadow: 0 2px 8px rgba(0,0,0,0.5);
             pointer-events: none;
         }
 
         .hero-text h1 {
-            font-size: 3.5vw;
+            font-size: 3vw;    /* 稍小一点，避免挤压 */
             line-height: 1.2;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
-        /* 第二行：强制不换行，同时允许 Foundation AI 放大且不影响同行 */
         .hero-text .sub-line {
-            font-size: 2.8vw;
+            font-size: 2.4vw;  /* 调小，保证和 Foundation AI 同行 */
             line-height: 1.3;
             margin-bottom: 1rem;
             font-weight: 500;
-            white-space: nowrap;
         }
         .hero-text .highlight-ai {
-            font-size: 1.2em;
+            font-size: 1.3em;
             color: #00bfa5;
             display: inline-block;
         }
 
-        /* 段落：桌面端强制一行，超出则出现横向滚动条（不换行且不截断） */
+        /* 段落：允许自然换行，但不截断 */
         .hero-text p {
-            font-size: 1.2vw;
+            font-size: 1.1vw;
             line-height: 1.4;
             margin-bottom: 2rem;
-            white-space: nowrap;
-            overflow-x: auto;
-            overflow-y: hidden;
-            -webkit-overflow-scrolling: touch;
-            padding-bottom: 5px; /* 给滚动条留空间 */
         }
 
         .hero-buttons {
@@ -213,17 +207,13 @@
                 top: 10%;
             }
             .hero-text h1 {
-                font-size: 6vw;
+                font-size: 7vw;
             }
             .hero-text .sub-line {
                 font-size: 5vw;
-                white-space: normal;  /* 移动端允许换行 */
-                word-break: keep-all;
             }
             .hero-text p {
                 font-size: 3.5vw;
-                white-space: normal;   /* 移动端正常换行 */
-                overflow-x: visible;
             }
             .hero-buttons {
                 top: 60%;
@@ -234,6 +224,7 @@
             }
         }
 
+        /* 正文白色卡片区域 */
         .content-wrap {
             max-width: 1200px;
             margin: 50px auto;
