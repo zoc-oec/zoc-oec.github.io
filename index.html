@@ -165,13 +165,11 @@
             display: inline-block;
         }
 
-        /* 段落拆分成三行，每行为一个块级元素 */
         .hero-text .desc-line {
             font-size: 1.1vw;
             line-height: 1.4;
             margin-bottom: 0.3rem;
         }
-        /* 最后一个下边距留大一点，与按钮保持距离 */
         .hero-text .desc-line:last-of-type {
             margin-bottom: 1.5rem;
         }
@@ -234,6 +232,7 @@
             }
         }
 
+        /* 正文白色卡片区域 (原有内容) */
         .content-wrap {
             max-width: 1200px;
             margin: 50px auto;
@@ -250,6 +249,108 @@
         }
         .content-wrap h2 { color: #0a192f; margin-top: 1.5em; }
         .content-wrap p, .content-wrap li { color: #1e2a3a; line-height: 1.6; }
+
+        /* ---------- 新增统计卡片区域 ---------- */
+        .stats-section {
+            max-width: 1200px;
+            margin: 30px auto 50px auto;
+            padding: 0 20px;
+        }
+        .stats-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .stat-card {
+            flex: 1;
+            min-width: 180px;
+            background: white;
+            border-radius: 24px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #eef2f6;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+        }
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #00bfa5;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+        .stat-label {
+            font-size: 1rem;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+        .stat-sub {
+            font-size: 0.85rem;
+            color: #6c7a89;
+            margin-top: 5px;
+        }
+        /* 针对混合内容（如最后一张卡片的文本）优化 */
+        .stat-card:last-child .stat-number {
+            font-size: 1.6rem;
+        }
+
+        /* ---------- 功能标签 (底部链接) ---------- */
+        .footer-links-section {
+            max-width: 1200px;
+            margin: 0 auto 60px auto;
+            padding: 0 20px;
+        }
+        .links-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            background: #f8fafd;
+            border-radius: 60px;
+            padding: 15px 30px;
+            border: 1px solid #e9edf2;
+        }
+        .links-grid a {
+            color: #1e2a3a;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            border-radius: 40px;
+            transition: all 0.2s;
+        }
+        .links-grid a:hover {
+            color: #00bfa5;
+            background-color: rgba(0,191,165,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .links-grid {
+                border-radius: 30px;
+                padding: 12px 20px;
+                gap: 12px;
+            }
+            .links-grid a {
+                font-size: 0.8rem;
+            }
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #6c757d;
+            font-size: 0.85rem;
+            border-top: 1px solid #e9ecef;
+            margin-top: 30px;
+        }
     </style>
 </head>
 <body>
@@ -280,7 +381,6 @@
         <h1>Advancing Vision Science</h1>
         <div class="line-data">Through Longitudinal Data</div>
         <div class="line-and">and <span class="highlight-ai">Foundation AI</span></div>
-        <!-- 以下段落手动分三行 -->
         <div class="desc-line">The ZOC Ocular Epidemiology Consortium integrates longitudinal cohorts,</div>
         <div class="desc-line">multimodal imaging, multi-omics and AI to advance the understanding,</div>
         <div class="desc-line">prediction, and prevention of blinding eye diseases.</div>
@@ -318,6 +418,52 @@
     <h2 id="contact">Contact / Collaboration Inquiry</h2>
     <p>Email: wangwei@gzzoc.com<br>Location: Zhongshan Ophthalmic Center, Sun Yat-sen University, Guangzhou, China</p>
 </div>
+
+<!-- 新增：统计卡片 -->
+<div class="stats-section">
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-number">80,000+</div>
+            <div class="stat-label">Participants</div>
+            <div class="stat-sub">Across 8 Cohorts</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">20+</div>
+            <div class="stat-label">Years</div>
+            <div class="stat-sub">Follow-up Duration</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">10M+</div>
+            <div class="stat-label">Retinal Images &</div>
+            <div class="stat-sub">Multimodal Data</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">8</div>
+            <div class="stat-label">Population-based</div>
+            <div class="stat-sub">Cohorts</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">Multi-modal<br>Imaging, EMR &<br>Multi-omics</div>
+            <div class="stat-label">Integrated Data</div>
+            <div class="stat-sub">&nbsp;</div>
+        </div>
+    </div>
+</div>
+
+<!-- 新增：底部功能标签 -->
+<div class="footer-links-section">
+    <div class="links-grid">
+        <a href="#">Longitudinal Cohorts</a>
+        <a href="#">Multimodal Data</a>
+        <a href="#">Multi-omics</a>
+        <a href="#">Foundation AI</a>
+        <a href="#">Precision Eye Care</a>
+    </div>
+</div>
+
+<footer>
+    &copy; 2025 ZOC Ocular Epidemiology Consortium — Zhongshan Ophthalmic Center, Sun Yat-sen University
+</footer>
 
 <script>
     (function() {
