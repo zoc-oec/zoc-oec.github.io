@@ -120,7 +120,6 @@
             aspect-ratio: 23 / 10;
             background-color: #0a1428;
         }
-
         .hero-bg {
             position: absolute;
             top: 0;
@@ -130,7 +129,6 @@
             object-fit: contain;
             object-position: center bottom;
         }
-
         .hero-text {
             position: absolute;
             left: 5%;
@@ -140,13 +138,11 @@
             text-shadow: 0 2px 8px rgba(0,0,0,0.5);
             pointer-events: none;
         }
-
         .hero-text h1 {
             font-size: 3.5vw;
             line-height: 1.2;
             margin-bottom: 1rem;
         }
-
         .hero-text .line-data {
             font-size: 2.5vw;
             line-height: 1.3;
@@ -164,7 +160,6 @@
             color: #00bfa5;
             display: inline-block;
         }
-
         .hero-text .desc-line {
             font-size: 1.1vw;
             line-height: 1.4;
@@ -173,7 +168,6 @@
         .hero-text .desc-line:last-of-type {
             margin-bottom: 1.5rem;
         }
-
         .hero-buttons {
             position: absolute;
             left: 5%;
@@ -182,7 +176,6 @@
             gap: 15px;
             pointer-events: auto;
         }
-
         .btn-primary, .btn-secondary {
             display: inline-block;
             padding: 10px 28px;
@@ -207,7 +200,6 @@
         .btn-secondary:hover {
             background-color: rgba(255,255,255,0.1);
         }
-
         @media (max-width: 768px) {
             .hero-text {
                 width: 85%;
@@ -216,8 +208,7 @@
             .hero-text h1 {
                 font-size: 6vw;
             }
-            .hero-text .line-data,
-            .hero-text .line-and {
+            .hero-text .line-data, .hero-text .line-and {
                 font-size: 4.5vw;
             }
             .hero-text .desc-line {
@@ -232,10 +223,10 @@
             }
         }
 
-        /* ========= 统计卡片区域（放在封面文字上方，即封面图下方） ========= */
+        /* 统计卡片区域（不重叠，下移） */
         .stats-section {
             max-width: 1200px;
-            margin: -30px auto 30px auto;  /* 向上微调，紧贴封面图底部 */
+            margin: 40px auto 40px auto;  /* 上边距增大，避免重叠 */
             padding: 0 20px;
             position: relative;
             z-index: 5;
@@ -248,40 +239,51 @@
         }
         .stat-card {
             flex: 1;
-            min-width: 180px;
+            min-width: 170px;
             background: white;
             border-radius: 20px;
-            padding: 28px 16px;
+            padding: 20px 12px;   /* 减小内边距，让卡片更扁平 */
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
             transition: transform 0.2s, box-shadow 0.2s;
             border: 1px solid #eef2f6;
         }
         .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 35px rgba(0,0,0,0.12);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
         }
         .stat-number {
-            font-size: 2.4rem;
+            font-size: 2rem;       /* 数字增大 */
             font-weight: 800;
-            color: #0a2f44;   /* 深蓝色 */
+            color: #1e5f8e;        /* 明亮的深蓝色 */
             line-height: 1.2;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         .stat-label {
             font-size: 1rem;
-            color: #2c3e50;
+            color: #1a1a1a;        /* 黑色 */
             font-weight: 600;
             margin-bottom: 4px;
         }
         .stat-sub {
-            font-size: 0.85rem;
-            color: #6c7a89;
-        }
-        /* 针对第五个卡片的多行文本处理 */
-        .stat-card:last-child .stat-number {
-            font-size: 1.5rem;
+            font-size: 0.9rem;      /* 副文本调大 */
+            color: #1a1a1a;         /* 黑色 */
             line-height: 1.3;
+        }
+        /* 针对第五个卡片特殊处理：第一行加粗深蓝，第二行普通黑 */
+        .stat-card-special .stat-number {
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+        }
+        .stat-card-special .stat-extra {
+            font-size: 0.9rem;
+            color: #1a1a1a;
+            font-weight: normal;
+            margin-top: 4px;
+        }
+        /* 通用卡片内行间距调整 */
+        .stat-card:last-child .stat-number {
+            font-size: 1.6rem;
         }
 
         /* 正文白色卡片区域 */
@@ -299,7 +301,7 @@
                 padding: 25px;
             }
             .stat-number {
-                font-size: 2rem;
+                font-size: 1.6rem;
             }
             .stat-card:last-child .stat-number {
                 font-size: 1.2rem;
@@ -396,7 +398,7 @@
     </div>
 </div>
 
-<!-- ========= 统计卡片：放在封面文字上方（封面图下方） ========= -->
+<!-- 统计卡片（已下移，扁平化，颜色调亮，全黑字） -->
 <div class="stats-section">
     <div class="stats-grid">
         <div class="stat-card">
@@ -419,10 +421,11 @@
             <div class="stat-label">Population-based</div>
             <div class="stat-sub">Cohorts</div>
         </div>
+        <!-- 第五个卡片特殊结构：第一行加粗深蓝，第二行普通黑 -->
         <div class="stat-card">
-            <div class="stat-number">Multi-modal<br>Imaging, EMR &amp;<br>Multi-omics</div>
-            <div class="stat-label">Integrated Data</div>
-            <div class="stat-sub"></div>
+            <div class="stat-number">Multi-modal</div>
+            <div class="stat-label" style="font-weight: normal; margin-top: 4px;">Imaging, EMR &amp;<br>Multi-omics</div>
+            <div class="stat-sub" style="display: none;"></div>
         </div>
     </div>
 </div>
