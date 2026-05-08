@@ -138,6 +138,7 @@ body {
     font-size: 1.2rem;
     line-height: 1.9;
 }
+/* 全局 section 默认样式 */
 section {
     padding: 100px 6%;
 }
@@ -197,7 +198,7 @@ section {
 .metric p {
     color: #d7e6f5;
 }
-/* ---------- 团队卡片完美对齐 ---------- */
+/* ---------- 团队卡片 (底部链接对齐) ---------- */
 .team-row {
     max-width: 1400px;
     margin: 0 auto 40px auto;
@@ -226,17 +227,17 @@ section {
     transform: translateY(-8px);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
 }
-/* 图片区域 – 针对每张图片单独调整垂直位置使头部完整 */
+/* 图片区域 */
 .team-card img {
     width: 100%;
     height: 280px;
     object-fit: cover;
     background: #eef2f8;
 }
-/* 按人名单独调 position (请根据实际照片微调百分比) */
+/* 单独调整每个人的垂直位置（使头部完整） */
 .img-huang { object-position: 50% 15%; }
 .img-chen { object-position: 50% 20%; }
-.img-gao  { object-position: 50% 28%; }
+.img-gao  { object-position: 50% 35%; }   /* 高信博单独下移 */
 .img-he   { object-position: 50% 25%; }
 .img-cheng{ object-position: 50% 20%; }
 
@@ -259,12 +260,12 @@ section {
     color: #5f6f82;
     line-height: 1.8;
     margin-bottom: 24px;
-    flex: 1;  /* 将剩余空间撑开，把链接推到最底部 */
+    flex: 1;
 }
 .team-links {
     display: flex;
     gap: 16px;
-    margin-top: auto;   /* 保证所有卡片的链接都贴底对齐 */
+    margin-top: auto;
 }
 .team-links a {
     color: #0088ff;
@@ -287,32 +288,17 @@ section {
         max-width: 400px;
     }
 }
-/* 其他区域 */
-.collab-box {
-    max-width: 1400px;
-    margin: auto;
-    background: white;
-    border-radius: 30px;
-    padding: 50px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 30px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-}
-.collab-item { padding: 20px; }
-.collab-item h3 { margin-bottom: 8px; font-size: 1.1rem; }
-.collab-item p { color: #5f6f82; }
+/* 研究区域 - 两行四列网格 */
 .tags {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 18px;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 .tag {
-    padding: 14px 24px;
+    text-align: center;
+    padding: 14px 12px;
     background: white;
     border-radius: 50px;
     border: 1px solid #dfe8f2;
@@ -325,6 +311,7 @@ section {
     color: white;
     transform: translateY(-3px);
 }
+/* CTA 区域 */
 .cta-box {
     max-width: 1400px;
     margin: auto;
@@ -376,6 +363,7 @@ footer {
     .leader-content h2 { font-size: 2.2rem; }
     .leader-card { padding: 35px; }
     .cta-box { padding: 40px 30px; }
+    .tags { grid-template-columns: repeat(2, 1fr); gap: 15px; }
 }
 </style>
 </head>
@@ -430,11 +418,11 @@ footer {
     </div>
 </section>
 
-<!-- Core Research Team (完美对齐 + 头部完整) -->
-<section>
+<!-- Core Research Team (去掉上方空白) -->
+<section style="padding-top: 20px;">
     <div class="section-title">Core Research Team</div>
 
-    <!-- 第一行: 3人 -->
+    <!-- 第一行：3人 -->
     <div class="team-row">
         <div class="team-card">
             <img src="/images/huangwenyong.jpg" class="img-huang">
@@ -465,7 +453,7 @@ footer {
         </div>
     </div>
 
-    <!-- 第二行: 2人 -->
+    <!-- 第二行：2人 -->
     <div class="team-row two-cols">
         <div class="team-card">
             <img src="/images/hechang.png" class="img-he">
@@ -488,18 +476,7 @@ footer {
     </div>
 </section>
 
-<!-- 国际合作等 (保持不变) -->
-<section>
-    <div class="section-title">International Collaborators</div>
-    <div class="collab-box">
-        <div class="collab-item"><h3>UK Biobank</h3><p>United Kingdom</p></div>
-        <div class="collab-item"><h3>AI-READI</h3><p>United States</p></div>
-        <div class="collab-item"><h3>SERI</h3><p>Singapore</p></div>
-        <div class="collab-item"><h3>National University of Singapore</h3><p>Singapore</p></div>
-        <div class="collab-item"><h3>Global Research Network</h3><p>Multi-center Collaboration</p></div>
-    </div>
-</section>
-
+<!-- 研究领域（两行四列） -->
 <section>
     <div class="section-title">Research Areas</div>
     <div class="tags">
@@ -514,6 +491,7 @@ footer {
     </div>
 </section>
 
+<!-- CTA 区域 -->
 <section>
     <div class="cta-box">
         <div>
