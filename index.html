@@ -120,7 +120,7 @@ body {
 }
 
 /* =========================
-   HERO (使用独立图片，完整显示)
+   HERO
 ========================= */
 .hero {
     position: relative;
@@ -249,6 +249,9 @@ section {
     color: #071426;
 }
 
+/* =========================
+   ABOUT 卡片（扁平化，无图标，深蓝标题）
+========================= */
 .about-grid {
     max-width: 1400px;
     margin: auto;
@@ -259,31 +262,32 @@ section {
 
 .about-card {
     background: white;
-    border-radius: 28px;
-    padding: 42px 34px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    transition: 0.3s;
+    border-radius: 20px;           /* 减小圆角，更扁平 */
+    padding: 28px 24px;            /* 减小内边距 */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);  /* 更轻的阴影 */
+    transition: 0.2s ease;
+    border: 1px solid #eef2f8;
 }
 
 .about-card:hover {
-    transform: translateY(-8px);
-}
-
-.about-icon {
-    font-size: 2.7rem;
-    margin-bottom: 22px;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.06);
 }
 
 .about-card h3 {
     font-size: 1.4rem;
-    margin-bottom: 16px;
+    font-weight: 700;
+    color: #0f3b6a;              /* 深蓝色标题 */
+    margin-bottom: 14px;
 }
 
 .about-card p {
-    color: #5f6f82;
-    line-height: 1.8;
+    color: #3a546d;
+    line-height: 1.6;
+    font-size: 0.95rem;
 }
 
+/* 其他区域不变 */
 .impact-section {
     padding-top: 20px;
 }
@@ -420,6 +424,9 @@ footer {
     .cta-box h2 {
         font-size: 1.8rem;
     }
+    .about-card {
+        padding: 22px 20px;
+    }
 }
 </style>
 </head>
@@ -467,27 +474,23 @@ footer {
     </div>
 </div>
 
-<!-- ABOUT -->
+<!-- ABOUT（已去掉图标，标题深蓝，卡片扁平） -->
 <section>
     <div class="section-title">About ZOC-OEC</div>
     <div class="about-grid">
         <div class="about-card">
-            <div class="about-icon">📊</div>
             <h3>Longitudinal Cohorts</h3>
             <p>20+ years of population-based ocular epidemiology studies with extensive follow-up.</p>
         </div>
         <div class="about-card">
-            <div class="about-icon">🧠</div>
             <h3>AI & Risk Prediction</h3>
             <p>Dynamic modeling and multimodal AI for disease progression and prediction.</p>
         </div>
         <div class="about-card">
-            <div class="about-icon">🌍</div>
             <h3>Global Collaboration</h3>
             <p>International collaborative network advancing translational vision science.</p>
         </div>
         <div class="about-card">
-            <div class="about-icon">🔬</div>
             <h3>Translational Impact</h3>
             <p>Integrating epidemiology, retinal imaging, AI and clinical ophthalmology.</p>
         </div>
@@ -568,9 +571,7 @@ footer {
 
 <script>
     (function() {
-        // 获取当前页面路径（去掉域名和参数）
         let currentPath = window.location.pathname;
-        // 处理首页
         if (currentPath === '' || currentPath === '/' || currentPath === '/index.html') {
             currentPath = '/';
         } else {
@@ -578,24 +579,16 @@ footer {
                 currentPath = currentPath.slice(0, -1);
             }
         }
-        // 获取所有导航链接
         const navLinks = document.querySelectorAll('.nav-links a');
         navLinks.forEach(link => {
             let href = link.getAttribute('href');
             if (!href || href === '#' || href.startsWith('javascript:')) return;
-            // 构造绝对路径进行对比
             let linkPath = href;
-            if (!linkPath.startsWith('/')) {
-                linkPath = '/' + linkPath;
-            }
-            if (linkPath.endsWith('/') && linkPath !== '/') {
-                linkPath = linkPath.slice(0, -1);
-            }
+            if (!linkPath.startsWith('/')) linkPath = '/' + linkPath;
+            if (linkPath.endsWith('/') && linkPath !== '/') linkPath = linkPath.slice(0, -1);
             let isMatch = (currentPath === linkPath);
             if (currentPath === '/' && linkPath === '/') isMatch = true;
-            if (isMatch) {
-                link.classList.add('current-page');
-            }
+            if (isMatch) link.classList.add('current-page');
         });
     })();
 </script>
