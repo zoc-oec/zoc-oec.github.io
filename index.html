@@ -135,7 +135,7 @@
             position: absolute;
             left: 5%;
             top: 12%;
-            width: 55%;
+            width: 60%;
             color: white;
             text-shadow: 0 2px 8px rgba(0,0,0,0.5);
             pointer-events: none;
@@ -146,18 +146,22 @@
             line-height: 1.2;
             margin-bottom: 1rem;
         }
+
+        /* 第二行：强制不换行，同时允许 Foundation AI 放大且不影响同行 */
         .hero-text .sub-line {
             font-size: 2.8vw;
             line-height: 1.3;
             margin-bottom: 1rem;
             font-weight: 500;
+            white-space: nowrap;
         }
-        /* 重点：放大 Foundation AI */
         .hero-text .highlight-ai {
-            font-size: 1.3em;    /* 相对父级放大 30% */
+            font-size: 1.2em;
             color: #00bfa5;
             display: inline-block;
         }
+
+        /* 段落：桌面端强制一行，超出则出现横向滚动条（不换行且不截断） */
         .hero-text p {
             font-size: 1.2vw;
             line-height: 1.4;
@@ -166,6 +170,7 @@
             overflow-x: auto;
             overflow-y: hidden;
             -webkit-overflow-scrolling: touch;
+            padding-bottom: 5px; /* 给滚动条留空间 */
         }
 
         .hero-buttons {
@@ -204,7 +209,7 @@
 
         @media (max-width: 768px) {
             .hero-text {
-                width: 80%;
+                width: 85%;
                 top: 10%;
             }
             .hero-text h1 {
@@ -212,10 +217,12 @@
             }
             .hero-text .sub-line {
                 font-size: 5vw;
+                white-space: normal;  /* 移动端允许换行 */
+                word-break: keep-all;
             }
             .hero-text p {
                 font-size: 3.5vw;
-                white-space: normal;
+                white-space: normal;   /* 移动端正常换行 */
                 overflow-x: visible;
             }
             .hero-buttons {
