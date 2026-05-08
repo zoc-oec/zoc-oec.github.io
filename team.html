@@ -33,16 +33,12 @@ body{
     overflow-x:hidden;
 }
 
-/* =========================
-   NAVBAR
-========================= */
-
+/* 导航栏 (同首页) */
 .navbar{
     position:fixed;
     top:0;
     width:100%;
     z-index:1000;
-
     background:rgba(5,12,28,0.78);
     backdrop-filter:blur(10px);
     border-bottom:1px solid rgba(255,255,255,0.08);
@@ -123,543 +119,361 @@ body{
     width:100%;
 }
 
-/* =========================
-   HERO
-========================= */
-
+/* HERO 区域 */
 .team-hero{
-
     position:relative;
-
     height:70vh;
     min-height:600px;
-
     background:
-    linear-gradient(
-        rgba(4,10,24,0.85),
-        rgba(4,10,24,0.88)
-    ),
-    url('/images/team-bg.jpg');
-
+        linear-gradient(rgba(4,10,24,0.85), rgba(4,10,24,0.88)),
+        url('/images/team-bg.jpg');
     background-size:cover;
     background-position:center;
-
     display:flex;
     align-items:center;
 }
 
 .team-hero::before{
-
     content:'';
-
     position:absolute;
     inset:0;
-
-    background:
-    radial-gradient(
-        circle at right,
-        rgba(0,194,255,0.18),
-        transparent 40%
-    );
+    background:radial-gradient(circle at right, rgba(0,194,255,0.18), transparent 40%);
 }
 
 .hero-content{
-
     position:relative;
     z-index:2;
-
     max-width:1400px;
     width:100%;
-
     margin:auto;
     padding:0 6%;
 }
 
 .hero-content h1{
-
     color:white;
-
     font-size:5rem;
     font-weight:800;
-
     margin-bottom:20px;
 }
 
 .hero-highlight{
-
     color:#00c2ff;
-
     font-size:1.6rem;
     font-style:italic;
-
     margin-bottom:28px;
 }
 
 .hero-desc{
-
     max-width:720px;
-
     color:#d7e6f5;
-
     font-size:1.2rem;
     line-height:1.9;
 }
 
-/* =========================
-   GENERAL
-========================= */
-
+/* 通用 section */
 section{
     padding:100px 6%;
 }
 
 .section-title{
-
     text-align:center;
-
     font-size:2.8rem;
     font-weight:800;
-
     margin-bottom:60px;
-
     color:#071426;
 }
 
-/* =========================
-   LEADERSHIP
-========================= */
-
+/* 领导区域 (不变) */
 .leader-card{
-
     max-width:1400px;
     margin:auto;
-
-    background:
-    linear-gradient(
-        135deg,
-        #071426,
-        #0c2340
-    );
-
+    background:linear-gradient(135deg, #071426, #0c2340);
     border-radius:34px;
-
     padding:50px;
-
     display:grid;
-
-    grid-template-columns:
-    320px 1fr;
-
+    grid-template-columns:320px 1fr;
     gap:50px;
-
     align-items:center;
-
-    box-shadow:
-    0 20px 60px rgba(0,0,0,0.15);
+    box-shadow:0 20px 60px rgba(0,0,0,0.15);
 }
 
 .leader-photo img{
-
     width:100%;
-
     border-radius:24px;
-
     object-fit:cover;
-    object-position:50% 20%;  /* 让人物脸部更完整 */
+    object-position:50% 20%;
 }
 
 .leader-content h2{
-
     color:white;
-
     font-size:3rem;
-
     margin-bottom:10px;
 }
 
 .leader-role{
-
     color:#00c2ff;
-
     font-size:1.3rem;
-
     margin-bottom:24px;
 }
 
 .leader-text{
-
     color:#d7e6f5;
-
     line-height:1.9;
-
     font-size:1.05rem;
-
     margin-bottom:30px;
 }
 
 .leader-metrics{
-
     display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(140px,1fr));
-
+    grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
     gap:24px;
-
     margin-top:30px;
 }
 
 .metric h3{
-
     color:#00c2ff;
-
     font-size:2rem;
-
     margin-bottom:8px;
 }
 
 .metric p{
-
     color:#d7e6f5;
 }
 
-/* =========================
-   TEAM GRID (优化图片显示)
-========================= */
-
-.team-grid{
-
-    max-width:1400px;
-    margin:auto;
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(240px,1fr));
-
-    gap:30px;
-}
-
+/* 团队卡片样式 (共用) */
 .team-card{
-
     background:white;
-
     border-radius:28px;
-
     overflow:hidden;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,0.05);
-
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
     transition:0.3s;
 }
 
 .team-card:hover{
-
     transform:translateY(-8px);
-
-    box-shadow:
-    0 20px 50px rgba(0,0,0,0.1);
+    box-shadow:0 20px 50px rgba(0,0,0,0.1);
 }
 
 .team-card img{
-
     width:100%;
     height:280px;
-
     object-fit:cover;
-    object-position:50% 20%;   /* 调整垂直位置，避免脸部被裁剪 */
-    background:#eef2f8;         /* 背景色填充余白 */
+    object-position:50% 20%;
+    background:#eef2f8;
 }
 
 .team-info{
-
     padding:28px;
 }
 
 .team-info h3{
-
     font-size:1.3rem;
-
     margin-bottom:10px;
 }
 
 .team-role{
-
     color:#0088ff;
-
     font-weight:600;
-
     margin-bottom:18px;
 }
 
 .team-focus{
-
     color:#5f6f82;
-
     line-height:1.8;
-
     margin-bottom:20px;
 }
 
 .team-links{
-
     display:flex;
     gap:16px;
 }
 
 .team-links a{
-
     color:#0088ff;
-
     text-decoration:none;
-
     font-size:0.95rem;
 }
 
-/* =========================
-   COLLABORATORS
-========================= */
+/* 团队网格分区布局 */
+.team-row {
+    max-width: 1400px;
+    margin: 0 auto 40px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
 
+.team-row .team-card {
+    width: calc(33.33% - 20px);
+    min-width: 260px;
+    max-width: 320px;
+    flex: 0 1 auto;
+}
+
+/* 第二行两列时限制宽度 */
+.team-row.two-cols .team-card {
+    width: calc(50% - 15px);
+    max-width: 360px;
+}
+
+/* 响应式：窄屏幕时自动调整 */
+@media (max-width: 900px) {
+    .team-row .team-card {
+        width: calc(50% - 15px);
+    }
+    .team-row.two-cols .team-card {
+        width: calc(100% - 30px);
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 600px) {
+    .team-row .team-card {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+/* 其他区域不变 */
 .collab-box{
-
     max-width:1400px;
     margin:auto;
-
     background:white;
-
     border-radius:30px;
-
     padding:50px;
-
     display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(180px,1fr));
-
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
     gap:30px;
-
     text-align:center;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,0.05);
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
 
 .collab-item{
-
     padding:20px;
 }
 
 .collab-item h3{
-
     margin-bottom:8px;
-
     font-size:1.1rem;
 }
 
 .collab-item p{
-
     color:#5f6f82;
 }
 
-/* =========================
-   RESEARCH TAGS
-========================= */
-
 .tags{
-
     max-width:1200px;
     margin:auto;
-
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-
     gap:18px;
 }
 
 .tag{
-
     padding:14px 24px;
-
     background:white;
-
     border-radius:50px;
-
     border:1px solid #dfe8f2;
-
     color:#3a4b62;
-
     font-weight:500;
-
     transition:0.3s;
 }
 
 .tag:hover{
-
     background:#0088ff;
-
     color:white;
-
     transform:translateY(-3px);
 }
 
-/* =========================
-   CTA
-========================= */
-
 .cta-box{
-
     max-width:1400px;
     margin:auto;
-
-    background:
-    linear-gradient(
-        135deg,
-        #071426,
-        #0c2340
-    );
-
+    background:linear-gradient(135deg, #071426, #0c2340);
     border-radius:34px;
-
     padding:60px;
-
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     gap:40px;
-
     flex-wrap:wrap;
 }
 
 .cta-box h2{
-
     color:white;
-
     font-size:2.2rem;
-
     margin-bottom:16px;
 }
 
 .cta-box p{
-
     color:#d7e6f5;
-
     line-height:1.8;
 }
 
 .cta-btn{
-
-    background:linear-gradient(
-        135deg,
-        #00bfa5,
-        #0088ff
-    );
-
+    background:linear-gradient(135deg, #00bfa5, #0088ff);
     color:white;
-
     text-decoration:none;
-
     padding:18px 34px;
-
     border-radius:60px;
-
     font-weight:600;
-
     transition:0.3s;
 }
 
 .cta-btn:hover{
-
     transform:translateY(-3px);
 }
 
-/* =========================
-   FOOTER
-========================= */
-
 footer{
-
     text-align:center;
-
     padding:50px 20px;
-
     color:#6f7f92;
-
     font-size:0.92rem;
 }
 
-/* =========================
-   MOBILE
-========================= */
-
 @media(max-width:900px){
-
     .leader-card{
-
         grid-template-columns:1fr;
     }
-
     .leader-photo{
-
         max-width:320px;
         margin:auto;
     }
 }
 
 @media(max-width:768px){
-
     .nav-container{
-
         flex-direction:column;
         gap:18px;
     }
-
     .nav-links{
-
         gap:18px;
         flex-wrap:wrap;
         justify-content:center;
     }
-
     .hero-content h1{
-
         font-size:3.5rem;
     }
-
     .hero-highlight{
-
         font-size:1.2rem;
     }
-
     .hero-desc{
-
         font-size:1rem;
     }
-
     .section-title{
-
         font-size:2rem;
     }
-
     .leader-content h2{
-
         font-size:2.2rem;
     }
-
     .leader-card{
-
         padding:35px;
     }
-
     .cta-box{
-
         padding:40px 30px;
     }
-
 }
-
 </style>
 
 </head>
@@ -667,515 +481,149 @@ footer{
 <body>
 
 <!-- NAVBAR -->
-
 <div class="navbar">
-
     <div class="nav-container">
-
         <div class="logo">
-
             <a href="/">
-
                 <img src="/images/icon.png">
-
                 <div class="logo-text">
-
-                    <span class="logo-main">
-                        ZOC-OEC
-                    </span>
-
-                    <span class="logo-sub">
-                        Ocular Epidemiology Consortium
-                    </span>
-
+                    <span class="logo-main">ZOC-OEC</span>
+                    <span class="logo-sub">Ocular Epidemiology Consortium</span>
                 </div>
-
             </a>
-
         </div>
-
         <ul class="nav-links">
-
             <li><a href="/">Home</a></li>
-
             <li><a href="/team.html" class="current-page">Team</a></li>
-
             <li><a href="/publications.html">Publications</a></li>
-
             <li><a href="/data_access.html">Data Access</a></li>
-
         </ul>
-
     </div>
-
 </div>
 
 <!-- HERO -->
-
 <section class="team-hero">
-
     <div class="hero-content">
-
-        <h1>
-            Meet the Team
-        </h1>
-
-        <div class="hero-highlight">
-            Building the Future of Precision Ophthalmology
-        </div>
-
-        <div class="hero-desc">
-
-            A multidisciplinary consortium integrating ophthalmology,
-            epidemiology, AI, imaging and translational medicine
-            to advance vision science worldwide.
-
-        </div>
-
+        <h1>Meet the Team</h1>
+        <div class="hero-highlight">Building the Future of Precision Ophthalmology</div>
+        <div class="hero-desc">A multidisciplinary consortium integrating ophthalmology, epidemiology, AI, imaging and translational medicine to advance vision science worldwide.</div>
     </div>
-
 </section>
 
 <!-- LEADERSHIP -->
-
 <section>
-
-    <div class="section-title">
-        Leadership
-    </div>
-
+    <div class="section-title">Leadership</div>
     <div class="leader-card">
-
-        <div class="leader-photo">
-
-            <img src="/images/wangwei.png">
-
-        </div>
-
+        <div class="leader-photo"><img src="/images/wangwei.png"></div>
         <div class="leader-content">
-
-            <h2>
-                Wei Wang, MD, PhD
-            </h2>
-
-            <div class="leader-role">
-
-                Director, ZOC-OEC
-
-            </div>
-
-            <div class="leader-text">
-
-                Professor, Zhongshan Ophthalmic Center,
-                Sun Yat-sen University.
-
-                Prof. Wei Wang is an internationally recognized ophthalmologist
-                and epidemiologist focusing on glaucoma, myopia,
-                retinal diseases and AI-driven ophthalmology.
-
-                His work integrates longitudinal population cohorts,
-                multimodal imaging and translational medicine to
-                advance precision eye care worldwide.
-
-            </div>
-
+            <h2>Wei Wang, MD, PhD</h2>
+            <div class="leader-role">Director, ZOC-OEC</div>
+            <div class="leader-text">Professor, Zhongshan Ophthalmic Center, Sun Yat-sen University. Prof. Wei Wang is an internationally recognized ophthalmologist and epidemiologist focusing on glaucoma, myopia, retinal diseases and AI-driven ophthalmology. His work integrates longitudinal population cohorts, multimodal imaging and translational medicine to advance precision eye care worldwide.</div>
             <div class="leader-metrics">
-
-                <div class="metric">
-
-                    <h3>310+</h3>
-
-                    <p>SCI Publications</p>
-
-                </div>
-
-                <div class="metric">
-
-                    <h3>20K+</h3>
-
-                    <p>Citations</p>
-
-                </div>
-
-                <div class="metric">
-
-                    <h3>69</h3>
-
-                    <p>H-index</p>
-
-                </div>
-
-                <div class="metric">
-
-                    <h3>Top 2%</h3>
-
-                    <p>Stanford Scientists</p>
-
-                </div>
-
+                <div class="metric"><h3>310+</h3><p>SCI Publications</p></div>
+                <div class="metric"><h3>20K+</h3><p>Citations</p></div>
+                <div class="metric"><h3>69</h3><p>H-index</p></div>
+                <div class="metric"><h3>Top 2%</h3><p>Stanford Scientists</p></div>
             </div>
-
         </div>
-
     </div>
-
 </section>
 
-<!-- TEAM (包含 He Chang) -->
-
+<!-- CORE RESEARCH TEAM (分两行：第一行3人，第二行2人居中) -->
 <section>
+    <div class="section-title">Core Research Team</div>
 
-    <div class="section-title">
-        Core Research Team
-    </div>
-
-    <div class="team-grid">
-
+    <!-- 第一行：3人 -->
+    <div class="team-row">
         <div class="team-card">
-
             <img src="/images/huangwenyong.jpg">
-
             <div class="team-info">
-
-                <h3>
-                    Wenyong Huang
-                </h3>
-
-                <div class="team-role">
-                    Professor
-                </div>
-
-                <div class="team-focus">
-
-                    Ophthalmic epidemiology · blindness prevention · cataract surgery
-
-                </div>
-
-                <div class="team-links">
-
-                    <a href="#">
-                        Scholar
-                    </a>
-
-                    <a href="#">
-                        Email
-                    </a>
-
-                </div>
-
+                <h3>Wenyong Huang</h3>
+                <div class="team-role">Professor</div>
+                <div class="team-focus">Ophthalmic epidemiology · blindness prevention · cataract surgery</div>
+                <div class="team-links"><a href="#">Scholar</a><a href="#">Email</a></div>
             </div>
-
         </div>
-
         <div class="team-card">
-
             <img src="/images/chenshida.jpg">
-
             <div class="team-info">
-
-                <h3>
-                    Shida Chen
-                </h3>
-
-                <div class="team-role">
-                    Associate Chief Physician
-                </div>
-
-                <div class="team-focus">
-
-                    Fundus disease · diabetic retinopathy · pathological myopia
-
-                </div>
-
-                <div class="team-links">
-
-                    <a href="#">
-                        Scholar
-                    </a>
-
-                    <a href="#">
-                        Email
-                    </a>
-
-                </div>
-
+                <h3>Shida Chen</h3>
+                <div class="team-role">Associate Chief Physician</div>
+                <div class="team-focus">Fundus disease · diabetic retinopathy · pathological myopia</div>
+                <div class="team-links"><a href="#">Scholar</a><a href="#">Email</a></div>
             </div>
-
         </div>
-
         <div class="team-card">
-
             <img src="/images/gaoxinbo.png">
-
             <div class="team-info">
-
-                <h3>
-                    Xinbo Gao
-                </h3>
-
-                <div class="team-role">
-                    Associate Chief Physician
-                </div>
-
-                <div class="team-focus">
-
-                    Glaucoma · MIGS · ocular glymphatic system
-
-                </div>
-
-                <div class="team-links">
-
-                    <a href="#">
-                        Scholar
-                    </a>
-
-                    <a href="#">
-                        Email
-                    </a>
-
-                </div>
-
+                <h3>Xinbo Gao</h3>
+                <div class="team-role">Associate Chief Physician</div>
+                <div class="team-focus">Glaucoma · MIGS · ocular glymphatic system</div>
+                <div class="team-links"><a href="#">Scholar</a><a href="#">Email</a></div>
             </div>
-
         </div>
+    </div>
 
+    <!-- 第二行：2人 (He Chang + Weijing Cheng) 居中 -->
+    <div class="team-row two-cols">
         <div class="team-card">
-
             <img src="/images/hechang.png">
-
             <div class="team-info">
-
-                <h3>
-                    Chang He
-                </h3>
-
-                <div class="team-role">
-                    Associate Chief Physician
-                </div>
-
-                <div class="team-focus">
-
-                    Ocular immunology · cataract · retinal diseases
-
-                </div>
-
-                <div class="team-links">
-
-                    <a href="#">
-                        Scholar
-                    </a>
-
-                    <a href="#">
-                        Email
-                    </a>
-
-                </div>
-
+                <h3>Chang He</h3>
+                <div class="team-role">Associate Chief Physician</div>
+                <div class="team-focus">Ocular immunology · cataract · retinal diseases</div>
+                <div class="team-links"><a href="#">Scholar</a><a href="#">Email</a></div>
             </div>
-
         </div>
-
         <div class="team-card">
-
             <img src="/images/chengweijing.png">
-
             <div class="team-info">
-
-                <h3>
-                    Weijing Cheng
-                </h3>
-
-                <div class="team-role">
-                    Associate Researcher
-                </div>
-
-                <div class="team-focus">
-
-                    Choroidal imaging · microcirculation · OCT biomarkers
-
-                </div>
-
-                <div class="team-links">
-
-                    <a href="#">
-                        Scholar
-                    </a>
-
-                    <a href="#">
-                        Email
-                    </a>
-
-                </div>
-
+                <h3>Weijing Cheng</h3>
+                <div class="team-role">Associate Researcher</div>
+                <div class="team-focus">Choroidal imaging · microcirculation · OCT biomarkers</div>
+                <div class="team-links"><a href="#">Scholar</a><a href="#">Email</a></div>
             </div>
-
         </div>
-
     </div>
-
 </section>
 
-<!-- COLLABORATORS -->
-
+<!-- 国际协作、研究标签、CTA、页脚等保持不变 -->
 <section>
-
-    <div class="section-title">
-        International Collaborators
-    </div>
-
+    <div class="section-title">International Collaborators</div>
     <div class="collab-box">
-
-        <div class="collab-item">
-
-            <h3>
-                UK Biobank
-            </h3>
-
-            <p>
-                United Kingdom
-            </p>
-
-        </div>
-
-        <div class="collab-item">
-
-            <h3>
-                AI-READI
-            </h3>
-
-            <p>
-                United States
-            </p>
-
-        </div>
-
-        <div class="collab-item">
-
-            <h3>
-                SERI
-            </h3>
-
-            <p>
-                Singapore
-            </p>
-
-        </div>
-
-        <div class="collab-item">
-
-            <h3>
-                National University of Singapore
-            </h3>
-
-            <p>
-                Singapore
-            </p>
-
-        </div>
-
-        <div class="collab-item">
-
-            <h3>
-                Global Research Network
-            </h3>
-
-            <p>
-                Multi-center Collaboration
-            </p>
-
-        </div>
-
+        <div class="collab-item"><h3>UK Biobank</h3><p>United Kingdom</p></div>
+        <div class="collab-item"><h3>AI-READI</h3><p>United States</p></div>
+        <div class="collab-item"><h3>SERI</h3><p>Singapore</p></div>
+        <div class="collab-item"><h3>National University of Singapore</h3><p>Singapore</p></div>
+        <div class="collab-item"><h3>Global Research Network</h3><p>Multi-center Collaboration</p></div>
     </div>
-
 </section>
 
-<!-- TAGS -->
-
 <section>
-
-    <div class="section-title">
-        Research Areas
-    </div>
-
+    <div class="section-title">Research Areas</div>
     <div class="tags">
-
-        <div class="tag">
-            AI Ophthalmology
-        </div>
-
-        <div class="tag">
-            PACG & Glaucoma
-        </div>
-
-        <div class="tag">
-            Retinal Biomarkers
-        </div>
-
-        <div class="tag">
-            Population Cohorts
-        </div>
-
-        <div class="tag">
-            Multi-omics
-        </div>
-
-        <div class="tag">
-            Vision Imaging
-        </div>
-
-        <div class="tag">
-            Clinical Epidemiology
-        </div>
-
-        <div class="tag">
-            Foundation AI
-        </div>
-
+        <div class="tag">AI Ophthalmology</div>
+        <div class="tag">PACG & Glaucoma</div>
+        <div class="tag">Retinal Biomarkers</div>
+        <div class="tag">Population Cohorts</div>
+        <div class="tag">Multi-omics</div>
+        <div class="tag">Vision Imaging</div>
+        <div class="tag">Clinical Epidemiology</div>
+        <div class="tag">Foundation AI</div>
     </div>
-
 </section>
-
-<!-- CTA -->
 
 <section>
-
     <div class="cta-box">
-
         <div>
-
-            <h2>
-                Join Our Collaboration Network
-            </h2>
-
-            <p>
-
-                We welcome motivated researchers,
-                clinicians and students to collaborate
-                and advance precision ophthalmology together.
-
-            </p>
-
+            <h2>Join Our Collaboration Network</h2>
+            <p>We welcome motivated researchers, clinicians and students to collaborate and advance precision ophthalmology together.</p>
         </div>
-
-        <a href="/data_access.html" class="cta-btn">
-
-            Collaboration Inquiry
-
-        </a>
-
+        <a href="/data_access.html" class="cta-btn">Collaboration Inquiry</a>
     </div>
-
 </section>
 
-<!-- FOOTER -->
-
-<footer>
-
-    © 2025 ZOC-OEC | Zhongshan Ophthalmic Center,
-    Sun Yat-sen University
-
-</footer>
+<footer>© 2025 ZOC-OEC | Zhongshan Ophthalmic Center, Sun Yat-sen University</footer>
 
 </body>
-
 </html>
