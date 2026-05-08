@@ -51,10 +51,21 @@
             color: #f0f0f0;
             text-decoration: none;
             font-weight: 500;
+            transition: all 0.3s ease;
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
         }
+        /* 鼠标悬停效果 */
         .nav-links li a:hover {
             color: #00bfa5;
+            border-bottom-color: #00bfa5;
         }
+        /* 当前页面的高亮效果 (常亮) */
+        .nav-links li a.current-page {
+            color: #00bfa5 !important;
+            border-bottom: 2px solid #00bfa5 !important;
+        }
+
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
@@ -239,5 +250,65 @@
     <p>Email: wangwei@gzzoc.com<br>Location: Zhongshan Ophthalmic Center, Sun Yat-sen University, Guangzhou, China</p>
 </div>
 
+<script>
+    (function() {
+        // 获取当前浏览器的路径（不含域名和参数）
+        let currentPath = window.location.pathname;
+        
+        // 处理特殊情况：如果路径是空字符串或 '/' 或 '/index.html'，都视为首页
+        if (currentPath === '' || currentPath === '/' || currentPath === '/index.html') {
+            currentPath = '/';
+        } else {
+            // 去掉末尾的斜杠（如果有）
+            if (currentPath.endsWith('/')) {
+                currentPath = currentPath.slice(0, -1);
+            }
+        }
+        
+        // 获取导航栏所有链接
+        const navLinks = document.querySelectorAll('.nav-links a');
+        
+        navLinks.forEach(link => {
+            let href = link.getAttribute('href');
+            
+            // 跳过纯锚点（如 #contact）和javascript链接
+            if (!href || href === '#' || href.startsWith('javascript:')) return;
+            
+            // 处理相对路径：比如 "team.html" 或 "/team.html"
+            let linkPath = href;
+            // 如果链接以 '/' 开头，直接使用；否则在当前路径基础上补全（简单比较文件名）
+            if (!linkPath.startsWith('/')) {
+                // 如果当前页面在根目录，相对路径直接作为文件名
+                // 但我们统一提取文件名部分进行比较（因为 team.html 与 /team.html 应匹配）
+                linkPath = '/' + linkPath;
+            }
+            
+            // 同样去掉末尾斜杠
+            if (linkPath.endsWith('/') && linkPath !== '/') {
+                linkPath = linkPath.slice(0, -1);
+            }
+            
+            // 匹配逻辑：比较当前路径和链接路径是否相同
+            let isMatch = false;
+            if (currentPath === linkPath) {
+                isMatch = true;
+            }
+            // 特殊处理首页：链接为 '/' 且当前路径为 '/' 时匹配
+            if (currentPath === '/' && linkPath === '/') {
+                isMatch = true;
+            }
+            // 处理文件名匹配：比如当前路径是 '/team.html'，链接是 '/team.html'
+            // 上面已经直接比较，没问题。
+            
+            if (isMatch) {
+                link.classList.add('current-page');
+                // 可选：如果希望同时给父级li加样式，可以在这里添加
+                // link.parentElement.classList.add('active');
+            }
+        });
+        
+        // 如果没有任何匹配（比如锚点链接），不做额外处理
+    })();
+</script>
 </body>
 </html>
