@@ -112,367 +112,479 @@
                 align-items: center;
             }
         }
+body{
+    background:#f4f7fb;
+    color:#0a192f;
+    font-family:Inter,sans-serif;
+}
 
-        /* 封面容器 */
-        .hero-container {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 23 / 10;
-            background-color: #0a1428;
-        }
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            object-position: center bottom;
-        }
-        .hero-text {
-            position: absolute;
-            left: 5%;
-            top: 12%;
-            width: 60%;
-            color: white;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
-            pointer-events: none;
-        }
-        .hero-text h1 {
-            font-size: 3.5vw;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-        .hero-text .line-data {
-            font-size: 2.5vw;
-            line-height: 1.3;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-        .hero-text .line-and {
-            font-size: 2.5vw;
-            line-height: 1.3;
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-        .hero-text .highlight-ai {
-            font-size: 1.3em;
-            color: #00bfa5;
-            display: inline-block;
-        }
-        .hero-text .desc-line {
-            font-size: 1.1vw;
-            line-height: 1.4;
-            margin-bottom: 0.3rem;
-        }
-        .hero-text .desc-line:last-of-type {
-            margin-bottom: 1.5rem;
-        }
-        .hero-buttons {
-            position: absolute;
-            left: 5%;
-            top: 68%;
-            display: flex;
-            gap: 15px;
-            pointer-events: auto;
-        }
-        .btn-primary, .btn-secondary {
-            display: inline-block;
-            padding: 10px 28px;
-            border-radius: 30px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.3s;
-            font-size: 1rem;
-        }
-        .btn-primary {
-            background-color: #00bfa5;
-            color: #020713;
-        }
-        .btn-primary:hover {
-            background-color: #00a08b;
-        }
-        .btn-secondary {
-            background-color: transparent;
-            color: white;
-            border: 1px solid white;
-        }
-        .btn-secondary:hover {
-            background-color: rgba(255,255,255,0.1);
-        }
-        @media (max-width: 768px) {
-            .hero-text {
-                width: 85%;
-                top: 10%;
-            }
-            .hero-text h1 {
-                font-size: 6vw;
-            }
-            .hero-text .line-data, .hero-text .line-and {
-                font-size: 4.5vw;
-            }
-            .hero-text .desc-line {
-                font-size: 3.5vw;
-            }
-            .hero-buttons {
-                top: 60%;
-            }
-            .btn-primary, .btn-secondary {
-                padding: 8px 20px;
-                font-size: 0.9rem;
-            }
-        }
+/* HERO */
 
-        /* 统计卡片区域（不重叠，下移） */
-        .stats-section {
-            max-width: 1200px;
-            margin: 40px auto 40px auto;  /* 上边距增大，避免重叠 */
-            padding: 0 20px;
-            position: relative;
-            z-index: 5;
-        }
-        .stats-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 24px;
-        }
-        .stat-card {
-            flex: 1;
-            min-width: 170px;
-            background: white;
-            border-radius: 20px;
-            padding: 20px 12px;   /* 减小内边距，让卡片更扁平 */
-            text-align: center;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-            transition: transform 0.2s, box-shadow 0.2s;
-            border: 1px solid #eef2f6;
-        }
-        .stat-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
-        }
-        .stat-number {
-            font-size: 2rem;       /* 数字增大 */
-            font-weight: 800;
-            color: #1e5f8e;        /* 明亮的深蓝色 */
-            line-height: 1.2;
-            margin-bottom: 6px;
-        }
-        .stat-label {
-            font-size: 1rem;
-            color: #1a1a1a;        /* 黑色 */
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-        .stat-sub {
-            font-size: 0.9rem;      /* 副文本调大 */
-            color: #1a1a1a;         /* 黑色 */
-            line-height: 1.3;
-        }
-        /* 针对第五个卡片特殊处理：第一行加粗深蓝，第二行普通黑 */
-        .stat-card-special .stat-number {
-            font-size: 1.6rem;
-            margin-bottom: 8px;
-        }
-        .stat-card-special .stat-extra {
-            font-size: 0.9rem;
-            color: #1a1a1a;
-            font-weight: normal;
-            margin-top: 4px;
-        }
-        /* 通用卡片内行间距调整 */
-        .stat-card:last-child .stat-number {
-            font-size: 1.6rem;
-        }
+.hero-new{
+    position:relative;
+    height:92vh;
+    min-height:700px;
 
-        /* 正文白色卡片区域 */
-        .content-wrap {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 40px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-        @media (max-width: 768px) {
-            .content-wrap {
-                margin: 30px 20px;
-                padding: 25px;
-            }
-            .stat-number {
-                font-size: 1.6rem;
-            }
-            .stat-card:last-child .stat-number {
-                font-size: 1.2rem;
-            }
-        }
-        .content-wrap h2 { color: #0a192f; margin-top: 1.5em; }
-        .content-wrap p, .content-wrap li { color: #1e2a3a; line-height: 1.6; }
+    background:
+    linear-gradient(
+    rgba(3,10,25,0.72),
+    rgba(3,10,25,0.78)
+    ),
+    url('/images/Cover.png');
 
-        /* 底部功能标签 */
-        .footer-links-section {
-            max-width: 1200px;
-            margin: 0 auto 60px auto;
-            padding: 0 20px;
-        }
-        .links-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            background: #f8fafd;
-            border-radius: 60px;
-            padding: 15px 30px;
-            border: 1px solid #e9edf2;
-        }
-        .links-grid a {
-            color: #1e2a3a;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            padding: 6px 12px;
-            border-radius: 40px;
-            transition: all 0.2s;
-        }
-        .links-grid a:hover {
-            color: #00bfa5;
-            background-color: rgba(0,191,165,0.1);
-        }
-        @media (max-width: 768px) {
-            .links-grid {
-                border-radius: 30px;
-                padding: 12px 20px;
-                gap: 12px;
-            }
-            .links-grid a {
-                font-size: 0.8rem;
-            }
-        }
+    background-size:cover;
+    background-position:center;
 
-        footer {
-            text-align: center;
-            padding: 30px 20px;
-            color: #6c757d;
-            font-size: 0.85rem;
-            border-top: 1px solid #e9ecef;
-            margin-top: 30px;
-        }
-    </style>
-</head>
-<body>
+    display:flex;
+    align-items:center;
+}
 
-<div class="navbar">
-    <div class="nav-container">
-        <div class="logo">
-            <a href="/">
-                <img src="/images/icon.png" alt="ZOC-OEC Logo">
-                <div class="logo-text">
-                    <span class="logo-main">ZOC‑OEC</span>
-                    <span class="logo-sub">ZOC Ocular Epidemiology Consortium</span>
-                </div>
-            </a>
+.hero-content{
+    width:100%;
+    max-width:1400px;
+    margin:auto;
+    padding:0 7%;
+}
+
+.hero-left{
+    max-width:720px;
+}
+
+.hero-tag{
+    color:#00c2ff;
+    font-size:0.95rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.hero-left h1{
+    font-size:6rem;
+    color:white;
+    font-weight:800;
+    line-height:1;
+    margin-bottom:10px;
+}
+
+.hero-left h2{
+    font-size:2.2rem;
+    color:white;
+    font-weight:300;
+    margin-bottom:30px;
+}
+
+.hero-slogan{
+    font-size:1.4rem;
+    line-height:1.7;
+    color:#dce7f5;
+    max-width:680px;
+    margin-bottom:40px;
+}
+
+.hero-btns{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.hero-btn-primary,
+.hero-btn-secondary{
+    padding:16px 34px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.hero-btn-primary{
+    background:linear-gradient(
+    135deg,
+    #00bfa5,
+    #0088ff
+    );
+    color:white;
+}
+
+.hero-btn-primary:hover{
+    transform:translateY(-2px);
+}
+
+.hero-btn-secondary{
+    border:1px solid rgba(255,255,255,0.3);
+    color:white;
+    backdrop-filter:blur(8px);
+}
+
+.hero-btn-secondary:hover{
+    background:rgba(255,255,255,0.08);
+}
+
+/* SECTION */
+
+section{
+    padding:100px 7%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.7rem;
+    font-weight:800;
+    margin-bottom:60px;
+    color:#081b33;
+}
+
+/* ABOUT */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:28px;
+}
+
+.about-card{
+    background:white;
+    padding:40px 32px;
+    border-radius:28px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    transition:0.3s;
+}
+
+.about-card:hover{
+    transform:translateY(-8px);
+}
+
+.about-icon{
+    font-size:2.5rem;
+    margin-bottom:20px;
+}
+
+.about-card h3{
+    font-size:1.4rem;
+    margin-bottom:16px;
+}
+
+.about-card p{
+    color:#5c6b80;
+    line-height:1.7;
+}
+
+/* IMPACT */
+
+.impact-section{
+    padding-top:20px;
+}
+
+.impact-grid{
+    background:#071426;
+    border-radius:32px;
+    padding:50px;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:30px;
+    text-align:center;
+}
+
+.impact-item h2{
+    color:#00c2ff;
+    font-size:3rem;
+    margin-bottom:12px;
+}
+
+.impact-item p{
+    color:#d9e6f2;
+    font-size:1.1rem;
+}
+
+/* RESEARCH */
+
+.research-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.research-card{
+    background:white;
+    border-radius:28px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.06);
+    transition:0.3s;
+}
+
+.research-card:hover{
+    transform:translateY(-8px);
+}
+
+.research-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.research-content{
+    padding:28px;
+}
+
+.research-content h3{
+    margin-bottom:14px;
+    font-size:1.4rem;
+}
+
+.research-content p{
+    line-height:1.7;
+    color:#5c6b80;
+}
+
+/* CTA */
+
+.cta-box{
+    background:
+    linear-gradient(
+    135deg,
+    #071426,
+    #0c2340
+    );
+
+    border-radius:32px;
+
+    padding:60px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.cta-box h2{
+    color:white;
+    font-size:2.2rem;
+    margin-bottom:16px;
+}
+
+.cta-box p{
+    color:#d7e6f5;
+    font-size:1.1rem;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .hero-left h1{
+        font-size:4rem;
+    }
+
+    .hero-left h2{
+        font-size:1.5rem;
+    }
+
+    .hero-slogan{
+        font-size:1.1rem;
+    }
+
+    .section-title{
+        font-size:2rem;
+    }
+
+    .cta-box{
+        padding:40px 30px;
+    }
+
+}
+        
+<!-- HERO SECTION -->
+<section class="hero-new">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <div class="hero-left">
+
+            <div class="hero-tag">
+                Zhongshan Ophthalmic Center
+            </div>
+
+            <h1>
+                ZOC-OEC
+            </h1>
+
+            <h2>
+                Ocular Epidemiology Consortium
+            </h2>
+
+            <p class="hero-slogan">
+                Advancing Precision Ophthalmology Through
+                Longitudinal Population Research
+            </p>
+
+            <div class="hero-btns">
+                <a href="#research" class="hero-btn-primary">
+                    Explore Research
+                </a>
+
+                <a href="/publications.html" class="hero-btn-secondary">
+                    Publications
+                </a>
+            </div>
+
         </div>
-        <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/team.html">Team</a></li>
-            <li><a href="/publications.html">Publications</a></li>
-            <li><a href="/data_access.html">Data Access</a></li>
-        </ul>
+
     </div>
-</div>
 
-<div class="hero-container">
-    <img class="hero-bg" src="https://zoc-oec.github.io/images/Cover.png" alt="Cover">
-    <div class="hero-text">
-        <h1>Advancing Vision Science</h1>
-        <div class="line-data">Through Longitudinal Data</div>
-        <div class="line-and">and <span class="highlight-ai">Foundation AI</span></div>
-        <div class="desc-line">The ZOC Ocular Epidemiology Consortium integrates longitudinal cohorts,</div>
-        <div class="desc-line">multimodal imaging, multi-omics and AI to advance the understanding,</div>
-        <div class="desc-line">prediction, and prevention of blinding eye diseases.</div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section">
+
+    <div class="section-title">
+        About ZOC-OEC
     </div>
-    <div class="hero-buttons">
-        <a href="#our-core-cohorts" class="btn-primary">Explore Our Research →</a>
-        <a href="#our-core-cohorts" class="btn-secondary">Our Cohorts</a>
+
+    <div class="about-grid">
+
+        <div class="about-card">
+            <div class="about-icon">📊</div>
+            <h3>Longitudinal Cohorts</h3>
+            <p>
+                20+ years of population-based ocular epidemiology studies.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <div class="about-icon">🧠</div>
+            <h3>AI & Risk Prediction</h3>
+            <p>
+                Dynamic modeling and multimodal AI for disease progression.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <div class="about-icon">🌍</div>
+            <h3>Global Collaboration</h3>
+            <p>
+                International collaborative network in vision science.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <div class="about-icon">🔬</div>
+            <h3>Translational Impact</h3>
+            <p>
+                Bridging epidemiology, imaging and clinical ophthalmology.
+            </p>
+        </div>
+
     </div>
-</div>
 
-<!-- 统计卡片（已下移，扁平化，颜色调亮，全黑字） -->
-<div class="stats-section">
-    <div class="stats-grid">
-        <div class="stat-card">
-            <div class="stat-number">80,000+</div>
-            <div class="stat-label">Participants</div>
-            <div class="stat-sub">Across 8 Cohorts</div>
+</section>
+
+<!-- IMPACT -->
+<section class="impact-section">
+
+    <div class="impact-grid">
+
+        <div class="impact-item">
+            <h2>80,000+</h2>
+            <p>Participants</p>
         </div>
-        <div class="stat-card">
-            <div class="stat-number">20+</div>
-            <div class="stat-label">Years</div>
-            <div class="stat-sub">Follow-up Duration</div>
+
+        <div class="impact-item">
+            <h2>20+</h2>
+            <p>Years Follow-up</p>
         </div>
-        <div class="stat-card">
-            <div class="stat-number">10M+</div>
-            <div class="stat-label">Retinal Images &amp;</div>
-            <div class="stat-sub">Multimodal Data</div>
+
+        <div class="impact-item">
+            <h2>10M+</h2>
+            <p>Retinal Images</p>
         </div>
-        <div class="stat-card">
-            <div class="stat-number">8</div>
-            <div class="stat-label">Population-based</div>
-            <div class="stat-sub">Cohorts</div>
+
+        <div class="impact-item">
+            <h2>8</h2>
+            <p>Population Cohorts</p>
         </div>
-        <!-- 第五个卡片特殊结构：第一行加粗深蓝，第二行普通黑 -->
-        <div class="stat-card">
-            <div class="stat-number">Multi-modal</div>
-            <div class="stat-label" style="font-weight: normal; margin-top: 4px;">Imaging, EMR &amp;<br>Multi-omics</div>
-            <div class="stat-sub" style="display: none;"></div>
-        </div>
+
     </div>
-</div>
 
-<!-- 原有正文内容 -->
-<div class="content-wrap" id="our-core-cohorts">
-    <p style="font-size:1.1em; margin-bottom:30px;">Our work integrates classical epidemiological methods with cutting-edge approaches — including AI prediction models, Transformer architectures, multimodal data fusion, and proteomics — to generate globally impactful insights in ocular epidemiology.</p>
+</section>
 
-    <h2>Our Core Cohorts</h2>
-    <h3>1. ZAP — Zhongshan Angle Closure Prevention Trial</h3>
-    <p>The ZAP cohort is a landmark randomized controlled trial and long-term prospective study examining the natural history and prevention of primary angle closure glaucoma (PACG). With over 18 years of follow-up, ZAP represents one of the world's longest-running trials in glaucoma epidemiology.</p>
-    <p><strong>Key focus areas:</strong> angle closure progression · laser iridotomy outcomes · anterior segment biometry · long-term glaucoma risk</p>
+<!-- RESEARCH -->
+<section class="research-section" id="research">
 
-    <h3>2. GDES — Guangzhou Diabetic Eye Study</h3>
-    <p>The Guangzhou Diabetic Eye Study (GDES) is a comprehensive population-based cohort dedicated to understanding the ocular complications of diabetes in a Chinese population.</p>
-    <p><strong>Key focus areas:</strong> diabetic retinopathy · retinal imaging biomarkers · risk prediction · systemic-ocular interactions</p>
-
-    <h3>3. ZHMC — Zhongshan Myopia Cohort</h3>
-    <p>The Zhongshan Myopia Cohort (ZHMC) is a longitudinal population-based study designed to investigate the onset, progression, and complications of myopia.</p>
-    <p><strong>Key focus areas:</strong> myopia progression · high myopia complications · HMON mechanisms · choroidal imaging · prediction modeling</p>
-
-    <h2>What We Do</h2>
-    <ul>
-        <li><strong>Data-Driven Discovery:</strong> We apply rigorous statistical methods — including longitudinal analysis, restricted cubic spline modeling, and Mendelian randomization — to uncover disease patterns across our cohorts.</li>
-        <li><strong>AI & Multimodal Modeling:</strong> We develop deep learning and Transformer-based models integrating retinal imaging, proteomics, and clinical data.</li>
-        <li><strong>Global Collaboration:</strong> We actively partner with international research groups, including UK Biobank, AI-READI, and SERI.</li>
-        <li><strong>Open Science:</strong> Collaboration and data access inquiries are welcome.</li>
-    </ul>
-
-    <h2 id="contact">Contact / Collaboration Inquiry</h2>
-    <p>Email: wangwei@gzzoc.com<br>Location: Zhongshan Ophthalmic Center, Sun Yat-sen University, Guangzhou, China</p>
-</div>
-
-<!-- 底部功能标签 -->
-<div class="footer-links-section">
-    <div class="links-grid">
-        <a href="#">Longitudinal Cohorts</a>
-        <a href="#">Multimodal Data</a>
-        <a href="#">Multi-omics</a>
-        <a href="#">Foundation AI</a>
-        <a href="#">Precision Eye Care</a>
+    <div class="section-title">
+        Research Focus
     </div>
-</div>
 
-<footer>
-    &copy; 2025 ZOC Ocular Epidemiology Consortium — Zhongshan Ophthalmic Center, Sun Yat-sen University
-</footer>
+    <div class="research-grid">
+
+        <div class="research-card">
+            <img src="/images/pacg.jpg">
+            <div class="research-content">
+                <h3>PACG Progression</h3>
+                <p>
+                    Dynamic risk prediction and longitudinal angle-closure analysis.
+                </p>
+            </div>
+        </div>
+
+        <div class="research-card">
+            <img src="/images/retina.jpg">
+            <div class="research-content">
+                <h3>Retinal Biomarkers</h3>
+                <p>
+                    RNFL and retinal imaging biomarkers for systemic diseases.
+                </p>
+            </div>
+        </div>
+
+        <div class="research-card">
+            <img src="/images/ai.jpg">
+            <div class="research-content">
+                <h3>AI Ophthalmology</h3>
+                <p>
+                    Foundation AI and multimodal deep learning for eye diseases.
+                </p>
+            </div>
+        </div>
+
+        <div class="research-card">
+            <img src="/images/population.jpg">
+            <div class="research-content">
+                <h3>Population Eye Health</h3>
+                <p>
+                    Large-scale epidemiological research for vision health.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+
+    <div class="cta-box">
+
+        <div>
+            <h2>
+                Together, We Advance Vision Science
+            </h2>
+
+            <p>
+                Data-driven discovery through global collaboration.
+            </p>
+        </div>
+
+        <a href="/data_access.html" class="hero-btn-primary">
+            Collaboration Inquiry
+        </a>
+
+    </div>
+
+</section>
 
 <script>
     (function() {
