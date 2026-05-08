@@ -1,313 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Team | ZOC-OEC</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
-
-body{
-    font-family:'Inter',sans-serif;
-    background:#f4f7fb;
-    color:#081b33;
-    overflow-x:hidden;
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f4f7fb;
+    color: #081b33;
+    overflow-x: hidden;
 }
-
 /* 导航栏 */
-.navbar{
-    position:fixed;
-    top:0;
-    width:100%;
-    z-index:1000;
-    background:rgba(5,12,28,0.78);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(255,255,255,0.08);
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(5, 12, 28, 0.78);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
-
-.nav-container{
-    max-width:1400px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 6%;
+.nav-container {
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 6%;
 }
-
-.logo a{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    text-decoration:none;
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
 }
-
-.logo img{
-    width:42px;
-    height:42px;
+.logo img {
+    width: 42px;
+    height: 42px;
 }
-
-.logo-text{
-    display:flex;
-    flex-direction:column;
+.logo-text {
+    display: flex;
+    flex-direction: column;
 }
-
-.logo-main{
-    color:white;
-    font-size:1.4rem;
-    font-weight:800;
+.logo-main {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 800;
 }
-
-.logo-sub{
-    color:#b8c7da;
-    font-size:0.72rem;
+.logo-sub {
+    color: #b8c7da;
+    font-size: 0.72rem;
 }
-
-.nav-links{
-    display:flex;
-    list-style:none;
-    gap:34px;
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 34px;
 }
-
-.nav-links a{
-    text-decoration:none;
-    color:white;
-    font-weight:500;
-    transition:0.3s;
-    position:relative;
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s;
+    position: relative;
 }
-
-.nav-links a:hover{
-    color:#00c2ff;
+.nav-links a:hover {
+    color: #00c2ff;
 }
-
-.nav-links a.current-page{
-    color:#00c2ff;
+.nav-links a.current-page {
+    color: #00c2ff;
 }
-
-.nav-links a::after{
-    content:'';
-    position:absolute;
-    left:0;
-    bottom:-8px;
-    width:0%;
-    height:2px;
-    background:#00c2ff;
-    transition:0.3s;
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0%;
+    height: 2px;
+    background: #00c2ff;
+    transition: 0.3s;
 }
-
 .nav-links a:hover::after,
-.nav-links a.current-page::after{
-    width:100%;
+.nav-links a.current-page::after {
+    width: 100%;
 }
-
 /* HERO */
-.team-hero{
-    position:relative;
-    height:70vh;
-    min-height:600px;
-    background:
-        linear-gradient(rgba(4,10,24,0.85), rgba(4,10,24,0.88)),
-        url('/images/team-bg.jpg');
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    align-items:center;
+.team-hero {
+    position: relative;
+    height: 70vh;
+    min-height: 600px;
+    background: linear-gradient(rgba(4, 10, 24, 0.85), rgba(4, 10, 24, 0.88)), url('/images/team-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
 }
-
-.team-hero::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:radial-gradient(circle at right, rgba(0,194,255,0.18), transparent 40%);
+.team-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at right, rgba(0, 194, 255, 0.18), transparent 40%);
 }
-
-.hero-content{
-    position:relative;
-    z-index:2;
-    max-width:1400px;
-    width:100%;
-    margin:auto;
-    padding:0 6%;
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    width: 100%;
+    margin: auto;
+    padding: 0 6%;
 }
-
-.hero-content h1{
-    color:white;
-    font-size:5rem;
-    font-weight:800;
-    margin-bottom:20px;
+.hero-content h1 {
+    color: white;
+    font-size: 5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
 }
-
-.hero-highlight{
-    color:#00c2ff;
-    font-size:1.6rem;
-    font-style:italic;
-    margin-bottom:28px;
+.hero-highlight {
+    color: #00c2ff;
+    font-size: 1.6rem;
+    font-style: italic;
+    margin-bottom: 28px;
 }
-
-.hero-desc{
-    max-width:720px;
-    color:#d7e6f5;
-    font-size:1.2rem;
-    line-height:1.9;
+.hero-desc {
+    max-width: 720px;
+    color: #d7e6f5;
+    font-size: 1.2rem;
+    line-height: 1.9;
 }
-
-/* 通用 section */
-section{
-    padding:100px 6%;
+section {
+    padding: 100px 6%;
 }
-
-.section-title{
-    text-align:center;
-    font-size:2.8rem;
-    font-weight:800;
-    margin-bottom:60px;
-    color:#071426;
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 60px;
+    color: #071426;
 }
-
 /* 领导区域 */
-.leader-card{
-    max-width:1400px;
-    margin:auto;
-    background:linear-gradient(135deg, #071426, #0c2340);
-    border-radius:34px;
-    padding:50px;
-    display:grid;
-    grid-template-columns:320px 1fr;
-    gap:50px;
-    align-items:center;
-    box-shadow:0 20px 60px rgba(0,0,0,0.15);
+.leader-card {
+    max-width: 1400px;
+    margin: auto;
+    background: linear-gradient(135deg, #071426, #0c2340);
+    border-radius: 34px;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 50px;
+    align-items: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
-
-.leader-photo img{
-    width:100%;
-    border-radius:24px;
-    object-fit:cover;
-    object-position:50% 20%;
+.leader-photo img {
+    width: 100%;
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: 50% 20%;
 }
-
-.leader-content h2{
-    color:white;
-    font-size:3rem;
-    margin-bottom:10px;
+.leader-content h2 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 10px;
 }
-
-.leader-role{
-    color:#00c2ff;
-    font-size:1.3rem;
-    margin-bottom:24px;
+.leader-role {
+    color: #00c2ff;
+    font-size: 1.3rem;
+    margin-bottom: 24px;
 }
-
-.leader-text{
-    color:#d7e6f5;
-    line-height:1.9;
-    font-size:1.05rem;
-    margin-bottom:30px;
+.leader-text {
+    color: #d7e6f5;
+    line-height: 1.9;
+    font-size: 1.05rem;
+    margin-bottom: 30px;
 }
-
-.leader-metrics{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-    gap:24px;
-    margin-top:30px;
+.leader-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 24px;
+    margin-top: 30px;
 }
-
-.metric h3{
-    color:#00c2ff;
-    font-size:2rem;
-    margin-bottom:8px;
+.metric h3 {
+    color: #00c2ff;
+    font-size: 2rem;
+    margin-bottom: 8px;
 }
-
-.metric p{
-    color:#d7e6f5;
+.metric p {
+    color: #d7e6f5;
 }
-
-/* ========= 团队卡片样式（优化对齐） ========= */
-.team-card{
-    background:white;
-    border-radius:28px;
-    overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,0.05);
-    transition:0.3s;
-    display:flex;
-    flex-direction:column;
-    height:100%;
-}
-
-.team-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 20px 50px rgba(0,0,0,0.1);
-}
-
-.team-card img{
-    width:100%;
-    height:280px;
-    object-fit:cover;
-    background:#eef2f8;
-}
-
-/* 单独调整高信博照片位置，使其头部完全露出 */
-.team-card .img-gao {
-    object-position: 50% 30%;
-}
-
-/* 卡片内容区使用 flex 列布局，让底部链接自动下对齐 */
-.team-info{
-    padding:28px;
-    flex:1;
-    display:flex;
-    flex-direction:column;
-}
-
-.team-info h3{
-    font-size:1.3rem;
-    margin-bottom:10px;
-}
-
-.team-role{
-    color:#0088ff;
-    font-weight:600;
-    margin-bottom:18px;
-}
-
-.team-focus{
-    color:#5f6f82;
-    line-height:1.8;
-    margin-bottom:20px;
-    flex:1;  /* 占满剩余空间，把链接推到底部 */
-}
-
-.team-links{
-    display:flex;
-    gap:16px;
-    margin-top:auto;  /* 保证始终位于底部 */
-}
-
-.team-links a{
-    color:#0088ff;
-    text-decoration:none;
-    font-size:0.95rem;
-}
-
-/* 团队网格分区布局 */
+/* ---------- 团队卡片完美对齐 ---------- */
 .team-row {
     max-width: 1400px;
     margin: 0 auto 40px auto;
@@ -316,21 +206,74 @@ section{
     justify-content: center;
     gap: 30px;
 }
-
-.team-row .team-card {
+.team-card {
+    background: white;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
     width: calc(33.33% - 20px);
     min-width: 260px;
     max-width: 320px;
-    flex: 0 1 auto;
 }
-
 .team-row.two-cols .team-card {
     width: calc(50% - 15px);
     max-width: 360px;
 }
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+/* 图片区域 – 针对每张图片单独调整垂直位置使头部完整 */
+.team-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    background: #eef2f8;
+}
+/* 按人名单独调 position (请根据实际照片微调百分比) */
+.img-huang { object-position: 50% 15%; }
+.img-chen { object-position: 50% 20%; }
+.img-gao  { object-position: 50% 28%; }
+.img-he   { object-position: 50% 25%; }
+.img-cheng{ object-position: 50% 20%; }
 
+.team-info {
+    padding: 28px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.team-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+.team-role {
+    color: #0088ff;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+.team-focus {
+    color: #5f6f82;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    flex: 1;  /* 将剩余空间撑开，把链接推到最底部 */
+}
+.team-links {
+    display: flex;
+    gap: 16px;
+    margin-top: auto;   /* 保证所有卡片的链接都贴底对齐 */
+}
+.team-links a {
+    color: #0088ff;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+/* 响应式 */
 @media (max-width: 900px) {
-    .team-row .team-card {
+    .team-card, .team-row .team-card {
         width: calc(50% - 15px);
     }
     .team-row.two-cols .team-card {
@@ -338,160 +281,107 @@ section{
         max-width: 400px;
     }
 }
-
 @media (max-width: 600px) {
-    .team-row .team-card {
+    .team-card, .team-row .team-card {
         width: 100%;
         max-width: 400px;
     }
 }
-
-/* 其他区域（不变） */
-.collab-box{
-    max-width:1400px;
-    margin:auto;
-    background:white;
-    border-radius:30px;
-    padding:50px;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:30px;
-    text-align:center;
-    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+/* 其他区域 */
+.collab-box {
+    max-width: 1400px;
+    margin: auto;
+    background: white;
+    border-radius: 30px;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
-
-.collab-item{
-    padding:20px;
+.collab-item { padding: 20px; }
+.collab-item h3 { margin-bottom: 8px; font-size: 1.1rem; }
+.collab-item p { color: #5f6f82; }
+.tags {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
 }
-
-.collab-item h3{
-    margin-bottom:8px;
-    font-size:1.1rem;
+.tag {
+    padding: 14px 24px;
+    background: white;
+    border-radius: 50px;
+    border: 1px solid #dfe8f2;
+    color: #3a4b62;
+    font-weight: 500;
+    transition: 0.3s;
 }
-
-.collab-item p{
-    color:#5f6f82;
+.tag:hover {
+    background: #0088ff;
+    color: white;
+    transform: translateY(-3px);
 }
-
-.tags{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:18px;
+.cta-box {
+    max-width: 1400px;
+    margin: auto;
+    background: linear-gradient(135deg, #071426, #0c2340);
+    border-radius: 34px;
+    padding: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
 }
-
-.tag{
-    padding:14px 24px;
-    background:white;
-    border-radius:50px;
-    border:1px solid #dfe8f2;
-    color:#3a4b62;
-    font-weight:500;
-    transition:0.3s;
+.cta-box h2 {
+    color: white;
+    font-size: 2.2rem;
+    margin-bottom: 16px;
 }
-
-.tag:hover{
-    background:#0088ff;
-    color:white;
-    transform:translateY(-3px);
+.cta-box p {
+    color: #d7e6f5;
+    line-height: 1.8;
 }
-
-.cta-box{
-    max-width:1400px;
-    margin:auto;
-    background:linear-gradient(135deg, #071426, #0c2340);
-    border-radius:34px;
-    padding:60px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:40px;
-    flex-wrap:wrap;
+.cta-btn {
+    background: linear-gradient(135deg, #00bfa5, #0088ff);
+    color: white;
+    text-decoration: none;
+    padding: 18px 34px;
+    border-radius: 60px;
+    font-weight: 600;
+    transition: 0.3s;
 }
-
-.cta-box h2{
-    color:white;
-    font-size:2.2rem;
-    margin-bottom:16px;
+.cta-btn:hover { transform: translateY(-3px); }
+footer {
+    text-align: center;
+    padding: 50px 20px;
+    color: #6f7f92;
+    font-size: 0.92rem;
 }
-
-.cta-box p{
-    color:#d7e6f5;
-    line-height:1.8;
+@media (max-width: 900px) {
+    .leader-card { grid-template-columns: 1fr; }
+    .leader-photo { max-width: 320px; margin: auto; }
 }
-
-.cta-btn{
-    background:linear-gradient(135deg, #00bfa5, #0088ff);
-    color:white;
-    text-decoration:none;
-    padding:18px 34px;
-    border-radius:60px;
-    font-weight:600;
-    transition:0.3s;
-}
-
-.cta-btn:hover{
-    transform:translateY(-3px);
-}
-
-footer{
-    text-align:center;
-    padding:50px 20px;
-    color:#6f7f92;
-    font-size:0.92rem;
-}
-
-@media(max-width:900px){
-    .leader-card{
-        grid-template-columns:1fr;
-    }
-    .leader-photo{
-        max-width:320px;
-        margin:auto;
-    }
-}
-
-@media(max-width:768px){
-    .nav-container{
-        flex-direction:column;
-        gap:18px;
-    }
-    .nav-links{
-        gap:18px;
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-    .hero-content h1{
-        font-size:3.5rem;
-    }
-    .hero-highlight{
-        font-size:1.2rem;
-    }
-    .hero-desc{
-        font-size:1rem;
-    }
-    .section-title{
-        font-size:2rem;
-    }
-    .leader-content h2{
-        font-size:2.2rem;
-    }
-    .leader-card{
-        padding:35px;
-    }
-    .cta-box{
-        padding:40px 30px;
-    }
+@media (max-width: 768px) {
+    .nav-container { flex-direction: column; gap: 18px; }
+    .nav-links { gap: 18px; flex-wrap: wrap; justify-content: center; }
+    .hero-content h1 { font-size: 3.5rem; }
+    .hero-highlight { font-size: 1.2rem; }
+    .hero-desc { font-size: 1rem; }
+    .section-title { font-size: 2rem; }
+    .leader-content h2 { font-size: 2.2rem; }
+    .leader-card { padding: 35px; }
+    .cta-box { padding: 40px 30px; }
 }
 </style>
-
 </head>
-
 <body>
 
-<!-- NAVBAR -->
+<!-- 导航栏 -->
 <div class="navbar">
     <div class="nav-container">
         <div class="logo">
@@ -512,7 +402,7 @@ footer{
     </div>
 </div>
 
-<!-- HERO -->
+<!-- Hero -->
 <section class="team-hero">
     <div class="hero-content">
         <h1>Meet the Team</h1>
@@ -521,7 +411,7 @@ footer{
     </div>
 </section>
 
-<!-- LEADERSHIP -->
+<!-- Leadership -->
 <section>
     <div class="section-title">Leadership</div>
     <div class="leader-card">
@@ -540,14 +430,14 @@ footer{
     </div>
 </section>
 
-<!-- CORE RESEARCH TEAM -->
+<!-- Core Research Team (完美对齐 + 头部完整) -->
 <section>
     <div class="section-title">Core Research Team</div>
 
-    <!-- 第一行：3人 -->
+    <!-- 第一行: 3人 -->
     <div class="team-row">
         <div class="team-card">
-            <img src="/images/huangwenyong.jpg">
+            <img src="/images/huangwenyong.jpg" class="img-huang">
             <div class="team-info">
                 <h3>Wenyong Huang</h3>
                 <div class="team-role">Professor</div>
@@ -556,7 +446,7 @@ footer{
             </div>
         </div>
         <div class="team-card">
-            <img src="/images/chenshida.jpg">
+            <img src="/images/chenshida.jpg" class="img-chen">
             <div class="team-info">
                 <h3>Shida Chen</h3>
                 <div class="team-role">Associate Chief Physician</div>
@@ -575,10 +465,10 @@ footer{
         </div>
     </div>
 
-    <!-- 第二行：2人 (He Chang + Weijing Cheng) -->
+    <!-- 第二行: 2人 -->
     <div class="team-row two-cols">
         <div class="team-card">
-            <img src="/images/hechang.png">
+            <img src="/images/hechang.png" class="img-he">
             <div class="team-info">
                 <h3>Chang He</h3>
                 <div class="team-role">Associate Chief Physician</div>
@@ -587,7 +477,7 @@ footer{
             </div>
         </div>
         <div class="team-card">
-            <img src="/images/chengweijing.png">
+            <img src="/images/chengweijing.png" class="img-cheng">
             <div class="team-info">
                 <h3>Weijing Cheng</h3>
                 <div class="team-role">Associate Researcher</div>
@@ -598,7 +488,7 @@ footer{
     </div>
 </section>
 
-<!-- 国际协作、研究标签、CTA -->
+<!-- 国际合作等 (保持不变) -->
 <section>
     <div class="section-title">International Collaborators</div>
     <div class="collab-box">
@@ -637,5 +527,4 @@ footer{
 <footer>© 2025 ZOC-OEC | Zhongshan Ophthalmic Center, Sun Yat-sen University</footer>
 
 </body>
-
 </html>
