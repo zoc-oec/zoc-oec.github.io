@@ -54,11 +54,21 @@
             color: #f0f0f0;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.2s;
+            transition: all 0.3s ease;
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
         }
+        /* 鼠标悬停效果 */
         .nav-links li a:hover {
             color: #00bfa5;
+            border-bottom-color: #00bfa5;
         }
+        /* 当前页面的高亮效果 (常亮) */
+        .nav-links li a.current-page {
+            color: #00bfa5 !important;
+            border-bottom: 2px solid #00bfa5 !important;
+        }
+
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
@@ -178,7 +188,6 @@
             <li><a href="/team.html">Team</a></li>
             <li><a href="/publications.html">Publications</a></li>
             <li><a href="/data_access.html">Data Access</a></li>
-            <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
 </div>
@@ -274,5 +283,38 @@
     &copy; 2025 ZOC Ocular Epidemiology Consortium — Zhongshan Ophthalmic Center, Sun Yat-sen University
 </footer>
 
+<script>
+    (function() {
+        let currentPath = window.location.pathname;
+        if (currentPath === '' || currentPath === '/' || currentPath === '/index.html') {
+            currentPath = '/';
+        } else {
+            if (currentPath.endsWith('/')) {
+                currentPath = currentPath.slice(0, -1);
+            }
+        }
+
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
+            let href = link.getAttribute('href');
+            if (!href || href === '#' || href.startsWith('javascript:')) return;
+
+            let linkPath = href;
+            if (!linkPath.startsWith('/')) {
+                linkPath = '/' + linkPath;
+            }
+            if (linkPath.endsWith('/') && linkPath !== '/') {
+                linkPath = linkPath.slice(0, -1);
+            }
+
+            let isMatch = (currentPath === linkPath);
+            if (currentPath === '/' && linkPath === '/') isMatch = true;
+
+            if (isMatch) {
+                link.classList.add('current-page');
+            }
+        });
+    })();
+</script>
 </body>
 </html>
