@@ -110,6 +110,15 @@ body {
     width: 100%;
 }
 
+/* 当前页面高亮样式（常亮） */
+.nav-links a.current-page {
+    color: #00c2ff !important;
+}
+
+.nav-links a.current-page::after {
+    width: 100% !important;
+}
+
 /* =========================
    HERO (使用独立图片，完整显示)
 ========================= */
@@ -118,7 +127,7 @@ body {
     width: 100%;
     height: 100vh;
     min-height: 760px;
-    background-color: #0a1428; /* 背景色作为图片未覆盖区域的底色 */
+    background-color: #0a1428;
 }
 
 .hero-image {
@@ -127,12 +136,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain;      /* 完整显示图片，不裁剪 */
+    object-fit: contain;
     object-position: center;
     pointer-events: none;
 }
 
-/* 半透明蒙版层 (降低不透明度) */
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -141,7 +149,7 @@ body {
     height: 100%;
     background: linear-gradient(
         135deg,
-        rgba(4, 10, 24, 0.5),  /* 更透明 */
+        rgba(4, 10, 24, 0.5),
         rgba(4, 10, 24, 0.55)
     );
     pointer-events: none;
@@ -229,7 +237,6 @@ body {
     background: rgba(255,255,255,0.08);
 }
 
-/* 其余部分不变 */
 section {
     padding: 110px 6%;
 }
@@ -439,7 +446,7 @@ footer {
     </div>
 </div>
 
-<!-- HERO 使用独立图片 + 低透明度蒙版 -->
+<!-- HERO -->
 <div class="hero">
     <img class="hero-image" src="https://zoc-oec.github.io/images/Cover.png" alt="Cover">
     <div class="hero-overlay"></div>
@@ -558,5 +565,39 @@ footer {
 <footer>
     © 2025 ZOC-OEC — Zhongshan Ophthalmic Center, Sun Yat-sen University
 </footer>
+
+<script>
+    (function() {
+        // 获取当前页面路径（去掉域名和参数）
+        let currentPath = window.location.pathname;
+        // 处理首页
+        if (currentPath === '' || currentPath === '/' || currentPath === '/index.html') {
+            currentPath = '/';
+        } else {
+            if (currentPath.endsWith('/')) {
+                currentPath = currentPath.slice(0, -1);
+            }
+        }
+        // 获取所有导航链接
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
+            let href = link.getAttribute('href');
+            if (!href || href === '#' || href.startsWith('javascript:')) return;
+            // 构造绝对路径进行对比
+            let linkPath = href;
+            if (!linkPath.startsWith('/')) {
+                linkPath = '/' + linkPath;
+            }
+            if (linkPath.endsWith('/') && linkPath !== '/') {
+                linkPath = linkPath.slice(0, -1);
+            }
+            let isMatch = (currentPath === linkPath);
+            if (currentPath === '/' && linkPath === '/') isMatch = true;
+            if (isMatch) {
+                link.classList.add('current-page');
+            }
+        });
+    })();
+</script>
 </body>
 </html>
