@@ -33,7 +33,7 @@ body{
     overflow-x:hidden;
 }
 
-/* 导航栏 (同首页) */
+/* 导航栏 */
 .navbar{
     position:fixed;
     top:0;
@@ -119,7 +119,7 @@ body{
     width:100%;
 }
 
-/* HERO 区域 */
+/* HERO */
 .team-hero{
     position:relative;
     height:70vh;
@@ -183,7 +183,7 @@ section{
     color:#071426;
 }
 
-/* 领导区域 (不变) */
+/* 领导区域 */
 .leader-card{
     max-width:1400px;
     margin:auto;
@@ -240,13 +240,16 @@ section{
     color:#d7e6f5;
 }
 
-/* 团队卡片样式 (共用) */
+/* ========= 团队卡片样式（优化对齐） ========= */
 .team-card{
     background:white;
     border-radius:28px;
     overflow:hidden;
     box-shadow:0 10px 30px rgba(0,0,0,0.05);
     transition:0.3s;
+    display:flex;
+    flex-direction:column;
+    height:100%;
 }
 
 .team-card:hover{
@@ -258,12 +261,20 @@ section{
     width:100%;
     height:280px;
     object-fit:cover;
-    object-position:50% 20%;
     background:#eef2f8;
 }
 
+/* 单独调整高信博照片位置，使其头部完全露出 */
+.team-card .img-gao {
+    object-position: 50% 30%;
+}
+
+/* 卡片内容区使用 flex 列布局，让底部链接自动下对齐 */
 .team-info{
     padding:28px;
+    flex:1;
+    display:flex;
+    flex-direction:column;
 }
 
 .team-info h3{
@@ -281,11 +292,13 @@ section{
     color:#5f6f82;
     line-height:1.8;
     margin-bottom:20px;
+    flex:1;  /* 占满剩余空间，把链接推到底部 */
 }
 
 .team-links{
     display:flex;
     gap:16px;
+    margin-top:auto;  /* 保证始终位于底部 */
 }
 
 .team-links a{
@@ -311,13 +324,11 @@ section{
     flex: 0 1 auto;
 }
 
-/* 第二行两列时限制宽度 */
 .team-row.two-cols .team-card {
     width: calc(50% - 15px);
     max-width: 360px;
 }
 
-/* 响应式：窄屏幕时自动调整 */
 @media (max-width: 900px) {
     .team-row .team-card {
         width: calc(50% - 15px);
@@ -335,7 +346,7 @@ section{
     }
 }
 
-/* 其他区域不变 */
+/* 其他区域（不变） */
 .collab-box{
     max-width:1400px;
     margin:auto;
@@ -529,7 +540,7 @@ footer{
     </div>
 </section>
 
-<!-- CORE RESEARCH TEAM (分两行：第一行3人，第二行2人居中) -->
+<!-- CORE RESEARCH TEAM -->
 <section>
     <div class="section-title">Core Research Team</div>
 
@@ -554,7 +565,7 @@ footer{
             </div>
         </div>
         <div class="team-card">
-            <img src="/images/gaoxinbo.png">
+            <img src="/images/gaoxinbo.png" class="img-gao">
             <div class="team-info">
                 <h3>Xinbo Gao</h3>
                 <div class="team-role">Associate Chief Physician</div>
@@ -564,7 +575,7 @@ footer{
         </div>
     </div>
 
-    <!-- 第二行：2人 (He Chang + Weijing Cheng) 居中 -->
+    <!-- 第二行：2人 (He Chang + Weijing Cheng) -->
     <div class="team-row two-cols">
         <div class="team-card">
             <img src="/images/hechang.png">
@@ -587,7 +598,7 @@ footer{
     </div>
 </section>
 
-<!-- 国际协作、研究标签、CTA、页脚等保持不变 -->
+<!-- 国际协作、研究标签、CTA -->
 <section>
     <div class="section-title">International Collaborators</div>
     <div class="collab-box">
@@ -626,4 +637,5 @@ footer{
 <footer>© 2025 ZOC-OEC | Zhongshan Ophthalmic Center, Sun Yat-sen University</footer>
 
 </body>
+
 </html>
