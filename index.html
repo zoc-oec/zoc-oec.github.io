@@ -1,136 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZOC Ocular Epidemiology Consortium</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            background: white;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
+<title>ZOC-OEC | Ocular Epidemiology Consortium</title>
 
-        /* 导航栏 */
-        .navbar {
-            position: sticky;
-            top: 0;
-            width: 100%;
-            background-color: rgba(10, 20, 40, 0.85);
-            backdrop-filter: blur(6px);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            min-height: 64px;
-            flex-wrap: wrap;
-        }
-        .logo a {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            margin-left: 5%;
-        }
-        .logo img {
-            height: 40px;
-            width: auto;
-        }
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-        .logo-main {
-            color: #00bfa5;
-            font-size: 1.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-        .logo-sub {
-            color: #f0f0f0;
-            font-size: 0.7rem;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-            white-space: nowrap;
-        }
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-            margin-right: 5%;
-        }
-        .nav-links li a {
-            color: #f0f0f0;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding-bottom: 4px;
-            border-bottom: 2px solid transparent;
-        }
-        .nav-links li a:hover {
-            color: #00bfa5;
-            border-bottom-color: #00bfa5;
-        }
-        .nav-links li a.current-page {
-            color: #00bfa5 !important;
-            border-bottom: 2px solid #00bfa5 !important;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                padding: 12px 5%;
-            }
-            .logo a {
-                margin-left: 0;
-            }
-            .nav-links {
-                margin-right: 0;
-            }
-            .logo-sub {
-                white-space: normal;
-                font-size: 0.65rem;
-                text-align: center;
-            }
-            .logo a {
-                flex-direction: column;
-                text-align: center;
-                gap: 6px;
-            }
-            .logo-text {
-                align-items: center;
-            }
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     background:#f4f7fb;
     color:#0a192f;
-    font-family:Inter,sans-serif;
+    font-family:'Inter',sans-serif;
+    overflow-x:hidden;
 }
 
-/* HERO */
+/* =========================
+   NAVBAR
+========================= */
 
-.hero-new{
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+
+    background:rgba(5,12,28,0.75);
+
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.nav-container{
+    max-width:1400px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 6%;
+}
+
+.logo a{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    text-decoration:none;
+}
+
+.logo img{
+    width:42px;
+    height:42px;
+}
+
+.logo-text{
+    display:flex;
+    flex-direction:column;
+}
+
+.logo-main{
+    color:white;
+    font-size:1.4rem;
+    font-weight:800;
+    letter-spacing:0.5px;
+}
+
+.logo-sub{
+    color:#b8c7da;
+    font-size:0.72rem;
+    letter-spacing:0.5px;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:34px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:0.3s;
     position:relative;
-    height:92vh;
-    min-height:700px;
+}
+
+.nav-links a:hover{
+    color:#00c2ff;
+}
+
+.nav-links a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0%;
+    height:2px;
+    background:#00c2ff;
+    transition:0.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    position:relative;
+
+    height:100vh;
+    min-height:760px;
 
     background:
     linear-gradient(
-    rgba(3,10,25,0.72),
-    rgba(3,10,25,0.78)
+        rgba(4,10,24,0.82),
+        rgba(4,10,24,0.82)
     ),
-    url('/images/Cover.png');
+    url('https://zoc-oec.github.io/images/Cover.png');
 
     background-size:cover;
     background-position:center;
@@ -139,113 +145,169 @@ body{
     align-items:center;
 }
 
+.hero::before{
+    content:'';
+
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at right,
+        rgba(0,194,255,0.15),
+        transparent 40%
+    );
+}
+
 .hero-content{
-    width:100%;
+    position:relative;
+    z-index:2;
+
     max-width:1400px;
+    width:100%;
+
     margin:auto;
-    padding:0 7%;
+    padding:0 6%;
 }
 
 .hero-left{
-    max-width:720px;
+    max-width:760px;
 }
 
 .hero-tag{
     color:#00c2ff;
-    font-size:0.95rem;
-    letter-spacing:2px;
+
     text-transform:uppercase;
-    margin-bottom:20px;
+    letter-spacing:2px;
+
+    font-size:0.9rem;
+
+    margin-bottom:22px;
 }
 
-.hero-left h1{
+.hero h1{
+    color:white;
+
     font-size:6rem;
-    color:white;
     font-weight:800;
+
     line-height:1;
-    margin-bottom:10px;
+
+    margin-bottom:12px;
 }
 
-.hero-left h2{
-    font-size:2.2rem;
-    color:white;
+.hero h2{
+    color:#dce7f5;
+
+    font-size:2.1rem;
     font-weight:300;
-    margin-bottom:30px;
+
+    margin-bottom:34px;
 }
 
 .hero-slogan{
-    font-size:1.4rem;
-    line-height:1.7;
-    color:#dce7f5;
+    color:#d7e6f5;
+
+    font-size:1.35rem;
+    line-height:1.8;
+
+    margin-bottom:42px;
+
     max-width:680px;
-    margin-bottom:40px;
 }
 
-.hero-btns{
+.hero-buttons{
     display:flex;
-    gap:20px;
+    gap:18px;
     flex-wrap:wrap;
 }
 
-.hero-btn-primary,
-.hero-btn-secondary{
+.btn-primary,
+.btn-secondary{
     padding:16px 34px;
-    border-radius:50px;
+
+    border-radius:60px;
+
     text-decoration:none;
+
     font-weight:600;
+
     transition:0.3s;
 }
 
-.hero-btn-primary{
+.btn-primary{
     background:linear-gradient(
-    135deg,
-    #00bfa5,
-    #0088ff
+        135deg,
+        #00bfa5,
+        #0088ff
     );
+
     color:white;
+
+    box-shadow:0 10px 30px rgba(0,136,255,0.25);
 }
 
-.hero-btn-primary:hover{
-    transform:translateY(-2px);
+.btn-primary:hover{
+    transform:translateY(-3px);
 }
 
-.hero-btn-secondary{
-    border:1px solid rgba(255,255,255,0.3);
+.btn-secondary{
     color:white;
+
+    border:1px solid rgba(255,255,255,0.25);
+
     backdrop-filter:blur(8px);
 }
 
-.hero-btn-secondary:hover{
+.btn-secondary:hover{
     background:rgba(255,255,255,0.08);
 }
 
-/* SECTION */
+/* =========================
+   GENERAL SECTION
+========================= */
 
 section{
-    padding:100px 7%;
+    padding:110px 6%;
 }
 
 .section-title{
     text-align:center;
-    font-size:2.7rem;
+
+    font-size:2.8rem;
     font-weight:800;
-    margin-bottom:60px;
-    color:#081b33;
+
+    margin-bottom:65px;
+
+    color:#071426;
 }
 
-/* ABOUT */
+/* =========================
+   ABOUT
+========================= */
 
 .about-grid{
+    max-width:1400px;
+    margin:auto;
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:28px;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap:30px;
 }
 
 .about-card{
     background:white;
-    padding:40px 32px;
+
     border-radius:28px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+
+    padding:42px 34px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.05);
+
     transition:0.3s;
 }
 
@@ -254,61 +316,96 @@ section{
 }
 
 .about-icon{
-    font-size:2.5rem;
-    margin-bottom:20px;
+    font-size:2.7rem;
+
+    margin-bottom:22px;
 }
 
 .about-card h3{
     font-size:1.4rem;
+
     margin-bottom:16px;
 }
 
 .about-card p{
-    color:#5c6b80;
-    line-height:1.7;
+    color:#5f6f82;
+
+    line-height:1.8;
 }
 
-/* IMPACT */
+/* =========================
+   IMPACT
+========================= */
 
 .impact-section{
     padding-top:20px;
 }
 
-.impact-grid{
-    background:#071426;
-    border-radius:32px;
-    padding:50px;
+.impact-box{
+    max-width:1400px;
+    margin:auto;
+
+    background:
+    linear-gradient(
+        135deg,
+        #071426,
+        #0c2340
+    );
+
+    border-radius:34px;
+
+    padding:60px;
 
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:30px;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:40px;
+
     text-align:center;
 }
 
 .impact-item h2{
     color:#00c2ff;
-    font-size:3rem;
+
+    font-size:3.2rem;
+
     margin-bottom:12px;
 }
 
 .impact-item p{
-    color:#d9e6f2;
+    color:#d7e6f5;
+
     font-size:1.1rem;
 }
 
-/* RESEARCH */
+/* =========================
+   RESEARCH
+========================= */
 
 .research-grid{
+    max-width:1400px;
+    margin:auto;
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
     gap:30px;
 }
 
 .research-card{
     background:white;
+
     border-radius:28px;
+
     overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,0.06);
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.06);
+
     transition:0.3s;
 }
 
@@ -319,85 +416,188 @@ section{
 .research-card img{
     width:100%;
     height:220px;
+
     object-fit:cover;
 }
 
 .research-content{
-    padding:28px;
+    padding:30px;
 }
 
 .research-content h3{
     margin-bottom:14px;
-    font-size:1.4rem;
+
+    font-size:1.35rem;
 }
 
 .research-content p{
-    line-height:1.7;
-    color:#5c6b80;
+    line-height:1.8;
+
+    color:#5f6f82;
 }
 
-/* CTA */
+/* =========================
+   CTA
+========================= */
+
+.cta-section{
+    padding-top:40px;
+}
 
 .cta-box{
+    max-width:1400px;
+    margin:auto;
+
     background:
     linear-gradient(
-    135deg,
-    #071426,
-    #0c2340
+        135deg,
+        #071426,
+        #0c2340
     );
 
-    border-radius:32px;
+    border-radius:34px;
 
     padding:60px;
 
     display:flex;
     justify-content:space-between;
     align-items:center;
-    gap:30px;
+    gap:40px;
+
     flex-wrap:wrap;
 }
 
 .cta-box h2{
     color:white;
-    font-size:2.2rem;
+
+    font-size:2.3rem;
+
     margin-bottom:16px;
 }
 
 .cta-box p{
     color:#d7e6f5;
+
     font-size:1.1rem;
 }
 
-/* MOBILE */
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    text-align:center;
+
+    padding:50px 20px;
+
+    color:#6f7f92;
+
+    font-size:0.92rem;
+}
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:768px){
 
-    .hero-left h1{
+    .nav-container{
+        flex-direction:column;
+        gap:18px;
+    }
+
+    .nav-links{
+        gap:20px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero{
+        min-height:700px;
+    }
+
+    .hero h1{
         font-size:4rem;
     }
 
-    .hero-left h2{
+    .hero h2{
         font-size:1.5rem;
     }
 
     .hero-slogan{
-        font-size:1.1rem;
+        font-size:1.05rem;
     }
 
     .section-title{
         font-size:2rem;
     }
 
+    .impact-box{
+        padding:40px 30px;
+    }
+
     .cta-box{
         padding:40px 30px;
     }
 
-}
-        
-<!-- HERO SECTION -->
-<section class="hero-new">
+    .cta-box h2{
+        font-size:1.8rem;
+    }
 
-    <div class="hero-overlay"></div>
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+    <div class="nav-container">
+
+        <div class="logo">
+
+            <a href="/">
+
+                <img src="/images/icon.png" alt="Logo">
+
+                <div class="logo-text">
+
+                    <span class="logo-main">
+                        ZOC-OEC
+                    </span>
+
+                    <span class="logo-sub">
+                        Ocular Epidemiology Consortium
+                    </span>
+
+                </div>
+
+            </a>
+
+        </div>
+
+        <ul class="nav-links">
+
+            <li><a href="/">Home</a></li>
+
+            <li><a href="/team.html">Team</a></li>
+
+            <li><a href="/publications.html">Publications</a></li>
+
+            <li><a href="/data_access.html">Data Access</a></li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+<!-- HERO -->
+
+<section class="hero">
 
     <div class="hero-content">
 
@@ -416,18 +616,22 @@ section{
             </h2>
 
             <p class="hero-slogan">
+
                 Advancing Precision Ophthalmology Through
                 Longitudinal Population Research
+
             </p>
 
-            <div class="hero-btns">
-                <a href="#research" class="hero-btn-primary">
+            <div class="hero-buttons">
+
+                <a href="#research" class="btn-primary">
                     Explore Research
                 </a>
 
-                <a href="/publications.html" class="hero-btn-secondary">
+                <a href="/publications.html" class="btn-secondary">
                     Publications
                 </a>
+
             </div>
 
         </div>
@@ -437,7 +641,8 @@ section{
 </section>
 
 <!-- ABOUT -->
-<section class="about-section">
+
+<section>
 
     <div class="section-title">
         About ZOC-OEC
@@ -446,35 +651,51 @@ section{
     <div class="about-grid">
 
         <div class="about-card">
+
             <div class="about-icon">📊</div>
+
             <h3>Longitudinal Cohorts</h3>
+
             <p>
-                20+ years of population-based ocular epidemiology studies.
+                20+ years of population-based ocular epidemiology studies with extensive follow-up.
             </p>
+
         </div>
 
         <div class="about-card">
+
             <div class="about-icon">🧠</div>
+
             <h3>AI & Risk Prediction</h3>
+
             <p>
-                Dynamic modeling and multimodal AI for disease progression.
+                Dynamic modeling and multimodal AI for disease progression and prediction.
             </p>
+
         </div>
 
         <div class="about-card">
+
             <div class="about-icon">🌍</div>
+
             <h3>Global Collaboration</h3>
+
             <p>
-                International collaborative network in vision science.
+                International collaborative network advancing translational vision science.
             </p>
+
         </div>
 
         <div class="about-card">
+
             <div class="about-icon">🔬</div>
+
             <h3>Translational Impact</h3>
+
             <p>
-                Bridging epidemiology, imaging and clinical ophthalmology.
+                Integrating epidemiology, retinal imaging, AI and clinical ophthalmology.
             </p>
+
         </div>
 
     </div>
@@ -482,28 +703,41 @@ section{
 </section>
 
 <!-- IMPACT -->
+
 <section class="impact-section">
 
-    <div class="impact-grid">
+    <div class="impact-box">
 
         <div class="impact-item">
+
             <h2>80,000+</h2>
+
             <p>Participants</p>
+
         </div>
 
         <div class="impact-item">
+
             <h2>20+</h2>
+
             <p>Years Follow-up</p>
+
         </div>
 
         <div class="impact-item">
+
             <h2>10M+</h2>
+
             <p>Retinal Images</p>
+
         </div>
 
         <div class="impact-item">
+
             <h2>8</h2>
+
             <p>Population Cohorts</p>
+
         </div>
 
     </div>
@@ -511,7 +745,8 @@ section{
 </section>
 
 <!-- RESEARCH -->
-<section class="research-section" id="research">
+
+<section id="research">
 
     <div class="section-title">
         Research Focus
@@ -520,43 +755,67 @@ section{
     <div class="research-grid">
 
         <div class="research-card">
+
             <img src="/images/pacg.jpg">
+
             <div class="research-content">
+
                 <h3>PACG Progression</h3>
+
                 <p>
                     Dynamic risk prediction and longitudinal angle-closure analysis.
                 </p>
+
             </div>
+
         </div>
 
         <div class="research-card">
+
             <img src="/images/retina.jpg">
+
             <div class="research-content">
+
                 <h3>Retinal Biomarkers</h3>
+
                 <p>
                     RNFL and retinal imaging biomarkers for systemic diseases.
                 </p>
+
             </div>
+
         </div>
 
         <div class="research-card">
+
             <img src="/images/ai.jpg">
+
             <div class="research-content">
+
                 <h3>AI Ophthalmology</h3>
+
                 <p>
                     Foundation AI and multimodal deep learning for eye diseases.
                 </p>
+
             </div>
+
         </div>
 
         <div class="research-card">
+
             <img src="/images/population.jpg">
+
             <div class="research-content">
+
                 <h3>Population Eye Health</h3>
+
                 <p>
                     Large-scale epidemiological research for vision health.
                 </p>
+
             </div>
+
         </div>
 
     </div>
@@ -564,11 +823,13 @@ section{
 </section>
 
 <!-- CTA -->
+
 <section class="cta-section">
 
     <div class="cta-box">
 
         <div>
+
             <h2>
                 Together, We Advance Vision Science
             </h2>
@@ -576,9 +837,10 @@ section{
             <p>
                 Data-driven discovery through global collaboration.
             </p>
+
         </div>
 
-        <a href="/data_access.html" class="hero-btn-primary">
+        <a href="/data_access.html" class="btn-primary">
             Collaboration Inquiry
         </a>
 
@@ -586,28 +848,13 @@ section{
 
 </section>
 
-<script>
-    (function() {
-        let currentPath = window.location.pathname;
-        if (currentPath === '' || currentPath === '/' || currentPath === '/index.html') {
-            currentPath = '/';
-        } else {
-            if (currentPath.endsWith('/')) {
-                currentPath = currentPath.slice(0, -1);
-            }
-        }
-        const navLinks = document.querySelectorAll('.nav-links a');
-        navLinks.forEach(link => {
-            let href = link.getAttribute('href');
-            if (!href || href === '#' || href.startsWith('javascript:')) return;
-            let linkPath = href;
-            if (!linkPath.startsWith('/')) linkPath = '/' + linkPath;
-            if (linkPath.endsWith('/') && linkPath !== '/') linkPath = linkPath.slice(0, -1);
-            let isMatch = (currentPath === linkPath);
-            if (currentPath === '/' && linkPath === '/') isMatch = true;
-            if (isMatch) link.classList.add('current-page');
-        });
-    })();
-</script>
+<!-- FOOTER -->
+
+<footer>
+
+    © 2025 ZOC-OEC — Zhongshan Ophthalmic Center, Sun Yat-sen University
+
+</footer>
+
 </body>
 </html>
