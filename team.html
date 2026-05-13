@@ -138,15 +138,15 @@ body {
     font-size: 1.2rem;
     line-height: 1.9;
 }
-/* 全局 section 默认样式 */
+/* 全局 section 默认样式 - 减少上下内边距 */
 section {
-    padding: 100px 6%;
+    padding: 60px 6%; /* 原100px 改为 60px */
 }
 .section-title {
     text-align: center;
     font-size: 2.8rem;
     font-weight: 800;
-    margin-bottom: 60px;
+    margin-bottom: 40px; /* 原60px 改为 40px */
     color: #071426;
 }
 /* 领导区域 */
@@ -155,10 +155,10 @@ section {
     margin: auto;
     background: linear-gradient(135deg, #071426, #0c2340);
     border-radius: 34px;
-    padding: 50px;
+    padding: 40px; /* 原50px 改为 40px */
     display: grid;
     grid-template-columns: 320px 1fr;
-    gap: 50px;
+    gap: 40px; /* 原50px 改为 40px */
     align-items: center;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
@@ -176,19 +176,19 @@ section {
 .leader-role {
     color: #00c2ff;
     font-size: 1.3rem;
-    margin-bottom: 24px;
+    margin-bottom: 20px; /* 原24px 改为 20px */
 }
 .leader-text {
     color: #d7e6f5;
-    line-height: 1.9;
+    line-height: 1.8;
     font-size: 1.05rem;
-    margin-bottom: 30px;
+    margin-bottom: 25px; /* 原30px 改为 25px */
 }
 .leader-metrics {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 24px;
-    margin-top: 30px;
+    gap: 20px; /* 原24px 改为 20px */
+    margin-top: 20px; /* 原30px 改为 20px */
 }
 .metric h3 {
     color: #00c2ff;
@@ -201,7 +201,7 @@ section {
 /* ---------- 团队卡片 (底部链接对齐) ---------- */
 .team-row {
     max-width: 1400px;
-    margin: 0 auto 40px auto;
+    margin: 0 auto 20px auto; /* 原40px 改为 20px */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -311,13 +311,13 @@ section {
     color: white;
     transform: translateY(-3px);
 }
-/* CTA 区域 */
+/* CTA 区域 - 保持原有间距，但可适当压缩 */
 .cta-box {
     max-width: 1400px;
     margin: auto;
     background: linear-gradient(135deg, #071426, #0c2340);
     border-radius: 34px;
-    padding: 60px;
+    padding: 50px; /* 原60px 改为 50px */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -359,11 +359,14 @@ footer {
     .hero-content h1 { font-size: 3.5rem; }
     .hero-highlight { font-size: 1.2rem; }
     .hero-desc { font-size: 1rem; }
-    .section-title { font-size: 2rem; }
+    .section-title { font-size: 2rem; margin-bottom: 30px; }
     .leader-content h2 { font-size: 2.2rem; }
-    .leader-card { padding: 35px; }
-    .cta-box { padding: 40px 30px; }
+    .leader-card { padding: 30px; }
+    .cta-box { padding: 30px; }
     .tags { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    section {
+        padding: 40px 6%; /* 移动端进一步减少 */
+    }
 }
 </style>
 </head>
