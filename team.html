@@ -98,15 +98,17 @@ body {
 .team-hero {
     position: relative;
     width: 100%;
-    min-height: 600px;  /* 增加高度，保证地图可显示 */
-    padding-top: 80px;  /* 给固定导航栏腾出空间 */
+    min-height: 600px; /* 保证足够高度 */
     display: flex;
-    align-items: center;   /* 文字居中显示，不挡地图 */
-    justify-content: flex-start;
-    background: url('/images/team-bg.jpg') no-repeat top center;
-    background-size: cover; /* 填充Hero区域，保持比例 */
+    align-items: flex-end; 
+    justify-content: center;
+    background: url('/images/team-bg.jpg') no-repeat;
+    background-size: cover;
+    /* 关键修改：背景从顶部下移 80px */
+    background-position: center 80px; 
     z-index: 1;
     overflow: hidden;
+    padding-top: 0; /* 去掉之前padding-top，避免重复 */
 }
 
 /* 遮罩层，保证文字可读 */
