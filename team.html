@@ -95,22 +95,25 @@ body {
 .nav-links a.current-page::after {
     width: 100%;
 }
-/* HERO - 蒙版透明度降低 */
+/* HERO - 图片完整显示，高度紧凑 */
 .team-hero {
     position: relative;
-    height: 70vh;
-    min-height: 600px;
+    width: 100%;
     background: linear-gradient(rgba(4, 10, 24, 0.55), rgba(4, 10, 24, 0.60)), url('/images/team-bg.jpg');
-    background-size: cover;
+    background-size: contain;      /* 完整显示图片，不裁剪 */
+    background-repeat: no-repeat;
     background-position: center;
     display: flex;
     align-items: center;
+    aspect-ratio: 16 / 6;          /* 更窄的比例，图片完整且下方不空 */
+    min-height: 360px;             /* 保证最小的舒适高度 */
 }
 .team-hero::before {
     content: '';
     position: absolute;
     inset: 0;
     background: radial-gradient(circle at right, rgba(0, 194, 255, 0.12), transparent 40%);
+    pointer-events: none;
 }
 .hero-content {
     position: relative;
@@ -140,13 +143,13 @@ body {
 }
 /* 全局 section 默认样式 - 减少上下内边距 */
 section {
-    padding: 60px 6%; /* 原100px 改为 60px */
+    padding: 60px 6%;
 }
 .section-title {
     text-align: center;
     font-size: 2.8rem;
     font-weight: 800;
-    margin-bottom: 40px; /* 原60px 改为 40px */
+    margin-bottom: 40px;
     color: #071426;
 }
 /* 领导区域 */
@@ -155,10 +158,10 @@ section {
     margin: auto;
     background: linear-gradient(135deg, #071426, #0c2340);
     border-radius: 34px;
-    padding: 40px; /* 原50px 改为 40px */
+    padding: 40px;
     display: grid;
     grid-template-columns: 320px 1fr;
-    gap: 40px; /* 原50px 改为 40px */
+    gap: 40px;
     align-items: center;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
@@ -176,19 +179,19 @@ section {
 .leader-role {
     color: #00c2ff;
     font-size: 1.3rem;
-    margin-bottom: 20px; /* 原24px 改为 20px */
+    margin-bottom: 20px;
 }
 .leader-text {
     color: #d7e6f5;
     line-height: 1.8;
     font-size: 1.05rem;
-    margin-bottom: 25px; /* 原30px 改为 25px */
+    margin-bottom: 25px;
 }
 .leader-metrics {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 20px; /* 原24px 改为 20px */
-    margin-top: 20px; /* 原30px 改为 20px */
+    gap: 20px;
+    margin-top: 20px;
 }
 .metric h3 {
     color: #00c2ff;
@@ -198,10 +201,10 @@ section {
 .metric p {
     color: #d7e6f5;
 }
-/* ---------- 团队卡片 (底部链接对齐) ---------- */
+/* 团队卡片 */
 .team-row {
     max-width: 1400px;
-    margin: 0 auto 20px auto; /* 原40px 改为 20px */
+    margin: 0 auto 20px auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -227,20 +230,17 @@ section {
     transform: translateY(-8px);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
 }
-/* 图片区域 */
 .team-card img {
     width: 100%;
     height: 280px;
     object-fit: cover;
     background: #eef2f8;
 }
-/* 单独调整每个人的垂直位置（使头部完整） */
 .img-huang { object-position: 50% 15%; }
 .img-chen { object-position: 50% 20%; }
-.img-gao  { object-position: 50% 35%; }   /* 高信博单独下移 */
+.img-gao  { object-position: 50% 35%; }
 .img-he   { object-position: 50% 25%; }
 .img-cheng{ object-position: 50% 20%; }
-
 .team-info {
     padding: 28px;
     flex: 1;
@@ -272,23 +272,7 @@ section {
     text-decoration: none;
     font-size: 0.95rem;
 }
-/* 响应式 */
-@media (max-width: 900px) {
-    .team-card, .team-row .team-card {
-        width: calc(50% - 15px);
-    }
-    .team-row.two-cols .team-card {
-        width: calc(100% - 30px);
-        max-width: 400px;
-    }
-}
-@media (max-width: 600px) {
-    .team-card, .team-row .team-card {
-        width: 100%;
-        max-width: 400px;
-    }
-}
-/* 研究区域 - 两行四列网格 */
+/* 研究区域 - 两行四列 */
 .tags {
     max-width: 1000px;
     margin: 0 auto;
@@ -311,13 +295,13 @@ section {
     color: white;
     transform: translateY(-3px);
 }
-/* CTA 区域 - 保持原有间距，但可适当压缩 */
+/* CTA 区域 */
 .cta-box {
     max-width: 1400px;
     margin: auto;
     background: linear-gradient(135deg, #071426, #0c2340);
     border-radius: 34px;
-    padding: 50px; /* 原60px 改为 50px */
+    padding: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -349,7 +333,15 @@ footer {
     color: #6f7f92;
     font-size: 0.92rem;
 }
+/* 响应式 */
 @media (max-width: 900px) {
+    .team-card, .team-row .team-card {
+        width: calc(50% - 15px);
+    }
+    .team-row.two-cols .team-card {
+        width: calc(100% - 30px);
+        max-width: 400px;
+    }
     .leader-card { grid-template-columns: 1fr; }
     .leader-photo { max-width: 320px; margin: auto; }
 }
@@ -364,8 +356,13 @@ footer {
     .leader-card { padding: 30px; }
     .cta-box { padding: 30px; }
     .tags { grid-template-columns: repeat(2, 1fr); gap: 15px; }
-    section {
-        padding: 40px 6%; /* 移动端进一步减少 */
+    section { padding: 40px 6%; }
+    .team-hero { aspect-ratio: 16 / 5; min-height: 300px; }
+}
+@media (max-width: 600px) {
+    .team-card, .team-row .team-card {
+        width: 100%;
+        max-width: 400px;
     }
 }
 </style>
@@ -393,7 +390,7 @@ footer {
     </div>
 </div>
 
-<!-- Hero -->
+<!-- Hero 区域（图片完整，高度紧凑） -->
 <section class="team-hero">
     <div class="hero-content">
         <h1>Meet the Team</h1>
@@ -421,7 +418,7 @@ footer {
     </div>
 </section>
 
-<!-- Core Research Team (去掉上方空白) -->
+<!-- Core Research Team（紧凑） -->
 <section style="padding-top: 20px;">
     <div class="section-title">Core Research Team</div>
 
