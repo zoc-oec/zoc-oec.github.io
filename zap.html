@@ -2,86 +2,126 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZAP Cohort Publications - ZOC Ocular Epidemiology Consortium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        body, html {
-            width: 100%;
-            overflow-x: hidden;
-            background-color: #ffffff;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        html {
             scroll-behavior: smooth;
         }
+        body {
+            background: #f4f7fb;
+            color: #0a192f;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
 
-        /* 导航栏（与首页完全一致，无额外gap，避免高度变化） */
+        /* =========================  NAVBAR (与 index 完全一致)  ========================= */
         .navbar {
-            position: sticky;
+            position: fixed;
             top: 0;
             width: 100%;
-            background-color: rgba(10, 20, 40, 0.85);
-            backdrop-filter: blur(6px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            background: rgba(5, 12, 28, 0.75);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
         }
         .nav-container {
             max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 5%;
+            margin: auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            min-height: 64px;
-            flex-wrap: wrap;
+            padding: 18px 6%;
         }
         .logo a {
-            color: #00bfa5;
-            font-size: 1.5rem;
-            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 14px;
             text-decoration: none;
+        }
+        .logo img {
+            width: 42px;
+            height: 42px;
+        }
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .logo-main {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+        .logo-sub {
+            color: #b8c7da;
+            font-size: 0.72rem;
+            letter-spacing: 0.5px;
         }
         .nav-links {
             display: flex;
-            gap: 2rem;
             list-style: none;
+            gap: 34px;
         }
-        .nav-links li a {
-            color: #f0f0f0;
+        .nav-links a {
             text-decoration: none;
+            color: white;
             font-weight: 500;
-            transition: color 0.2s;
+            transition: 0.3s;
+            position: relative;
         }
-        .nav-links li a:hover {
-            color: #00bfa5;
+        .nav-links a:hover {
+            color: #00c2ff;
         }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 0%;
+            height: 2px;
+            background: #00c2ff;
+            transition: 0.3s;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .nav-links a.current-page {
+            color: #00c2ff !important;
+        }
+        .nav-links a.current-page::after {
+            width: 100% !important;
+        }
+
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
-                padding: 12px 5%;
+                gap: 18px;
             }
             .nav-links {
-                gap: 1rem;
+                gap: 20px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
         }
 
-        /* 主要内容容器 */
+        /* =========================  页面内容样式  ========================= */
         .page-content {
             max-width: 1100px;
-            margin: 50px auto;
-            padding: 30px 40px;
+            margin: 100px auto 50px auto;
+            padding: 40px;
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+            border-radius: 28px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
-
-        /* 顶部 flex 区域：左队名+图标，右返回按钮 */
         .cohort-header {
             display: flex;
             justify-content: space-between;
@@ -123,14 +163,11 @@
             color: white;
             text-decoration: none;
         }
-
-        /* 正文段落说明 */
         .cohort-description {
             margin-bottom: 2rem;
             color: #1e2a3a;
             line-height: 1.6;
         }
-
         h2 {
             color: #1e3a5f;
             font-size: 1.6rem;
@@ -138,7 +175,6 @@
             padding-bottom: 0.3rem;
             border-bottom: 2px solid #e9ecef;
         }
-
         .pub-list {
             list-style: none;
             margin-left: 0;
@@ -156,20 +192,18 @@
         .pub-list a:hover {
             text-decoration: underline;
         }
-
         footer {
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 20px;
             color: #6c757d;
             font-size: 0.85rem;
             border-top: 1px solid #e9ecef;
             margin-top: 30px;
         }
-
         @media (max-width: 768px) {
             .page-content {
-                margin: 20px;
-                padding: 20px;
+                margin: 100px 20px 30px 20px;
+                padding: 25px;
             }
             .cohort-title h1 {
                 font-size: 1.5rem;
@@ -185,15 +219,23 @@
 </head>
 <body>
 
+<!-- 导航栏（完全同 index） -->
 <div class="navbar">
     <div class="nav-container">
-        <div class="logo"><a href="/">ZOC‑OEC</a></div>
+        <div class="logo">
+            <a href="/">
+                <img src="/images/icon.png" alt="Logo">
+                <div class="logo-text">
+                    <span class="logo-main">ZOC-OEC</span>
+                    <span class="logo-sub">Ocular Epidemiology Consortium</span>
+                </div>
+            </a>
+        </div>
         <ul class="nav-links">
             <li><a href="/">Home</a></li>
             <li><a href="/team.html">Team</a></li>
             <li><a href="/publications.html">Publications</a></li>
             <li><a href="/data_access.html">Data Access</a></li>
-            <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
 </div>
@@ -265,8 +307,29 @@
 </div>
 
 <footer>
-    &copy; 2025 ZOC Ocular Epidemiology Consortium — Zhongshan Ophthalmic Center, Sun Yat-sen University
+    © 2025 ZOC-OEC — Zhongshan Ophthalmic Center, Sun Yat-sen University
 </footer>
+
+<script>
+    (function() {
+        let currentPath = window.location.pathname;
+        if (currentPath === '' || currentPath === '/' || currentPath === '/index.html') {
+            currentPath = '/';
+        } else {
+            if (currentPath.endsWith('/')) currentPath = currentPath.slice(0, -1);
+        }
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
+            let href = link.getAttribute('href');
+            if (!href || href === '#' || href.startsWith('javascript:')) return;
+            let linkPath = href;
+            if (!linkPath.startsWith('/')) linkPath = '/' + linkPath;
+            if (linkPath.endsWith('/') && linkPath !== '/') linkPath = linkPath.slice(0, -1);
+            let isMatch = (currentPath === linkPath) || (currentPath === '/' && linkPath === '/');
+            if (isMatch) link.classList.add('current-page');
+        });
+    })();
+</script>
 
 </body>
 </html>
