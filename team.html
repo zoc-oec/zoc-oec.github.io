@@ -95,12 +95,12 @@ body {
 .nav-links a.current-page::after {
     width: 100%;
 }
-/* HERO */
+/* HERO - 蒙版透明度降低 */
 .team-hero {
     position: relative;
     height: 70vh;
     min-height: 600px;
-    background: linear-gradient(rgba(4, 10, 24, 0.85), rgba(4, 10, 24, 0.88)), url('/images/team-bg.jpg');
+    background: linear-gradient(rgba(4, 10, 24, 0.55), rgba(4, 10, 24, 0.60)), url('/images/team-bg.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -110,7 +110,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at right, rgba(0, 194, 255, 0.18), transparent 40%);
+    background: radial-gradient(circle at right, rgba(0, 194, 255, 0.12), transparent 40%);
 }
 .hero-content {
     position: relative;
