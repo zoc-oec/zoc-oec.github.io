@@ -96,50 +96,33 @@ body {
     width: 100%;
 }
 /* HERO - 图片完整显示，高度紧凑 */
+/* HERO - 图片完整显示，高度紧凑 */
 .team-hero {
     position: relative;
     width: 100%;
     background: linear-gradient(rgba(4, 10, 24, 0.55), rgba(4, 10, 24, 0.60)), url('/images/team-bg.jpg');
-    background-size: contain;      /* 完整显示图片，不裁剪 */
+    background-size: cover;       /* 改为 cover，让图片填充但不拉伸比例 */
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top center; /* 保持顶部可见 */
     display: flex;
-    align-items: center;
-    aspect-ratio: 16 / 6;          /* 更窄的比例，图片完整且下方不空 */
-    min-height: 360px;             /* 保证最小的舒适高度 */
+    align-items: flex-end;        /* 内容在底部 */
+    min-height: 500px;            /* 可调节最小高度 */
 }
-.team-hero::before {
+
+/* 去掉多余横线 */
+.team-hero::after {
     content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at right, rgba(0, 194, 255, 0.12), transparent 40%);
-    pointer-events: none;
+    display: none;
 }
+
+/* Hero 内容内边距 */
 .hero-content {
     position: relative;
     z-index: 2;
     max-width: 1400px;
     width: 100%;
     margin: auto;
-    padding: 0 6%;
-}
-.hero-content h1 {
-    color: white;
-    font-size: 5rem;
-    font-weight: 800;
-    margin-bottom: 20px;
-}
-.hero-highlight {
-    color: #00c2ff;
-    font-size: 1.6rem;
-    font-style: italic;
-    margin-bottom: 28px;
-}
-.hero-desc {
-    max-width: 720px;
-    color: #d7e6f5;
-    font-size: 1.2rem;
-    line-height: 1.9;
+    padding: 40px 6%; /* 可调节 */
 }
 /* 全局 section 默认样式 - 减少上下内边距 */
 section {
