@@ -95,40 +95,36 @@ body {
 .nav-links a.current-page::after {
     width: 100%;
 }
-/* Hero 区域调整：保证地图不被导航栏挡住 */
 .team-hero {
     position: relative;
     width: 100%;
-    min-height: 500px;                 /* 高度保证地图完整显示，可根据屏幕调 */
+    min-height: 600px;  /* 增加高度，保证地图可显示 */
+    padding-top: 80px;  /* 给固定导航栏腾出空间 */
     display: flex;
-    align-items: flex-end;             /* 文字靠下 */
-    justify-content: center;
-    background: url('/images/team-bg.jpg') no-repeat center top;
-    background-size: cover;            /* 填充容器，保持比例 */
+    align-items: center;   /* 文字居中显示，不挡地图 */
+    justify-content: flex-start;
+    background: url('/images/team-bg.jpg') no-repeat top center;
+    background-size: cover; /* 填充Hero区域，保持比例 */
     z-index: 1;
     overflow: hidden;
-
-    /* 新增：上内边距给固定导航栏腾位置 */
-    padding-top: 80px;                 /* 如果导航栏是 70px 左右，可以调成 80px */
 }
 
-/* 遮罩层保证文字可读 */
+/* 遮罩层，保证文字可读 */
 .team-hero::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(4, 10, 24, 0.65), rgba(4, 10, 24, 0.2));
+    background: linear-gradient(to top, rgba(4,10,24,0.65), rgba(4,10,24,0.2));
     z-index: 1;
 }
 
-/* Hero 文本 */
 .hero-content {
     position: relative;
     z-index: 2;
     max-width: 1400px;
     width: 100%;
     padding: 0 6%;
-    text-align: left;
+    text-align: left;   /* 可改为center */
 }
 .hero-content h1 {
     color: white;
