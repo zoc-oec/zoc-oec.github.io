@@ -14,20 +14,20 @@
         body, html {
             width: 100%;
             overflow-x: hidden;
-            background-color: #ffffff;
+            background-color: #f4f7fb;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             scroll-behavior: smooth;
         }
 
-        /* 导航栏 —— 与 index.html 完全一致 */
+        /* 导航栏（与首页/团队/出版页统一） */
         .navbar {
             position: sticky;
             top: 0;
             width: 100%;
-            background-color: rgba(10, 20, 40, 0.85);
-            backdrop-filter: blur(6px);
+            background: rgba(5, 12, 28, 0.85);
+            backdrop-filter: blur(12px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
         }
         .nav-container {
             max-width: 1400px;
@@ -40,10 +40,31 @@
             flex-wrap: wrap;
         }
         .logo a {
-            color: #00bfa5;
-            font-size: 1.5rem;
-            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
             text-decoration: none;
+        }
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .logo-main {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        .logo-sub {
+            color: #b8c7da;
+            font-size: 0.7rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
         }
         .nav-links {
             display: flex;
@@ -54,24 +75,44 @@
             color: #f0f0f0;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.2s;
+            transition: all 0.3s ease;
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
         }
         .nav-links li a:hover {
-            color: #00bfa5;
+            color: #00c2ff;
+            border-bottom-color: #00c2ff;
+        }
+        /* 当前页面高亮样式（常亮） */
+        .nav-links li a.current-page {
+            color: #00c2ff !important;
+            border-bottom: 2px solid #00c2ff !important;
         }
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
                 padding: 12px 5%;
             }
+            .logo a {
+                flex-direction: column;
+                text-align: center;
+                gap: 6px;
+            }
+            .logo-text {
+                align-items: center;
+            }
+            .logo-sub {
+                white-space: normal;
+                font-size: 0.65rem;
+            }
             .nav-links {
                 gap: 1rem;
                 justify-content: center;
-                flex-wrap: wrap;  /* 移动端允许换行 */
+                flex-wrap: wrap;
             }
         }
 
-        /* 页面主容器（保持不变） */
+        /* 页面主容器（保留原有样式） */
         .page-content {
             max-width: 1000px;
             margin: 50px auto;
@@ -154,15 +195,23 @@
 </head>
 <body>
 
+<!-- 导航栏 -->
 <div class="navbar">
     <div class="nav-container">
-        <div class="logo"><a href="/">ZOC‑OEC</a></div>
+        <div class="logo">
+            <a href="/">
+                <img src="/images/icon.png" alt="ZOC-OEC Logo">
+                <div class="logo-text">
+                    <span class="logo-main">ZOC‑OEC</span>
+                    <span class="logo-sub">Ocular Epidemiology Consortium</span>
+                </div>
+            </a>
+        </div>
         <ul class="nav-links">
             <li><a href="/">Home</a></li>
             <li><a href="/team.html">Team</a></li>
             <li><a href="/publications.html">Publications</a></li>
             <li><a href="/data_access.html">Data Access</a></li>
-            <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
 </div>
@@ -193,5 +242,28 @@
     &copy; 2025 ZOC Ocular Epidemiology Consortium — Zhongshan Ophthalmic Center, Sun Yat-sen University
 </footer>
 
+<script>
+    (function() {
+        let currentPath = window.location.pathname;
+        if (currentPath === '' || currentPath === '/' || currentPath === '/index.html') {
+            currentPath = '/';
+        } else {
+            if (currentPath.endsWith('/')) {
+                currentPath = currentPath.slice(0, -1);
+            }
+        }
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
+            let href = link.getAttribute('href');
+            if (!href || href === '#' || href.startsWith('javascript:')) return;
+            let linkPath = href;
+            if (!linkPath.startsWith('/')) linkPath = '/' + linkPath;
+            if (linkPath.endsWith('/') && linkPath !== '/') linkPath = linkPath.slice(0, -1);
+            let isMatch = (currentPath === linkPath);
+            if (currentPath === '/' && linkPath === '/') isMatch = true;
+            if (isMatch) link.classList.add('current-page');
+        });
+    })();
+</script>
 </body>
 </html>
