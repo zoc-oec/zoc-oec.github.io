@@ -23,7 +23,7 @@
             overflow-x: hidden;
         }
 
-        /* =========================  NAVBAR (与 index 完全一致)  ========================= */
+        /* =========================  NAVBAR (与 Home 完全一致)  ========================= */
         .navbar {
             position: fixed;
             top: 0;
@@ -189,7 +189,6 @@
 </head>
 <body>
 
-<!-- 导航栏（完全同 index） -->
 <div class="navbar">
     <div class="nav-container">
         <div class="logo">
@@ -205,7 +204,7 @@
             <li><a href="/">Home</a></li>
             <li><a href="/team.html">Team</a></li>
             <li><a href="/publications.html">Publications</a></li>
-            <li><a href="/data_access.html">Data Access</a></li>
+            <li><a href="/data_access.html" class="current-page">Data Access</a></li>
         </ul>
     </div>
 </div>
@@ -237,7 +236,7 @@
 </footer>
 
 <script>
-    // 高亮当前页面导航
+    // 高亮当前页面导航 (作为备用)
     (function() {
         let currentPath = window.location.pathname;
         if (currentPath === '' || currentPath === '/' || currentPath === '/index.html') {
