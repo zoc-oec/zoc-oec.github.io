@@ -106,7 +106,6 @@ body {
     display: flex;
     align-items: flex-end; 
     justify-content: center;
-    /* 已修复底边灰框：cover 填满，加上深色底色 */
     background: #040a18 url('/images/team-bg.jpg') no-repeat center center;
     background-size: cover; 
     z-index: 1;
@@ -125,7 +124,6 @@ body {
     z-index: 2;
     max-width: 1400px;
     width: 100%;
-    /* 已修复文字靠下：增加底部 padding */
     padding: 0 6% 80px; 
     text-align: left;
 }
@@ -182,7 +180,7 @@ section {
     border-radius: 24px;
     padding: 40px 50px;
     display: flex;
-    gap: 50px;
+    gap: 40px; /* 稍微缩小缝隙以便给右侧让空间 */
     align-items: center;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
@@ -190,17 +188,18 @@ section {
     flex-shrink: 0;
 }
 .leader-photo img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%; /* 圆形头像 */
+    /* 头像调大 */
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
     object-fit: cover;
     object-position: center 20%;
     border: 4px solid rgba(255, 255, 255, 0.1);
 }
 .leader-info {
-    flex: 1;
+    flex: 0.85; /* 修改比例：让左侧变窄，竖线左移 */
     border-right: 1px solid rgba(255, 255, 255, 0.1);
-    padding-right: 40px;
+    padding-right: 30px;
 }
 .leader-info h3 {
     color: white;
@@ -244,8 +243,18 @@ section {
     width: 20px;
     text-align: center;
 }
+/* 联系方式超链接样式 */
+.leader-contacts a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.leader-contacts a:hover {
+    color: #00c2ff;
+}
+
 .leader-stats-col {
-    flex: 1;
+    flex: 1.15; /* 修改比例：让右侧区域变宽，防止堆叠 */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -258,7 +267,8 @@ section {
 }
 .leader-metrics-grid {
     display: flex;
-    gap: 30px;
+    justify-content: space-between; /* 均匀分布空间 */
+    gap: 15px; 
 }
 .metric-item {
     display: flex;
@@ -287,7 +297,7 @@ section {
     max-width: 1400px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5列等宽 */
+    grid-template-columns: repeat(5, 1fr); 
     gap: 25px;
 }
 .team-card {
@@ -306,7 +316,7 @@ section {
 }
 .team-card img {
     width: 100%;
-    aspect-ratio: 1 / 1; /* 正方形图片 */
+    aspect-ratio: 1 / 1; 
     object-fit: cover;
     background: #eef2f8;
 }
@@ -441,7 +451,7 @@ footer {
     .leader-card { flex-direction: column; text-align: center; gap: 30px; }
     .leader-info { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding-right: 0; padding-bottom: 30px; }
     .leader-info h3, .leader-contacts li { justify-content: center; }
-    .leader-metrics-grid { justify-content: center; flex-wrap: wrap; }
+    .leader-metrics-grid { justify-content: center; flex-wrap: wrap; gap: 25px; }
 }
 @media (max-width: 900px) {
     .team-grid { grid-template-columns: repeat(2, 1fr); }
@@ -508,8 +518,8 @@ footer {
             <div class="leader-affil">Professor, Zhongshan Ophthalmic Center,<br>Sun Yat-sen University</div>
             <ul class="leader-contacts">
                 <li><i class="fa-regular fa-envelope"></i> wangwei@gzzoc.com</li>
-                <li><i class="fa-brands fa-google"></i> Google Scholar</li>
-                <li><i class="fa-brands fa-orcid"></i> ORCID</li>
+                <li><i class="fa-brands fa-google"></i> <a href="https://scholar.google.com/citations?hl=zh-TW&user=cfrO1nsAAAAJ" target="_blank">Google Scholar</a></li>
+                <li><i class="fa-brands fa-orcid"></i> <a href="https://orcid.org/0000-0002-5273-3332" target="_blank">ORCID</a></li>
             </ul>
         </div>
         <div class="leader-stats-col">
