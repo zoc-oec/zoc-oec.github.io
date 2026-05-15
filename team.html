@@ -24,14 +24,16 @@ body {
     overflow-x: hidden;
 }
 
-/* 导航栏 */
+/* =========================
+   NAVBAR (已与 Home 完全同步)
+========================= */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(5, 12, 28, 0.78);
-    backdrop-filter: blur(10px);
+    background: rgba(5, 12, 28, 0.75);
+    backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 .nav-container {
@@ -60,10 +62,12 @@ body {
     color: white;
     font-size: 1.4rem;
     font-weight: 800;
+    letter-spacing: 0.5px;
 }
 .logo-sub {
     color: #b8c7da;
     font-size: 0.72rem;
+    letter-spacing: 0.5px;
 }
 .nav-links {
     display: flex;
@@ -81,7 +85,7 @@ body {
     color: #00c2ff;
 }
 .nav-links a.current-page {
-    color: #00c2ff;
+    color: #00c2ff !important;
 }
 .nav-links a::after {
     content: '';
@@ -95,7 +99,7 @@ body {
 }
 .nav-links a:hover::after,
 .nav-links a.current-page::after {
-    width: 100%;
+    width: 100% !important;
 }
 
 /* Hero 区域 */
@@ -318,10 +322,10 @@ section {
     object-fit: cover;
     background: #eef2f8;
 }
-/* 修改了高新博(gao)的数值，调整为0%让图片置顶对齐，头部完全露出 */
+/* 修改了高新博(gao)的数值，调整为15%让他照片往下移一些 */
 .img-huang { object-position: 50% 15%; }
 .img-chen { object-position: 50% 20%; }
-.img-gao  { object-position: 50% 0%; } 
+.img-gao  { object-position: 50% 15%; } 
 .img-he   { object-position: 50% 25%; }
 .img-cheng{ object-position: 50% 20%; }
 
