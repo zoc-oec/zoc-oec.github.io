@@ -1,625 +1,571 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Team | ZOC-OEC</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-html {
-    scroll-behavior: smooth;
-}
-body {
-    font-family: 'Inter', sans-serif;
-    background: #f4f7fb;
-    color: #081b33;
-    overflow-x: hidden;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team | ZOC-OEC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* 通用样式 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+    }
 
-/* 导航栏 */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background: rgba(5, 12, 28, 0.78);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-.nav-container {
-    max-width: 1400px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 6%;
-}
-.logo a {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    text-decoration: none;
-}
-.logo img {
-    width: 42px;
-    height: 42px;
-}
-.logo-text {
-    display: flex;
-    flex-direction: column;
-}
-.logo-main {
-    color: white;
-    font-size: 1.4rem;
-    font-weight: 800;
-}
-.logo-sub {
-    color: #b8c7da;
-    font-size: 0.72rem;
-}
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 34px;
-}
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
-    transition: 0.3s;
-    position: relative;
-}
-.nav-links a:hover {
-    color: #00c2ff;
-}
-.nav-links a.current-page {
-    color: #00c2ff;
-}
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    width: 0%;
-    height: 2px;
-    background: #00c2ff;
-    transition: 0.3s;
-}
-.nav-links a:hover::after,
-.nav-links a.current-page::after {
-    width: 100%;
-}
+    /* 容器样式 */
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
 
-/* Hero 区域 */
-.team-hero {
-    position: relative;
-    width: 100%;
-    height: 80vh; 
-    display: flex;
-    align-items: flex-end; 
-    justify-content: center;
-    background: #040a18 url('/images/team-bg.jpg') no-repeat center center;
-    background-size: cover; 
-    z-index: 1;
-    overflow: hidden;
-    border: none; 
-}
-.team-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(4,10,24,0.8), rgba(4,10,24,0.2));
-    z-index: 1;
-}
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 1400px;
-    width: 100%;
-    padding: 0 6% 80px; 
-    text-align: left;
-}
-.hero-content h1 {
-    color: white;
-    font-size: 4rem;
-    font-weight: 800;
-    margin-bottom: 20px;
-}
-.hero-highlight {
-    color: #00c2ff;
-    font-size: 1.6rem;
-    font-style: italic;
-    margin-bottom: 20px;
-}
-.hero-desc {
-    max-width: 720px;
-    color: #d7e6f5;
-    font-size: 1.2rem;
-    line-height: 1.8;
-}
+    /* 导航栏样式 */
+    .navbar {
+      background-color: #0c1c2e;
+      color: #fff;
+      padding: 20px 0;
+    }
+    .navbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo img {
+      width: 36px;
+      height: 36px;
+    }
+    .logo-text h1 {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    .logo-text p {
+      font-size: 0.8rem;
+      color: #adb5bd;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+    .nav-links a {
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #0dcaf0;
+    }
+    .nav-links a.active {
+      border-bottom: 2px solid #0dcaf0;
+      padding-bottom: 5px;
+    }
 
-/* ====================
-   通用标题样式
-   ==================== */
-section {
-    padding: 60px 20px;
-}
-.section-header {
-    text-align: center;
-    margin-bottom: 50px;
-}
-.section-header h2 {
-    font-size: 2.2rem;
-    color: #081b33;
-    margin-bottom: 12px;
-    font-weight: 700;
-}
-.section-header .line {
-    width: 40px;
-    height: 3px;
-    background: #0088ff;
-    margin: 0 auto;
-    border-radius: 2px;
-}
+    /* Hero 部分样式 */
+    .hero {
+      background: linear-gradient(rgba(12, 28, 46, 0.8), rgba(12, 28, 46, 0.8)),
+                  url('path/to/world_map_bg.png') no-repeat center center;
+      background-size: cover;
+      color: #fff;
+      padding: 120px 0;
+    }
+    .hero-inner {
+      text-align: left;
+      position: relative;
+    }
+    .hero-inner::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      left: -60px;
+      width: 150px;
+      height: 150px;
+      background: url('path/to/iris_logo_large.png') no-repeat center center;
+      background-size: contain;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .hero h2 {
+      font-size: 1.5rem;
+      color: #0dcaf0;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #e0e6ed;
+      max-width: 800px;
+    }
 
-/* ====================
-   Leadership 区域
-   ==================== */
-.leader-card {
-    max-width: 1200px;
-    margin: auto;
-    background: linear-gradient(135deg, #0d1b2a, #1b2a47);
-    border-radius: 24px;
-    padding: 40px 50px;
-    display: flex;
-    gap: 40px; 
-    align-items: center;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-.leader-photo {
-    flex-shrink: 0;
-}
-.leader-photo img {
-    width: 240px;
-    height: 240px;
-    border-radius: 50%;
-    object-fit: cover;
-    /* 修改：将20%改为5%，把图片往下放，露出完整头部 */
-    object-position: center 5%;
-    border: 4px solid rgba(255, 255, 255, 0.1);
-}
-.leader-info {
-    flex: 0.85; 
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    padding-right: 30px;
-}
-.leader-info h3 {
-    color: white;
-    font-size: 2rem;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-}
-.leader-info h3 span {
-    font-size: 1.2rem;
-    font-weight: 400;
-}
-.leader-role {
-    color: #00c2ff;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-.leader-affil {
-    color: #b8c7da;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-.leader-contacts {
-    list-style: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
-}
-.leader-contacts li {
-    color: white;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.95rem;
-}
-.leader-contacts li i {
-    color: #00c2ff;
-    width: 20px;
-    text-align: center;
-}
-.leader-contacts a {
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-}
-.leader-contacts a:hover {
-    color: #00c2ff;
-}
+    /* 标题统一样式 */
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-align: center;
+      margin: 80px 0 48px;
+    }
 
-.leader-stats-col {
-    flex: 1.15; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.leader-bio {
-    color: #d7e6f5;
-    line-height: 1.6;
-    font-size: 0.95rem;
-    margin-bottom: 30px;
-}
-.leader-metrics-grid {
-    display: flex;
-    justify-content: space-between; 
-    gap: 15px; 
-}
-.metric-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-.metric-item i {
-    font-size: 1.8rem;
-    color: #00c2ff;
-}
-.metric-text strong {
-    display: block;
-    color: white;
-    font-size: 1.4rem;
-    margin-bottom: 2px;
-}
-.metric-text span {
-    color: #b8c7da;
-    font-size: 0.8rem;
-}
+    /* Leadership 部分样式 */
+    .leader-card {
+      background-color: #121d33;
+      color: #fff;
+      border-radius: 20px;
+      padding: 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+    .left-col {
+      /* 核心修改点：将王巍名字右侧的分割线左移，给描述文字留出更多空间 */
+      flex: 0 0 35%; /* 减少左侧列所占比例，从例如 45% 减到 35% */
+      padding-right: 32px;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .headshot-wrapper {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .headshot-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .personal-info {
+      text-align: left;
+    }
+    .personal-info .name {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .personal-info .name span {
+      font-weight: 400;
+      font-size: 1.1rem;
+    }
+    .personal-info .title-link {
+      display: inline-block;
+      font-size: 1rem;
+      color: #0dcaf0;
+      text-decoration: underline;
+      margin-bottom: 12px;
+    }
+    .personal-info .affiliation {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #adb5bd;
+      margin-bottom: 24px;
+    }
+    .personal-info .contacts {
+      display: flex;
+      gap: 16px;
+      font-size: 0.9rem;
+      color: #e0e6ed;
+    }
 
-/* ====================
-   团队卡片 (5列网格)
-   ==================== */
-.team-grid {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); 
-    gap: 25px;
-}
-.team-card {
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
-    transition: 0.3s;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #edf2f7;
-}
-.team-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
-}
-.team-card img {
-    width: 100%;
-    aspect-ratio: 1 / 1; 
-    object-fit: cover;
-    background: #eef2f8;
-}
-/* 修改了高新博(gao)的数值，确保完整露出头部 */
-.img-huang { object-position: 50% 15%; }
-.img-chen { object-position: 50% 20%; }
-.img-gao  { object-position: 50% 10%; } 
-.img-he   { object-position: 50% 25%; }
-.img-cheng{ object-position: 50% 20%; }
+    .divider {
+      width: 1px;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
 
-.team-info {
-    padding: 20px 15px 30px 15px; /* 底部稍微增加内边距，因为去掉了图标 */
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-.team-info h3 {
-    font-size: 1.15rem;
-    margin-bottom: 4px;
-    color: #081b33;
-}
-.team-role {
-    color: #0088ff;
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin-bottom: 12px;
-}
-.team-focus {
-    color: #5f6f82;
-    font-size: 0.85rem;
-    line-height: 1.5;
-}
+    .right-col {
+      flex: 1; /* 占据剩余的所有空间，因为左侧比例缩小了，这里会自动变宽 */
+      padding-left: 40px;
+      text-align: left;
+    }
+    .description {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #e0e6ed;
+      margin-bottom: 40px;
+      /* 这里不需要额外的 CSS，右侧列变宽后描述文字会自动排成一行 */
+    }
+    .metrics {
+      display: flex;
+      gap: 48px;
+    }
+    .metric {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .metric-icon {
+      font-size: 2.2rem;
+      color: #0dcaf0;
+    }
+    .metric-info {
+      text-align: left;
+    }
+    .metric-value {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .metric-label {
+      font-size: 0.85rem;
+      color: #adb5bd;
+    }
 
-/* ====================
-   研究领域 (强制一行四个)
-   ==================== */
-.tags {
-    max-width: 1100px;
-    margin: 0 auto;
-    /* 使用 grid 强制四列 */
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-.tag {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 14px 15px;
-    background: white;
-    border-radius: 50px;
-    border: 1px solid #dfe8f2;
-    color: #3a4b62;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: 0.3s;
-    white-space: nowrap;
-}
-.tag i {
-    color: #0088ff;
-    font-size: 1.1rem;
-}
-.tag:hover {
-    border-color: #0088ff;
-    background: #f0f7ff;
-    color: #0088ff;
-    transform: translateY(-2px);
-}
+    /* Core Research Team 部分样式 */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+    }
+    .team-card {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+    .team-member-headshot {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 20px;
+    }
+    .team-member-headshot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
 
-/* CTA 区域 */
-.cta-box {
-    max-width: 1400px;
-    margin: auto;
-    background: linear-gradient(135deg, #071426, #0c2340);
-    border-radius: 34px;
-    padding: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-.cta-box h2 {
-    color: white;
-    font-size: 2.2rem;
-    margin-bottom: 16px;
-}
-.cta-box p {
-    color: #d7e6f5;
-    line-height: 1.8;
-}
-.cta-btn {
-    background: linear-gradient(135deg, #00bfa5, #0088ff);
-    color: white;
-    text-decoration: none;
-    padding: 18px 34px;
-    border-radius: 60px;
-    font-weight: 600;
-    transition: 0.3s;
-    white-space: nowrap;
-}
-.cta-btn:hover { transform: translateY(-3px); }
+    /* 核心修改点：针对高新博图像进行移动调整 */
+    .xinbo-gao-headshot img {
+      object-position: 50% 35%; /* 将图像内容往下移，从默认位置下移 35% */
+    }
 
-footer {
-    text-align: center;
-    padding: 50px 20px;
-    color: #6f7f92;
-    font-size: 0.92rem;
-}
+    .team-card .name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .team-card .title {
+      font-size: 0.9rem;
+      color: #0d121a;
+      margin-bottom: 16px;
+    }
+    .team-card .focus {
+      font-size: 0.85rem;
+      color: #6c757d;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .team-card .contacts {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      font-size: 0.8rem;
+      color: #6c757d;
+    }
 
-/* ====================
-   响应式调整
-   ==================== */
-@media (max-width: 1200px) {
-    .team-grid { grid-template-columns: repeat(3, 1fr); }
-    .leader-card { flex-direction: column; text-align: center; gap: 30px; }
-    .leader-info { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding-right: 0; padding-bottom: 30px; }
-    .leader-info h3, .leader-contacts li { justify-content: center; }
-    .leader-metrics-grid { justify-content: center; flex-wrap: wrap; gap: 25px; }
-}
-@media (max-width: 900px) {
-    .team-grid { grid-template-columns: repeat(2, 1fr); }
-    .tags { grid-template-columns: repeat(2, 1fr); } /* 平板变为两列 */
-}
-@media (max-width: 768px) {
-    .nav-container { flex-direction: column; gap: 18px; }
-    .nav-links { gap: 18px; flex-wrap: wrap; justify-content: center; }
-    .hero-content h1 { font-size: 3.5rem; }
-    .hero-highlight { font-size: 1.2rem; }
-    .hero-desc { font-size: 1rem; }
-    .section-header h2 { font-size: 2rem; }
-    .cta-box { padding: 30px; flex-direction: column; text-align: center; }
-    .team-hero { aspect-ratio: 16 / 5; min-height: 300px; }
-}
-@media (max-width: 600px) {
-    .team-grid { grid-template-columns: 1fr; }
-    .tags { grid-template-columns: 1fr; } /* 手机变为单列 */
-    .leader-metrics-grid { flex-direction: column; align-items: center; }
-}
-</style>
+    /* 按钮统一样式 */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #0dcaf0;
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #0bb3da;
+    }
+    .btn-outline {
+      background-color: transparent;
+      border: 1px solid #ced4da;
+      color: #ced4da;
+      padding: 10px 24px;
+    }
+    .btn-outline:hover {
+      border-color: #adb5bd;
+      color: #adb5bd;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    /* 其他部分简略样式 */
+    .collaborators {
+      background-color: #f8f9fa;
+      padding: 80px 0;
+    }
+    .collaborators-logos {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      align-items: center;
+    }
+    .research-areas-inner {
+      text-align: center;
+    }
+    .research-areas-inner span {
+      display: inline-block;
+      background-color: #e2e6ea;
+      color: #121d33;
+      padding: 12px 24px;
+      border-radius: 30px;
+      margin: 8px;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    /* Join Us 部分样式 */
+    .join-us {
+      background: linear-gradient(rgba(12, 28, 46, 0.9), rgba(12, 28, 46, 0.9)),
+                  url('path/to/silhouettes.png') no-repeat center bottom;
+      background-size: cover;
+      color: #fff;
+      padding: 80px 0;
+      text-align: left;
+    }
+    .join-us-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .join-us h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .join-us p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #e0e6ed;
+      max-width: 600px;
+    }
+
+    /* 页脚部分样式 */
+    .footer {
+      background-color: #121d33;
+      color: #adb5bd;
+      padding: 24px 0;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
 
-<div class="navbar">
-    <div class="nav-container">
-        <div class="logo">
-            <a href="/">
-                <img src="/images/icon.png" alt="Logo">
-                <div class="logo-text">
-                    <span class="logo-main">ZOC-OEC</span>
-                    <span class="logo-sub">Ocular Epidemiology Consortium</span>
-                </div>
-            </a>
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <div class="logo">
+        <img src="path/to/zoc_logo.png" alt="ZOC Logo">
+        <div class="logo-text">
+          <h1>ZOC-OEC</h1>
+          <p>Ocular Epidemiology Consortium</p>
         </div>
-        <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/team.html" class="current-page">Team</a></li>
-            <li><a href="/publications.html">Publications</a></li>
-            <li><a href="/data_access.html">Data Access</a></li>
-        </ul>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#" class="active">Team</a></li>
+        <li><a href="#">Publications</a></li>
+        <li><a href="#">Data Access</a></li>
+      </ul>
     </div>
-</div>
+  </nav>
 
-<section class="team-hero" style="padding: 0;">
-    <div class="hero-content">
-        <h1>Meet the Team</h1>
-        <div class="hero-highlight">Building the Future of Precision Ophthalmology</div>
-        <div class="hero-desc">A multidisciplinary consortium integrating ophthalmology, epidemiology, AI, imaging and translational medicine to advance vision science worldwide.</div>
+  <header class="hero">
+    <div class="container hero-inner">
+      <h1>Meet the Team</h1>
+      <h2>Building the Future of Precision Ophthalmology</h2>
+      <p>A multidisciplinary consortium integrating ophthalmology, epidemiology, AI, imaging and translational medicine to advance vision science worldwide.</p>
     </div>
-</section>
+  </header>
 
-<section>
-    <div class="section-header">
-        <h2>Leadership</h2>
-        <div class="line"></div>
-    </div>
-    
-    <div class="leader-card">
-        <div class="leader-photo">
-            <img src="/images/wangwei.png" alt="Wei Wang">
-        </div>
-        <div class="leader-info">
-            <h3>Wei Wang, <span>MD, PhD</span></h3>
-            <div class="leader-role">Director, ZOC-OEC</div>
-            <div class="leader-affil">Professor, Zhongshan Ophthalmic Center,<br>Sun Yat-sen University</div>
-            <ul class="leader-contacts">
-                <li><i class="fa-regular fa-envelope"></i> wangwei@gzzoc.com</li>
-                <li><i class="fa-brands fa-google"></i> <a href="https://scholar.google.com/citations?hl=zh-TW&user=cfrO1nsAAAAJ" target="_blank">Google Scholar</a></li>
-                <li><i class="fa-brands fa-orcid"></i> <a href="https://orcid.org/0000-0002-5273-3332" target="_blank">ORCID</a></li>
+  <section class="leadership">
+    <div class="container">
+      <h2 class="section-title">Leadership</h2>
+      <div class="leader-card">
+        <div class="left-col">
+          <div class="headshot-wrapper">
+            <img src="path/to/wangwei.png" alt="Prof. Wei Wang">
+          </div>
+          <div class="personal-info">
+            <h2 class="name">Wei Wang, <span>MD, PhD</span></h2>
+            <a href="#" class="title-link">Director, ZOC-OEC</a>
+            <p class="affiliation">Professor, Zhongshan Ophthalmic Center,<br>Sun Yat-sen University</p>
+            <ul class="contacts">
+              <li><i class="icon-email"></i> wangwei@gzzoc.com</li>
+              <li><i class="icon-scholar"></i> Google Scholar</li>
+              <li><i class="icon-orcid"></i> ORCID</li>
             </ul>
+          </div>
         </div>
-        <div class="leader-stats-col">
-            <div class="leader-bio">
-                Prof. Wei Wang is an internationally recognized ophthalmologist and epidemiologist focusing on glaucoma, myopia, retinal diseases and AI-driven ophthalmology. His work integrates longitudinal population cohorts, multimodal imaging and translational medicine to advance precision eye care worldwide.
+        <div class="right-col">
+          <p class="description">
+            Prof. Wei Wang is an internationally recognized ophthalmologist and epidemiologist focusing on glaucoma, myopia, retinal diseases, and AI-driven ophthalmology. His work integrates longitudinal population cohorts, multimodal imaging, and translational medicine to advance precision eye care worldwide.
+          </p>
+          <div class="metrics">
+            <div class="metric">
+              <i class="metric-icon icon-publications"></i>
+              <div class="metric-info">
+                <div class="metric-value">310+</div>
+                <div class="metric-label">SCI Publications</div>
+              </div>
             </div>
-            <div class="leader-metrics-grid">
-                <div class="metric-item">
-                    <i class="fa-solid fa-book-open"></i>
-                    <div class="metric-text">
-                        <strong>310+</strong>
-                        <span>SCI Publications</span>
-                    </div>
-                </div>
-                <div class="metric-item">
-                    <i class="fa-solid fa-quote-right"></i>
-                    <div class="metric-text">
-                        <strong>20K+</strong>
-                        <span>Citations</span>
-                    </div>
-                </div>
-                <div class="metric-item">
-                    <i class="fa-solid fa-chart-line"></i>
-                    <div class="metric-text">
-                        <strong>69</strong>
-                        <span>H-index</span>
-                    </div>
-                </div>
+            <div class="metric">
+              <i class="metric-icon icon-citations"></i>
+              <div class="metric-info">
+                <div class="metric-value">20K+</div>
+                <div class="metric-label">Citations</div>
+              </div>
             </div>
+            <div class="metric">
+              <i class="metric-icon icon-hindex"></i>
+              <div class="metric-info">
+                <div class="metric-value">69</div>
+                <div class="metric-label">H-index</div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<section>
-    <div class="section-header">
-        <h2>Core Research Team</h2>
-        <div class="line"></div>
-    </div>
-
-    <div class="team-grid">
+  <section class="core-team">
+    <div class="container">
+      <h2 class="section-title">Core Research Team</h2>
+      <div class="team-grid">
         <div class="team-card">
-            <img src="/images/huangwenyong.jpg" class="img-huang" alt="Wenyong Huang">
-            <div class="team-info">
-                <h3>Wenyong Huang</h3>
-                <div class="team-role">Professor</div>
-                <div class="team-focus">Ophthalmic epidemiology<br>Blindness prevention</div>
-            </div>
-        </div>
-        <div class="team-card">
-            <img src="/images/chenshida.jpg" class="img-chen" alt="Shida Chen">
-            <div class="team-info">
-                <h3>Shida Chen</h3>
-                <div class="team-role">Associate Chief Physician</div>
-                <div class="team-focus">Fundus disease<br>Diabetic retinopathy</div>
-            </div>
+          <div class="team-member-headshot">
+            <img src="path/to/huangwenyong.png" alt="Wenyong Huang">
+          </div>
+          <p class="name">Wenyong Huang</p>
+          <p class="title">Associate Professor</p>
+          <p class="focus">Ophthalmic epidemiology<br>Blindness prevention</p>
+          <ul class="contacts">
+            <li><i class="icon-scholar"></i> Scholar</li>
+            <li><i class="icon-email"></i> Email</li>
+          </ul>
         </div>
         <div class="team-card">
-            <img src="/images/gaoxinbo.png" class="img-gao" alt="Xinbo Gao">
-            <div class="team-info">
-                <h3>Xinbo Gao</h3>
-                <div class="team-role">Associate Chief Physician</div>
-                <div class="team-focus">Glaucoma · MIGS<br>Ocular glymphatic system</div>
-            </div>
+          <div class="team-member-headshot">
+            <img src="path/to/chenshida.png" alt="Shida Chen">
+          </div>
+          <p class="name">Shida Chen</p>
+          <p class="title">Associate Chief Physician</p>
+          <p class="focus">Fundus disease<br>Diabetic retinopathy</p>
+          <ul class="contacts">
+            <li><i class="icon-scholar"></i> Scholar</li>
+            <li><i class="icon-email"></i> Email</li>
+          </ul>
         </div>
         <div class="team-card">
-            <img src="/images/hechang.png" class="img-he" alt="Chang He">
-            <div class="team-info">
-                <h3>Chang He</h3>
-                <div class="team-role">Associate Chief Physician</div>
-                <div class="team-focus">Ocular immunology<br>Cataract & Retinal diseases</div>
-            </div>
+          <div class="team-member-headshot xinbo-gao-headshot">
+            <img src="path/to/gaoxinbo.png" alt="Xinbo Gao">
+          </div>
+          <p class="name">Xinbo Gao</p>
+          <p class="title">Associate Chief Physician</p>
+          <p class="focus">Glaucoma Progression<br>Longitudinal Analysis</p>
+          <ul class="contacts">
+            <li><i class="icon-scholar"></i> Scholar</li>
+            <li><i class="icon-email"></i> Email</li>
+          </ul>
         </div>
         <div class="team-card">
-            <img src="/images/chengweijing.png" class="img-cheng" alt="Weijing Cheng">
-            <div class="team-info">
-                <h3>Weijing Cheng</h3>
-                <div class="team-role">Associate Researcher</div>
-                <div class="team-focus">Choroidal imaging<br>OCT biomarkers</div>
-            </div>
+          <div class="team-member-headshot">
+            <img src="path/to/hechang.png" alt="Chang He">
+          </div>
+          <p class="name">Chang He</p>
+          <p class="title">Associate Chief Physician</p>
+          <p class="focus">Ocular immunology<br>Cataract & Retinal diseases</p>
+          <ul class="contacts">
+            <li><i class="icon-scholar"></i> Scholar</li>
+            <li><i class="icon-email"></i> Email</li>
+          </ul>
         </div>
-    </div>
-</section>
-
-<section>
-    <div class="section-header">
-        <h2>Research Areas</h2>
-        <div class="line"></div>
-    </div>
-    
-    <div class="tags">
-        <div class="tag"><i class="fa-solid fa-brain"></i> AI Ophthalmology</div>
-        <div class="tag"><i class="fa-solid fa-chart-line"></i> PACG & Glaucoma</div>
-        <div class="tag"><i class="fa-solid fa-eye"></i> Retinal Biomarkers</div>
-        <div class="tag"><i class="fa-solid fa-users-viewfinder"></i> Population Cohorts</div>
-        <div class="tag"><i class="fa-solid fa-dna"></i> Multi-omics</div>
-        <div class="tag"><i class="fa-solid fa-camera"></i> Vision Imaging</div>
-        <div class="tag"><i class="fa-solid fa-stethoscope"></i> Clinical Epidemiology</div>
-        <div class="tag"><i class="fa-solid fa-microchip"></i> Foundation AI</div>
-    </div>
-</section>
-
-<section>
-    <div class="cta-box">
-        <div>
-            <h2>Join Our Collaboration Network</h2>
-            <p>We welcome motivated researchers, clinicians and students to collaborate and advance precision ophthalmology together.</p>
+        <div class="team-card">
+          <div class="team-member-headshot">
+            <img src="path/to/chengweijing.png" alt="Weijing Cheng">
+          </div>
+          <p class="name">Weijing Cheng</p>
+          <p class="title">Associate Researcher</p>
+          <p class="focus">Choroidal imaging<br>OCT biomarkers</p>
+          <ul class="contacts">
+            <li><i class="icon-scholar"></i> Scholar</li>
+            <li><i class="icon-email"></i> Email</li>
+          </ul>
         </div>
-        <a href="/data_access.html" class="cta-btn">Collaboration Inquiry</a>
+      </div>
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="#" class="btn btn-outline btn-inline">View All Team Members →</a>
+      </div>
     </div>
-</section>
+  </section>
 
-<footer>© 2025 ZOC-OEC | Zhongshan Ophthalmic Center, Sun Yat-sen University</footer>
+  <section class="collaborators">
+    <div class="container collaborators-inner">
+      <h2 class="section-title">International Collaborators</h2>
+      <div class="collaborators-logos">
+        <img src="path/to/uk_biobank_logo.png" alt="UK Biobank">
+        <img src="path/to/NUS_logo.png" alt="National University of Singapore">
+        <img src="path/to/and_more_globe.png" alt="And More Collaborators">
+      </div>
+    </div>
+  </section>
+
+  <section class="research-areas">
+    <div class="container research-areas-inner">
+      <h2 class="section-title">Our Research Areas</h2>
+      <span>AI Ophthalmology</span>
+      <span>Retinal Biomarkers</span>
+      <span>PACG & Glaucoma</span>
+      <span>Population Cohorts</span>
+      <span>Multi-omics</span>
+      <span>Vision Imaging</span>
+      <span>Clinical Epidemiology</span>
+    </div>
+  </section>
+
+  <section class="join-us">
+    <div class="container join-us-inner">
+      <div>
+        <h2>Join Us</h2>
+        <p>We welcome motivated researchers, clinicians, and students to collaborate and advance vision science together.</p>
+      </div>
+      <a href="#" class="btn">Explore Opportunities →</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 ZOC-OEC | Zhongshan Ophthalmic Center, Sun Yat-sen University</p>
+    </div>
+  </footer>
 
 </body>
 </html>
