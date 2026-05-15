@@ -71,6 +71,10 @@
             list-style: none;
             gap: 34px;
         }
+        /* 修复误伤导航栏的 margin 问题 */
+        .nav-links li {
+            margin-bottom: 0 !important;
+        }
         .nav-links a {
             text-decoration: none;
             color: white;
@@ -117,7 +121,7 @@
         /* =========================  页面内容样式  ========================= */
         .page-content {
             max-width: 1000px;
-            margin: 100px auto 50px auto;  /* margin-top 避开固定导航栏 */
+            margin: 100px auto 50px auto;
             padding: 40px;
             background: white;
             border-radius: 28px;
@@ -136,7 +140,8 @@
             margin: 1.8rem 0 1rem;
             font-size: 1.6rem;
         }
-        p, li {
+        /* 限定作用域，只让正文的段落和列表加底边距，避免影响导航栏 */
+        .page-content p, .page-content li {
             color: #1e2a3a;
             line-height: 1.7;
             margin-bottom: 1rem;
@@ -236,7 +241,6 @@
 </footer>
 
 <script>
-    // 高亮当前页面导航 (作为备用)
     (function() {
         let currentPath = window.location.pathname;
         if (currentPath === '' || currentPath === '/' || currentPath === '/index.html') {
