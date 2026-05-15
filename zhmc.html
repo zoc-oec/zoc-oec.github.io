@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>ZHMC Cohort Publications - ZOC Ocular Epidemiology Consortium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,71 +17,113 @@
         body, html {
             width: 100%;
             overflow-x: hidden;
-            background-color: #ffffff;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7fb; /* 统一为浅色背景 */
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             scroll-behavior: smooth;
         }
 
-        /* 导航栏 —— 与首页完全一致 */
+        /* =========================  NAVBAR (与 Home 完全一致)  ========================= */
         .navbar {
-            position: sticky;
+            position: fixed; /* 修改为 fixed 保持一致 */
             top: 0;
             width: 100%;
-            background-color: rgba(10, 20, 40, 0.85);
-            backdrop-filter: blur(6px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            background: rgba(5, 12, 28, 0.75);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
         }
         .nav-container {
             max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 5%;
+            margin: auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            min-height: 64px;
-            flex-wrap: wrap;
+            padding: 18px 6%;
         }
         .logo a {
-            color: #00bfa5;
-            font-size: 1.5rem;
-            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 14px;
             text-decoration: none;
+        }
+        .logo img {
+            width: 42px;
+            height: 42px;
+        }
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .logo-main {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+        .logo-sub {
+            color: #b8c7da;
+            font-size: 0.72rem;
+            letter-spacing: 0.5px;
         }
         .nav-links {
             display: flex;
-            gap: 2rem;
             list-style: none;
+            gap: 34px;
         }
-        .nav-links li a {
-            color: #f0f0f0;
+        .nav-links li {
+            margin-bottom: 0 !important;
+        }
+        .nav-links a {
             text-decoration: none;
+            color: white;
             font-weight: 500;
-            transition: color 0.2s;
+            transition: 0.3s;
+            position: relative;
         }
-        .nav-links li a:hover {
-            color: #00bfa5;
+        .nav-links a:hover {
+            color: #00c2ff;
         }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 0%;
+            height: 2px;
+            background: #00c2ff;
+            transition: 0.3s;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        /* 当前页面高亮样式（常亮） */
+        .nav-links a.current-page {
+            color: #00c2ff !important;
+        }
+        .nav-links a.current-page::after {
+            width: 100% !important;
+        }
+
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
-                padding: 12px 5%;
+                gap: 18px;
             }
             .nav-links {
-                gap: 1rem;
+                gap: 20px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
         }
 
-        /* 主要内容容器 */
+        /* =========================  主要内容容器  ========================= */
         .page-content {
             max-width: 1100px;
-            margin: 50px auto;
-            padding: 30px 40px;
+            margin: 100px auto 50px auto; /* margin-top 避开固定导航栏 */
+            padding: 40px;
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+            border-radius: 28px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
         /* 顶部 flex 区域：左队名+图标，右返回按钮 */
@@ -159,7 +204,7 @@
 
         footer {
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 20px;
             color: #6c757d;
             font-size: 0.85rem;
             border-top: 1px solid #e9ecef;
@@ -168,8 +213,8 @@
 
         @media (max-width: 768px) {
             .page-content {
-                margin: 20px;
-                padding: 20px;
+                margin: 100px 20px 30px 20px;
+                padding: 25px;
             }
             .cohort-title h1 {
                 font-size: 1.5rem;
@@ -187,19 +232,25 @@
 
 <div class="navbar">
     <div class="nav-container">
-        <div class="logo"><a href="/">ZOC‑OEC</a></div>
+        <div class="logo">
+            <a href="/">
+                <img src="/images/icon.png" alt="Logo">
+                <div class="logo-text">
+                    <span class="logo-main">ZOC-OEC</span>
+                    <span class="logo-sub">Ocular Epidemiology Consortium</span>
+                </div>
+            </a>
+        </div>
         <ul class="nav-links">
             <li><a href="/">Home</a></li>
             <li><a href="/team.html">Team</a></li>
-            <li><a href="/publications.html">Publications</a></li>
+            <li><a href="/publications.html" class="current-page">Publications</a></li>
             <li><a href="/data_access.html">Data Access</a></li>
-            <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
 </div>
 
 <div class="page-content">
-    <!-- 顶部：左（图标 + 队列名），右（返回按钮） -->
     <div class="cohort-header">
         <div class="cohort-title">
             <img src="/images/zhmc_icon.png" alt="ZHMC Icon">
@@ -212,82 +263,95 @@
         <p>Here is the complete list of publications derived from the <strong>Zhongshan High Myopia Cohort (ZHMC)</strong>, organized by year.</p>
     </div>
 
-    <!-- 2026 -->
     <h2>2026</h2>
     <ul class="pub-list">
-        <li>Chen Y, Wang W, Xiong R, et al. Three-year efficacy and safety of repeated low-level red-light therapy for myopia control: a multicentre real-world study. <em>Br J Ophthalmol.</em> Published online February 11, 2026. doi:<a href="https://doi.org/10.1136/bjo-2025-328687">10.1136/bjo-2025-328687</a></li>
+        <li>Chen Y, Wang W, Xiong R, et al. Three-year efficacy and safety of repeated low-level red-light therapy for myopia control: a multicentre real-world study. <strong>Br J Ophthalmol.</strong> Published online February 11, 2026. doi:<a href="https://doi.org/10.1136/bjo-2025-328687">10.1136/bjo-2025-328687</a></li>
     </ul>
 
-    <!-- 2025 -->
     <h2>2025</h2>
     <ul class="pub-list">
-        <li>Luo N, Liu B, Wang L, et al. Fundus Curvature as a Clinical Marker for Posterior Staphyloma Based on Widefield Optical Coherence Tomography. <em>Am J Ophthalmol.</em> 2025;271:478-487. doi:<a href="https://doi.org/10.1016/j.ajo.2024.12.020">10.1016/j.ajo.2024.12.020</a></li>
-        <li>Wu Y, Shan Y, Bu J, et al. Longitudinal Changes in Macular Vessel Density in High Myopia on Optical Coherence Tomography Angiography. <em>Ophthalmic Res.</em> 2025;68(1):342-351. doi:<a href="https://doi.org/10.1159/000543975">10.1159/000543975</a></li>
-        <li>Chen Y, Xiong R, Zhang J, et al. Ten-Year Change in Visual Function and Incidence of Visual Impairment in Highly Myopic Children and Adults. <em>Invest Ophthalmol Vis Sci.</em> 2025;66(1):2. doi:<a href="https://doi.org/10.1167/iovs.66.1.2">10.1167/iovs.66.1.2</a></li>
+        <li>Luo N, Liu B, Wang L, et al. Fundus Curvature as a Clinical Marker for Posterior Staphyloma Based on Widefield Optical Coherence Tomography. <strong>Am J Ophthalmol.</strong> 2025;271:478-487. doi:<a href="https://doi.org/10.1016/j.ajo.2024.12.020">10.1016/j.ajo.2024.12.020</a></li>
+        <li>Wu Y, Shan Y, Bu J, et al. Longitudinal Changes in Macular Vessel Density in High Myopia on Optical Coherence Tomography Angiography. <strong>Ophthalmic Res.</strong> 2025;68(1):342-351. doi:<a href="https://doi.org/10.1159/000543975">10.1159/000543975</a></li>
+        <li>Chen Y, Xiong R, Zhang J, et al. Ten-Year Change in Visual Function and Incidence of Visual Impairment in Highly Myopic Children and Adults. <strong>Invest Ophthalmol Vis Sci.</strong> 2025;66(1):2. doi:<a href="https://doi.org/10.1167/iovs.66.1.2">10.1167/iovs.66.1.2</a></li>
     </ul>
 
-    <!-- 2024 -->
     <h2>2024</h2>
     <ul class="pub-list">
-        <li>Zhang S, Chen Y, Li Z, et al. Axial Elongation Trajectories in Chinese Children and Adults With High Myopia. <em>JAMA Ophthalmol.</em> 2024;142(2):87-94. doi:<a href="https://doi.org/10.1001/jamaophthalmol.2023.5835">10.1001/jamaophthalmol.2023.5835</a></li>
-        <li>Wang Y, Wang D, Yin Q, Li J, Li Z, He M. Choroidal Thickness and Visual Acuity in High Myopia Without Myopic Maculopathy: Insights From a Chinese Population Study. <em>Transl Vis Sci Technol.</em> 2024;13(11):9. doi:<a href="https://doi.org/10.1167/tvst.13.11.9">10.1167/tvst.13.11.9</a></li>
-        <li>Xuan M, Wang D, Xiao O, et al. Choroidal Vascularity and Axial Length Elongation in Highly Myopic Children: A 2-Year Longitudinal Investigation. <em>Invest Ophthalmol Vis Sci.</em> 2024;65(10):7. doi:<a href="https://doi.org/10.1167/iovs.65.10.7">10.1167/iovs.65.10.7</a></li>
-        <li>Chen Y, Yang S, Liu R, et al. Forecasting Myopic Maculopathy Risk Over a Decade: Development and Validation of an Interpretable Machine Learning Algorithm. <em>Invest Ophthalmol Vis Sci.</em> 2024;65(6):40. doi:<a href="https://doi.org/10.1167/iovs.65.6.40">10.1167/iovs.65.6.40</a></li>
-        <li>Yii FS, He M, Chappell F, et al. Higher intraocular pressure is associated with slower axial growth in children with non-pathological high myopia. <em>Eye (Lond).</em> 2024;38(6):1208-1214. doi:<a href="https://doi.org/10.1038/s41433-023-02872-7">10.1038/s41433-023-02872-7</a></li>
-        <li>Li C, Chen Y, Yang S, et al. Long-Term Prediction and Risk Factors for Incident Visual Field Defect in Nonpathologic High Myopia. <em>Invest Ophthalmol Vis Sci.</em> 2024;65(10):43. doi:<a href="https://doi.org/10.1167/iovs.65.10.43">10.1167/iovs.65.10.43</a></li>
-        <li>Xiong R, Wang W, Tang X, et al. Myopia Control Effect of Repeated Low-Level Red-Light Therapy Combined with Orthokeratology: A Multicenter Randomized Controlled Trial. <em>Ophthalmology.</em> 2024;131(11):1304-1313. doi:<a href="https://doi.org/10.1016/j.ophtha.2024.05.015">10.1016/j.ophtha.2024.05.015</a></li>
-        <li>Chen Y, Xiong R, Yang S, et al. Safety of repeated low-level red-light therapy for myopia: A systematic review. <em>Asia Pac J Ophthalmol (Phila).</em> 2024;13(6):100124. doi:<a href="https://doi.org/10.1016/j.apjo.2024.100124">10.1016/j.apjo.2024.100124</a></li>
-        <li>Liu R, Xuan M, Wang DC, et al. Using choroidal thickness to detect myopic macular degeneration. <em>Int J Ophthalmol.</em> 2024;17(2):317-323. doi:<a href="https://doi.org/10.18240/ijo.2024.02.14">10.18240/ijo.2024.02.14</a></li>
+        <li>Zhang S, Chen Y, Li Z, et al. Axial Elongation Trajectories in Chinese Children and Adults With High Myopia. <strong>JAMA Ophthalmol.</strong> 2024;142(2):87-94. doi:<a href="https://doi.org/10.1001/jamaophthalmol.2023.5835">10.1001/jamaophthalmol.2023.5835</a></li>
+        <li>Wang Y, Wang D, Yin Q, Li J, Li Z, He M. Choroidal Thickness and Visual Acuity in High Myopia Without Myopic Maculopathy: Insights From a Chinese Population Study. <strong>Transl Vis Sci Technol.</strong> 2024;13(11):9. doi:<a href="https://doi.org/10.1167/tvst.13.11.9">10.1167/tvst.13.11.9</a></li>
+        <li>Xuan M, Wang D, Xiao O, et al. Choroidal Vascularity and Axial Length Elongation in Highly Myopic Children: A 2-Year Longitudinal Investigation. <strong>Invest Ophthalmol Vis Sci.</strong> 2024;65(10):7. doi:<a href="https://doi.org/10.1167/iovs.65.10.7">10.1167/iovs.65.10.7</a></li>
+        <li>Chen Y, Yang S, Liu R, et al. Forecasting Myopic Maculopathy Risk Over a Decade: Development and Validation of an Interpretable Machine Learning Algorithm. <strong>Invest Ophthalmol Vis Sci.</strong> 2024;65(6):40. doi:<a href="https://doi.org/10.1167/iovs.65.6.40">10.1167/iovs.65.6.40</a></li>
+        <li>Yii FS, He M, Chappell F, et al. Higher intraocular pressure is associated with slower axial growth in children with non-pathological high myopia. <strong>Eye (Lond).</strong> 2024;38(6):1208-1214. doi:<a href="https://doi.org/10.1038/s41433-023-02872-7">10.1038/s41433-023-02872-7</a></li>
+        <li>Li C, Chen Y, Yang S, et al. Long-Term Prediction and Risk Factors for Incident Visual Field Defect in Nonpathologic High Myopia. <strong>Invest Ophthalmol Vis Sci.</strong> 2024;65(10):43. doi:<a href="https://doi.org/10.1167/iovs.65.10.43">10.1167/iovs.65.10.43</a></li>
+        <li>Xiong R, Wang W, Tang X, et al. Myopia Control Effect of Repeated Low-Level Red-Light Therapy Combined with Orthokeratology: A Multicenter Randomized Controlled Trial. <strong>Ophthalmology.</strong> 2024;131(11):1304-1313. doi:<a href="https://doi.org/10.1016/j.ophtha.2024.05.015">10.1016/j.ophtha.2024.05.015</a></li>
+        <li>Chen Y, Xiong R, Yang S, et al. Safety of repeated low-level red-light therapy for myopia: A systematic review. <strong>Asia Pac J Ophthalmol (Phila).</strong> 2024;13(6):100124. doi:<a href="https://doi.org/10.1016/j.apjo.2024.100124">10.1016/j.apjo.2024.100124</a></li>
+        <li>Liu R, Xuan M, Wang DC, et al. Using choroidal thickness to detect myopic macular degeneration. <strong>Int J Ophthalmol.</strong> 2024;17(2):317-323. doi:<a href="https://doi.org/10.18240/ijo.2024.02.14">10.18240/ijo.2024.02.14</a></li>
     </ul>
 
-    <!-- 2023 -->
     <h2>2023</h2>
     <ul class="pub-list">
-        <li>Xuan M, Wang W, Shi D, et al. A Deep Learning-Based Fully Automated Program for Choroidal Structure Analysis Within the Region of Interest in Myopic Children. <em>Transl Vis Sci Technol.</em> 2023;12(3):22. doi:<a href="https://doi.org/10.1167/tvst.12.3.22">10.1167/tvst.12.3.22</a></li>
-        <li>Wang W, Jiang Y, Zhu Z, et al. Axial Shortening in Myopic Children after Repeated Low-Level Red-Light Therapy: Post Hoc Analysis of a Randomized Trial. <em>Ophthalmol Ther.</em> 2023;12(2):1223-1237. doi:<a href="https://doi.org/10.1007/s40123-023-00671-7">10.1007/s40123-023-00671-7</a></li>
-        <li>Wang W, Jiang Y, Zhu Z, et al. Clinically Significant Axial Shortening in Myopic Children After Repeated Low-Level Red Light Therapy: A Retrospective Multicenter Analysis. <em>Ophthalmol Ther.</em> 2023;12(2):999-1011. doi:<a href="https://doi.org/10.1007/s40123-022-00644-2">10.1007/s40123-022-00644-2</a></li>
-        <li>Xuan M, Li C, Kong X, Zhang J, Wang W, He M. Distribution and determinants of choroidal vascularity index in healthy eyes from deep-learning choroidal analysis: a population-based SS-OCT study. <em>Br J Ophthalmol.</em> 2024;108(4):546-551. doi:<a href="https://doi.org/10.1136/bjo-2023-323224">10.1136/bjo-2023-323224</a></li>
-        <li>Song Y, Li F, Chong RS, et al. High Myopia Normative Database of Peripapillary Retinal Nerve Fiber Layer Thickness to Detect Myopic Glaucoma in a Chinese Population. <em>Ophthalmology.</em> 2023;130(12):1279-1289. doi:<a href="https://doi.org/10.1016/j.ophtha.2023.07.022">10.1016/j.ophtha.2023.07.022</a></li>
-        <li>Xuan M, Zhu Z, Jiang Y, et al. Longitudinal Changes in Choroidal Structure Following Repeated Low-Level Red-Light Therapy for Myopia Control: Secondary Analysis of a Randomized Controlled Trial. <em>Asia Pac J Ophthalmol (Phila).</em> 2023;12(4):377-383. doi:<a href="https://doi.org/10.1097/APO.0000000000000618">10.1097/APO.0000000000000618</a></li>
+        <li>Xuan M, Wang W, Shi D, et al. A Deep Learning-Based Fully Automated Program for Choroidal Structure Analysis Within the Region of Interest in Myopic Children. <strong>Transl Vis Sci Technol.</strong> 2023;12(3):22. doi:<a href="https://doi.org/10.1167/tvst.12.3.22">10.1167/tvst.12.3.22</a></li>
+        <li>Wang W, Jiang Y, Zhu Z, et al. Axial Shortening in Myopic Children after Repeated Low-Level Red-Light Therapy: Post Hoc Analysis of a Randomized Trial. <strong>Ophthalmol Ther.</strong> 2023;12(2):1223-1237. doi:<a href="https://doi.org/10.1007/s40123-023-00671-7">10.1007/s40123-023-00671-7</a></li>
+        <li>Wang W, Jiang Y, Zhu Z, et al. Clinically Significant Axial Shortening in Myopic Children After Repeated Low-Level Red Light Therapy: A Retrospective Multicenter Analysis. <strong>Ophthalmol Ther.</strong> 2023;12(2):999-1011. doi:<a href="https://doi.org/10.1007/s40123-022-00644-2">10.1007/s40123-022-00644-2</a></li>
+        <li>Xuan M, Li C, Kong X, Zhang J, Wang W, He M. Distribution and determinants of choroidal vascularity index in healthy eyes from deep-learning choroidal analysis: a population-based SS-OCT study. <strong>Br J Ophthalmol.</strong> 2024;108(4):546-551. doi:<a href="https://doi.org/10.1136/bjo-2023-323224">10.1136/bjo-2023-323224</a></li>
+        <li>Song Y, Li F, Chong RS, et al. High Myopia Normative Database of Peripapillary Retinal Nerve Fiber Layer Thickness to Detect Myopic Glaucoma in a Chinese Population. <strong>Ophthalmology.</strong> 2023;130(12):1279-1289. doi:<a href="https://doi.org/10.1016/j.ophtha.2023.07.022">10.1016/j.ophtha.2023.07.022</a></li>
+        <li>Xuan M, Zhu Z, Jiang Y, et al. Longitudinal Changes in Choroidal Structure Following Repeated Low-Level Red-Light Therapy for Myopia Control: Secondary Analysis of a Randomized Controlled Trial. <strong>Asia Pac J Ophthalmol (Phila).</strong> 2023;12(4):377-383. doi:<a href="https://doi.org/10.1097/APO.0000000000000618">10.1097/APO.0000000000000618</a></li>
     </ul>
 
-    <!-- 2022 -->
     <h2>2022</h2>
     <ul class="pub-list">
-        <li>Cheng W, Song Y, Gao X, et al. Axial Length and Choriocapillaris Flow Deficits in Non-pathological High Myopia. <em>Am J Ophthalmol.</em> 2022;244:68-78. doi:<a href="https://doi.org/10.1016/j.ajo.2022.08.005">10.1016/j.ajo.2022.08.005</a></li>
-        <li>Lin F, Chen S, Song Y, et al. Classification of Visual Field Abnormalities in Highly Myopic Eyes without Pathologic Change. <em>Ophthalmology.</em> 2022;129(7):803-812. doi:<a href="https://doi.org/10.1016/j.ophtha.2022.03.001">10.1016/j.ophtha.2022.03.001</a></li>
-        <li>Wang L, Jin G, Zhang J, et al. Clinically Significant Intraocular Lens Decentration and Tilt in Highly Myopic Eyes: A Swept-Source Optical Coherence Tomography Study. <em>Am J Ophthalmol.</em> 2022;235:46-55. doi:<a href="https://doi.org/10.1016/j.ajo.2021.08.017">10.1016/j.ajo.2021.08.017</a></li>
+        <li>Cheng W, Song Y, Gao X, et al. Axial Length and Choriocapillaris Flow Deficits in Non-pathological High Myopia. <strong>Am J Ophthalmol.</strong> 2022;244:68-78. doi:<a href="https://doi.org/10.1016/j.ajo.2022.08.005">10.1016/j.ajo.2022.08.005</a></li>
+        <li>Lin F, Chen S, Song Y, et al. Classification of Visual Field Abnormalities in Highly Myopic Eyes without Pathologic Change. <strong>Ophthalmology.</strong> 2022;129(7):803-812. doi:<a href="https://doi.org/10.1016/j.ophtha.2022.03.001">10.1016/j.ophtha.2022.03.001</a></li>
+        <li>Wang L, Jin G, Zhang J, et al. Clinically Significant Intraocular Lens Decentration and Tilt in Highly Myopic Eyes: A Swept-Source Optical Coherence Tomography Study. <strong>Am J Ophthalmol.</strong> 2022;235:46-55. doi:<a href="https://doi.org/10.1016/j.ajo.2021.08.017">10.1016/j.ajo.2021.08.017</a></li>
     </ul>
 
-    <!-- 2021 -->
     <h2>2021</h2>
     <ul class="pub-list">
-        <li>Li Z, Wang W, Liu R, et al. Choroidal thickness predicts progression of myopic maculopathy in high myopes: a 2-year longitudinal study. <em>Br J Ophthalmol.</em> 2021;105(12):1744-1750. doi:<a href="https://doi.org/10.1136/bjophthalmol-2020-316866">10.1136/bjophthalmol-2020-316866</a></li>
-        <li>Li Z, Li S, Liu R, et al. Distribution of intraocular pressure and related risk factors in a highly myopic Chinese population: an observational, cross-sectional study. <em>Clin Exp Optom.</em> 2021;104(7):767-772. doi:<a href="https://doi.org/10.1080/08164622.2021.1878817">10.1080/08164622.2021.1878817</a></li>
-        <li>Li Z, Liu R, Xiao O, et al. Progression of diffuse chorioretinal atrophy among patients with high myopia: a 4-year follow-up study. <em>Br J Ophthalmol.</em> 2021;105(7):989-994. doi:<a href="https://doi.org/10.1136/bjophthalmol-2020-316691">10.1136/bjophthalmol-2020-316691</a></li>
-        <li>Liu R, Li Z, Xiao O, et al. CHARACTERISTICS OF PERIPAPILLARY INTRACHOROIDAL CAVITATION IN HIGHLY MYOPIC EYES: The Zhongshan Ophthalmic Center-Brien Holden Vision Institute High Myopia Cohort Study. <em>Retina.</em> 2021;41(5):1057-1062. doi:<a href="https://doi.org/10.1097/IAE.0000000000002963">10.1097/IAE.0000000000002963</a></li>
+        <li>Li Z, Wang W, Liu R, et al. Choroidal thickness predicts progression of myopic maculopathy in high myopes: a 2-year longitudinal study. <strong>Br J Ophthalmol.</strong> 2021;105(12):1744-1750. doi:<a href="https://doi.org/10.1136/bjophthalmol-2020-316866">10.1136/bjophthalmol-2020-316866</a></li>
+        <li>Li Z, Li S, Liu R, et al. Distribution of intraocular pressure and related risk factors in a highly myopic Chinese population: an observational, cross-sectional study. <strong>Clin Exp Optom.</strong> 2021;104(7):767-772. doi:<a href="https://doi.org/10.1080/08164622.2021.1878817">10.1080/08164622.2021.1878817</a></li>
+        <li>Li Z, Liu R, Xiao O, et al. Progression of diffuse chorioretinal atrophy among patients with high myopia: a 4-year follow-up study. <strong>Br J Ophthalmol.</strong> 2021;105(7):989-994. doi:<a href="https://doi.org/10.1136/bjophthalmol-2020-316691">10.1136/bjophthalmol-2020-316691</a></li>
+        <li>Liu R, Li Z, Xiao O, et al. CHARACTERISTICS OF PERIPAPILLARY INTRACHOROIDAL CAVITATION IN HIGHLY MYOPIC EYES: The Zhongshan Ophthalmic Center-Brien Holden Vision Institute High Myopia Cohort Study. <strong>Retina.</strong> 2021;41(5):1057-1062. doi:<a href="https://doi.org/10.1097/IAE.0000000000002963">10.1097/IAE.0000000000002963</a></li>
     </ul>
 
-    <!-- 2020 -->
     <h2>2020</h2>
     <ul class="pub-list">
-        <li>Zhang J, Tan X, Wang W, et al. Effect of Axial Length Adjustment Methods on Intraocular Lens Power Calculation in Highly Myopic Eyes. <em>Am J Ophthalmol.</em> 2020;214:110-118. doi:<a href="https://doi.org/10.1016/j.ajo.2020.02.023">10.1016/j.ajo.2020.02.023</a></li>
-        <li>Song Y, Wang W, Lin F, et al. Natural history of glaucomatous optic neuropathy in highly myopic Chinese: study protocol for a registry cohort study. <em>BMJ Open.</em> 2020;10(12):e039183. doi:<a href="https://doi.org/10.1136/bmjopen-2020-039183">10.1136/bmjopen-2020-039183</a></li>
-        <li>Lee JTL, Guo X, Li Z, Jong M, Sankaridurg P, He M. Progression and Longitudinal Biometric Changes in Highly Myopic Eyes. <em>Invest Ophthalmol Vis Sci.</em> 2020;61(4):34. doi:<a href="https://doi.org/10.1167/iovs.61.4.34">10.1167/iovs.61.4.34</a></li>
-        <li>Jiang Y, Wang D, Han X, et al. Visual impairment in highly myopic eyes: The ZOC-BHVI High Myopia Cohort Study. <em>Clin Exp Ophthalmol.</em> 2020;48(6):783-792. doi:<a href="https://doi.org/10.1111/ceo.13779">10.1111/ceo.13779</a></li>
-        <li>Liu R, Guo X, Xiao O, et al. DIFFUSE CHORIORETINAL ATROPHY IN CHINESE HIGH MYOPIA: The ZOC-BHVI High Myopia Cohort Study. <em>Retina.</em> 2020;40(2):241-248. doi:<a href="https://doi.org/10.1097/IAE.0000000000002397">10.1097/IAE.0000000000002397</a></li>
+        <li>Zhang J, Tan X, Wang W, et al. Effect of Axial Length Adjustment Methods on Intraocular Lens Power Calculation in Highly Myopic Eyes. <strong>Am J Ophthalmol.</strong> 2020;214:110-118. doi:<a href="https://doi.org/10.1016/j.ajo.2020.02.023">10.1016/j.ajo.2020.02.023</a></li>
+        <li>Song Y, Wang W, Lin F, et al. Natural history of glaucomatous optic neuropathy in highly myopic Chinese: study protocol for a registry cohort study. <strong>BMJ Open.</strong> 2020;10(12):e039183. doi:<a href="https://doi.org/10.1136/bmjopen-2020-039183">10.1136/bmjopen-2020-039183</a></li>
+        <li>Lee JTL, Guo X, Li Z, Jong M, Sankaridurg P, He M. Progression and Longitudinal Biometric Changes in Highly Myopic Eyes. <strong>Invest Ophthalmol Vis Sci.</strong> 2020;61(4):34. doi:<a href="https://doi.org/10.1167/iovs.61.4.34">10.1167/iovs.61.4.34</a></li>
+        <li>Jiang Y, Wang D, Han X, et al. Visual impairment in highly myopic eyes: The ZOC-BHVI High Myopia Cohort Study. <strong>Clin Exp Ophthalmol.</strong> 2020;48(6):783-792. doi:<a href="https://doi.org/10.1111/ceo.13779">10.1111/ceo.13779</a></li>
+        <li>Liu R, Guo X, Xiao O, et al. DIFFUSE CHORIORETINAL ATROPHY IN CHINESE HIGH MYOPIA: The ZOC-BHVI High Myopia Cohort Study. <strong>Retina.</strong> 2020;40(2):241-248. doi:<a href="https://doi.org/10.1097/IAE.0000000000002397">10.1097/IAE.0000000000002397</a></li>
     </ul>
 
-    <!-- 2018 -->
     <h2>2018</h2>
     <ul class="pub-list">
-        <li>Chen Y, Xiao O, Guo X, et al. Methodology of the ZOC-BHVI High Myopia Cohort Study: The Onset and Progression of Myopic Pathologies and Associated Risk Factors in Highly Myopic Chinese. <em>Ophthalmic Epidemiol.</em> 2018;25(1):31-38. doi:<a href="https://doi.org/10.1080/09286586.2017.1338733">10.1080/09286586.2017.1338733</a></li>
+        <li>Chen Y, Xiao O, Guo X, et al. Methodology of the ZOC-BHVI High Myopia Cohort Study: The Onset and Progression of Myopic Pathologies and Associated Risk Factors in Highly Myopic Chinese. <strong>Ophthalmic Epidemiol.</strong> 2018;25(1):31-38. doi:<a href="https://doi.org/10.1080/09286586.2017.1338733">10.1080/09286586.2017.1338733</a></li>
     </ul>
 </div>
 
 <footer>
     &copy; 2025 ZOC Ocular Epidemiology Consortium — Zhongshan Ophthalmic Center, Sun Yat-sen University
 </footer>
+
+<script>
+    (function() {
+        let currentPath = window.location.pathname;
+        if (currentPath === '' || currentPath === '/' || currentPath === '/index.html') {
+            currentPath = '/';
+        } else {
+            if (currentPath.endsWith('/')) currentPath = currentPath.slice(0, -1);
+        }
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
+            let href = link.getAttribute('href');
+            if (!href || href === '#' || href.startsWith('javascript:')) return;
+            let linkPath = href;
+            if (!linkPath.startsWith('/')) linkPath = '/' + linkPath;
+            if (linkPath.endsWith('/') && linkPath !== '/') linkPath = linkPath.slice(0, -1);
+            let isMatch = (currentPath === linkPath) || (currentPath === '/' && linkPath === '/');
+            if (isMatch) link.classList.add('current-page');
+        });
+    })();
+</script>
 
 </body>
 </html>
