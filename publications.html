@@ -23,7 +23,7 @@
             overflow-x: hidden;
         }
 
-        /* =========================  NAVBAR (与 index 完全一致)  ========================= */
+        /* =========================  NAVBAR (与 Home 完全同步)  ========================= */
         .navbar {
             position: fixed;
             top: 0;
@@ -210,7 +210,6 @@
 </head>
 <body>
 
-<!-- 导航栏（完全同 index） -->
 <div class="navbar">
     <div class="nav-container">
         <div class="logo">
@@ -225,7 +224,7 @@
         <ul class="nav-links">
             <li><a href="/">Home</a></li>
             <li><a href="/team.html">Team</a></li>
-            <li><a href="/publications.html">Publications</a></li>
+            <li><a href="/publications.html" class="current-page">Publications</a></li>
             <li><a href="/data_access.html">Data Access</a></li>
         </ul>
     </div>
@@ -262,6 +261,7 @@
 </footer>
 
 <script>
+    // 依然保留 JS 以备后续扩展，但即使没有它，CSS 也会通过上面的 current-page 正常高亮
     (function() {
         let currentPath = window.location.pathname;
         if (currentPath === '' || currentPath === '/' || currentPath === '/index.html') {
