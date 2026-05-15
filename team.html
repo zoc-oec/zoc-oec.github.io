@@ -99,23 +99,24 @@ body {
 .team-hero {
     position: relative;
     width: 100%;
-    height: 80vh; /* 使用视口高度，保证上下完整显示 */
+    height: 80vh; 
     display: flex;
-    align-items: flex-end; /* 文本靠下 */
+    align-items: flex-end; 
     justify-content: center;
-    background: url('/images/team-bg.jpg') no-repeat center center;
-    background-size: contain; /* 保持比例，完整显示背景 */
+    /* 增加了一个深色底色防穿透，并将 contain 改为 cover 以填满整个区域 */
+    background: #040a18 url('/images/team-bg.jpg') no-repeat center center;
+    background-size: cover; 
     z-index: 1;
     overflow: hidden;
-    border: none; /* 去掉白线 */
+    border: none; 
 }
 
-/* 遮罩层，保证文字可读 */
+/* 遮罩层，保证文字可读（保持不变） */
 .team-hero::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(4,10,24,0.65), rgba(4,10,24,0.2));
+    background: linear-gradient(to top, rgba(4,10,24,0.8), rgba(4,10,24,0.2)); /* 稍微加深了底部的遮罩让文字更清晰 */
     z-index: 1;
 }
 
@@ -125,7 +126,8 @@ body {
     z-index: 2;
     max-width: 1400px;
     width: 100%;
-    padding: 0 6%;
+    /* 修改了这里：增加了 80px 的底部 padding，把文字整体往上抬 */
+    padding: 0 6% 80px; 
     text-align: left;
 }
 .hero-content h1 {
