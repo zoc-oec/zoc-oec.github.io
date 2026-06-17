@@ -1,615 +1,69 @@
----
-layout: none
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ZOC-OEC | Ocular Epidemiology Consortium</title>
+<meta name="description" content="ZOC-OEC is the Zhongshan Ophthalmic Center Ocular Epidemiology Consortium â advancing precision ophthalmology through longitudinal cohort research, multimodal imaging, and global collaboration.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background: #f4f7fb;
-    color: #0a192f;
-    font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
-}
-
-/* =========================
-   NAVBAR
-========================= */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background: rgba(5, 12, 28, 0.75);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.nav-container {
-    max-width: 1400px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 6%;
-}
-
-.logo a {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    text-decoration: none;
-}
-
-.logo img {
-    width: 42px;
-    height: 42px;
-}
-
-.logo-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.logo-main {
-    color: white;
-    font-size: 1.4rem;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-}
-
-.logo-sub {
-    color: #b8c7da;
-    font-size: 0.72rem;
-    letter-spacing: 0.5px;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 34px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
-    transition: 0.3s;
-    position: relative;
-}
-
-.nav-links a:hover {
-    color: #00c2ff;
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    width: 0%;
-    height: 2px;
-    background: #00c2ff;
-    transition: 0.3s;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-/* 当前页面高亮样式（常亮） */
-.nav-links a.current-page {
-    color: #00c2ff !important;
-}
-
-.nav-links a.current-page::after {
-    width: 100% !important;
-}
-
-/* =========================
-   HERO
-========================= */
-.hero {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    min-height: 760px;
-    background-color: #0a1428;
-}
-
-.hero-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    pointer-events: none;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        135deg,
-        rgba(4, 10, 24, 0.5),
-        rgba(4, 10, 24, 0.55)
-    );
-    pointer-events: none;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 1400px;
-    width: 100%;
-    margin: auto;
-    padding: 0 6%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.hero-left {
-    max-width: 760px;
-}
-
-.hero-tag {
-    color: #00c2ff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.9rem;
-    margin-bottom: 22px;
-}
-
-.hero h1 {
-    color: white;
-    font-size: 6rem;
-    font-weight: 800;
-    line-height: 1;
-    margin-bottom: 12px;
-}
-
-.hero h2 {
-    color: #dce7f5;
-    font-size: 2.1rem;
-    font-weight: 300;
-    margin-bottom: 34px;
-}
-
-.hero-slogan {
-    color: #d7e6f5;
-    font-size: 1.35rem;
-    line-height: 1.8;
-    margin-bottom: 42px;
-    max-width: 680px;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 18px;
-    flex-wrap: wrap;
-}
-
-.btn-primary,
-.btn-secondary {
-    padding: 16px 34px;
-    border-radius: 60px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, #00bfa5, #0088ff);
-    color: white;
-    box-shadow: 0 10px 30px rgba(0,136,255,0.25);
-}
-
-.btn-primary:hover {
-    transform: translateY(-3px);
-}
-
-.btn-secondary {
-    color: white;
-    border: 1px solid rgba(255,255,255,0.25);
-    backdrop-filter: blur(8px);
-}
-
-.btn-secondary:hover {
-    background: rgba(255,255,255,0.08);
-}
-
-section {
-    padding: 80px 6%;  /* 减小默认 section 上下内边距（原来110px） */
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2.8rem;
-    font-weight: 800;
-    margin-bottom: 50px;  /* 减小标题下方间距 */
-    color: #071426;
-}
-
-/* =========================
-   ABOUT 卡片
-========================= */
-.about-grid {
-    max-width: 1400px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
-}
-
-.about-card {
-    background: white;
-    border-radius: 20px;
-    padding: 28px 24px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-    transition: 0.2s ease;
-    border: 1px solid #eef2f8;
-}
-
-.about-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.06);
-}
-
-.about-card h3 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #0f3b6a;
-    margin-bottom: 14px;
-}
-
-.about-card p {
-    color: #3a546d;
-    line-height: 1.6;
-    font-size: 0.95rem;
-}
-
-/* IMPACT 区域 - 压缩间距 */
-.impact-section {
-    padding-top: 0;          /* 去掉额外的上边距 */
-    padding-bottom: 40px;    /* 减小底部空白 */
-}
-
-.impact-box {
-    max-width: 1400px;
-    margin: auto;
-    background: linear-gradient(135deg, #071426, #0c2340);
-    border-radius: 34px;
-    padding: 40px 60px;      /* 原60px 减少到40px */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 40px;
-    text-align: center;
-}
-
-.impact-item h2 {
-    color: #00c2ff;
-    font-size: 3.2rem;
-    margin-bottom: 12px;
-}
-
-.impact-item p {
-    color: #d7e6f5;
-    font-size: 1.1rem;
-}
-
-/* RESEARCH 区域 - 大幅减少上边距 */
-#research {
-    padding-top: 20px;       /* 原来继承80px，现在单独减少 */
-}
-
-.research-grid {
-    max-width: 1400px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.research-card {
-    background: white;
-    border-radius: 28px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    transition: 0.3s;
-}
-
-.research-card:hover {
-    transform: translateY(-8px);
-}
-
-.research-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
-
-.research-content {
-    padding: 30px;
-}
-
-.research-content h3 {
-    margin-bottom: 14px;
-    font-size: 1.35rem;
-}
-
-.research-content p {
-    line-height: 1.8;
-    color: #5f6f82;
-}
-
-/* CTA 区域 - 保持原样 */
-.cta-section {
-    padding-top: 40px;
-    padding-bottom: 80px;
-}
-
-.cta-box {
-    max-width: 1400px;
-    margin: auto;
-    background: linear-gradient(135deg, #071426, #0c2340);
-    border-radius: 34px;
-    padding: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-.cta-box h2 {
-    color: white;
-    font-size: 2.3rem;
-    margin-bottom: 16px;
-}
-
-.cta-box p {
-    color: #d7e6f5;
-    font-size: 1.1rem;
-}
-
-footer {
-    text-align: center;
-    padding: 50px 20px;
-    color: #6f7f92;
-    font-size: 0.92rem;
-}
-
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        gap: 18px;
-    }
-    .nav-links {
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .hero {
-        min-height: 700px;
-    }
-    .hero h1 {
-        font-size: 4rem;
-    }
-    .hero h2 {
-        font-size: 1.5rem;
-    }
-    .hero-slogan {
-        font-size: 1.05rem;
-    }
-    .section-title {
-        font-size: 2rem;
-        margin-bottom: 40px;
-    }
-    .impact-box {
-        padding: 30px 20px;
-        gap: 30px;
-    }
-    .cta-box {
-        padding: 40px 30px;
-    }
-    .cta-box h2 {
-        font-size: 1.8rem;
-    }
-    .about-card {
-        padding: 22px 20px;
-    }
-    section {
-        padding: 60px 6%;
-    }
-    #research {
-        padding-top: 10px;
-    }
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
-    <div class="nav-container">
-        <div class="logo">
-            <a href="/">
-                <img src="/images/icon.png" alt="Logo">
-                <div class="logo-text">
-                    <span class="logo-main">ZOC-OEC</span>
-                    <span class="logo-sub">Ocular Epidemiology Consortium</span>
-                </div>
-            </a>
-        </div>
-        <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/team.html">Team</a></li>
-            <li><a href="/publications.html">Publications</a></li>
-            <li><a href="/data_access.html">Data Access</a></li>
-        </ul>
-    </div>
-</div>
+<!-- NAV -->
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <img src="images/icon.png" alt="ZOC-OEC">
+      <div>
+        <span class="nav__logo-name">ZOC-OEC</span>
+        <small class="nav__logo-tagline">Ocular Epidemiology Consortium</small>
+      </div>
+    </a>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cohorts.html">Cohorts</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="data_access.html" class="nav__cta">Data Access</a></li>
+    </ul>
+  </div>
+</nav>
 
 <!-- HERO -->
-<div class="hero">
-    <img class="hero-image" src="https://zoc-oec.github.io/images/Cover.png" alt="Cover">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-        <div class="hero-left">
-            <div class="hero-tag">Zhongshan Ophthalmic Center</div>
-            <h1>ZOC-OEC</h1>
-            <h2>Ocular Epidemiology Consortium</h2>
-            <p class="hero-slogan">
-                Advancing Precision Ophthalmology Through<br>
-                Longitudinal Population Research
-            </p>
-            <div class="hero-buttons">
-                <a href="#research" class="btn-primary">Explore Research</a>
-                <a href="/publications.html" class="btn-secondary">Publications</a>
-            </div>
-        </div>
+<section class="hero" id="home">
+  <div class="hero__inner">
+    <div class="hero__content">
+      <p class="hero__eyebrow">Zhongshan Ophthalmic Center Â· Sun Yat-sen University</p>
+      <h1 class="hero__title">
+        Advancing<br><span>Precision</span><br>Ophthalmology
+      </h1>
+      <p class="hero__sub">
+        ZOC-OEC unites longitudinal cohort research, multimodal ophthalmic imaging,
+        and AI-driven risk prediction to advance global vision science and open international collaboration.
+      </p>
+      <div class="hero__btns">
+        <a href="cohorts.html" class="btn btn--primary">Explore Cohorts</a>
+        <a href="data_access.html" class="btn btn--outline">Request Data Access</a>
+      </div>
     </div>
-</div>
-
-<!-- ABOUT -->
-<section>
-    <div class="section-title">About ZOC-OEC</div>
-    <div class="about-grid">
-        <div class="about-card">
-            <h3>Longitudinal Cohorts</h3>
-            <p>20+ years of population-based ocular epidemiology studies with extensive follow-up.</p>
-        </div>
-        <div class="about-card">
-            <h3>AI & Risk Prediction</h3>
-            <p>Dynamic modeling and multimodal AI for disease progression and prediction.</p>
-        </div>
-        <div class="about-card">
-            <h3>Global Collaboration</h3>
-            <p>International collaborative network advancing translational vision science.</p>
-        </div>
-        <div class="about-card">
-            <h3>Translational Impact</h3>
-            <p>Integrating epidemiology, retinal imaging, AI and clinical ophthalmology.</p>
-        </div>
+    <div class="hero__stats">
+      <div class="hero__stat"><div class="hero__stat-num">80K+</div><div class="hero__stat-lbl">Participants</div></div>
+      <div class="hero__stat"><div class="hero__stat-num">20+</div><div class="hero__stat-lbl">Yoars Follow-up</div></div>
+      <div class="hero__stat"><div class="hero__stat-num">10M+</div><div class="hero__stat-lbl">Retinal Images</div></div>
+      <div class="hero__stat"><div class="hero__stat-num">8</div><div class="hero__stat-lbl">Population Cohorts</div></div>
     </div>
+  </div>
 </section>
-
-<!-- IMPACT（统计卡片，间距已压缩） -->
-<section class="impact-section">
-    <div class="impact-box">
-        <div class="impact-item">
-            <h2>80,000+</h2>
-            <p>Participants</p>
-        </div>
-        <div class="impact-item">
-            <h2>20+</h2>
-            <p>Years Follow-up</p>
-        </div>
-        <div class="impact-item">
-            <h2>10M+</h2>
-            <p>Retinal Images</p>
-        </div>
-        <div class="impact-item">
-            <h2>8</h2>
-            <p>Population Cohorts</p>
-        </div>
-    </div>
-</section>
-
-<!-- RESEARCH（研究焦点，上边距已减少） -->
-<section id="research">
-    <div class="section-title">Research Focus</div>
-    <div class="research-grid">
-        <div class="research-card">
-            <img src="/images/pacg.jpg" alt="PACG">
-            <div class="research-content">
-                <h3>PACG Progression</h3>
-                <p>Dynamic risk prediction and longitudinal angle-closure analysis.</p>
-            </div>
-        </div>
-        <div class="research-card">
-            <img src="/images/retina.jpg" alt="Retina">
-            <div class="research-content">
-                <h3>Retinal Biomarkers</h3>
-                <p>RNFL and retinal imaging biomarkers for systemic diseases.</p>
-            </div>
-        </div>
-        <div class="research-card">
-            <img src="/images/ai.jpg" alt="AI">
-            <div class="research-content">
-                <h3>AI Ophthalmology</h3>
-                <p>Foundation AI and multimodal deep learning for eye diseases.</p>
-            </div>
-        </div>
-        <div class="research-card">
-            <img src="/images/population.jpg" alt="Population">
-            <div class="research-content">
-                <h3>Population Eye Health</h3>
-                <p>Large-scale epidemiological research for vision health.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section">
-    <div class="cta-box">
-        <div>
-            <h2>Together, We Advance Vision Science</h2>
-            <p>Data-driven discovery through global collaboration.</p>
-        </div>
-        <a href="/data_access.html" class="btn-primary">Collaboration Inquiry</a>
-    </div>
-</section>
-
-<footer>
-    © 2025 ZOC-OEC — Zhongshan Ophthalmic Center, Sun Yat-sen University
-</footer>
-
-<script>
-    (function() {
-        let currentPath = window.location.pathname;
-        if (currentPath === '' || currentPath === '/' || currentPath === '/index.html') {
-            currentPath = '/';
-        } else {
-            if (currentPath.endsWith('/')) {
-                currentPath = currentPath.slice(0, -1);
-            }
-        }
-        const navLinks = document.querySelectorAll('.nav-links a');
-        navLinks.forEach(link => {
-            let href = link.getAttribute('href');
-            if (!href || href === '#' || href.startsWith('javascript:')) return;
-            let linkPath = href;
-            if (!linkPath.startsWith('/')) linkPath = '/' + linkPath;
-            if (linkPath.endsWith('/') && linkPath !== '/') linkPath = linkPath.slice(0, -1);
-            let isMatch = (currentPath === linkPath);
-            if (currentPath === '/' && linkPath === '/') isMatch = true;
-            if (isMatch) link.classList.add('current-page');
-        });
-    })();
-</script>
+<div class="feature-strip"><div class="feature-item"><div class="feature-item__icon">ð¬</div><div class="feature-item__title">Longitudinal Cohorts</div><div class="feature-item__desc">20+ years of prospective population-based ocular epidemiology studies.</div></div><div class="feature-item"><div class="feature-item__icon">ð¤</div><div class="feature-item__title">AI &amp; Risk Prediction</div><div class="feature-item__desc">Dynamic modeling and multimodal foundation AI for disease progression.</div></div><div class="feature-item"><div class="feature-item__icon">ð</div><div class="feature-item__title">Global Collaboration</div><div class="feature-item__desc">International research network advancing translational vision science.</div></div><div class="feature-item"><div class="feature-item__icon">ð</div><div class="feature-item__title">Multi-omics Integration</div><div class="feature-item__desc">Linking retinal biomarkers with metabolomics, proteomics, and imaging.</div></div></div>
+<section class="section" id="cohorts"><div class="container"><div class="sec-hd"><p class="eyebrow">Our Cohorts</p><h2 class="sec-title">Three Landmark Prospective Studies</h2><p class="sec-desc">Each cohort provides longitudinal data underpinning ZOC-OEC's scientific output and collaboration programmes.</p></div><div class="grid-3"><div class="card cohort-card"><span class="cohort-card__tag">ZAP</span><h3 class="cohort-card__title">Angle Closure Prevention</h3><p class="cohort-card__name">Zhongshan Angle Closure Prevention Trial</p><p class="cohort-card__desc">Landmark RCT on laser peripheral iridotomy for primary angle-closure prevention, with 14-year follow-up and biometric risk stratification.</p><a href="zap.html" class="btn btn--outline" style="width:100%;justify-content:center">View Publications â</a></div><div class="card cohort-card"><span class="cohort-card__tag">GDES</span><h3 class="cohort-card__title">Diabetic Eye Study</h3><p class="cohort-card__name">Guangzhou Diabetic Eye Study</p><p class="cohort-card__desc">Prospective cohort linking retinal imaging, metabolomics, and proteomics to diabetic retinopathy, cardiometabolic risk, and systemic outcomes.</p><a href="gdes.html" class="btn btn--outline" style="width:100%;justify-content:center">View Publications â</a></div><div class="card cohort-card"><span class="cohort-card__tag">ZHMC</span><h3 class="cohort-card__title">High Myopia Cohort</h3><p class="cohort-card__name">Zhongshan High Myopia Cohort</p><p class="cohort-card__desc">Long-term registry of highly myopic children and adults; OCT/OCTA biomarkers, maculopathy progression, AI-guided risk prediction, and myopia control RCTs.</p><a href="zhmc.html" class="btn btn--outline" style="width:100%;justify-content:center">View Publications â</a></div></div></div></section>
+<div class="info-band"><div class="info-band__inner"><div class="info-band__stat"><strong>310+</strong><span>SCI Personal Publications</span></div><div class="info-band__stat"><strong>20K+</strong><span>Citations</span></div><div class="info-band__stat"><strong>69</strong><span>H-index</span></div><div class="info-band__stat"><strong>3</strong><span>Core Cohorts</span></div><div class="info-band__stat"><strong>Global</strong><span>Collaboration Network</span></div></div></div>
+<section class="section" id="research"><div class="container"><div class="sec-hd"><p class="eyebrow">Research Focus</p><h2 class="sec-title">Four Pillars of Vision Science</h2></div><div class="research-grid"><div class="research-card"><img src="images/pacg.jpg" alt="PACG Research" loading="lazy"><div class="research-card__ov"><div class="research-card__title">PACG Progression</div><div class="research-card__desc">Dynamic risk prediction and longitudinal angle-closure analysis.</div></div></div><div class="research-card"><img src="images/retina.jpg" alt="Retinal Biomarkers" loading="lazy"><div class="research-card__ov"><div class="research-card__title">Retinal Biomarkers</div><div class="research-card__desc">RNFL and retinal imaging biomarkers for systemic diseases.</div></div></div><div class="research-card"><img src="images/ai.jpg" alt="AI Ophthalmology" loading="lazy"><div class="research-card__ov"><div class="research-card__title">AI Ophthalmology</div><div class="research-card__desc">Foundation AI and multimodal deep learning for eye diseases.</div></div></div><div class="research-card"><img src="images/population.jpg" alt="Population Eye Health" loading="lazy"><div class="research-card__ov"><div class="research-card__title">Population Eye Health</div><div class="research-card__desc">Large-scale epidemiological research for vision health.</div></div></div></div></div></section>
+<section class="section" style="background:rgba(255,255,255,.02);border-top:1px solid var(--border);"><div class="container"><div class="sec-hd"><p class="eyebrow">Featured Publications</p><h2 class="sec-title">Recent Landmark Papers</h2></div><div class="pub-list" style="margin-bottom:28px;"><div class="pub-item featured"><div class="pub-item__meta"><span class="pub-tag pub-tag--gdes">GDES</span><span class="pub-year">2025</span></div><div class="pub-item__title">Artificial intelligence-driven metabolomics of retinal nerve fibre layer to profile risks of mortality and cardiometabolic diseases.</div><div class="pub-item__authors">Yang S, Xin Z, Li H, et al.</div><div class="pub-item__journal"><strong>Nature Communications</strong> 2025;16(1):11039.</div><a class="pub-item__doi" href="https://doi.org/10.1038/s41467-025-66979-z" target="_blank" rel="noopener">â doi:10.1038/s41467-025-66979-z</a></div><div class="pub-item featured"><div class="pub-item__meta"><span class="pub-tag pub-tag--zap">ZAP</span><span class="pub-year">2026</span></div><div class="pub-item__title">Iris Trabecular Contact on OCT in Angle Closure Progression.</div><div class="pub-item__authors">Hong KL, Xu BY, Wang W, et al.</div><div class="pub-item__journal"><strong>JAMA Ophthalmology</strong> 2026;144(3):247â254.</div><a class="pub-item__doi" href="https://doi.org/10.1001/jamaophthalmol.2025.6067" target="_blank" rel="noopener">â doi:10.1001/jamaophthalmol.2025.6067</a></div><div class="pub-item featured"><div class="pub-item__meta"><span class="pub-tag pub-tag--zhmc">ZHMC</span><span class="pub-year">2024</span></div><div class="pub-item__title">Axial Elongation Trajectories in Chinese Children and Adults With High Myopia.</div><div class="pub-item__authors">Zhang S, Chen Y, Li Z, et al.</div><div class="pub-item__journal"><strong>JAMA Ophthalmology</strong> 2024;142(2):87â94.</div><a class="pub-item__doi" href="https://doi.org/10.1001/jamaophthalmol.2023.5835" target="_blank" rel="noopener">â doi:10.1001/jamaophthalmol.2023.5835</a></div></div><div class="text-center"><a href="publications.html" class="btn btn--outline">Browse All Publications</a></div></div></section>
+<section class="section"><div class="container"><div class="cta-banner"><h2>Collaborate with ZOC-OEC</h2><p>We welcome collaboration proposals from researchers and institutions worldwide. Submit a data access request or contact the PI to discuss scientific partnership.</p><div class="btn-group"><a href="data_access.html" class="btn btn--primary">Request Data Access</a><a href="team.html" class="btn btn--outline">Meet the Team</a></div></div></div></section>
+<footer class="footer"><p class="footer__text">Â© 2025 ZOC-OEC â <a href="https://www.gzzoc.com" target="_blank" rel="noopener">Zhongshan Ophthalmic Center</a>, Sun Yat-sen University</p></footer>
+<script src="assets/js/site.js"></script>
 </body>
 </html>
