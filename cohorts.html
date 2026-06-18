@@ -1,6 +1,3 @@
----
-layout: none
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +8,58 @@ layout: none
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
+<style>
+/* Cohort page extras */
+.cohort-section{margin-bottom:5rem;scroll-margin-top:80px}
+.cohort-header{display:flex;align-items:center;gap:1rem;margin-bottom:2rem}
+.cohort-badge{font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:.35rem 1rem;border-radius:999px}
+.cohort-badge--zap{background:rgba(99,102,241,.18);color:#818cf8}
+.cohort-badge--gdes{background:rgba(16,185,129,.15);color:#34d399}
+.cohort-badge--zhmc{background:rgba(251,191,36,.14);color:#fbbf24}
+.cohort-title{margin:0;font-size:1.85rem;font-weight:800}
+.cohort-body{display:grid;grid-template-columns:1fr 380px;gap:2.5rem;align-items:start}
+.cohort-desc p{color:rgba(255,255,255,.68);line-height:1.82;margin-bottom:1.1rem;font-size:.94rem}
+.cohort-desc p:last-child{margin-bottom:0}
+.cohort-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.4rem 0}
+.ctag{font-size:.72rem;font-weight:600;padding:.25rem .75rem;border-radius:4px;border:1px solid}
+.ctag--blue{background:rgba(99,102,241,.1);border-color:rgba(99,102,241,.3);color:#818cf8}
+.ctag--green{background:rgba(16,185,129,.1);border-color:rgba(16,185,129,.28);color:#34d399}
+.ctag--amber{background:rgba(251,191,36,.1);border-color:rgba(251,191,36,.26);color:#fbbf24}
+.ctag--cyan{background:var(--cyan-dim);border-color:var(--border);color:var(--cyan)}
+.cohort-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.75rem}
+/* Stats sidebar */
+.cohort-stats{display:flex;flex-direction:column;gap:.85rem}
+.cstat{border-radius:var(--radius);padding:1.25rem 1.4rem}
+.cstat--zap{background:rgba(99,102,241,.07);border:1px solid rgba(99,102,241,.22)}
+.cstat--gdes{background:rgba(16,185,129,.07);border:1px solid rgba(16,185,129,.2)}
+.cstat--zhmc{background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.2)}
+.cstat__num{font-size:1.85rem;font-weight:800;line-height:1}
+.cstat__zap .cstat__num{color:#818cf8}
+.cstat--zap .cstat__num{color:#818cf8}
+.cstat--gdes .cstat__num{color:#34d399}
+.cstat--zhmc .cstat__num{color:#fbbf24}
+.cstat__lbl{font-size:.72rem;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:.07em}
+.cstat--measures{padding:1.2rem 1.4rem}
+.cstat__measure-title{font-size:.7rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.65rem}
+.measures-grid{display:flex;flex-wrap:wrap;gap:.4rem}
+.measure-pill{font-size:.72rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:.2rem .6rem;color:rgba(255,255,255,.65)}
+.divider{border:none;border-top:1px solid var(--border-sub);margin:0 0 5rem}
+/* Highlights */
+.highlight-box{
+  background:linear-gradient(135deg,rgba(0,212,255,.05) 0%,rgba(255,255,255,.02) 100%);
+  border:1px solid var(--border);border-radius:var(--radius);
+  padding:1.25rem 1.5rem;margin:1.25rem 0;
+}
+.highlight-box__label{font-size:.68rem;font-weight:700;color:var(--cyan);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem}
+.highlight-box__text{font-size:.86rem;color:rgba(255,255,255,.72);line-height:1.65}
+
+@media(max-width:860px){
+  .cohort-body{grid-template-columns:1fr}
+  .cohort-stats{flex-direction:row;flex-wrap:wrap}
+  .cohort-stats .cstat{flex:1;min-width:140px}
+  .cohort-stats .cstat--measures{flex:100%}
+}
+</style>
 </head>
 <body>
 
@@ -26,7 +75,7 @@ layout: none
     <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
     <ul class="nav__links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="cohorts.html">Cohorts</a></li>
+      <li><a href="cohorts.html" class="active">Cohorts</a></li>
       <li><a href="publications.html">Publications</a></li>
       <li><a href="team.html">Team</a></li>
       <li><a href="data_access.html" class="nav__cta">Data Access</a></li>
@@ -38,142 +87,104 @@ layout: none
   <div class="container">
     <p class="eyebrow">Research Infrastructure</p>
     <h1>Our Cohorts</h1>
-    <p>Three complementary longitudinal cohorts covering the major causes of preventable blindness in Asia: angle-closure glaucoma, diabetic eye disease, and high myopia.</p>
+    <p>Three complementary longitudinal cohorts covering the major preventable causes of blindness in Asia: angle-closure glaucoma, diabetic eye disease, and pathological myopia.</p>
   </div>
 </div>
 
 <section class="section">
   <div class="container">
 
-    <!-- ZAP -->
-    <div id="zap" style="margin-bottom:4rem;scroll-margin-top:80px">
-      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem">
-        <span style="background:rgba(99,102,241,.2);color:#818cf8;font-weight:700;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;padding:.35rem .9rem;border-radius:999px">ZAP</span>
-        <h2 style="margin:0;font-size:1.75rem">Zhongshan Angle-Closure Prevention Trial</h2>
+    <!-- âââââââââââââââââââââââââââââââ ZAP âââââââââââââââââââââââââââââââ -->
+    <div id="zap" class="cohort-section">
+      <div class="cohort-header">
+        <span class="cohort-badge cohort-badge--zap">ZAP</span>
+        <h2 class="cohort-title">Zhongshan Angle-Closure Prevention Trial</h2>
       </div>
-      <div style="display:grid;grid-template-columns:2fr 1fr;gap:2rem;align-items:start">
-        <div>
-          <p style="color:var(--muted);line-height:1.75;margin-bottom:1.25rem">The ZAP trial is a landmark randomized controlled trial evaluating whether laser peripheral iridotomy (LPI) prevents angle closure and glaucoma in Chinese adults with narrow drainage angles (primary angle-closure suspect, PACS). Initiated at Zhongshan Ophthalmic Center in Guangzhou, ZAP has followed over 2,000 eyes across ~1,000 participants for 14 years, generating the longest follow-up data on angle closure prevention in the literature.</p>
-          <p style="color:var(--muted);line-height:1.75;margin-bottom:1.5rem">The 2019 <em>Lancet</em> publication of the primary trial results (He M et al., Lancet 2019) demonstrated that LPI significantly reduces angle closure progression. Subsequent analyses have characterized the biometric risk factors, anatomical predictors, and long-term durability of the intervention through 14-year follow-up (Yuan Y et al., Ophthalmology 2023; JAMA Ophthalmol 2024).</p>
-          <div style="display:flex;gap:.75rem;flex-wrap:wrap">
-            <a href="publications.html#zap" class="btn btn--outline" style="font-size:.85rem">View All ZAP Publications</a>
+
+      <div class="cohort-body">
+        <div class="cohort-desc">
+          <p>The <strong>Zhongshan Angle-Closure Prevention (ZAP) Trial</strong> is the world's largest and longest-running randomized controlled trial evaluating the efficacy of laser peripheral iridotomy (LPI) in preventing angle-closure glaucoma among individuals with primary angle-closure suspect (PACS) â a condition affecting an estimated 500 million people globally. Initiated at Zhongshan Ophthalmic Center in 2008, ZAP has now accumulated <strong>18 continuous years of prospective follow-up</strong>, making it the definitive longitudinal dataset on angle-closure disease natural history and prevention.</p>
+
+          <p>The landmark <em>Lancet</em> 2019 publication (He M et al.) established that LPI significantly reduces the risk of angle-closure progression, fundamentally reshaping international clinical guidelines. Subsequent 14-year extended follow-up analyses (Ophthalmology 2023; The Innovation Medicine 2023) confirmed the durability of the LPI effect and characterized the biometric risk factors â including anterior chamber depth, iris thickness, and lens vault â that predict progression. The 2024 and 2026 JAMA Ophthalmology papers further used AS-OCTâderived trabecular-iris contact to quantify structural closure mechanisms over time.</p>
+
+          <div class="highlight-box">
+            <div class="highlight-box__label">Scientific Distinction</div>
+            <div class="highlight-box__text">ZAP holds the longest continuous follow-up of any angle-closure prevention cohort in the world. Its unique within-person design â one treated eye, one untreated eye â eliminates confounding from inter-individual variation, providing unparalleled causal inference power.</div>
+          </div>
+
+          <p>The ZAP biobank contains repeated gonioscopy, AS-OCT biometric series, intraocular pressure trajectories, visual field data, and BCVA records across 18 annual follow-up cycles. These data have underpinned predictive algorithms for glaucoma conversion adopted by the World Glaucoma Association. Ongoing analyses are characterizing the 18-year cumulative incidence of angle-closure and primary angle-closure glaucoma (PACG) â data with direct policy implications for population screening programmes across Asia.</p>
+
+          <div class="cohort-tags">
+            <span class="ctag ctag--blue">18-Year RCT</span>
+            <span class="ctag ctag--blue">889 Participants</span>
+            <span class="ctag ctag--blue">~1,750 Eyes</span>
+            <span class="ctag ctag--cyan">Lancet 2019</span>
+            <span class="ctag ctag--cyan">JAMA Ophthalmol</span>
+            <span class="ctag ctag--cyan">Ophthalmology</span>
+          </div>
+
+          <div class="cohort-actions">
+            <a href="publications.html#zap" class="btn btn--outline" style="font-size:.85rem">View ZAP Publications</a>
             <a href="data_access.html" class="btn btn--outline" style="font-size:.85rem">Request ZAP Data</a>
           </div>
         </div>
-        <div style="display:flex;flex-direction:column;gap:.75rem">
-          <div style="background:var(--card-bg);border:1px solid rgba(99,102,241,.25);border-radius:var(--radius);padding:1.25rem">
-            <div style="font-size:1.75rem;font-weight:800;color:#818cf8">~2,000</div>
-            <div style="font-size:.8rem;color:var(--muted);margin-top:2px">Eyes enrolled</div>
+
+        <div class="cohort-stats">
+          <div class="cstat cstat--zap">
+            <div class="cstat__num">18</div>
+            <div class="cstat__lbl">Years Follow-up</div>
           </div>
-          <div style="background:var(--card-bg);border:1px solid rgba(99,102,241,.25);border-radius:var(--radius);padding:1.25rem">
-            <div style="font-size:1.75rem;font-weight:800;color:#818cf8">14 yrs</div>
-            <div style="font-size:.8rem;color:var(--muted);margin-top:2px">Maximum follow-up</div>
+          <div class="cstat cstat--zap">
+            <div class="cstat__num">889</div>
+            <div class="cstat__lbl">Participants</div>
           </div>
-          <div style="background:var(--card-bg);border:1px solid rgba(99,102,241,.25);border-radius:var(--radius);padding:1.25rem">
-            <div style="font-size:1.75rem;font-weight:800;color:#818cf8">15+</div>
-            <div style="font-size:.8rem;color:var(--muted);margin-top:2px">Publications</div>
+          <div class="cstat cstat--zap">
+            <div class="cstat__num">~1,750</div>
+            <div class="cstat__lbl">Eyes Enrolled</div>
           </div>
-          <div style="background:var(--card-bg);border:1px solid rgba(99,102,241,.25);border-radius:var(--radius);padding:1.25rem">
-            <div style="font-size:.8rem;color:var(--muted);margin-bottom:.5rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em">Key Measures</div>
-            <div style="font-size:.82rem;color:var(--text);line-height:1.6">Gonioscopy · AS-OCT · IOP · BCVA · Visual fields · Iris &amp; lens parameters</div>
+          <div class="cstat cstat--zap">
+            <div class="cstat__num">15+</div>
+            <div class="cstat__lbl">Publications</div>
+          </div>
+          <div class="cstat cstat--zap cstat--measures">
+            <div class="cstat__measure-title">Key Variables Collected</div>
+            <div class="measures-grid">
+              <span class="measure-pill">Gonioscopy</span>
+              <span class="measure-pill">AS-OCT</span>
+              <span class="measure-pill">Iris biometry</span>
+              <span class="measure-pill">Lens vault</span>
+              <span class="measure-pill">IOP</span>
+              <span class="measure-pill">BCVA</span>
+              <span class="measure-pill">Visual fields</span>
+              <span class="measure-pill">ACD</span>
+              <span class="measure-pill">Trabecular-iris contact</span>
+              <span class="measure-pill">Pupil diameter</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <hr style="border:none;border-top:1px solid var(--border);margin-bottom:4rem">
+    <hr class="divider">
 
-    <!-- GDES -->
-    <div id="gdes" style="margin-bottom:4rem;scroll-margin-top:80px">
-      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem">
-        <span style="background:rgba(16,185,129,.15);color:#34d399;font-weight:700;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;padding:.35rem .9rem;border-radius:999px">GDES</span>
-        <h2 style="margin:0;font-size:1.75rem">Guangzhou Diabetic Eye Study</h2>
+    <!-- âââââââââââââââââââââââââââââââ GDES ââââââââââââââââââââââââââââââ -->
+    <div id="gdes" class="cohort-section">
+      <div class="cohort-header">
+        <span class="cohort-badge cohort-badge--gdes">GDES</span>
+        <h2 class="cohort-title">Guangzhou Diabetic Eye Study</h2>
       </div>
-      <div style="display:grid;grid-template-columns:2fr 1fr;gap:2rem;align-items:start">
-        <div>
-          <p style="color:var(--muted);line-height:1.75;margin-bottom:1.25rem">GDES is a prospective longitudinal cohort of adults with type 2 diabetes mellitus recruited from the outpatient endocrinology service at Zhongshan Ophthalmic Center. The study integrates ophthalmic imaging (OCT, OCTA, fundus photography) with systemic phenotyping, plasma metabolomics, proteomics, and genomics to characterize the ocular and systemic consequences of diabetes and discover novel biomarkers.</p>
-          <p style="color:var(--muted);line-height:1.75;margin-bottom:1.5rem">GDES has produced landmark multi-omics analyses linking retinal phenotypes to metabolomic signatures of systemic disease (Nat Commun 2023, 2025), predictive models for diabetic retinopathy progression (Ophthalmology 2024), and OCTA-based biomarkers of renal and cardiovascular dysfunction. The cohort's 4-year longitudinal follow-up enables both incidence and progression analyses.</p>
-          <div style="display:flex;gap:.75rem;flex-wrap:wrap">
-            <a href="publications.html#gdes" class="btn btn--outline" style="font-size:.85rem">View All GDES Publications</a>
-            <a href="data_access.html" class="btn btn--outline" style="font-size:.85rem">Request GDES Data</a>
-          </div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:.75rem">
-          <div style="background:var(--card-bg);border:1px solid rgba(16,185,129,.25);border-radius:var(--radius);padding:1.25rem">
-            <div style="font-size:1.75rem;font-weight:800;color:#34d399">~1,400</div>
-            <div style="font-size:.8rem;color:var(--muted);margin-top:2px">Participants</div>
-          </div>
-          <div style="background:var(--card-bg);border:1px solid rgba(16,185,129,.25);border-radius:var(--radius);padding:1.25rem">
-            <div style="font-size:1.75rem;font-weight:800;color:#34d399">4 yrs</div>
-            <div style="font-size:.8rem;color:var(--muted);margin-top:2px">Follow-up</div>
-          </div>
-          <div style="background:var(--card-bg);border:1px solid rgba(16,185,129,.25);border-radius:var(--radius);padding:1.25rem">
-            <div style="font-size:1.75rem;font-weight:800;color:#34d399">40+</div>
-            <div style="font-size:.8rem;color:var(--muted);margin-top:2px">Publications</div>
-          </div>
-          <div style="background:var(--card-bg);border:1px solid rgba(16,185,129,.25);border-radius:var(--radius);padding:1.25rem">
-            <div style="font-size:.8rem;color:var(--muted);margin-bottom:.5rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em">Key Measures</div>
-            <div style="font-size:.82rem;color:var(--text);line-height:1.6">OCT · SS-OCTA · Fundus photos · Metabolomics · Proteomics · HbA1c · eGFR</div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <hr style="border:none;border-top:1px solid var(--border);margin-bottom:4rem">
+      <div class="cohort-body">
+        <div class="cohort-desc">
+          <p>The <strong>Guangzhou Diabetic Eye Study (GDES)</strong> is a large-scale prospective longitudinal cohort of adults with type 2 diabetes mellitus, established at Zhongshan Ophthalmic Center between 2017 and 2019. With over <strong>3,000 participants</strong> aged 35&ndash;85 years and now entering its <strong>7th year of continuous follow-up</strong>, GDES is one of the most deeply phenotyped diabetic eye disease cohorts in the world, integrating multimodal retinal imaging with a comprehensive multi-omics biobank.</p>
 
-    <!-- ZHMC -->
-    <div id="zhmc" style="scroll-margin-top:80px">
-      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem">
-        <span style="background:rgba(251,191,36,.12);color:#fbbf24;font-weight:700;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;padding:.35rem .9rem;border-radius:999px">ZHMC</span>
-        <h2 style="margin:0;font-size:1.75rem">ZOC–BHVI High Myopia Cohort</h2>
-      </div>
-      <div style="display:grid;grid-template-columns:2fr 1fr;gap:2rem;align-items:start">
-        <div>
-          <p style="color:var(--muted);line-height:1.75;margin-bottom:1.25rem">The ZOC–BHVI High Myopia Cohort (ZHMC) is a prospective longitudinal study of adults and children with high myopia (spherical equivalent ≤ −6.00 D) established in collaboration with the Brien Holden Vision Institute, Sydney. The cohort characterizes 10-year trajectories of axial elongation, macular structural change, and functional loss, and evaluates emerging interventions including repeated low-level red-light (RLRL) therapy and orthokeratology.</p>
-          <p style="color:var(--muted);line-height:1.75;margin-bottom:1.5rem">ZHMC has defined axial length trajectories in Chinese high myopes (JAMA Ophthalmol 2024), demonstrated the efficacy of RLRL combined with orthokeratology (Ophthalmology 2024), established normative RNFL databases for detecting myopic glaucoma (Ophthalmology 2023), and built machine learning models to predict myopic maculopathy risk over a decade.</p>
-          <div style="display:flex;gap:.75rem;flex-wrap:wrap">
-            <a href="publications.html#zhmc" class="btn btn--outline" style="font-size:.85rem">View All ZHMC Publications</a>
-            <a href="data_access.html" class="btn btn--outline" style="font-size:.85rem">Request ZHMC Data</a>
-          </div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:.75rem">
-          <div style="background:var(--card-bg);border:1px solid rgba(251,191,36,.25);border-radius:var(--radius);padding:1.25rem">
-            <div style="font-size:1.75rem;font-weight:800;color:#fbbf24">~1,000</div>
-            <div style="font-size:.8rem;color:var(--muted);margin-top:2px">Participants</div>
-          </div>
-          <div style="background:var(--card-bg);border:1px solid rgba(251,191,36,.25);border-radius:var(--radius);padding:1.25rem">
-            <div style="font-size:1.75rem;font-weight:800;color:#fbbf24">10 yrs</div>
-            <div style="font-size:.8rem;color:var(--muted);margin-top:2px">Follow-up</div>
-          </div>
-          <div style="background:var(--card-bg);border:1px solid rgba(251,191,36,.25);border-radius:var(--radius);padding:1.25rem">
-            <div style="font-size:1.75rem;font-weight:800;color:#fbbf24">30+</div>
-            <div style="font-size:.8rem;color:var(--muted);margin-top:2px">Publications</div>
-          </div>
-          <div style="background:var(--card-bg);border:1px solid rgba(251,191,36,.25);border-radius:var(--radius);padding:1.25rem">
-            <div style="font-size:.8rem;color:var(--muted);margin-bottom:.5rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em">Key Measures</div>
-            <div style="font-size:.82rem;color:var(--text);line-height:1.6">Axial length · Refraction · OCT · OCTA · Visual fields · Fundus photography</div>
-          </div>
-        </div>
-      </div>
-    </div>
+          <p>What sets GDES apart is its unprecedented depth of molecular profiling. Plasma samples were analysed using Olink proximity extension assay to quantify <strong>2,923 plasma proteins</strong>, making GDES one of the largest proteomics-linked ophthalmic cohorts globally. Alongside proteomics, the cohort has generated metabolomics profiles, genome-wide genotyping, and longitudinal OCT/SS-OCTA measurements at multiple timepoints, enabling integrative multi-omics analyses linking retinal phenotypes to systemic disease mechanisms.</p>
 
-    <!-- Data Access CTA -->
-    <div class="cta-banner" style="margin-top:4rem">
-      <h2 class="cta-banner__title">Access Our Data</h2>
-      <p class="cta-banner__sub">Qualified researchers can apply to collaborate and access de-identified datasets from one or more cohorts.</p>
-      <div class="cta-banner__actions">
-        <a href="data_access.html" class="btn btn--primary">Apply for Data Access</a>
-        <a href="publications.html" class="btn btn--outline">Browse Publications</a>
-      </div>
-    </div>
+          <div class="highlight-box">
+            <div class="highlight-box__label">Multi-omics Powerhouse</div>
+            <div class="highlight-box__text">GDES links 2,923-protein plasma proteomics (Olink) + metabolomics + genome-wide genotyping to multimodal retinal imaging (OCT, SS-OCTA, fundus photos) â enabling discovery of systemic biomarkers of diabetic complications at a scale unmatched in ophthalmology.</div>
+          </div>
 
-  </div>
-</section>
+          <p>GDES has produced landmark publications in <em>Nature Communications</em> (2023, 2025) and <em>PLOS Medicine</em> (2026) demonstrating that retinal biomarkers derived from AI-metabolomics profiling predict mortality and cardiometabolic risk beyond conventional clinical factors. The 2025 proteomics atlas (Nat Commun) identified 71 plasma proteins associated with diabetic retinal neurodegeneration across inflammatory and extracellular-matrix pathways. Longitudinal OCTA analyses have defined the earliest structural signs of diabetic retinopathy and linked foveal avascular zone changes to renal and cardiovascular outcomes.</p>
 
-<footer class="footer">
-  <p class="footer__text">© 2025 ZOC-OEC — <a href="https://www.gzzoc.com" target="_blank" rel="noopener">Zhongshan Ophthalmic Center</a>, Sun Yat-sen University</p>
-</footer>
-
-<script src="assets/js/site.js"></script>
-</body>
-</html>
+          <p>With seven annual follow-up cycles complete, GDES now provides sufficient longitudinal depth to study incidence, progression, regression, and remission of diabetic retinopathy, macular oedema, and retinal neurodegeneration â across a population spanning the
