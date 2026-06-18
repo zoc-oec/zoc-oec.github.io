@@ -33,7 +33,51 @@
   var cohortBtns   = document.querySelectorAll('.filter-btn[data-cohort]');
   var yearSelect   = document.getElementById('year-filter');
   var countEl      = document.getElementById('pub-count');
+  var pubContainer = filterArea.closest('.container');
   var items        = Array.from(document.querySelectorAll('.pub-item'));
+
+  function sortPublicationsByYear() {
+    if (!pubContainer || !items.length) return;
+
+    var grouped = {};
+    items.forEach(function (item) {
+      var year = item.dataset.year || 'Other';
+      if (!grouped[year]) grouped[year] = [];
+      grouped[year].push(item);
+    });
+
+    Array.from(pubContainer.querySelectorAll('.year-section')).forEach(function (section) {
+      section.remove();
+    });
+
+    Object.keys(grouped).sort(function (a, b) {
+      return Number(b) - Number(a);
+    }).forEach(function (year) {
+      var section = document.createElement('div');
+      section.className = 'year-section';
+      section.dataset.year = year;
+
+      var heading = document.createElement('div');
+      heading.className = 'year-heading';
+      heading.textContent = year;
+
+      var list = document.createElement('div');
+      list.className = 'pub-list';
+
+      grouped[year].sort(function (a, b) {
+        return (b.classList.contains('featured') ? 1 : 0) - (a.classList.contains('featured') ? 1 : 0);
+      }).forEach(function (item) {
+        list.appendChild(item);
+      });
+
+      section.appendChild(heading);
+      section.appendChild(list);
+      pubContainer.appendChild(section);
+    });
+  }
+
+  sortPublicationsByYear();
+  items = Array.from(document.querySelectorAll('.pub-item'));
 
   function getFilters() {
     var activeCohort = document.querySelector('.filter-btn[data-cohort].active');
