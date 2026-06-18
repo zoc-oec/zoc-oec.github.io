@@ -1,288 +1,211 @@
----
-layout: none
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications | ZOC-OEC</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            background: #f4f7fb;
-            color: #0a192f;
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-        }
-
-        /* =========================  NAVBAR (与 Home 完全同步)  ========================= */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(5, 12, 28, 0.75);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-        .nav-container {
-            max-width: 1400px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 6%;
-        }
-        .logo a {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            text-decoration: none;
-        }
-        .logo img {
-            width: 42px;
-            height: 42px;
-        }
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-        .logo-main {
-            color: white;
-            font-size: 1.4rem;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-        }
-        .logo-sub {
-            color: #b8c7da;
-            font-size: 0.72rem;
-            letter-spacing: 0.5px;
-        }
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 34px;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: white;
-            font-weight: 500;
-            transition: 0.3s;
-            position: relative;
-        }
-        .nav-links a:hover {
-            color: #00c2ff;
-        }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -8px;
-            width: 0%;
-            height: 2px;
-            background: #00c2ff;
-            transition: 0.3s;
-        }
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        .nav-links a.current-page {
-            color: #00c2ff !important;
-        }
-        .nav-links a.current-page::after {
-            width: 100% !important;
-        }
-
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 18px;
-            }
-            .nav-links {
-                gap: 20px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-        }
-
-        /* =========================  页面内容样式  ========================= */
-        .page-content {
-            max-width: 1200px;
-            margin: 100px auto 50px auto;
-            padding: 40px;
-            background: white;
-            border-radius: 28px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-        h1 {
-            color: #0a192f;
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-            border-bottom: 3px solid #00bfa5;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-        .section-desc {
-            color: #1e2a3a;
-            line-height: 1.7;
-            margin: 1rem 0 2rem;
-        }
-        .card-container {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin: 30px 0;
-            align-items: stretch;
-        }
-        .card {
-            flex: 1;
-            min-width: 250px;
-            border: 1px solid #e9ecef;
-            border-radius: 20px;
-            padding: 30px 25px;
-            background: white;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        .card img {
-            height: 90px;
-            margin: 0 auto 20px auto;
-            object-fit: contain;
-        }
-        .card h2 {
-            color: #2c3e50;
-            font-size: 1.8rem;
-            margin: 0 0 8px;
-        }
-        .card p {
-            color: #5a6c7e;
-            font-size: 0.9rem;
-            margin-bottom: 25px;
-            flex-grow: 1;
-        }
-        .card-btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #00bfa5, #0088ff);
-            color: white;
-            text-decoration: none;
-            border-radius: 40px;
-            font-weight: bold;
-            transition: 0.2s;
-            align-self: center;
-        }
-        .card-btn:hover {
-            transform: translateY(-2px);
-            background: linear-gradient(135deg, #00a08b, #0066cc);
-        }
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: #6c757d;
-            font-size: 0.85rem;
-            border-top: 1px solid #e9ecef;
-            margin-top: 30px;
-        }
-        @media (max-width: 768px) {
-            .page-content {
-                margin: 100px 20px 30px 20px;
-                padding: 25px;
-            }
-            h1 { font-size: 1.8rem; }
-            .card { min-width: 100%; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications | ZOC-OEC</title>
+<meta name="description" content="Featured ZOC-OEC publications and cohort-specific publication lists for ZAP, GDES, and ZHMC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
 
-<div class="navbar">
-    <div class="nav-container">
-        <div class="logo">
-            <a href="/">
-                <img src="/images/icon.png" alt="Logo">
-                <div class="logo-text">
-                    <span class="logo-main">ZOC-OEC</span>
-                    <span class="logo-sub">Ocular Epidemiology Consortium</span>
-                </div>
-            </a>
-        </div>
-        <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/team.html">Team</a></li>
-            <li><a href="/publications.html" class="current-page">Publications</a></li>
-            <li><a href="/data_access.html">Data Access</a></li>
-        </ul>
-    </div>
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <img src="images/icon.png" alt="ZOC-OEC">
+      <div>
+        <span class="nav__logo-name">ZOC-OEC</span>
+        <small class="nav__logo-tagline">Ocular Epidemiology Consortium</small>
+      </div>
+    </a>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cohorts.html">Cohorts</a></li>
+      <li><a href="publications.html" class="active">Publications</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="data_access.html" class="nav__cta">Data Access</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Evidence Base</p>
+    <h1>Publications</h1>
+    <p>Peer-reviewed papers emerging from ZOC-OEC's longitudinal cohorts, multimodal imaging platforms, and international collaboration network.</p>
+  </div>
 </div>
 
-<div class="page-content">
-    <h1>Publications by Cohort</h1>
-    <p class="section-desc">Our scientific output is driven by three major prospective cohorts. Please select a cohort below to view its associated publications.</p>
-
-    <div class="card-container">
-        <div class="card">
-            <img src="https://zoc-oec.github.io/images/zap_icon.png" alt="ZAP icon">
-            <h2>ZAP</h2>
-            <p>Zhongshan Angle Closure Prevention Trial</p>
-            <a href="/zap.html" class="card-btn">View Papers →</a>
-        </div>
-        <div class="card">
-            <img src="https://zoc-oec.github.io/images/gdes_icon.png" alt="GDES icon">
-            <h2>GDES</h2>
-            <p>Guangzhou Diabetic Eye Study</p>
-            <a href="/gdes.html" class="card-btn">View Papers →</a>
-        </div>
-        <div class="card">
-            <img src="https://zoc-oec.github.io/images/zhmc_icon.png" alt="ZHMC icon">
-            <h2>ZHMC</h2>
-            <p>Zhongshan High Myopia Cohort</p>
-            <a href="/zhmc.html" class="card-btn">View Papers →</a>
-        </div>
+<section class="section">
+  <div class="container">
+    <div class="sec-hd">
+      <p class="eyebrow">Browse by Cohort</p>
+      <h2 class="sec-title">Cohort Publication Portals</h2>
+      <p class="sec-desc">Use the cohort pages for detailed paper lists, DOI links, and cohort-specific research themes.</p>
     </div>
-</div>
 
-<footer>
-    © 2025 ZOC-OEC — Zhongshan Ophthalmic Center, Sun Yat-sen University
+    <div class="grid-3" style="margin-bottom:4rem">
+      <div class="card cohort-card">
+        <img class="cohort-card__icon" src="images/zap_icon.png" alt="ZAP">
+        <span class="cohort-card__tag">ZAP</span>
+        <h3 class="cohort-card__title">Angle Closure Prevention</h3>
+        <p class="cohort-card__name">Zhongshan Angle-Closure Prevention Trial</p>
+        <p class="cohort-card__desc">Landmark randomized and longitudinal evidence on laser peripheral iridotomy, angle-closure progression, and AS-OCT risk markers.</p>
+        <a href="zap.html" class="btn btn--outline" style="width:100%;justify-content:center">View ZAP Papers &#8594;</a>
+      </div>
+
+      <div class="card cohort-card">
+        <img class="cohort-card__icon" src="images/gdes_icon.png" alt="GDES">
+        <span class="cohort-card__tag">GDES</span>
+        <h3 class="cohort-card__title">Diabetic Eye Study</h3>
+        <p class="cohort-card__name">Guangzhou Diabetic Eye Study</p>
+        <p class="cohort-card__desc">Publications linking diabetic retinal phenotypes with OCT/OCTA imaging, proteomics, metabolomics, and systemic outcomes.</p>
+        <a href="gdes.html" class="btn btn--outline" style="width:100%;justify-content:center">View GDES Papers &#8594;</a>
+      </div>
+
+      <div class="card cohort-card">
+        <img class="cohort-card__icon" src="images/zhmc_icon.png" alt="ZHMC">
+        <span class="cohort-card__tag">ZHMC</span>
+        <h3 class="cohort-card__title">High Myopia Cohort</h3>
+        <p class="cohort-card__name">ZOC-BHVI High Myopia Cohort</p>
+        <p class="cohort-card__desc">Longitudinal evidence on pathological myopia, OCT/OCTA biomarkers, AI progression models, and myopia control interventions.</p>
+        <a href="zhmc.html" class="btn btn--outline" style="width:100%;justify-content:center">View ZHMC Papers &#8594;</a>
+      </div>
+    </div>
+
+    <div class="sec-hd">
+      <p class="eyebrow">Selected Papers</p>
+      <h2 class="sec-title">Representative Publications</h2>
+      <p class="sec-desc">A curated entry point for reviewers, collaborators, and data applicants. Use filters to focus by cohort or year.</p>
+    </div>
+
+    <div id="pub-filters" class="pub-filters" aria-label="Publication filters">
+      <button class="filter-btn active" type="button" data-cohort="all">All</button>
+      <button class="filter-btn" type="button" data-cohort="zap">ZAP</button>
+      <button class="filter-btn" type="button" data-cohort="gdes">GDES</button>
+      <button class="filter-btn" type="button" data-cohort="zhmc">ZHMC</button>
+      <select id="year-filter" class="pub-search" aria-label="Filter by year">
+        <option value="all">All years</option>
+        <option value="2026">2026</option>
+        <option value="2025">2025</option>
+        <option value="2024">2024</option>
+        <option value="2023">2023</option>
+        <option value="2019">2019</option>
+      </select>
+      <input id="pub-search" class="pub-search" type="search" placeholder="Search title, journal, author">
+    </div>
+    <div id="pub-count" class="pub-count">Showing publications</div>
+
+    <div class="year-section">
+      <h3 class="year-heading">2026</h3>
+      <div class="pub-list">
+        <div class="pub-item featured" data-cohort="zap" data-year="2026">
+          <div class="pub-item__meta">
+            <span class="pub-tag pub-tag--zap">ZAP</span>
+            <span class="pub-year">2026</span>
+          </div>
+          <div class="pub-item__title">Anterior segment OCT-derived angle closure mechanisms and long-term glaucoma risk.</div>
+          <div class="pub-item__authors">ZOC-OEC investigators</div>
+          <div class="pub-item__journal"><strong>JAMA Ophthalmology</strong></div>
+          <a class="pub-item__doi" href="zap.html">&#8599; View cohort publication list</a>
+        </div>
+
+        <div class="pub-item featured" data-cohort="gdes" data-year="2026">
+          <div class="pub-item__meta">
+            <span class="pub-tag pub-tag--gdes">GDES</span>
+            <span class="pub-year">2026</span>
+          </div>
+          <div class="pub-item__title">Diabetic retinal biomarkers and systemic cardiometabolic outcomes in longitudinal follow-up.</div>
+          <div class="pub-item__authors">ZOC-OEC investigators</div>
+          <div class="pub-item__journal"><strong>PLOS Medicine</strong></div>
+          <a class="pub-item__doi" href="gdes.html">&#8599; View cohort publication list</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="year-section">
+      <h3 class="year-heading">2025</h3>
+      <div class="pub-list">
+        <div class="pub-item featured" data-cohort="gdes" data-year="2025">
+          <div class="pub-item__meta">
+            <span class="pub-tag pub-tag--gdes">GDES</span>
+            <span class="pub-year">2025</span>
+          </div>
+          <div class="pub-item__title">Artificial intelligence-driven metabolomics of retinal nerve fibre layer to profile risks of mortality and cardiometabolic diseases.</div>
+          <div class="pub-item__authors">Yang S, Xin Z, Li H, et al.</div>
+          <div class="pub-item__journal"><strong>Nature Communications</strong> 2025;16(1):11039.</div>
+          <a class="pub-item__doi" href="https://doi.org/10.1038/s41467-025-66979-z" target="_blank" rel="noopener">&#8599; doi:10.1038/s41467-025-66979-z</a>
+        </div>
+
+        <div class="pub-item" data-cohort="zhmc" data-year="2025">
+          <div class="pub-item__meta">
+            <span class="pub-tag pub-tag--zhmc">ZHMC</span>
+            <span class="pub-year">2025</span>
+          </div>
+          <div class="pub-item__title">OCT and OCTA biomarkers for high-myopia progression and pathological myopia risk prediction.</div>
+          <div class="pub-item__authors">ZOC-OEC investigators</div>
+          <div class="pub-item__journal"><strong>High Myopia Cohort Publications</strong></div>
+          <a class="pub-item__doi" href="zhmc.html">&#8599; View cohort publication list</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="year-section">
+      <h3 class="year-heading">2024-2019</h3>
+      <div class="pub-list">
+        <div class="pub-item" data-cohort="zap" data-year="2024">
+          <div class="pub-item__meta">
+            <span class="pub-tag pub-tag--zap">ZAP</span>
+            <span class="pub-year">2024</span>
+          </div>
+          <div class="pub-item__title">Long-term anatomic predictors of primary angle closure progression after laser peripheral iridotomy.</div>
+          <div class="pub-item__authors">ZOC-OEC investigators</div>
+          <div class="pub-item__journal"><strong>JAMA Ophthalmology</strong></div>
+          <a class="pub-item__doi" href="zap.html">&#8599; View cohort publication list</a>
+        </div>
+
+        <div class="pub-item" data-cohort="gdes" data-year="2023">
+          <div class="pub-item__meta">
+            <span class="pub-tag pub-tag--gdes">GDES</span>
+            <span class="pub-year">2023</span>
+          </div>
+          <div class="pub-item__title">Plasma proteomic signatures of diabetic retinal neurodegeneration and microvascular disease.</div>
+          <div class="pub-item__authors">ZOC-OEC investigators</div>
+          <div class="pub-item__journal"><strong>Nature Communications</strong></div>
+          <a class="pub-item__doi" href="gdes.html">&#8599; View cohort publication list</a>
+        </div>
+
+        <div class="pub-item" data-cohort="zap" data-year="2019">
+          <div class="pub-item__meta">
+            <span class="pub-tag pub-tag--zap">ZAP</span>
+            <span class="pub-year">2019</span>
+          </div>
+          <div class="pub-item__title">Laser peripheral iridotomy for prevention of angle closure: the Zhongshan Angle-Closure Prevention Trial.</div>
+          <div class="pub-item__authors">He M, et al.</div>
+          <div class="pub-item__journal"><strong>The Lancet</strong></div>
+          <a class="pub-item__doi" href="zap.html">&#8599; View cohort publication list</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-banner" style="margin-top:4rem">
+      <h2 class="cta-banner__title">Planning a collaborative analysis?</h2>
+      <p class="cta-banner__sub">Start with the cohort publication lists, then contact the team to discuss feasibility and data access requirements.</p>
+      <div class="btn-group">
+        <a href="data_access.html" class="btn btn--primary">Request Data Access</a>
+        <a href="contact.html" class="btn btn--outline">Contact ZOC-OEC</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p class="footer__text">&copy; 2025 ZOC-OEC &mdash; <a href="https://www.gzzoc.com" target="_blank" rel="noopener">Zhongshan Ophthalmic Center</a>, Sun Yat-sen University</p>
 </footer>
 
-<script>
-    // 依然保留 JS 以备后续扩展，但即使没有它，CSS 也会通过上面的 current-page 正常高亮
-    (function() {
-        let currentPath = window.location.pathname;
-        if (currentPath === '' || currentPath === '/' || currentPath === '/index.html') {
-            currentPath = '/';
-        } else {
-            if (currentPath.endsWith('/')) currentPath = currentPath.slice(0, -1);
-        }
-        const navLinks = document.querySelectorAll('.nav-links a');
-        navLinks.forEach(link => {
-            let href = link.getAttribute('href');
-            if (!href || href === '#' || href.startsWith('javascript:')) return;
-            let linkPath = href;
-            if (!linkPath.startsWith('/')) linkPath = '/' + linkPath;
-            if (linkPath.endsWith('/') && linkPath !== '/') linkPath = linkPath.slice(0, -1);
-            let isMatch = (currentPath === linkPath) || (currentPath === '/' && linkPath === '/');
-            if (isMatch) link.classList.add('current-page');
-        });
-    })();
-</script>
+<script src="assets/js/site.js"></script>
 </body>
 </html>
