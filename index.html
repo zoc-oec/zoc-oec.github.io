@@ -23,7 +23,7 @@
     </a>
     <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
     <ul class="nav__links">
-      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
       <li><a href="cohorts.html">Cohorts</a></li>
       <li><a href="publications.html">Publications</a></li>
       <li><a href="team.html">Team</a></li>
@@ -55,7 +55,7 @@
         <div class="hero__stat-lbl">Participants</div>
       </div>
       <div class="hero__stat">
-        <div class="hero__stat-num">20+</div>
+        <div class="hero__stat-num">18+</div>
         <div class="hero__stat-lbl">Years Follow-up</div>
       </div>
       <div class="hero__stat">
@@ -73,24 +73,59 @@
 <!-- FEATURE STRIP -->
 <div class="feature-strip">
   <div class="feature-item">
-    <div class="feature-item__icon">ð¬</div>
+    <div class="feature-item__icon">
+      <!-- Pulse / activity line â Longitudinal Cohorts -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+      </svg>
+    </div>
     <div class="feature-item__title">Longitudinal Cohorts</div>
-    <div class="feature-item__desc">20+ years of prospective population-based ocular epidemiology studies.</div>
+    <div class="feature-item__desc">18+ years of prospective population-based ocular epidemiology across three landmark cohorts.</div>
   </div>
   <div class="feature-item">
-    <div class="feature-item__icon">ð¤</div>
+    <div class="feature-item__icon">
+      <!-- CPU chip â AI & Risk Prediction -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="4" width="16" height="16" rx="2"/>
+        <rect x="9" y="9" width="6" height="6"/>
+        <line x1="9" y1="1" x2="9" y2="4"/>
+        <line x1="15" y1="1" x2="15" y2="4"/>
+        <line x1="9" y1="20" x2="9" y2="23"/>
+        <line x1="15" y1="20" x2="15" y2="23"/>
+        <line x1="20" y1="9" x2="23" y2="9"/>
+        <line x1="20" y1="14" x2="23" y2="14"/>
+        <line x1="1" y1="9" x2="4" y2="9"/>
+        <line x1="1" y1="14" x2="4" y2="14"/>
+      </svg>
+    </div>
     <div class="feature-item__title">AI &amp; Risk Prediction</div>
-    <div class="feature-item__desc">Dynamic modeling and multimodal foundation AI for disease progression.</div>
+    <div class="feature-item__desc">Dynamic modeling and multimodal foundation AI for disease progression and population risk.</div>
   </div>
   <div class="feature-item">
-    <div class="feature-item__icon">ð</div>
+    <div class="feature-item__icon">
+      <!-- Globe â Global Collaboration -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="2" y1="12" x2="22" y2="12"/>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+    </div>
     <div class="feature-item__title">Global Collaboration</div>
-    <div class="feature-item__desc">International research network advancing translational vision science.</div>
+    <div class="feature-item__desc">International research network advancing translational vision science across continents.</div>
   </div>
   <div class="feature-item">
-    <div class="feature-item__icon">ð</div>
+    <div class="feature-item__icon">
+      <!-- Share-2 / network nodes â Multi-omics Integration -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="18" cy="5" r="3"/>
+        <circle cx="6" cy="12" r="3"/>
+        <circle cx="18" cy="19" r="3"/>
+        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+      </svg>
+    </div>
     <div class="feature-item__title">Multi-omics Integration</div>
-    <div class="feature-item__desc">Linking retinal biomarkers with metabolomics, proteomics, and imaging.</div>
+    <div class="feature-item__desc">Linking retinal biomarkers with plasma proteomics, metabolomics, and multimodal imaging.</div>
   </div>
 </div>
 
@@ -100,7 +135,7 @@
     <div class="sec-hd">
       <p class="eyebrow">Our Cohorts</p>
       <h2 class="sec-title">Three Landmark Prospective Studies</h2>
-      <p class="sec-desc">Each cohort provides longitudinal data underpinning ZOC-OEC's scientific output and collaboration programmes.</p>
+      <p class="sec-desc">Each cohort provides longitudinal data underpinning ZOC-OEC's scientific output and global collaboration programmes.</p>
     </div>
     <div class="grid-3">
 
@@ -108,13 +143,13 @@
         <img class="cohort-card__icon" src="images/zap_icon.png" alt="ZAP">
         <span class="cohort-card__tag">ZAP</span>
         <h3 class="cohort-card__title">Angle Closure Prevention</h3>
-        <p class="cohort-card__name">Zhongshan Angle Closure Prevention Trial</p>
-        <p class="cohort-card__desc">Landmark RCT on laser peripheral iridotomy for primary angle-closure prevention, with 14-year follow-up and biometric risk stratification.</p>
+        <p class="cohort-card__name">Zhongshan Angle-Closure Prevention Trial</p>
+        <p class="cohort-card__desc">World's largest RCT on LPI for angle-closure prevention. 18-year continuous follow-up with AS-OCT, gonioscopy, and functional endpoints â the defining evidence base for global PACS management guidelines.</p>
         <div class="cohort-card__metrics">
-          <div class="cohort-card__metric"><span class="val">14+</span><span class="lbl">Years</span></div>
+          <div class="cohort-card__metric"><span class="val">18+</span><span class="lbl">Years</span></div>
           <div class="cohort-card__metric"><span class="val">JAMA</span><span class="lbl">Flagship Outlet</span></div>
         </div>
-        <a href="zap.html" class="btn btn--outline" style="width:100%; justify-content:center;">View Publications â</a>
+        <a href="cohorts.html#zap" class="btn btn--outline" style="width:100%;justify-content:center;">Explore ZAP &rarr;</a>
       </div>
 
       <div class="card cohort-card">
@@ -122,25 +157,25 @@
         <span class="cohort-card__tag">GDES</span>
         <h3 class="cohort-card__title">Diabetic Eye Study</h3>
         <p class="cohort-card__name">Guangzhou Diabetic Eye Study</p>
-        <p class="cohort-card__desc">Prospective cohort linking retinal imaging, metabolomics, and proteomics to diabetic retinopathy, cardiometabolic risk, and systemic outcomes.</p>
+        <p class="cohort-card__desc">3,000+ T2DM patients with multi-omics (2,923 plasma proteins + metabolomics), multimodal retinal imaging, and 7-year longitudinal follow-up. Unrivalled depth for diabetic retinopathy biomarker discovery.</p>
         <div class="cohort-card__metrics">
-          <div class="cohort-card__metric"><span class="val">Nat Comms</span><span class="lbl">Top Outlets</span></div>
-          <div class="cohort-card__metric"><span class="val">Multi-omics</span><span class="lbl">Data</span></div>
+          <div class="cohort-card__metric"><span class="val">Nat Comms</span><span class="lbl">Top Outlet</span></div>
+          <div class="cohort-card__metric"><span class="val">Multi-omics</span><span class="lbl">Platform</span></div>
         </div>
-        <a href="gdes.html" class="btn btn--outline" style="width:100%; justify-content:center;">View Publications â</a>
+        <a href="cohorts.html#gdes" class="btn btn--outline" style="width:100%;justify-content:center;">Explore GDES &rarr;</a>
       </div>
 
       <div class="card cohort-card">
         <img class="cohort-card__icon" src="images/zhmc_icon.png" alt="ZHMC">
         <span class="cohort-card__tag">ZHMC</span>
         <h3 class="cohort-card__title">High Myopia Cohort</h3>
-        <p class="cohort-card__name">Zhongshan High Myopia Cohort</p>
-        <p class="cohort-card__desc">Long-term registry of highly myopic children and adults; OCT/OCTA biomarkers, maculopathy progression, AI-guided risk prediction, and myopia control RCTs.</p>
+        <p class="cohort-card__name">ZOC&ndash;BHVI High Myopia Cohort</p>
+        <p class="cohort-card__desc">14-year registry of highly myopic children &amp; adults. OCT/OCTA biomarkers, maculopathy trajectories, AI-guided progression models, and myopia control RCTs â deepest longitudinal dataset on pathological myopia worldwide.</p>
         <div class="cohort-card__metrics">
-          <div class="cohort-card__metric"><span class="val">10+</span><span class="lbl">Years</span></div>
+          <div class="cohort-card__metric"><span class="val">14+</span><span class="lbl">Years</span></div>
           <div class="cohort-card__metric"><span class="val">AI+OCT</span><span class="lbl">Focus</span></div>
         </div>
-        <a href="zhmc.html" class="btn btn--outline" style="width:100%; justify-content:center;">View Publications â</a>
+        <a href="cohorts.html#zhmc" class="btn btn--outline" style="width:100%;justify-content:center;">Explore ZHMC &rarr;</a>
       </div>
 
     </div>
@@ -199,13 +234,13 @@
 </section>
 
 <!-- FEATURED PUBLICATIONS -->
-<section class="section" style="background:rgba(255,255,255,.02); border-top:1px solid var(--border);">
+<section class="section" style="background:rgba(255,255,255,.02);border-top:1px solid var(--border-sub)">
   <div class="container">
     <div class="sec-hd">
       <p class="eyebrow">Featured Publications</p>
       <h2 class="sec-title">Recent Landmark Papers</h2>
     </div>
-    <div class="pub-list" style="margin-bottom:28px;">
+    <div class="pub-list" style="margin-bottom:28px">
 
       <div class="pub-item featured">
         <div class="pub-item__meta">
@@ -215,7 +250,7 @@
         <div class="pub-item__title">Artificial intelligence-driven metabolomics of retinal nerve fibre layer to profile risks of mortality and cardiometabolic diseases.</div>
         <div class="pub-item__authors">Yang S, Xin Z, Li H, et al.</div>
         <div class="pub-item__journal"><strong>Nature Communications</strong> 2025;16(1):11039.</div>
-        <a class="pub-item__doi" href="https://doi.org/10.1038/s41467-025-66979-z" target="_blank" rel="noopener">â doi:10.1038/s41467-025-66979-z</a>
+        <a class="pub-item__doi" href="https://doi.org/10.1038/s41467-025-66979-z" target="_blank" rel="noopener">&#8599; doi:10.1038/s41467-025-66979-z</a>
       </div>
 
       <div class="pub-item featured">
@@ -223,51 +258,4 @@
           <span class="pub-tag pub-tag--zap">ZAP</span>
           <span class="pub-year">2026</span>
         </div>
-        <div class="pub-item__title">Iris Trabecular Contact on OCT in Angle Closure Progression.</div>
-        <div class="pub-item__authors">Hong KL, Xu BY, Wang W, et al.</div>
-        <div class="pub-item__journal"><strong>JAMA Ophthalmology</strong> 2026;144(3):247â254.</div>
-        <a class="pub-item__doi" href="https://doi.org/10.1001/jamaophthalmol.2025.6067" target="_blank" rel="noopener">â doi:10.1001/jamaophthalmol.2025.6067</a>
-      </div>
-
-      <div class="pub-item featured">
-        <div class="pub-item__meta">
-          <span class="pub-tag pub-tag--zhmc">ZHMC</span>
-          <span class="pub-year">2024</span>
-        </div>
-        <div class="pub-item__title">Axial Elongation Trajectories in Chinese Children and Adults With High Myopia.</div>
-        <div class="pub-item__authors">Zhang S, Chen Y, Li Z, et al.</div>
-        <div class="pub-item__journal"><strong>JAMA Ophthalmology</strong> 2024;142(2):87â94.</div>
-        <a class="pub-item__doi" href="https://doi.org/10.1001/jamaophthalmol.2023.5835" target="_blank" rel="noopener">â doi:10.1001/jamaophthalmol.2023.5835</a>
-      </div>
-
-    </div>
-    <div class="text-center">
-      <a href="publications.html" class="btn btn--outline">Browse All Publications</a>
-    </div>
-  </div>
-</section>
-
-<!-- DATA ACCESS CTA -->
-<section class="section">
-  <div class="container">
-    <div class="cta-banner">
-      <h2>Collaborate with ZOC-OEC</h2>
-      <p>We welcome collaboration proposals from researchers and institutions worldwide. Submit a data access request or contact the PI to discuss scientific partnership.</p>
-      <div class="btn-group">
-        <a href="data_access.html" class="btn btn--primary">Request Data Access</a>
-        <a href="team.html" class="btn btn--outline">Meet the Team</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <p class="footer__text">
-    Â© 2025 ZOC-OEC â <a href="https://www.gzzoc.com" target="_blank" rel="noopener">Zhongshan Ophthalmic Center</a>, Sun Yat-sen University
-  </p>
-</footer>
-
-<script src="assets/js/site.js"></script>
-</body>
-</html>
+        <div class="pub-item
