@@ -633,3 +633,77 @@ p{color:rgba(255,255,255,.82)}
   .faculty-grid{grid-template-columns:1fr}
   .collab-grid{grid-template-columns:1fr}
 }
+
+
+/* ===== Recent publications showcase (index) ===== */
+.pub-frames{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;align-items:end}
+.pub-frame{display:flex;flex-direction:column;align-items:center;text-align:center}
+.pub-frame__device{position:relative;width:100%;max-width:270px;animation:floaty 6s ease-in-out infinite}
+.pub-frame:nth-child(2) .pub-frame__device{animation-delay:-2s}
+.pub-frame:nth-child(3) .pub-frame__device{animation-delay:-4s}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+.device{position:relative;background:linear-gradient(145deg,#1b2a44,#0c1729);border:1px solid rgba(255,255,255,.16);box-shadow:0 28px 52px rgba(0,0,0,.5)}
+.device--tablet{border-radius:22px;padding:14px 12px}
+.device--tablet::before{content:'';position:absolute;top:7px;left:50%;transform:translateX(-50%);width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.28)}
+.device__screen{border-radius:11px;overflow:hidden;background:#fff;aspect-ratio:3/4;display:flex;align-items:center;justify-content:center}
+.device__screen img{width:100%;height:100%;object-fit:cover;object-position:top}
+.device--laptop{border-radius:14px;padding:12px}
+.device--laptop .device__screen{aspect-ratio:4/3}
+.device--laptop::after{content:'';position:absolute;left:-13%;right:-13%;bottom:-13px;height:13px;border-radius:0 0 11px 11px;background:linear-gradient(180deg,#27394f,#15233a);box-shadow:0 9px 20px rgba(0,0,0,.42)}
+.device--pen{border-radius:20px;padding:14px}
+.device--pen .device__screen{aspect-ratio:3/4}
+.pen{position:absolute;right:-16px;top:26%;width:8px;height:120px;border-radius:6px;background:linear-gradient(180deg,#7ef0ff,#0a86a0);transform:rotate(17deg);box-shadow:0 6px 14px rgba(0,0,0,.45)}
+.pen::after{content:'';position:absolute;bottom:-8px;left:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:9px solid #0a86a0}
+.dl-card{padding:20px 16px;display:flex;flex-direction:column;gap:11px;align-items:center;justify-content:center;height:100%;background:linear-gradient(160deg,#0e2138,#0a1424)}
+.dl-card__journal{font-size:.66rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan)}
+.dl-card__title{font-size:.82rem;font-weight:700;line-height:1.4;color:#fff}
+.dl-card__doi{font-size:.66rem;color:var(--muted);word-break:break-all}
+.pub-frame__cap{margin-top:20px;max-width:300px}
+.pub-frame__cap .tag{font-size:.66rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--cyan)}
+.pub-frame__cap h3{font-size:.9rem;font-weight:700;line-height:1.42;margin:7px 0 5px}
+.pub-frame__cap p{font-size:.76rem;color:var(--muted);margin-bottom:6px}
+@media(max-width:900px){.pub-frames{grid-template-columns:1fr;gap:52px;justify-items:center}.pub-frame__device{max-width:240px}}
+
+/* ===== Metric charts (publications) ===== */
+.chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:36px}
+.chart-card{background:var(--bg-card);border:1px solid var(--border-sub);border-radius:var(--radius);padding:22px 24px 16px}
+.chart-card h3{font-size:1rem;font-weight:800;margin-bottom:2px}
+.chart-card .sub{font-size:.76rem;color:var(--muted);margin-bottom:12px}
+.chart-card svg{width:100%;height:auto;display:block}
+.chart-axis{fill:var(--muted);font-size:9px;font-family:var(--font)}
+@media(max-width:760px){.chart-grid{grid-template-columns:1fr}}
+
+/* ===== Faculty modal ===== */
+.faculty-card[data-bio]{cursor:pointer}
+.faculty-card__more{font-size:.72rem;color:var(--cyan);font-weight:700;margin-top:9px;display:inline-flex;align-items:center;gap:4px}
+.faculty-detail{display:none}
+.fmodal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(4,9,20,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.fmodal.open{display:flex}
+.fmodal__panel{position:relative;max-width:680px;width:100%;max-height:86vh;overflow:auto;background:linear-gradient(160deg,#0e1f38,#0a1424);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px 34px;box-shadow:var(--shadow)}
+.fmodal__close{position:absolute;top:14px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--border-sub);background:rgba(255,255,255,.06);color:#fff;font-size:1.15rem;cursor:pointer;line-height:1}
+.fmodal__close:hover{border-color:var(--cyan);color:var(--cyan)}
+.fdetail{display:flex;gap:22px;align-items:flex-start}
+.fdetail img{width:120px;height:150px;object-fit:cover;border-radius:10px;flex-shrink:0;border:1px solid var(--border-sub)}
+.fdetail__name{font-size:1.3rem;font-weight:800;margin-bottom:5px}
+.fdetail__role{font-size:.84rem;color:var(--cyan);font-weight:600;line-height:1.5}
+.fmodal__content p{font-size:.88rem;color:rgba(255,255,255,.78);line-height:1.72;margin-top:13px}
+.fmodal__content ul{margin:11px 0 0 18px}
+.fmodal__content li{font-size:.85rem;color:rgba(255,255,255,.72);line-height:1.6;margin-bottom:6px}
+@media(max-width:560px){.fdetail{flex-direction:column;align-items:center;text-align:center}}
+
+/* ===== Team composition + contact ===== */
+.team-bottom{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:3rem;align-items:stretch}
+.tb-card{background:var(--bg-card);border:1px solid var(--border-sub);border-radius:var(--radius);padding:26px 28px}
+.tb-card h3{font-size:1.05rem;font-weight:800;margin-bottom:18px}
+.pie-wrap{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.pie-wrap svg{width:168px;height:168px;flex-shrink:0}
+.pie-legend{display:flex;flex-direction:column;gap:9px;font-size:.84rem}
+.pie-legend span{display:flex;align-items:center;gap:9px;color:rgba(255,255,255,.82)}
+.pie-legend i{width:12px;height:12px;border-radius:3px;flex-shrink:0}
+.pie-legend b{color:#fff;margin-left:auto;padding-left:10px}
+.pie-note{font-size:.71rem;color:var(--muted);margin-top:16px;line-height:1.5}
+.tb-contact{display:flex;flex-direction:column;gap:11px}
+.tb-contact a{display:flex;gap:11px;align-items:center;color:rgba(255,255,255,.82);font-size:.88rem;padding:.7rem .9rem;border-radius:var(--radius-sm);background:rgba(255,255,255,.03);border:1px solid transparent;transition:border-color var(--t),color var(--t)}
+.tb-contact a:hover{border-color:var(--border);color:var(--cyan-soft)}
+.tb-contact .ic{color:var(--cyan);font-weight:700;width:1.5em;text-align:center;flex-shrink:0}
+@media(max-width:760px){.team-bottom{grid-template-columns:1fr}}

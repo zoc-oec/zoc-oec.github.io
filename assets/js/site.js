@@ -1,4 +1,4 @@
-/* ZOC-OEC Portal – client-side JS */
+/* Will-Lab Portal - client-side JS */
 (function () {
   'use strict';
 
@@ -24,6 +24,59 @@
       a.classList.add('active');
     }
   });
+
+  /* ----- Animated counters ----- */
+  var counters = document.querySelectorAll('.hero__stat-num, .info-band__stat strong');
+  if (counters.length && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var el = e.target; io.unobserve(el);
+        var raw = (el.getAttribute('data-target') || el.textContent).trim();
+        var m = raw.match(/^([0-9]*\.?[0-9]+)(.*)$/);
+        if (!m) return;
+        el.setAttribute('data-target', raw);
+        var target = parseFloat(m[1]), suffix = m[2], dec = m[1].indexOf('.') >= 0 ? 1 : 0;
+        var dur = 1500, t0 = performance.now();
+        (function tick(now) {
+          var p = Math.min(1, (now - t0) / dur);
+          var val = target * (1 - Math.pow(1 - p, 3));
+          el.textContent = (dec ? val.toFixed(1) : Math.round(val)) + suffix;
+          if (p < 1) requestAnimationFrame(tick);
+        })(t0);
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(function (n) { io.observe(n); });
+  }
+
+  /* ----- Faculty bio modal ----- */
+  var fmodal = document.getElementById('faculty-modal');
+  if (fmodal) {
+    var fbody = fmodal.querySelector('.fmodal__content');
+    function openFaculty(card) {
+      var d = card.querySelector('.faculty-detail');
+      if (!d) return;
+      fbody.innerHTML = d.innerHTML;
+      fmodal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeFaculty() {
+      fmodal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.querySelectorAll('.faculty-card[data-bio]').forEach(function (card) {
+      card.addEventListener('click', function () { openFaculty(card); });
+      card.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openFaculty(card); }
+      });
+    });
+    fmodal.addEventListener('click', function (e) {
+      if (e.target === fmodal || e.target.classList.contains('fmodal__close')) closeFaculty();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeFaculty();
+    });
+  }
 
   /* ----- Publication filters (publications.html only) ----- */
   var filterArea = document.getElementById('pub-filters');

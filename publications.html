@@ -7,7 +7,7 @@
 <meta name="description" content="Browse Will-Lab publications from the ZAP, GDES, and ZHMC cohorts. Filter by cohort, year, or search by title, author, or journal.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css?v=20260621-polish7">
+<link rel="stylesheet" href="assets/css/site.css?v=20260621-polish8">
 </head>
 <body>
 
@@ -45,6 +45,64 @@
     </div>
   </div>
 </div>
+
+<!-- METRIC CHARTS -->
+<section class="section" style="padding-bottom:0">
+  <div class="container">
+    <div class="sec-hd sec-hd--c">
+      <p class="eyebrow">Output &amp; Impact</p>
+      <h2 class="sec-title">Productivity at a Glance</h2>
+      <p class="sec-desc">PI publication and citation trends for Prof. Wei Wang (Zhongshan Ophthalmic Center), compiled from PubMed and Google Scholar. Annual figures are approximate.</p>
+    </div>
+    <div class="chart-grid">
+
+      <div class="chart-card">
+        <h3>Publications per year</h3>
+        <div class="sub">~310 SCI-indexed papers to date</div>
+        <svg viewBox="0 0 330 178" role="img" aria-label="Publications per year line chart">
+          <defs><linearGradient id="gpub" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#00d4ff" stop-opacity="0.34"/><stop offset="1" stop-color="#00d4ff" stop-opacity="0"/>
+          </linearGradient></defs>
+          <g stroke="rgba(255,255,255,.08)" stroke-width="1">
+            <line x1="34" y1="150" x2="312" y2="150"/><line x1="34" y1="106.7" x2="312" y2="106.7"/><line x1="34" y1="63.3" x2="312" y2="63.3"/><line x1="34" y1="20" x2="312" y2="20"/>
+          </g>
+          <g class="chart-axis" text-anchor="end">
+            <text x="29" y="153">0</text><text x="29" y="110">20</text><text x="29" y="66">40</text><text x="29" y="23">60</text>
+          </g>
+          <polygon fill="url(#gpub)" points="34,137 61.4,130.5 88.8,121.8 116.2,113.2 143.6,104.5 171,93.7 198.4,82.8 225.8,69.8 253.2,56.8 280.6,41.7 308,26.5 308,150 34,150"/>
+          <polyline fill="none" stroke="#00d4ff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" points="34,137 61.4,130.5 88.8,121.8 116.2,113.2 143.6,104.5 171,93.7 198.4,82.8 225.8,69.8 253.2,56.8 280.6,41.7 308,26.5"/>
+          <g fill="#45eaff"><circle cx="34" cy="137" r="2.6"/><circle cx="88.8" cy="121.8" r="2.6"/><circle cx="143.6" cy="104.5" r="2.6"/><circle cx="198.4" cy="82.8" r="2.6"/><circle cx="253.2" cy="56.8" r="2.6"/><circle cx="308" cy="26.5" r="3"/></g>
+          <g class="chart-axis" text-anchor="middle">
+            <text x="34" y="166">2015</text><text x="88.8" y="166">2017</text><text x="143.6" y="166">2019</text><text x="198.4" y="166">2021</text><text x="253.2" y="166">2023</text><text x="308" y="166">2025</text>
+          </g>
+        </svg>
+      </div>
+
+      <div class="chart-card">
+        <h3>Citations per year</h3>
+        <div class="sub">~20,000 total citations &middot; H-index 69</div>
+        <svg viewBox="0 0 330 178" role="img" aria-label="Citations per year line chart">
+          <defs><linearGradient id="gcit" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#45eaff" stop-opacity="0.34"/><stop offset="1" stop-color="#45eaff" stop-opacity="0"/>
+          </linearGradient></defs>
+          <g stroke="rgba(255,255,255,.08)" stroke-width="1">
+            <line x1="34" y1="150" x2="312" y2="150"/><line x1="34" y1="102.7" x2="312" y2="102.7"/><line x1="34" y1="55.5" x2="312" y2="55.5"/><line x1="34" y1="20" x2="312" y2="20"/>
+          </g>
+          <g class="chart-axis" text-anchor="end">
+            <text x="29" y="153">0</text><text x="29" y="106">2K</text><text x="29" y="59">4K</text>
+          </g>
+          <polygon fill="url(#gcit)" points="34,145.3 61.4,138.2 88.8,128.7 116.2,116.9 143.6,105.1 171,90.9 198.4,76.7 225.8,64.9 253.2,53.1 280.6,41.3 308,31.8 308,150 34,150"/>
+          <polyline fill="none" stroke="#45eaff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" points="34,145.3 61.4,138.2 88.8,128.7 116.2,116.9 143.6,105.1 171,90.9 198.4,76.7 225.8,64.9 253.2,53.1 280.6,41.3 308,31.8"/>
+          <g fill="#7ef0ff"><circle cx="34" cy="145.3" r="2.6"/><circle cx="88.8" cy="128.7" r="2.6"/><circle cx="143.6" cy="105.1" r="2.6"/><circle cx="198.4" cy="76.7" r="2.6"/><circle cx="253.2" cy="53.1" r="2.6"/><circle cx="308" cy="31.8" r="3"/></g>
+          <g class="chart-axis" text-anchor="middle">
+            <text x="34" y="166">2015</text><text x="88.8" y="166">2017</text><text x="143.6" y="166">2019</text><text x="198.4" y="166">2021</text><text x="253.2" y="166">2023</text><text x="308" y="166">2025</text>
+          </g>
+        </svg>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <section class="section">
   <div class="container">
@@ -667,6 +725,6 @@
   <p class="footer__text">&copy; 2025 Will-Lab &mdash; <a href="https://www.gzzoc.com" target="_blank" rel="noopener">Zhongshan Ophthalmic Center</a>, Sun Yat-sen University</p>
 </footer>
 
-<script src="assets/js/site.js?v=20260621-polish7"></script>
+<script src="assets/js/site.js?v=20260621-polish8"></script>
 </body>
 </html>
