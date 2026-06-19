@@ -7,7 +7,7 @@
 <meta name="description" content="Browse Will-Lab publications from the ZAP, GDES, and ZHMC cohorts. Filter by cohort, year, or search by title, author, or journal.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css?v=20260621-polish8">
+<link rel="stylesheet" href="assets/css/site.css?v=20260621-polish9">
 </head>
 <body>
 
@@ -17,16 +17,17 @@
       <img src="images/icon.png" alt="Will-Lab">
       <div>
         <span class="nav__logo-name">Will-Lab</span>
-        <small class="nav__logo-tagline">Wang Wei Lab &middot; Zhongshan Ophthalmic Center</small>
+        <small class="nav__logo-tagline" data-zh="王伟课题组 &middot; 中山眼科中心">Wang Wei Lab &middot; Zhongshan Ophthalmic Center</small>
       </div>
     </a>
     <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
     <ul class="nav__links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="cohorts.html">Cohorts</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="team.html">Team</a></li>
-      <li><a href="data_access.html" class="nav__cta">Data Access</a></li>
+      <li><a href="index.html" data-zh="首页">Home</a></li>
+      <li><a href="cohorts.html" data-zh="队列研究">Cohorts</a></li>
+      <li><a href="publications.html" data-zh="研究论文">Publications</a></li>
+      <li><a href="team.html" data-zh="研究团队">Team</a></li>
+      <li><a href="data_access.html" class="nav__cta" data-zh="数据申请">Data Access</a></li>
+      <li><button class="lang-toggle" type="button" aria-label="Switch language">&#20013;</button></li>
     </ul>
   </div>
 </nav>
@@ -34,8 +35,8 @@
 <div class="page-hero page-hero--visual page-hero--publications">
   <div class="container page-hero__grid">
     <div>
-      <p class="eyebrow">Representative Scientific Output</p>
-      <h1>Publications</h1>
+      <p class="eyebrow" data-zh="代表性科研成果">Representative Scientific Output</p>
+      <h1 data-zh="研究论文">Publications</h1>
       <p>High-impact cohort publications from ZAP, GDES, and ZHMC, spanning prevention trials, diabetic eye multi-omics, and high-myopia intervention evidence.</p>
     </div>
     <div class="page-hero__cards" aria-label="Representative journals">
@@ -51,13 +52,13 @@
   <div class="container">
     <div class="sec-hd sec-hd--c">
       <p class="eyebrow">Output &amp; Impact</p>
-      <h2 class="sec-title">Productivity at a Glance</h2>
+      <h2 class="sec-title" data-zh="科研产出概览">Productivity at a Glance</h2>
       <p class="sec-desc">PI publication and citation trends for Prof. Wei Wang (Zhongshan Ophthalmic Center), compiled from PubMed and Google Scholar. Annual figures are approximate.</p>
     </div>
     <div class="chart-grid">
 
       <div class="chart-card">
-        <h3>Publications per year</h3>
+        <h3 data-zh="历年发文量">Publications per year</h3>
         <div class="sub">~310 SCI-indexed papers to date</div>
         <svg viewBox="0 0 330 178" role="img" aria-label="Publications per year line chart">
           <defs><linearGradient id="gpub" x1="0" y1="0" x2="0" y2="1">
@@ -79,7 +80,7 @@
       </div>
 
       <div class="chart-card">
-        <h3>Citations per year</h3>
+        <h3 data-zh="历年引用量">Citations per year</h3>
         <div class="sub">~20,000 total citations &middot; H-index 69</div>
         <svg viewBox="0 0 330 178" role="img" aria-label="Citations per year line chart">
           <defs><linearGradient id="gcit" x1="0" y1="0" x2="0" y2="1">
@@ -725,6 +726,6 @@
   <p class="footer__text">&copy; 2025 Will-Lab &mdash; <a href="https://www.gzzoc.com" target="_blank" rel="noopener">Zhongshan Ophthalmic Center</a>, Sun Yat-sen University</p>
 </footer>
 
-<script src="assets/js/site.js?v=20260621-polish8"></script>
+<script src="assets/js/site.js?v=20260621-polish9"></script>
 </body>
 </html>

@@ -707,3 +707,7 @@ p{color:rgba(255,255,255,.82)}
 .tb-contact a:hover{border-color:var(--border);color:var(--cyan-soft)}
 .tb-contact .ic{color:var(--cyan);font-weight:700;width:1.5em;text-align:center;flex-shrink:0}
 @media(max-width:760px){.team-bottom{grid-template-columns:1fr}}
+
+/* ===== Language toggle ===== */
+.lang-toggle{margin-left:8px;background:transparent;border:1px solid var(--border-sub);color:#fff;border-radius:99px;padding:5px 13px;font-size:.82rem;font-weight:700;cursor:pointer;font-family:var(--font);line-height:1;transition:border-color var(--t),color var(--t)}
+.lang-toggle:hover{border-color:var(--cyan);color:var(--cyan)}

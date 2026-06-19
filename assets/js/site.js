@@ -25,6 +25,27 @@
     }
   });
 
+  /* ----- Language toggle (EN / Chinese) ----- */
+  (function () {
+    var btn = document.querySelector('.lang-toggle');
+    if (!btn) return;
+    function apply(lang) {
+      document.querySelectorAll('[data-zh]').forEach(function (el) {
+        if (el.getAttribute('data-en') === null) el.setAttribute('data-en', el.innerHTML);
+        el.innerHTML = (lang === 'zh') ? el.getAttribute('data-zh') : el.getAttribute('data-en');
+      });
+      document.documentElement.lang = (lang === 'zh') ? 'zh-CN' : 'en';
+      btn.textContent = (lang === 'zh') ? 'EN' : '\u4e2d\u6587';
+      try { localStorage.setItem('wl-lang', lang); } catch (e) {}
+    }
+    var saved = 'en';
+    try { saved = localStorage.getItem('wl-lang') || 'en'; } catch (e) {}
+    apply(saved);
+    btn.addEventListener('click', function () {
+      apply(btn.textContent === 'EN' ? 'en' : 'zh');
+    });
+  })();
+
   /* ----- Animated counters ----- */
   var counters = document.querySelectorAll('.hero__stat-num, .info-band__stat strong');
   if (counters.length && 'IntersectionObserver' in window) {
