@@ -7,10 +7,10 @@
 <meta name="description" content="Overview of the three ZOC-OEC longitudinal cohorts: ZAP (angle closure), GDES (diabetic eye disease), and ZHMC (high myopia).">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css?v=20260619-polish2">
+<link rel="stylesheet" href="assets/css/site.css?v=20260619-polish3">
 <style>
 /* Cohort page extras */
-.cohort-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-bottom:4rem}
+.cohort-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-bottom:3.5rem}
 .cohort-overview__card{
   display:grid;grid-template-columns:72px 1fr;gap:18px;align-items:center;
   background:linear-gradient(160deg,rgba(255,255,255,.085),rgba(0,212,255,.04));
@@ -19,8 +19,8 @@
 }
 .cohort-overview__card:hover{border-color:var(--border);transform:translateY(-2px);box-shadow:var(--glow-card)}
 .cohort-overview__logo{width:72px;height:72px;object-fit:contain}
-.cohort-overview__label{font-size:.78rem;font-weight:800;letter-spacing:.12em;color:var(--cyan);margin-bottom:4px}
-.cohort-overview__title{font-size:1.02rem;font-weight:800;color:#fff;line-height:1.22;margin-bottom:6px}
+.cohort-overview__label{font-size:1.25rem;font-weight:900;letter-spacing:.1em;color:var(--cyan);margin-bottom:6px}
+.cohort-overview__title{font-size:1rem;font-weight:800;color:#fff;line-height:1.22;margin-bottom:7px}
 .cohort-overview__title span{display:block}
 .cohort-overview__text{font-size:.85rem;color:var(--muted);line-height:1.55}
 .cohort-section{margin-bottom:5rem;scroll-margin-top:80px}
@@ -38,6 +38,15 @@
 .cohort-keypoint{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-sm);padding:.9rem}
 .cohort-keypoint strong{display:block;color:#fff;font-size:.86rem;margin-bottom:.25rem}
 .cohort-keypoint span{display:block;color:var(--muted);font-size:.78rem;line-height:1.5}
+.cohort-proof{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;margin:1.15rem 0 1.35rem;
+}
+.cohort-proof__item{
+  background:rgba(0,212,255,.065);border:1px solid rgba(0,212,255,.18);
+  border-radius:var(--radius-sm);padding:.85rem .9rem;
+}
+.cohort-proof__item strong{display:block;color:var(--cyan);font-size:1rem;line-height:1.2}
+.cohort-proof__item span{display:block;color:var(--muted);font-size:.74rem;margin-top:.25rem;line-height:1.45}
 .ctag{font-size:.72rem;font-weight:600;padding:.25rem .75rem;border-radius:4px;border:1px solid}
 .ctag--blue{background:rgba(99,102,241,.1);border-color:rgba(99,102,241,.3);color:#818cf8}
 .ctag--green{background:rgba(16,185,129,.1);border-color:rgba(16,185,129,.28);color:#34d399}
@@ -73,6 +82,7 @@
 @media(max-width:860px){
   .cohort-overview{grid-template-columns:1fr}
   .cohort-keypoints{grid-template-columns:1fr}
+  .cohort-proof{grid-template-columns:1fr}
   .cohort-body{grid-template-columns:1fr}
   .cohort-stats{flex-direction:row;flex-wrap:wrap}
   .cohort-stats .cstat{flex:1;min-width:140px}
@@ -102,11 +112,18 @@
   </div>
 </nav>
 
-<div class="page-hero">
-  <div class="container">
-    <p class="eyebrow">Research Infrastructure</p>
-    <h1>Our Cohorts</h1>
-    <p>Three complementary longitudinal cohorts covering the major preventable causes of blindness in Asia: angle-closure glaucoma, diabetic eye disease, and pathological myopia.</p>
+<div class="page-hero page-hero--visual page-hero--cohorts">
+  <div class="container page-hero__grid">
+    <div>
+      <p class="eyebrow">ZOC-OEC Research Infrastructure</p>
+      <h1>Longitudinal Eye-Health Cohorts</h1>
+      <p>Three complementary cohorts from Zhongshan Ophthalmic Center connect randomized prevention evidence, diabetic eye multi-omics, and high-myopia progression research.</p>
+    </div>
+    <div class="page-hero__cards" aria-label="Cohort highlights">
+      <div class="hero-chip"><strong>889</strong><span>ZAP randomized trial participants</span></div>
+      <div class="hero-chip"><strong>3,000+</strong><span>GDES diabetic eye participants</span></div>
+      <div class="hero-chip"><strong>14 years</strong><span>ZHMC high-myopia follow-up platform</span></div>
+    </div>
   </div>
 </div>
 
@@ -118,24 +135,24 @@
         <img class="cohort-overview__logo" src="images/zap_icon.png" alt="ZAP">
         <div>
           <div class="cohort-overview__label">ZAP</div>
-          <div class="cohort-overview__title"><span>Angle-closure</span><span>prevention RCT</span></div>
-          <div class="cohort-overview__text">889 participants, 18-year follow-up, Lancet evidence base.</div>
+          <div class="cohort-overview__title"><span>889 participants</span><span>18-year prevention RCT</span></div>
+          <div class="cohort-overview__text">Landmark Lancet evidence for laser iridotomy in angle-closure prevention.</div>
         </div>
       </a>
       <a class="cohort-overview__card" href="#gdes">
         <img class="cohort-overview__logo" src="images/gdes_icon.png" alt="GDES">
         <div>
           <div class="cohort-overview__label">GDES</div>
-          <div class="cohort-overview__title"><span>Diabetic eye</span><span>multi-omics cohort</span></div>
-          <div class="cohort-overview__text">3,000+ participants, 7 years, 2,923-protein plasma atlas.</div>
+          <div class="cohort-overview__title"><span>3,000+ participants</span><span>diabetic eye multi-omics</span></div>
+          <div class="cohort-overview__text">Proteomics and metabolomics linked to retinal imaging and systemic outcomes.</div>
         </div>
       </a>
       <a class="cohort-overview__card" href="#zhmc">
         <img class="cohort-overview__logo" src="images/zhmc_icon.png" alt="ZHMC">
         <div>
           <div class="cohort-overview__label">ZHMC</div>
-          <div class="cohort-overview__title"><span>High-myopia</span><span>progression registry</span></div>
-          <div class="cohort-overview__text">14-year registry, OCT/OCTA biomarkers, AI risk modelling.</div>
+          <div class="cohort-overview__title"><span>High-myopia registry</span><span>children and adults</span></div>
+          <div class="cohort-overview__text">Zhongshan High Myopia Cohort for OCT/OCTA biomarkers and intervention evidence.</div>
         </div>
       </a>
     </div>
@@ -149,22 +166,26 @@
 
       <div class="cohort-body">
         <div class="cohort-desc">
-          <p>The <strong>Zhongshan Angle-Closure Prevention (ZAP) Trial</strong> is the world's largest and longest-running randomized controlled trial evaluating the efficacy of laser peripheral iridotomy (LPI) in preventing angle-closure glaucoma among individuals with primary angle-closure suspect (PACS) &mdash; a condition affecting an estimated 500 million people globally. Initiated at Zhongshan Ophthalmic Center in 2008, ZAP has now accumulated <strong>18 continuous years of prospective follow-up</strong>, making it the definitive longitudinal dataset on angle-closure disease natural history and prevention.</p>
+          <p><strong>ZAP</strong> is the Zhongshan Angle-Closure Prevention Trial: an 889-participant randomized trial designed to answer one clinical question with unusual clarity &mdash; whether laser peripheral iridotomy prevents angle-closure progression in primary angle-closure suspects.</p>
 
           <div class="cohort-keypoints">
-            <div class="cohort-keypoint"><strong>Lancet RCT</strong><span>Definitive randomized evidence for LPI prevention in PACS.</span></div>
-            <div class="cohort-keypoint"><strong>18-year depth</strong><span>Longitudinal gonioscopy, AS-OCT, IOP, and visual fields.</span></div>
-            <div class="cohort-keypoint"><strong>Within-person design</strong><span>One treated eye and one observed eye strengthen causal inference.</span></div>
+            <div class="cohort-keypoint"><strong>Design strength</strong><span>Within-person randomized design: one treated eye and one observed eye.</span></div>
+            <div class="cohort-keypoint"><strong>Clinical depth</strong><span>Gonioscopy, AS-OCT, IOP, visual fields, and anterior-segment biometry.</span></div>
+            <div class="cohort-keypoint"><strong>Scientific use</strong><span>Prevention evidence, risk prediction, and angle-closure natural history.</span></div>
           </div>
 
-          <p>The landmark <em>Lancet</em> 2019 publication (He M et al.) established that LPI significantly reduces the risk of angle-closure progression, fundamentally reshaping international clinical guidelines. Subsequent 14-year extended follow-up analyses (Ophthalmology 2023; The Innovation Medicine 2023) confirmed the durability of the LPI effect and characterized the biometric risk factors &mdash; including anterior chamber depth, iris thickness, and lens vault &mdash; that predict progression. The 2024 and 2026 JAMA Ophthalmology papers further used AS-OCT&ndash;derived trabecular-iris contact to quantify structural closure mechanisms over time.</p>
+          <div class="cohort-proof">
+            <div class="cohort-proof__item"><strong>Lancet</strong><span>Primary RCT evidence base</span></div>
+            <div class="cohort-proof__item"><strong>Ophthalmology</strong><span>14-year extended follow-up</span></div>
+            <div class="cohort-proof__item"><strong>JAMA Ophthalmol</strong><span>AS-OCT progression mechanisms</span></div>
+          </div>
 
           <div class="highlight-box">
-            <div class="highlight-box__label">Scientific Distinction</div>
-            <div class="highlight-box__text">ZAP holds the longest continuous follow-up of any angle-closure prevention cohort in the world. Its unique within-person design &mdash; one treated eye, one untreated eye &mdash; eliminates confounding from inter-individual variation, providing unparalleled causal inference power.</div>
+            <div class="highlight-box__label">Core Advantage</div>
+            <div class="highlight-box__text">ZAP combines randomized prevention evidence with long-term imaging follow-up, making it the consortium's clearest platform for angle-closure prevention and progression modelling.</div>
           </div>
 
-          <p>The ZAP biobank contains repeated gonioscopy, AS-OCT biometric series, intraocular pressure trajectories, visual field data, and BCVA records across 18 annual follow-up cycles. These data have underpinned predictive algorithms for glaucoma conversion adopted by the World Glaucoma Association. Ongoing analyses are characterizing the 18-year cumulative incidence of angle-closure and primary angle-closure glaucoma (PACG) &mdash; data with direct policy implications for population screening programmes across Asia.</p>
+          <p>The available research story is intentionally simple: a large prevention RCT, long follow-up, deep AS-OCT phenotyping, and a publication record spanning <em>Lancet</em>, <em>Ophthalmology</em>, and <em>JAMA Ophthalmology</em>.</p>
 
           <div class="cohort-tags">
             <span class="ctag ctag--blue">18-Year RCT</span>
@@ -228,24 +249,26 @@
 
       <div class="cohort-body">
         <div class="cohort-desc">
-          <p>The <strong>Guangzhou Diabetic Eye Study (GDES)</strong> is a large-scale prospective longitudinal cohort of adults with type 2 diabetes mellitus, established at Zhongshan Ophthalmic Center between 2017 and 2019. With over <strong>3,000 participants</strong> aged 35&ndash;85 years and now entering its <strong>7th year of continuous follow-up</strong>, GDES is one of the most deeply phenotyped diabetic eye disease cohorts in the world, integrating multimodal retinal imaging with a comprehensive multi-omics biobank.</p>
+          <p><strong>GDES</strong> is a deeply phenotyped diabetic eye cohort linking retinal structure, retinal microvasculature, plasma proteomics, metabolomics, and systemic outcomes in more than 3,000 participants with type 2 diabetes.</p>
 
           <div class="cohort-keypoints">
-            <div class="cohort-keypoint"><strong>3,000+ participants</strong><span>Deep diabetic eye phenotyping across retinal and systemic outcomes.</span></div>
-            <div class="cohort-keypoint"><strong>2,923 proteins</strong><span>Plasma proteomics linked to OCT, OCTA, and fundus imaging.</span></div>
-            <div class="cohort-keypoint"><strong>Multi-omics translation</strong><span>Metabolomics and proteomics for biomarker discovery and risk models.</span></div>
+            <div class="cohort-keypoint"><strong>Multi-modal imaging</strong><span>Fundus photography, OCT, SS-OCTA, and longitudinal retinal phenotypes.</span></div>
+            <div class="cohort-keypoint"><strong>Multi-omics layer</strong><span>2,923 plasma proteins plus metabolomics and genetic resources.</span></div>
+            <div class="cohort-keypoint"><strong>Systemic links</strong><span>Cardiometabolic, renal, mortality, and diabetic complication outcomes.</span></div>
           </div>
 
-          <p>What sets GDES apart is its unprecedented depth of molecular profiling. Plasma samples were analysed using Olink proximity extension assay to quantify <strong>2,923 plasma proteins</strong>, making GDES one of the largest proteomics-linked ophthalmic cohorts globally. Alongside proteomics, the cohort has generated metabolomics profiles, genome-wide genotyping, and longitudinal OCT/SS-OCTA measurements at multiple timepoints, enabling integrative multi-omics analyses linking retinal phenotypes to systemic disease mechanisms.</p>
+          <div class="cohort-proof">
+            <div class="cohort-proof__item"><strong>Nat Commun</strong><span>2023 retinal-metabolic risk profiling</span></div>
+            <div class="cohort-proof__item"><strong>Nat Commun</strong><span>2025 proteomics and retinal ageing</span></div>
+            <div class="cohort-proof__item"><strong>PLOS Med</strong><span>In-print systemic risk evidence</span></div>
+          </div>
 
           <div class="highlight-box">
-            <div class="highlight-box__label">Multi-omics Powerhouse</div>
-            <div class="highlight-box__text">GDES links 2,923-protein plasma proteomics (Olink) + metabolomics + genome-wide genotyping to multimodal retinal imaging (OCT, SS-OCTA, fundus photos) &mdash; enabling discovery of systemic biomarkers of diabetic complications at a scale unmatched in ophthalmology.</div>
+            <div class="highlight-box__label">Core Advantage</div>
+            <div class="highlight-box__text">GDES turns the retina into a systemic biomarker platform: imaging phenotypes can be interpreted together with proteomic and metabolic signatures.</div>
           </div>
 
-          <p>GDES has produced landmark publications in <em>Nature Communications</em> (2023, 2025) and <em>PLOS Medicine</em> (in print), demonstrating that retinal biomarkers derived from AI-metabolomics profiling can predict mortality and cardiometabolic risk beyond conventional clinical factors. The 2025 proteomics atlas (Nat Commun) identified 71 plasma proteins associated with diabetic retinal neurodegeneration across inflammatory and extracellular-matrix pathways. Longitudinal OCTA analyses have defined the earliest structural signs of diabetic retinopathy and linked foveal avascular zone changes to renal and cardiovascular outcomes.</p>
-
-          <p>With seven annual follow-up cycles complete, GDES now provides longitudinal depth to study incidence, progression, regression, and remission of diabetic retinopathy, macular oedema, and retinal neurodegeneration across a population spanning the full spectrum of metabolic disease.</p>
+          <p>The publication focus is retinal biomarkers for systemic disease: high-impact outputs include two <em>Nature Communications</em> papers and an in-print <em>PLOS Medicine</em> study.</p>
 
           <div class="cohort-tags">
             <span class="ctag ctag--green">3,000+ Participants</span>
@@ -302,27 +325,31 @@
     <div id="zhmc" class="cohort-section">
       <div class="cohort-header">
         <span class="cohort-badge cohort-badge--zhmc">ZHMC</span>
-        <h2 class="cohort-title">ZOC-BHVI High Myopia Cohort</h2>
+        <h2 class="cohort-title">Zhongshan High Myopia Cohort</h2>
       </div>
 
       <div class="cohort-body">
         <div class="cohort-desc">
-          <p>The <strong>ZOC-BHVI High Myopia Cohort (ZHMC)</strong> is a long-running registry and prospective cohort focused on highly myopic children and adults. It was designed to track axial elongation, myopic maculopathy, visual function, and structural progression using repeated clinical examination and multimodal imaging.</p>
+          <p><strong>ZHMC</strong> is the Zhongshan High Myopia Cohort, a long-running clinical registry and prospective platform for high-myopia progression in children and adults.</p>
 
           <div class="cohort-keypoints">
-            <div class="cohort-keypoint"><strong>14-year registry</strong><span>Longitudinal follow-up of children and adults with high myopia.</span></div>
-            <div class="cohort-keypoint"><strong>OCT/OCTA biomarkers</strong><span>Macular, choroidal, vascular, and peripapillary measurements.</span></div>
-            <div class="cohort-keypoint"><strong>Progression models</strong><span>AI-supported risk prediction and intervention evidence.</span></div>
+            <div class="cohort-keypoint"><strong>High-myopia registry</strong><span>Longitudinal records for children and adults with high myopia.</span></div>
+            <div class="cohort-keypoint"><strong>OCT/OCTA biomarkers</strong><span>Macular, choroidal, vascular, and peripapillary imaging measures.</span></div>
+            <div class="cohort-keypoint"><strong>Intervention evidence</strong><span>Myopia-control trials and real-world treatment studies.</span></div>
           </div>
 
-          <p>ZHMC combines widefield fundus imaging, OCT, OCTA, axial length, choroidal metrics, visual field testing, and intervention data. The cohort supports risk prediction for pathological myopia, evaluation of myopia-control strategies, and longitudinal modelling of macular and peripapillary change.</p>
+          <div class="cohort-proof">
+            <div class="cohort-proof__item"><strong>Ophthalmology</strong><span>2024 myopia-control RCT evidence</span></div>
+            <div class="cohort-proof__item"><strong>JAMA Ophthalmol</strong><span>2024 axial elongation trajectories</span></div>
+            <div class="cohort-proof__item"><strong>Br J Ophthalmol</strong><span>Choroid and maculopathy progression</span></div>
+          </div>
 
           <div class="highlight-box">
-            <div class="highlight-box__label">High-Myopia Evidence Base</div>
-            <div class="highlight-box__text">ZHMC links 14-year registry follow-up with OCT/OCTA biomarkers, visual function, AI risk modelling, and treatment studies, providing a rare longitudinal platform for pathological myopia research.</div>
+            <div class="highlight-box__label">Core Advantage</div>
+            <div class="highlight-box__text">ZHMC connects high-myopia natural history with imaging biomarkers and intervention studies, making it a practical platform for progression prediction and treatment evaluation.</div>
           </div>
 
-          <p>Recent ZHMC publications have described ten-year visual function change, axial elongation trajectories, fundus curvature markers of posterior staphyloma, macular vessel density change on OCTA, and machine-learning prediction of myopic maculopathy. These outputs make ZHMC a core dataset for precision risk stratification in high myopia.</p>
+          <p>The research emphasis is easy to grasp: axial elongation, myopic maculopathy, choroidal/OCTA biomarkers, AI risk modelling, and evidence for myopia-control interventions.</p>
 
           <div class="cohort-tags">
             <span class="ctag ctag--amber">14-Year Registry</span>
