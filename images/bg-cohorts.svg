@@ -12,31 +12,34 @@
   </defs>
   <rect width="1440" height="400" fill="url(#g)"/>
   <rect width="1440" height="400" fill="url(#glow)"/>
+  <g>
   <!-- faint year gridlines -->
   <g stroke="#00d4ff" stroke-opacity="0.08" stroke-width="1">
-    <line x1="800" y1="40" x2="800" y2="360"/>
-    <line x1="920" y1="40" x2="920" y2="360"/>
-    <line x1="1040" y1="40" x2="1040" y2="360"/>
-    <line x1="1160" y1="40" x2="1160" y2="360"/>
-    <line x1="1280" y1="40" x2="1280" y2="360"/>
-    <line x1="1400" y1="40" x2="1400" y2="360"/>
+    <line x1="360" y1="40" x2="360" y2="360"/>
+    <line x1="480" y1="40" x2="480" y2="360"/>
+    <line x1="600" y1="40" x2="600" y2="360"/>
+    <line x1="720" y1="40" x2="720" y2="360"/>
+    <line x1="840" y1="40" x2="840" y2="360"/>
+    <line x1="960" y1="40" x2="960" y2="360"/>
+    <line x1="1080" y1="40" x2="1080" y2="360"/>
   </g>
   <!-- three longitudinal cohort tracks, gently rising over time -->
   <g fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-    <polyline points="760,150 880,140 1000,124 1120,118 1240,104 1380,96" stroke="#00d4ff" stroke-opacity="0.42"/>
-    <polyline points="760,232 880,224 1000,214 1120,206 1240,196 1380,184" stroke="#45eaff" stroke-opacity="0.32"/>
-    <polyline points="760,312 880,300 1000,294 1120,282 1240,274 1380,262" stroke="#7fd8ff" stroke-opacity="0.26"/>
+    <polyline points="320,150 440,140 560,124 680,118 800,104 940,96" stroke="#00d4ff" stroke-opacity="0.42"/>
+    <polyline points="320,232 440,224 560,214 680,206 800,196 940,184" stroke="#45eaff" stroke-opacity="0.32"/>
+    <polyline points="320,312 440,300 560,294 680,282 800,274 940,262" stroke="#7fd8ff" stroke-opacity="0.26"/>
   </g>
   <!-- cohort follow-up nodes -->
   <g fill="#00d4ff">
     <g fill-opacity="0.55">
-      <circle cx="760" cy="150" r="4"/><circle cx="1000" cy="124" r="4"/><circle cx="1240" cy="104" r="4"/><circle cx="1380" cy="96" r="4.5"/>
+      <circle cx="320" cy="150" r="4"/><circle cx="560" cy="124" r="4"/><circle cx="800" cy="104" r="4"/><circle cx="940" cy="96" r="4.5"/>
     </g>
     <g fill-opacity="0.4">
-      <circle cx="760" cy="232" r="4"/><circle cx="1000" cy="214" r="4"/><circle cx="1240" cy="196" r="4"/><circle cx="1380" cy="184" r="4.5"/>
+      <circle cx="320" cy="232" r="4"/><circle cx="560" cy="214" r="4"/><circle cx="800" cy="196" r="4"/><circle cx="940" cy="184" r="4.5"/>
     </g>
     <g fill-opacity="0.32">
-      <circle cx="760" cy="312" r="4"/><circle cx="1000" cy="294" r="4"/><circle cx="1240" cy="274" r="4"/><circle cx="1380" cy="262" r="4.5"/>
+      <circle cx="320" cy="312" r="4"/><circle cx="560" cy="294" r="4"/><circle cx="800" cy="274" r="4"/><circle cx="940" cy="262" r="4.5"/>
     </g>
+  </g>
   </g>
 </svg>

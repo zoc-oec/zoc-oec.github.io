@@ -12,28 +12,30 @@
   </defs>
   <rect width="1440" height="400" fill="url(#g)"/>
   <rect width="1440" height="400" fill="url(#glow)"/>
+  <g>
   <!-- secure data-sharing network: a central hub linked to approved collaborators -->
   <g stroke="#00d4ff" stroke-opacity="0.28" stroke-width="1.6">
-    <line x1="1080" y1="200" x2="880"  y2="120"/>
-    <line x1="1080" y1="200" x2="900"  y2="300"/>
-    <line x1="1080" y1="200" x2="1250" y2="96"/>
-    <line x1="1080" y1="200" x2="1320" y2="210"/>
-    <line x1="1080" y1="200" x2="1230" y2="320"/>
-    <line x1="880"  y1="120" x2="1250" y2="96"/>
-    <line x1="900"  y1="300" x2="1230" y2="320"/>
+    <line x1="720" y1="200" x2="520"  y2="120"/>
+    <line x1="720" y1="200" x2="540"  y2="300"/>
+    <line x1="720" y1="200" x2="890" y2="96"/>
+    <line x1="720" y1="200" x2="960" y2="210"/>
+    <line x1="720" y1="200" x2="870" y2="320"/>
+    <line x1="520"  y1="120" x2="890" y2="96"/>
+    <line x1="540"  y1="300" x2="870" y2="320"/>
   </g>
   <!-- central hub -->
-  <circle cx="1080" cy="200" r="30" fill="#00d4ff" fill-opacity="0.12" stroke="#00d4ff" stroke-opacity="0.5" stroke-width="2"/>
-  <circle cx="1080" cy="200" r="11" fill="#45eaff" fill-opacity="0.65"/>
+  <circle cx="720" cy="200" r="30" fill="#00d4ff" fill-opacity="0.12" stroke="#00d4ff" stroke-opacity="0.5" stroke-width="2"/>
+  <circle cx="720" cy="200" r="11" fill="#45eaff" fill-opacity="0.65"/>
   <!-- collaborator nodes -->
   <g fill="#00d4ff">
-    <circle cx="880"  cy="120" r="9" fill-opacity="0.4"/>
-    <circle cx="900"  cy="300" r="9" fill-opacity="0.4"/>
-    <circle cx="1250" cy="96"  r="9" fill-opacity="0.4"/>
-    <circle cx="1320" cy="210" r="9" fill-opacity="0.4"/>
-    <circle cx="1230" cy="320" r="9" fill-opacity="0.4"/>
+    <circle cx="520"  cy="120" r="9" fill-opacity="0.4"/>
+    <circle cx="540"  cy="300" r="9" fill-opacity="0.4"/>
+    <circle cx="890" cy="96"  r="9" fill-opacity="0.4"/>
+    <circle cx="960" cy="210" r="9" fill-opacity="0.4"/>
+    <circle cx="870" cy="320" r="9" fill-opacity="0.4"/>
   </g>
   <!-- rings around hub -->
-  <circle cx="1080" cy="200" r="52" fill="none" stroke="#00d4ff" stroke-opacity="0.12" stroke-width="1"/>
-  <circle cx="1080" cy="200" r="78" fill="none" stroke="#00d4ff" stroke-opacity="0.07" stroke-width="1"/>
+  <circle cx="720" cy="200" r="52" fill="none" stroke="#00d4ff" stroke-opacity="0.12" stroke-width="1"/>
+  <circle cx="720" cy="200" r="78" fill="none" stroke="#00d4ff" stroke-opacity="0.07" stroke-width="1"/>
+  </g>
 </svg>
