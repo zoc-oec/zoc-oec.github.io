@@ -17,11 +17,16 @@ const dataAccess = read('data_access.html');
 const publications = read('publications.html');
 
 check(css.includes('.container--wide'), 'homepage needs a wide container option for cohort cards');
+check(/\.container--wide\{max-width:1280px\}/.test(css), 'wide cohort container should be visually closer to the feature strip');
+check(/\.feature-strip\{[\s\S]*max-width:1280px/.test(css), 'feature strip should align more closely with homepage cohort cards');
 check(/\.feature-strip\{[\s\S]*margin:1[0246]px auto 0/.test(css), 'feature strip gap should be reduced below the old 32px');
 check(/body::before\{[\s\S]*position:absolute/.test(css), 'dot-grid background should not be fixed');
 check(/body::after\{[\s\S]*display:none/.test(css), 'ambient fixed glow should be disabled for scroll performance');
 check(/\.cohort-card__name\{[\s\S]*white-space:nowrap/.test(css), 'homepage cohort names should stay on one line on desktop');
-check(/\.faculty-card__photo--gao img\{[\s\S]*object-position:center 18%/.test(css), 'Gao Xinbo photo needs its own crop adjustment');
+check(/\.hero\{[\s\S]*background-position:right 32%/.test(css), 'hero background should align right to avoid the broken right edge');
+check(/\.research-card__desc\{[\s\S]*font-size:\.96rem/.test(css), 'research card descriptions should fit cleanly on desktop');
+check(!css.includes('faculty-card__photo--gao'), 'faculty photos should use normalized crops instead of one-off Gao positioning');
+check(/\.collab-grid\{[\s\S]*grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/.test(css), 'collaboration network should render as two balanced rows');
 check(css.includes('.data-snapshot'), 'data access page needs a cleaner snapshot layout');
 
 check(index.includes('container container--wide'), 'homepage cohort section should use wide container');
@@ -32,11 +37,20 @@ check(team.includes('https://orcid.org/0000-0002-5273-3332'), 'team ORCID must u
 check(team.includes('<span class="stat-num">8</span><span class="stat-label">Cohorts Led</span>'), 'team PI cohorts led should be 8');
 check(!team.includes('Research Focus Areas'), 'ugly Research Focus Areas section should be removed from team page');
 check(!team.includes('University of Waterloo'), 'unverified collaborator should not appear');
+check(!team.includes('University of Melbourne / CERA'), 'collaboration list should be trimmed to a balanced verified set');
 check(!team.includes('H0PJmacAAAAJ'), 'old Google Scholar profile ID should be removed');
 check(!team.includes('Google Scholar'), 'Google Scholar link should be omitted until a verified profile ID is available');
-check(team.includes('faculty-card__photo faculty-card__photo--gao'), 'Gao Xinbo faculty card should carry the custom photo class');
+check(team.includes('images/faculty/huangwenyong-card.jpg'), 'faculty cards should use normalized cropped portraits');
+check(team.includes('images/faculty/chenshida-card.jpg'), 'faculty cards should use normalized cropped portraits');
+check(team.includes('images/faculty/gaoxinbo-card.jpg'), 'faculty cards should use normalized cropped portraits');
+check(team.includes('images/faculty/hechang-card.jpg'), 'faculty cards should use normalized cropped portraits');
+check(team.includes('images/faculty/chengweijing-card.jpg'), 'faculty cards should use normalized cropped portraits');
+check((team.match(/class="collab-item"/g) || []).length === 4, 'collaboration network should show four balanced institutions');
 
 check(cohorts.includes('cohort-overview'), 'cohorts page needs a scannable overview');
+check(cohorts.includes('<span>Angle-closure</span><span>prevention RCT</span>'), 'ZAP overview title should break evenly');
+check(cohorts.includes('<span>Diabetic eye</span><span>multi-omics cohort</span>'), 'GDES overview title should break evenly');
+check(cohorts.includes('<span>High-myopia</span><span>progression registry</span>'), 'ZHMC overview title should break evenly');
 check(cohorts.includes('<em>PLOS Medicine</em> (in print)'), 'GDES PLOS Medicine wording should be in print');
 check(!cohorts.includes('<em>PLOS Medicine</em> (2026)'), 'GDES should not cite missing PLOS Medicine 2026 as a published listing');
 

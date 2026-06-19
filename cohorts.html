@@ -7,7 +7,7 @@
 <meta name="description" content="Overview of the three ZOC-OEC longitudinal cohorts: ZAP (angle closure), GDES (diabetic eye disease), and ZHMC (high myopia).">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css?v=20260619-polish1">
+<link rel="stylesheet" href="assets/css/site.css?v=20260619-polish2">
 <style>
 /* Cohort page extras */
 .cohort-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-bottom:4rem}
@@ -20,7 +20,8 @@
 .cohort-overview__card:hover{border-color:var(--border);transform:translateY(-2px);box-shadow:var(--glow-card)}
 .cohort-overview__logo{width:72px;height:72px;object-fit:contain}
 .cohort-overview__label{font-size:.78rem;font-weight:800;letter-spacing:.12em;color:var(--cyan);margin-bottom:4px}
-.cohort-overview__title{font-size:1.02rem;font-weight:800;color:#fff;line-height:1.25;margin-bottom:6px}
+.cohort-overview__title{font-size:1.02rem;font-weight:800;color:#fff;line-height:1.22;margin-bottom:6px}
+.cohort-overview__title span{display:block}
 .cohort-overview__text{font-size:.85rem;color:var(--muted);line-height:1.55}
 .cohort-section{margin-bottom:5rem;scroll-margin-top:80px}
 .cohort-header{display:flex;align-items:center;gap:1rem;margin-bottom:2rem}
@@ -117,7 +118,7 @@
         <img class="cohort-overview__logo" src="images/zap_icon.png" alt="ZAP">
         <div>
           <div class="cohort-overview__label">ZAP</div>
-          <div class="cohort-overview__title">Angle-closure prevention RCT</div>
+          <div class="cohort-overview__title"><span>Angle-closure</span><span>prevention RCT</span></div>
           <div class="cohort-overview__text">889 participants, 18-year follow-up, Lancet evidence base.</div>
         </div>
       </a>
@@ -125,7 +126,7 @@
         <img class="cohort-overview__logo" src="images/gdes_icon.png" alt="GDES">
         <div>
           <div class="cohort-overview__label">GDES</div>
-          <div class="cohort-overview__title">Diabetic eye multi-omics cohort</div>
+          <div class="cohort-overview__title"><span>Diabetic eye</span><span>multi-omics cohort</span></div>
           <div class="cohort-overview__text">3,000+ participants, 7 years, 2,923-protein plasma atlas.</div>
         </div>
       </a>
@@ -133,7 +134,7 @@
         <img class="cohort-overview__logo" src="images/zhmc_icon.png" alt="ZHMC">
         <div>
           <div class="cohort-overview__label">ZHMC</div>
-          <div class="cohort-overview__title">High-myopia progression registry</div>
+          <div class="cohort-overview__title"><span>High-myopia</span><span>progression registry</span></div>
           <div class="cohort-overview__text">14-year registry, OCT/OCTA biomarkers, AI risk modelling.</div>
         </div>
       </a>
