@@ -289,8 +289,8 @@ p{color:rgba(255,255,255,.82)}
 }
 
 /* Research grid */
-.research-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.research-card{position:relative;border-radius:var(--radius);overflow:hidden;min-height:210px}
+.research-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.research-card{position:relative;border-radius:var(--radius);overflow:hidden;min-height:230px}
 .research-card img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
 .research-card:hover img{transform:scale(1.06)}
 .research-card__ov{
@@ -317,6 +317,10 @@ p{color:rgba(255,255,255,.82)}
 }
 .info-band__stat span{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:6px;display:block}
 .impact-strip{margin-top:34px}
+
+/* Team showcase (index) */
+.team-photo{max-width:840px;margin:0 auto;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-sub);box-shadow:var(--shadow)}
+.team-photo img{width:100%;display:block}
 
 /* CTA Banner */
 .cta-banner{
@@ -420,9 +424,9 @@ p{color:rgba(255,255,255,.82)}
   border-radius:var(--radius-lg);padding:2rem 2.25rem;align-items:start;
 }
 .team-pi__photo{position:relative}
-.team-pi__photo img{width:100%;height:auto;aspect-ratio:3/4;border-radius:var(--radius);object-fit:cover}
+.team-pi__photo img{width:100%;height:auto;aspect-ratio:4/5;border-radius:var(--radius);object-fit:cover}
 .team-pi__avatar-fallback{
-  width:100%;aspect-ratio:3/4;background:var(--bg-soft);border-radius:var(--radius);
+  width:100%;aspect-ratio:4/5;background:var(--bg-soft);border-radius:var(--radius);
   display:flex;align-items:center;justify-content:center;
   font-size:3rem;font-weight:700;color:var(--cyan);
 }
@@ -470,6 +474,12 @@ p{color:rgba(255,255,255,.82)}
   transition:all var(--t);
 }
 .area-tag:hover{border-color:var(--cyan);color:var(--cyan)}
+.join-us{display:grid;grid-template-columns:170px 1fr;gap:2rem;align-items:center;background:linear-gradient(135deg,var(--bg-soft),var(--bg-mid));border:1px solid var(--border);border-radius:var(--radius-lg);padding:2.25rem 2.5rem}
+.join-us__art{display:flex;justify-content:center}
+.join-us__art svg{width:150px;height:auto}
+.join-us__body h2{font-size:1.7rem;margin-bottom:.5rem;font-weight:800}
+.join-us__body p{color:rgba(255,255,255,.72);margin-bottom:1.1rem;max-width:580px;line-height:1.7}
+@media(max-width:640px){.join-us{grid-template-columns:1fr;text-align:center}.join-us__art{margin-bottom:.5rem}}
 .collab-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
 .collab-item{
   padding:.95rem 1.1rem;background:rgba(0,201,212,.07);
@@ -580,12 +590,12 @@ p{color:rgba(255,255,255,.82)}
   .team-pi{grid-template-columns:1fr}
   .team-pi__photo{max-width:280px}
   .team-pi__photo{max-width:220px}
-  .team-pi__photo img{height:auto;aspect-ratio:3/4}
+  .team-pi__photo img{height:auto;aspect-ratio:4/5}
   .contact-grid{grid-template-columns:1fr}
   .faculty-grid{grid-template-columns:repeat(2,1fr)}
   .feature-strip{grid-template-columns:1fr 1fr;margin:18px auto 0}
   .feature-item{border-bottom:1px solid rgba(255,255,255,.14)}
-  .research-grid{grid-template-columns:1fr}
+  .research-grid{grid-template-columns:1fr 1fr}
   .cohort-grid{grid-template-columns:1fr 1fr}
   .cohort-card__name{white-space:normal}
   .data-snapshot,.access-grid{grid-template-columns:1fr}
