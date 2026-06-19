@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071226"/>
+      <stop offset="0.55" stop-color="#0a1d33"/>
+      <stop offset="1" stop-color="#0c2740"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.8" cy="0.32" r="0.55">
+      <stop offset="0" stop-color="#00d4ff" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#00d4ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1440" height="400" fill="url(#g)"/>
+  <rect width="1440" height="400" fill="url(#glow)"/>
+  <!-- secure data-sharing network: a central hub linked to approved collaborators -->
+  <g stroke="#00d4ff" stroke-opacity="0.28" stroke-width="1.6">
+    <line x1="1080" y1="200" x2="880"  y2="120"/>
+    <line x1="1080" y1="200" x2="900"  y2="300"/>
+    <line x1="1080" y1="200" x2="1250" y2="96"/>
+    <line x1="1080" y1="200" x2="1320" y2="210"/>
+    <line x1="1080" y1="200" x2="1230" y2="320"/>
+    <line x1="880"  y1="120" x2="1250" y2="96"/>
+    <line x1="900"  y1="300" x2="1230" y2="320"/>
+  </g>
+  <!-- central hub -->
+  <circle cx="1080" cy="200" r="30" fill="#00d4ff" fill-opacity="0.12" stroke="#00d4ff" stroke-opacity="0.5" stroke-width="2"/>
+  <circle cx="1080" cy="200" r="11" fill="#45eaff" fill-opacity="0.65"/>
+  <!-- collaborator nodes -->
+  <g fill="#00d4ff">
+    <circle cx="880"  cy="120" r="9" fill-opacity="0.4"/>
+    <circle cx="900"  cy="300" r="9" fill-opacity="0.4"/>
+    <circle cx="1250" cy="96"  r="9" fill-opacity="0.4"/>
+    <circle cx="1320" cy="210" r="9" fill-opacity="0.4"/>
+    <circle cx="1230" cy="320" r="9" fill-opacity="0.4"/>
+  </g>
+  <!-- rings around hub -->
+  <circle cx="1080" cy="200" r="52" fill="none" stroke="#00d4ff" stroke-opacity="0.12" stroke-width="1"/>
+  <circle cx="1080" cy="200" r="78" fill="none" stroke="#00d4ff" stroke-opacity="0.07" stroke-width="1"/>
+</svg>

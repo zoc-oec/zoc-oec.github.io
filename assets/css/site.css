@@ -111,7 +111,6 @@ p{color:rgba(255,255,255,.82)}
   background-position:right 44%;
   background-repeat:no-repeat;
   background-color:var(--bg);
-  border-bottom:1px solid rgba(255,255,255,.1);
 }
 .hero::before{
   content:'';position:absolute;inset:0;z-index:0;
@@ -191,8 +190,8 @@ p{color:rgba(255,255,255,.82)}
 .sec-hd--c{text-align:center}
 .eyebrow{
   display:inline-flex;align-items:center;gap:8px;
-  font-size:.73rem;font-weight:700;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--cyan);margin-bottom:10px;
+  font-size:.92rem;font-weight:800;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--cyan);margin-bottom:12px;
 }
 .sec-title{font-size:clamp(1.75rem,3.2vw,2.4rem);font-weight:800}
 .sec-desc{color:rgba(255,255,255,.56);margin-top:12px;line-height:1.72;font-size:1.02rem}
@@ -213,6 +212,8 @@ p{color:rgba(255,255,255,.82)}
 }
 
 /* Feature strip */
+.feature-intro{max-width:1280px;margin:6px auto 0;padding:22px 24px 0;text-align:center}
+.feature-intro .sec-title{margin-top:6px}
 .feature-strip{
   display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
   gap:22px;
@@ -350,10 +351,10 @@ p{color:rgba(255,255,255,.82)}
     linear-gradient(100deg,rgba(5,13,29,.92) 0%,rgba(7,22,44,.78) 52%,rgba(0,61,92,.38) 100%),
     radial-gradient(ellipse 68% 100% at 86% 42%,rgba(0,212,255,.16),transparent 70%);
 }
-.page-hero--cohorts{background-image:url('/images/Cover.png');background-position:right 45%}
-.page-hero--publications{background-image:url('/images/retina.jpg');background-position:center 42%}
+.page-hero--cohorts{background-image:url('/images/bg-cohorts.svg');background-position:center}
+.page-hero--publications{background-image:url('/images/bg-publications.svg');background-position:center}
 .page-hero--team{background-image:url('/images/team-bg.jpg');background-position:center}
-.page-hero--data{background-image:url('/images/pacg.jpg');background-position:center 38%}
+.page-hero--data{background-image:url('/images/bg-data.svg');background-position:center}
 .page-hero__grid{
   position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) 360px;
   gap:48px;align-items:center;
