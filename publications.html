@@ -51,15 +51,15 @@
 <section class="section" style="padding-bottom:0">
   <div class="container">
     <div class="sec-hd sec-hd--c">
-      <p class="eyebrow">Output &amp; Impact</p>
+      <p class="eyebrow" data-zh="产出与影响">Output &amp; Impact</p>
       <h2 class="sec-title" data-zh="科研产出概览">Productivity at a Glance</h2>
-      <p class="sec-desc">PI publication and citation trends for Prof. Wei Wang (Zhongshan Ophthalmic Center), compiled from PubMed and Google Scholar. Annual figures are approximate.</p>
+      <p class="sec-desc" data-zh="PI（王伟，中山眼科中心）的发文与引用趋势，整理自 PubMed 与 Google Scholar；年度数据为近似值。">PI publication and citation trends for Prof. Wei Wang (Zhongshan Ophthalmic Center), compiled from PubMed and Google Scholar. Annual figures are approximate.</p>
     </div>
     <div class="chart-grid">
 
       <div class="chart-card">
         <h3 data-zh="历年发文量">Publications per year</h3>
-        <div class="sub">~310 SCI-indexed papers to date</div>
+        <div class="sub" data-zh="迄今约 310 篇 SCI 论文">~310 SCI-indexed papers to date</div>
         <svg viewBox="0 0 330 178" role="img" aria-label="Publications per year line chart">
           <defs><linearGradient id="gpub" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0" stop-color="#00d4ff" stop-opacity="0.34"/><stop offset="1" stop-color="#00d4ff" stop-opacity="0"/>
@@ -81,7 +81,7 @@
 
       <div class="chart-card">
         <h3 data-zh="历年引用量">Citations per year</h3>
-        <div class="sub">~20,000 total citations &middot; H-index 69</div>
+        <div class="sub" data-zh="总引用约 20,000 &middot; H 指数 69">~20,000 total citations &middot; H-index 69</div>
         <svg viewBox="0 0 330 178" role="img" aria-label="Citations per year line chart">
           <defs><linearGradient id="gcit" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0" stop-color="#45eaff" stop-opacity="0.34"/><stop offset="1" stop-color="#45eaff" stop-opacity="0"/>
@@ -111,14 +111,14 @@
     <!-- Filters -->
     <div id="pub-filters">
       <div class="pub-filters">
-        <span style="font-size:.8rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-right:4px;">Cohort</span>
-        <button class="filter-btn active" data-cohort="all">All Cohorts</button>
+        <span style="font-size:.8rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-right:4px;" data-zh="队列">Cohort</span>
+        <button class="filter-btn active" data-cohort="all" data-zh="全部队列">All Cohorts</button>
         <button class="filter-btn" data-cohort="zap">ZAP</button>
         <button class="filter-btn" data-cohort="gdes">GDES</button>
         <button class="filter-btn" data-cohort="zhmc">ZHMC</button>
         <span style="flex:1"></span>
         <select id="year-filter" class="filter-btn" style="appearance:none;padding:5px 30px 5px 13px;cursor:pointer;background-image:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2210%22 height=%226%22><path d=%22M0 0l5 6 5-6z%22 fill=%22%238a9ec0%22/></svg>');background-repeat:no-repeat;background-position:right 10px center;">
-          <option value="all">All Years</option>
+          <option value="all" data-zh="全部年份">All Years</option>
           <option value="2026">2026</option>
           <option value="2025">2025</option>
           <option value="2024">2024</option>
