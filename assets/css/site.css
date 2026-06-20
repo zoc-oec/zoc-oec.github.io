@@ -746,12 +746,14 @@ p{color:rgba(255,255,255,.82)}
 
 
 /* ===== Review round: sizing & layout ===== */
-.eyebrow{font-size:1rem}
-.hero__eyebrow{font-size:.85rem}
-.hero__stat-lbl{font-size:.8rem}
-.nav__logo-tagline{font-size:.75rem}
+/* enlarge labels ONLY in Chinese (English keeps original size, no overflow) */
+html[lang="zh-CN"] .eyebrow{font-size:1.08rem}
+html[lang="zh-CN"] .hero__eyebrow{font-size:.88rem}
+html[lang="zh-CN"] .hero__stat-lbl{font-size:.84rem}
+html[lang="zh-CN"] .nav__logo-tagline{font-size:.78rem}
 .pub-frame__badge{font-size:.72rem;padding:5px 12px}
-.pub-frame__cap h3{min-height:2.5em}
+.pub-frame__cap h3{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.55em;text-wrap:balance}
+.page-hero h1,.sec-title,.research-card__title,.cohort-title,.cohort-card__title{text-wrap:balance}
 .team-pi__meta{gap:1rem 2.6rem;align-items:center}
 .team-pi__stats{align-items:center}
 .team-pi__photo img{object-position:top center;aspect-ratio:3/4}
@@ -767,3 +769,5 @@ p{color:rgba(255,255,255,.82)}
 .tagc--lg{font-size:1.06rem;padding:8px 18px}
 .tagc--md{font-size:.92rem}
 .tagc--sm{font-size:.8rem;opacity:.85}
+
+.research-card__title{font-size:1.12rem}

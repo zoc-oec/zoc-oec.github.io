@@ -7,7 +7,7 @@
 <meta name="description" content="Overview of the three Will-Lab longitudinal cohorts: ZAP (angle closure), GDES (diabetic eye disease), and ZHMC (high myopia).">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css?v=20260621-polish16">
+<link rel="stylesheet" href="assets/css/site.css?v=20260621-polish18">
 <style>
 /* Cohort page extras */
 .cohort-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-bottom:2.5rem}
@@ -38,8 +38,9 @@
 .cohort-keypoint{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-sm);padding:.9rem}
 .cohort-keypoint strong{display:block;color:#fff;font-size:.86rem;margin-bottom:.25rem}
 .cohort-keypoint span{display:block;color:var(--muted);font-size:.78rem;line-height:1.5}
-.cohort-pubs-label{font-size:.7rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin:1.5rem 0 .1rem}
+.cohort-pubs-label{font-size:.84rem;font-weight:800;color:#fff;letter-spacing:.04em;margin:1.6rem 0 .2rem}
 .cohort-pubs-label b{color:var(--cyan)}
+.cohort-desc .cstat--measures{margin:1.4rem 0 0;background:rgba(255,255,255,.04)}
 .cohort-proof{
   display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;margin:.55rem 0 1.4rem;
 }
@@ -184,6 +185,22 @@
             <div class="cohort-proof__item" data-zh="<strong>Ophthalmology &times;4</strong><span>长期随访</span>"><strong>Ophthalmology &times;4</strong><span>Long-term follow-up</span></div>
           </div>
 
+          <div class="cstat cstat--zap cstat--measures cstat--full">
+            <div class="cstat__measure-title" data-zh="采集的关键变量">Key Variables Collected</div>
+            <div class="measures-grid">
+              <span class="measure-pill">Gonioscopy</span>
+              <span class="measure-pill">AS-OCT</span>
+              <span class="measure-pill">Iris biometry</span>
+              <span class="measure-pill">Lens vault</span>
+              <span class="measure-pill">IOP</span>
+              <span class="measure-pill">BCVA</span>
+              <span class="measure-pill">Visual fields</span>
+              <span class="measure-pill">ACD</span>
+              <span class="measure-pill">Trabecular-iris contact</span>
+              <span class="measure-pill">Pupil diameter</span>
+            </div>
+          </div>
+
           <div class="cohort-actions">
             <a href="publications.html#zap" class="btn btn--outline" style="font-size:.85rem" data-zh="查看 ZAP 论文">View ZAP Publications</a>
             <a href="data_access.html" class="btn btn--outline" style="font-size:.85rem" data-zh="申请 ZAP 数据">Request ZAP Data</a>
@@ -209,21 +226,6 @@
           </div>
           
         </div>
-        <div class="cstat cstat--zap cstat--measures cstat--full">
-            <div class="cstat__measure-title" data-zh="采集的关键变量">Key Variables Collected</div>
-            <div class="measures-grid">
-              <span class="measure-pill">Gonioscopy</span>
-              <span class="measure-pill">AS-OCT</span>
-              <span class="measure-pill">Iris biometry</span>
-              <span class="measure-pill">Lens vault</span>
-              <span class="measure-pill">IOP</span>
-              <span class="measure-pill">BCVA</span>
-              <span class="measure-pill">Visual fields</span>
-              <span class="measure-pill">ACD</span>
-              <span class="measure-pill">Trabecular-iris contact</span>
-              <span class="measure-pill">Pupil diameter</span>
-            </div>
-          </div>
       </div>
     </div>
 
@@ -253,6 +255,20 @@
             <div class="cohort-proof__item" data-zh="<strong>Br J Ophthalmol &times;7</strong><span>视网膜表型分析</span>"><strong>Br J Ophthalmol &times;7</strong><span>Retinal phenotyping</span></div>
           </div>
 
+          <div class="cstat cstat--gdes cstat--measures cstat--full">
+            <div class="cstat__measure-title" data-zh="采集的关键变量">Key Variables Collected</div>
+            <div class="measures-grid">
+              <span class="measure-pill">Fundus photos</span>
+              <span class="measure-pill">OCT</span>
+              <span class="measure-pill">SS-OCTA</span>
+              <span class="measure-pill">Proteomics</span>
+              <span class="measure-pill">Metabolomics</span>
+              <span class="measure-pill">Genotyping</span>
+              <span class="measure-pill">Renal outcomes</span>
+              <span class="measure-pill">Cardiometabolic risk</span>
+            </div>
+          </div>
+
           <div class="cohort-actions">
             <a href="publications.html#gdes" class="btn btn--outline" style="font-size:.85rem" data-zh="查看 GDES 论文">View GDES Publications</a>
             <a href="data_access.html" class="btn btn--outline" style="font-size:.85rem" data-zh="申请 GDES 数据">Request GDES Data</a>
@@ -278,19 +294,6 @@
           </div>
           
         </div>
-        <div class="cstat cstat--gdes cstat--measures cstat--full">
-            <div class="cstat__measure-title" data-zh="采集的关键变量">Key Variables Collected</div>
-            <div class="measures-grid">
-              <span class="measure-pill">Fundus photos</span>
-              <span class="measure-pill">OCT</span>
-              <span class="measure-pill">SS-OCTA</span>
-              <span class="measure-pill">Proteomics</span>
-              <span class="measure-pill">Metabolomics</span>
-              <span class="measure-pill">Genotyping</span>
-              <span class="measure-pill">Renal outcomes</span>
-              <span class="measure-pill">Cardiometabolic risk</span>
-            </div>
-          </div>
       </div>
     </div>
 
@@ -320,6 +323,20 @@
             <div class="cohort-proof__item" data-zh="<strong>Br J Ophthalmol &times;3</strong><span>脉络膜与黄斑病变</span>"><strong>Br J Ophthalmol &times;3</strong><span>Choroid &amp; maculopathy</span></div>
           </div>
 
+          <div class="cstat cstat--zhmc cstat--measures cstat--full">
+            <div class="cstat__measure-title" data-zh="采集的关键变量">Key Variables Collected</div>
+            <div class="measures-grid">
+              <span class="measure-pill">Axial length</span>
+              <span class="measure-pill">Widefield OCT</span>
+              <span class="measure-pill">OCTA</span>
+              <span class="measure-pill">Fundus curvature</span>
+              <span class="measure-pill">Choroidal thickness</span>
+              <span class="measure-pill">Visual fields</span>
+              <span class="measure-pill">Maculopathy grading</span>
+              <span class="measure-pill">Myopia control</span>
+            </div>
+          </div>
+
           <div class="cohort-actions">
             <a href="publications.html#zhmc" class="btn btn--outline" style="font-size:.85rem" data-zh="查看 ZHMC 论文">View ZHMC Publications</a>
             <a href="data_access.html" class="btn btn--outline" style="font-size:.85rem" data-zh="申请 ZHMC 数据">Request ZHMC Data</a>
@@ -345,19 +362,6 @@
           </div>
           
         </div>
-        <div class="cstat cstat--zhmc cstat--measures cstat--full">
-            <div class="cstat__measure-title" data-zh="采集的关键变量">Key Variables Collected</div>
-            <div class="measures-grid">
-              <span class="measure-pill">Axial length</span>
-              <span class="measure-pill">Widefield OCT</span>
-              <span class="measure-pill">OCTA</span>
-              <span class="measure-pill">Fundus curvature</span>
-              <span class="measure-pill">Choroidal thickness</span>
-              <span class="measure-pill">Visual fields</span>
-              <span class="measure-pill">Maculopathy grading</span>
-              <span class="measure-pill">Myopia control</span>
-            </div>
-          </div>
       </div>
     </div>
 
@@ -382,6 +386,6 @@
   }
 })();
 </script>
-<script src="assets/js/site.js?v=20260621-polish16"></script>
+<script src="assets/js/site.js?v=20260621-polish18"></script>
 </body>
 </html>
