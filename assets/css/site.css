@@ -743,3 +743,18 @@ p{color:rgba(255,255,255,.82)}
 .hero__brand{background:linear-gradient(90deg,#00d4ff 0%,#45eaff 50%,#7fe9ff 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;background-size:200% auto;animation:brandSheen 6s linear infinite}
 @keyframes brandSheen{to{background-position:200% center}}
 @media (prefers-reduced-motion:reduce){.hero__content > *{opacity:1;animation:none}.hero__brand{animation:none}}
+
+
+/* ===== Review round: sizing & layout ===== */
+.eyebrow{font-size:1rem}
+.hero__eyebrow{font-size:.85rem}
+.hero__stat-lbl{font-size:.8rem}
+.nav__logo-tagline{font-size:.75rem}
+.pub-frame__badge{font-size:.72rem;padding:5px 12px}
+.pub-frame__cap h3{min-height:2.5em}
+.team-pi__meta{gap:1rem 2.6rem;align-items:center}
+.team-pi__stats{align-items:center}
+.team-pi__photo img{object-position:top center;aspect-ratio:3/4}
+.team-pi__avatar-fallback{aspect-ratio:3/4}
+.cstat--full{grid-column:1/-1;margin-top:.4rem;padding:1.1rem 1.4rem}
+.cstat--full .measures-grid{gap:.5rem}
