@@ -214,5 +214,19 @@
   if (yearSelect)   yearSelect.addEventListener('change', applyFilters);
   if (searchInput)  searchInput.addEventListener('input',  applyFilters);
 
+  /* ----- Keyword cloud -> search ----- */
+  document.querySelectorAll('.tagc').forEach(function (t) {
+    t.addEventListener('click', function () {
+      if (!searchInput) return;
+      cohortBtns.forEach(function (b) { b.classList.remove('active'); });
+      var allBtn = document.querySelector('.filter-btn[data-cohort="all"]');
+      if (allBtn) allBtn.classList.add('active');
+      if (yearSelect) yearSelect.value = 'all';
+      searchInput.value = t.getAttribute('data-q');
+      applyFilters();
+      filterArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
   applyFilters(); /* initial run */
 })();
