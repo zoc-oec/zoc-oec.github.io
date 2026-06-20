@@ -711,3 +711,23 @@ p{color:rgba(255,255,255,.82)}
 /* ===== Language toggle ===== */
 .lang-toggle{margin-left:8px;background:transparent;border:1px solid var(--border-sub);color:#fff;border-radius:99px;padding:5px 13px;font-size:.82rem;font-weight:700;cursor:pointer;font-family:var(--font);line-height:1;transition:border-color var(--t),color var(--t)}
 .lang-toggle:hover{border-color:var(--cyan);color:var(--cyan)}
+
+
+/* ===== Scroll reveal ===== */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal--in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important}}
+
+/* ===== Premium publication frames ===== */
+.pub-frame__device{display:block;text-decoration:none;cursor:pointer}
+.pub-frame__badge{position:absolute;top:-9px;right:8px;z-index:4;background:linear-gradient(135deg,#00d4ff,#3b9eff);color:#06121f;font-size:.6rem;font-weight:800;letter-spacing:.03em;padding:4px 11px;border-radius:99px;box-shadow:0 6px 16px rgba(0,212,255,.4)}
+.device{transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+.device__screen{position:relative}
+.device__screen::after{content:'';position:absolute;inset:0;background:linear-gradient(125deg,rgba(255,255,255,.18),rgba(255,255,255,0) 44%);pointer-events:none}
+.pub-frame__device:hover .device{transform:scale(1.025);border-color:rgba(0,212,255,.55);box-shadow:0 32px 64px rgba(0,0,0,.55),0 0 34px rgba(0,212,255,.28)}
+.pub-frame__cta{position:absolute;left:50%;bottom:16px;transform:translateX(-50%) translateY(10px);z-index:4;background:var(--cyan);color:#06121f;font-size:.74rem;font-weight:800;padding:8px 16px;border-radius:99px;opacity:0;transition:opacity .3s ease,transform .3s ease;white-space:nowrap;box-shadow:0 8px 20px rgba(0,0,0,.45);pointer-events:none}
+.pub-frame__device:hover .pub-frame__cta{opacity:1;transform:translateX(-50%) translateY(0)}
+.pub-frame__readlink{font-size:.78rem;color:var(--cyan);font-weight:600;text-decoration:none}
+.pub-frame__readlink:hover{color:var(--cyan-soft)}
+.dl-card{gap:9px}
+.join-us__art svg{width:168px;height:auto}

@@ -70,6 +70,24 @@
     counters.forEach(function (n) { io.observe(n); });
   }
 
+  /* ----- Scroll reveal animation ----- */
+  if ('IntersectionObserver' in window) {
+    var revSel = '.sec-hd, .feature-item, .cohort-card, .research-card, .pub-frame, .chart-card, .team-photo, .faculty-card, .da-step, .cohort-overview__card, .team-pi, .join-us, .team-bottom > *, .cta-banner';
+    var revs = [].slice.call(document.querySelectorAll(revSel));
+    if (revs.length) {
+      var ro = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('reveal--in'); ro.unobserve(e.target); }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      revs.forEach(function (el, idx) {
+        el.classList.add('reveal');
+        el.style.transitionDelay = ((idx % 4) * 70) + 'ms';
+        ro.observe(el);
+      });
+    }
+  }
+
   /* ----- Faculty bio modal ----- */
   var fmodal = document.getElementById('faculty-modal');
   if (fmodal) {
