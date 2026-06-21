@@ -289,7 +289,7 @@ p{color:rgba(255,255,255,.82)}
 }
 
 /* Research grid */
-.research-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.research-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
 .research-card{position:relative;border-radius:var(--radius);overflow:hidden;min-height:230px}
 .research-card img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
 .research-card:hover img{transform:scale(1.06)}
@@ -308,18 +308,18 @@ p{color:rgba(255,255,255,.82)}
 }
 .info-band__inner{
   display:flex;justify-content:space-evenly;
-  padding:44px 24px;max-width:1160px;margin:0 auto;
+  padding:30px 24px 34px;max-width:1160px;margin:0 auto;
   text-align:center;flex-wrap:wrap;gap:24px;
 }
 .info-band__stat strong{
   display:block;font-size:2.7rem;font-weight:800;color:var(--cyan);
   text-shadow:0 0 24px rgba(0,212,255,.48);line-height:1;
 }
-.info-band__stat span{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:6px;display:block}
-.impact-strip{margin-top:34px}
+.info-band__stat span{font-size:.86rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:8px;display:block}
+.impact-strip{margin-top:6px}
 
 /* Team showcase (index) */
-.team-photo{max-width:840px;margin:0 auto;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-sub);box-shadow:var(--shadow)}
+.team-photo{max-width:1040px;margin:0 auto;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-sub);box-shadow:var(--shadow)}
 .team-photo img{width:100%;display:block}
 
 /* CTA Banner */
@@ -478,7 +478,7 @@ p{color:rgba(255,255,255,.82)}
 .join-us__art{display:flex;justify-content:center}
 .join-us__art svg{width:150px;height:auto}
 .join-us__body h2{font-size:1.7rem;margin-bottom:.5rem;font-weight:800}
-.join-us__body p{color:rgba(255,255,255,.72);margin-bottom:1.1rem;max-width:580px;line-height:1.7}
+.join-us__body p{color:rgba(255,255,255,.72);margin-bottom:1.1rem;max-width:none;line-height:1.75;font-size:1.04rem}
 @media(max-width:640px){.join-us{grid-template-columns:1fr;text-align:center}.join-us__art{margin-bottom:.5rem}}
 .collab-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
 .collab-item{
@@ -778,8 +778,7 @@ html[lang="zh-CN"] .nav__logo-tagline{font-size:.78rem}
 .cohort-card__head{display:flex;align-items:center;gap:14px;margin-bottom:16px}
 .cohort-card__head .cohort-card__icon{width:60px;height:60px;margin:0;flex-shrink:0}
 .cohort-card__head>div{min-width:0}
-.cohort-card__head .cohort-card__tag{margin-bottom:5px}
-.cohort-card__head .cohort-card__title{margin:0;white-space:normal;font-size:1.3rem}
+.cohort-card__head .cohort-card__tag{margin:0;align-self:center}
 .feature-item__desc{text-wrap:balance}
 .research-card__desc{text-wrap:balance;min-height:3.7em}
 
