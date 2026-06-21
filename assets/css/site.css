@@ -830,3 +830,25 @@ html[lang="zh-CN"] .nav__logo-tagline{font-size:.78rem}
 /* ===== Team: horizontal contact strip ===== */
 .tb-contact--row{display:flex!important;flex-direction:row!important;flex-wrap:wrap;justify-content:center;gap:1.1rem 1.6rem;margin-top:1.7rem}
 .tb-contact--row a{white-space:nowrap}
+
+/* ===== Hero logo + Who/What/How positioning band ===== */
+.hero__logo{height:62px;width:auto;margin-bottom:20px;filter:drop-shadow(0 4px 18px rgba(0,212,255,.45))}
+.positioning{max-width:1280px;margin:0 auto;padding:10px 24px 2px;position:relative;z-index:5}
+.positioning__inner{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.pos-item{background:linear-gradient(150deg,rgba(255,255,255,.055),rgba(0,212,255,.03));border:1px solid var(--border-sub);border-left:3px solid var(--cyan);border-radius:14px;padding:20px 22px;transition:border-color var(--t),transform var(--t),box-shadow var(--t)}
+.pos-item:hover{transform:translateY(-3px);box-shadow:var(--glow-card);border-color:rgba(0,212,255,.4);border-left-color:var(--cyan)}
+.pos-item__k{display:block;font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--cyan);margin-bottom:9px}
+.pos-item__v{font-size:1.01rem;color:rgba(255,255,255,.86);line-height:1.55;margin:0}
+@media(max-width:780px){.positioning__inner{grid-template-columns:1fr;gap:14px}.hero__logo{height:52px}}
+
+/* ===== Publications: Landmark Papers ===== */
+.landmark-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.landmark-card{display:flex;flex-direction:column;gap:11px;background:var(--bg-card);border:1px solid var(--border-sub);border-radius:var(--radius);padding:20px 22px;color:#fff;transition:transform var(--t),border-color var(--t),box-shadow var(--t)}
+.landmark-card:hover{transform:translateY(-3px);border-color:var(--border);box-shadow:var(--glow-card)}
+.landmark-card__top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.landmark-card__jrnl{font-size:.78rem;font-weight:700;color:var(--cyan);text-align:right}
+.landmark-card__title{font-size:.95rem;font-weight:700;line-height:1.42;color:#fff;flex:1;text-wrap:balance}
+.landmark-card__go{font-size:.8rem;font-weight:600;color:var(--muted);transition:color var(--t)}
+.landmark-card:hover .landmark-card__go{color:var(--cyan)}
+@media(max-width:880px){.landmark-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.landmark-grid{grid-template-columns:1fr}}
