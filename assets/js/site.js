@@ -274,5 +274,19 @@
     applyFilters();
   });
 
+  /* ----- Deep-link: ?cohort=zap pre-selects a cohort ----- */
+  (function () {
+    var params = new URLSearchParams(location.search);
+    var pc = params.get('cohort');
+    if (!pc) return;
+    var target = document.querySelector('.filter-btn[data-cohort="' + pc.toLowerCase() + '"]');
+    if (!target) return;
+    cohortBtns.forEach(function (b) { b.classList.remove('active'); });
+    target.classList.add('active');
+    requestAnimationFrame(function () {
+      filterArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  })();
+
   applyFilters(); /* initial run */
 })();
