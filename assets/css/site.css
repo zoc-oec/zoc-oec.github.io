@@ -771,3 +771,50 @@ html[lang="zh-CN"] .nav__logo-tagline{font-size:.78rem}
 .tagc--sm{font-size:.8rem;opacity:.85}
 
 .research-card__title{font-size:1.12rem}
+
+
+/* ===== Index review: cohort card head, balanced descs ===== */
+.cohort-card{min-height:auto}
+.cohort-card__head{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.cohort-card__head .cohort-card__icon{width:60px;height:60px;margin:0;flex-shrink:0}
+.cohort-card__head>div{min-width:0}
+.cohort-card__head .cohort-card__tag{margin-bottom:5px}
+.cohort-card__head .cohort-card__title{margin:0;white-space:normal;font-size:1.3rem}
+.feature-item__desc{text-wrap:balance}
+.research-card__desc{text-wrap:balance;min-height:3.7em}
+
+
+/* ===== Publications: custom chart tooltip + filter rows ===== */
+.chart-hit{cursor:pointer}
+.chart-tip{
+  position:fixed;z-index:300;pointer-events:none;
+  transform:translate(-50%,-100%);
+  background:linear-gradient(165deg,rgba(12,30,56,.98),rgba(8,20,39,.98));
+  border:1px solid var(--cyan);border-radius:11px;
+  padding:9px 16px;text-align:center;white-space:nowrap;
+  box-shadow:0 14px 34px rgba(0,0,0,.55),0 0 20px rgba(0,212,255,.28);
+}
+.chart-tip::after{
+  content:'';position:absolute;left:50%;bottom:-7px;transform:translateX(-50%);
+  border:7px solid transparent;border-top-color:var(--cyan);border-bottom:0;
+}
+.chart-tip__y{display:block;font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan)}
+.chart-tip__v{display:block;font-size:1.22rem;font-weight:800;color:#fff;margin-top:3px;letter-spacing:.01em}
+
+#pub-filters{max-width:1000px;margin:0 auto 34px}
+.pf-row{display:flex;align-items:flex-start;gap:18px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.pf-row:last-of-type{border-bottom:none}
+.pf-label{flex:0 0 78px;font-size:.74rem;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.09em;padding-top:9px}
+.pf-opts{display:flex;flex-wrap:wrap;gap:.55rem;flex:1;min-width:0}
+.pf-opts .pub-search{flex:1;min-width:240px;max-width:460px}
+.pub-count{text-align:center;color:var(--muted);font-size:.86rem;margin-top:18px}
+@media(max-width:680px){
+  .pf-row{flex-direction:column;gap:8px}
+  .pf-label{padding-top:0}
+  .pf-opts .pub-search{width:100%;max-width:none}
+}
+
+
+/* ===== Team: horizontal contact strip ===== */
+.tb-contact--row{display:flex!important;flex-direction:row!important;flex-wrap:wrap;justify-content:center;gap:1.1rem 1.6rem;margin-top:1.7rem}
+.tb-contact--row a{white-space:nowrap}

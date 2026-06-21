@@ -117,13 +117,41 @@
     });
   }
 
+  /* ----- Custom chart tooltip (publications.html) ----- */
+  (function () {
+    var hits = document.querySelectorAll('.chart-hit');
+    if (!hits.length) return;
+    var tip = document.createElement('div');
+    tip.className = 'chart-tip';
+    tip.style.display = 'none';
+    document.body.appendChild(tip);
+    function move(e) {
+      tip.style.left = e.clientX + 'px';
+      tip.style.top  = (e.clientY - 16) + 'px';
+    }
+    function show(e) {
+      var t = e.currentTarget;
+      tip.innerHTML = '<span class="chart-tip__y">' + t.getAttribute('data-ty') +
+                      '</span><span class="chart-tip__v">' + t.getAttribute('data-tv') + '</span>';
+      tip.style.display = 'block';
+      move(e);
+    }
+    function hide() { tip.style.display = 'none'; }
+    hits.forEach(function (h) {
+      h.addEventListener('mouseenter', show);
+      h.addEventListener('mousemove', move);
+      h.addEventListener('mouseleave', hide);
+    });
+  })();
+
   /* ----- Publication filters (publications.html only) ----- */
   var filterArea = document.getElementById('pub-filters');
   if (!filterArea) return;
 
   var searchInput  = document.getElementById('pub-search');
   var cohortBtns   = document.querySelectorAll('.filter-btn[data-cohort]');
-  var yearSelect   = document.getElementById('year-filter');
+  var yearBtns     = document.querySelectorAll('.filter-btn[data-year]');
+  var kwBtns       = document.querySelectorAll('.kw-btn');
   var countEl      = document.getElementById('pub-count');
   var pubContainer = filterArea.closest('.container');
   var items        = Array.from(document.querySelectorAll('.pub-item'));
@@ -173,9 +201,10 @@
 
   function getFilters() {
     var activeCohort = document.querySelector('.filter-btn[data-cohort].active');
+    var activeYear   = document.querySelector('.filter-btn[data-year].active');
     return {
       cohort: activeCohort ? activeCohort.dataset.cohort : 'all',
-      year:   yearSelect   ? yearSelect.value              : 'all',
+      year:   activeYear   ? activeYear.dataset.year     : 'all',
       q:      searchInput  ? searchInput.value.trim().toLowerCase() : ''
     };
   }
@@ -211,21 +240,38 @@
     });
   });
 
-  if (yearSelect)   yearSelect.addEventListener('change', applyFilters);
-  if (searchInput)  searchInput.addEventListener('input',  applyFilters);
+  yearBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      yearBtns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      applyFilters();
+    });
+  });
 
-  /* ----- Keyword cloud -> search ----- */
-  document.querySelectorAll('.tagc').forEach(function (t) {
+  /* ----- Keyword chips -> search + persistent highlight ----- */
+  function syncKeyword(val) {
+    kwBtns.forEach(function (b) {
+      b.classList.toggle('active', b.getAttribute('data-q') === val);
+    });
+  }
+  kwBtns.forEach(function (t) {
     t.addEventListener('click', function () {
       if (!searchInput) return;
-      cohortBtns.forEach(function (b) { b.classList.remove('active'); });
-      var allBtn = document.querySelector('.filter-btn[data-cohort="all"]');
-      if (allBtn) allBtn.classList.add('active');
-      if (yearSelect) yearSelect.value = 'all';
-      searchInput.value = t.getAttribute('data-q');
+      var wasActive = t.classList.contains('active');
+      if (wasActive) {
+        t.classList.remove('active');
+        searchInput.value = '';
+      } else {
+        syncKeyword(t.getAttribute('data-q'));
+        searchInput.value = t.getAttribute('data-q');
+      }
       applyFilters();
-      filterArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
+  });
+
+  if (searchInput) searchInput.addEventListener('input', function () {
+    syncKeyword(searchInput.value.trim().toLowerCase());
+    applyFilters();
   });
 
   applyFilters(); /* initial run */

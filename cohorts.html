@@ -7,7 +7,7 @@
 <meta name="description" content="Overview of the three Will-Lab longitudinal cohorts: ZAP (angle closure), GDES (diabetic eye disease), and ZHMC (high myopia).">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css?v=20260621-polish18">
+<link rel="stylesheet" href="assets/css/site.css?v=20260621-polish19">
 <style>
 /* Cohort page extras */
 .cohort-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-bottom:2.5rem}
@@ -41,6 +41,11 @@
 .cohort-pubs-label{font-size:.84rem;font-weight:800;color:#fff;letter-spacing:.04em;margin:1.6rem 0 .2rem}
 .cohort-pubs-label b{color:var(--cyan)}
 .cohort-desc .cstat--measures{margin:1.4rem 0 0;background:rgba(255,255,255,.04)}
+.cohort-header__icon{width:50px;height:50px;object-fit:contain;flex-shrink:0}
+.cohort-desc .cstat--measures{position:relative}
+.cohort-desc .measures-grid{flex-wrap:nowrap;overflow:hidden;padding-right:1.8rem;-webkit-mask-image:linear-gradient(90deg,#000 90%,transparent);mask-image:linear-gradient(90deg,#000 90%,transparent)}
+.cohort-desc .cstat--measures::after{content:'…';position:absolute;right:1.1rem;bottom:1.05rem;color:var(--muted);font-weight:800;font-size:1.05rem}
+
 .cohort-proof{
   display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;margin:.55rem 0 1.4rem;
 }
@@ -166,6 +171,7 @@
       <div class="cohort-header">
         <span class="cohort-badge cohort-badge--zap">ZAP</span>
         <h2 class="cohort-title">Zhongshan Angle-Closure Prevention Trial</h2>
+        <img class="cohort-header__icon" src="images/zap_icon.png" alt="">
       </div>
 
       <div class="cohort-body">
@@ -236,6 +242,7 @@
       <div class="cohort-header">
         <span class="cohort-badge cohort-badge--gdes">GDES</span>
         <h2 class="cohort-title">Guangzhou Diabetic Eye Study</h2>
+        <img class="cohort-header__icon" src="images/gdes_icon.png" alt="">
       </div>
 
       <div class="cohort-body">
@@ -304,6 +311,7 @@
       <div class="cohort-header">
         <span class="cohort-badge cohort-badge--zhmc">ZHMC</span>
         <h2 class="cohort-title">Zhongshan High Myopia Cohort</h2>
+        <img class="cohort-header__icon" src="images/zhmc_icon.png" alt="">
       </div>
 
       <div class="cohort-body">
@@ -386,6 +394,6 @@
   }
 })();
 </script>
-<script src="assets/js/site.js?v=20260621-polish18"></script>
+<script src="assets/js/site.js?v=20260621-polish19"></script>
 </body>
 </html>
