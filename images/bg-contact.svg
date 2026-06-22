@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 420" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="cbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a1c34"/>
+      <stop offset="0.55" stop-color="#0b1f38"/>
+      <stop offset="1" stop-color="#07162b"/>
+    </linearGradient>
+    <radialGradient id="cglow" cx="76%" cy="36%" r="58%">
+      <stop offset="0" stop-color="#00d4ff" stop-opacity="0.18"/>
+      <stop offset="0.55" stop-color="#0091c4" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#00d4ff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="csoft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+  </defs>
+  <rect width="1440" height="420" fill="url(#cbg)"/>
+  <rect width="1440" height="420" fill="url(#cglow)"/>
+  <!-- connection lines -->
+  <g stroke="#00d4ff" stroke-width="1" fill="none">
+    <g stroke-opacity="0.22">
+      <line x1="700" y1="310" x2="870" y2="220"/>
+      <line x1="800" y1="110" x2="870" y2="220"/>
+      <line x1="870" y1="220" x2="930" y2="330"/>
+      <line x1="800" y1="110" x2="1000" y2="150"/>
+      <line x1="1000" y1="150" x2="1090" y2="220"/>
+      <line x1="870" y1="220" x2="1090" y2="220"/>
+      <line x1="1090" y1="220" x2="1160" y2="120"/>
+      <line x1="1090" y1="220" x2="1170" y2="330"/>
+      <line x1="1160" y1="120" x2="1250" y2="210"/>
+      <line x1="1250" y1="210" x2="1320" y2="110"/>
+      <line x1="1250" y1="210" x2="1360" y2="300"/>
+      <line x1="1320" y1="110" x2="1390" y2="180"/>
+      <line x1="1000" y1="150" x2="960" y2="60"/>
+      <line x1="1160" y1="120" x2="1180" y2="60"/>
+      <line x1="1250" y1="210" x2="1390" y2="180"/>
+    </g>
+    <g stroke-opacity="0.09">
+      <line x1="700" y1="310" x2="610" y2="170"/>
+      <line x1="610" y1="170" x2="500" y2="300"/>
+      <line x1="500" y1="300" x2="430" y2="140"/>
+      <line x1="930" y1="330" x2="1170" y2="330"/>
+    </g>
+  </g>
+  <!-- nodes -->
+  <g fill="#45eaff">
+    <circle cx="700" cy="310" r="2.6" fill-opacity="0.55"/>
+    <circle cx="800" cy="110" r="3" fill-opacity="0.75"/>
+    <circle cx="930" cy="330" r="2.6" fill-opacity="0.6"/>
+    <circle cx="1000" cy="150" r="3" fill-opacity="0.8"/>
+    <circle cx="1080" cy="252" r="2.6" fill-opacity="0.65"/>
+    <circle cx="1160" cy="120" r="2.8" fill-opacity="0.7"/>
+    <circle cx="1170" cy="330" r="2.4" fill-opacity="0.5"/>
+    <circle cx="1250" cy="210" r="3" fill-opacity="0.75"/>
+    <circle cx="1320" cy="110" r="2.6" fill-opacity="0.62"/>
+    <circle cx="1360" cy="300" r="2.8" fill-opacity="0.66"/>
+    <circle cx="1390" cy="180" r="2.4" fill-opacity="0.5"/>
+    <circle cx="960" cy="60" r="2.4" fill-opacity="0.55"/>
+    <circle cx="1180" cy="60" r="2.2" fill-opacity="0.5"/>
+  </g>
+  <g fill="#6fb7e8">
+    <circle cx="610" cy="170" r="2" fill-opacity="0.32"/>
+    <circle cx="500" cy="300" r="1.8" fill-opacity="0.28"/>
+    <circle cx="430" cy="140" r="2" fill-opacity="0.3"/>
+    <circle cx="300" cy="250" r="1.6" fill-opacity="0.22"/>
+    <circle cx="180" cy="330" r="1.6" fill-opacity="0.2"/>
+  </g>
+  <!-- glowing hubs -->
+  <g fill="#00d4ff" filter="url(#csoft)">
+    <circle cx="1090" cy="220" r="9"/>
+    <circle cx="870" cy="220" r="7"/>
+  </g>
+  <g fill="#bdf3ff">
+    <circle cx="1090" cy="220" r="3.4"/>
+    <circle cx="870" cy="220" r="2.9"/>
+  </g>
+</svg>

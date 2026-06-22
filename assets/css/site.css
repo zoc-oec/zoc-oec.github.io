@@ -556,35 +556,42 @@ p{color:rgba(255,255,255,.82)}
 /* Contact */
 .contact-grid{display:flex;flex-direction:column;gap:1.2rem}
 .contact-card{
-  display:flex;align-items:center;gap:1.4rem 2.4rem;flex-wrap:wrap;
+  display:flex;align-items:center;gap:1.6rem 3rem;flex-wrap:wrap;
   background:var(--bg-card);border:1px solid var(--border-sub);border-radius:var(--radius);
-  padding:1.7rem 2rem;
+  padding:1.9rem 2.2rem;
 }
 .contact-card--featured{background:linear-gradient(120deg,rgba(0,212,255,.08) 0%,var(--bg-card) 58%);border-color:var(--border)}
-.contact-card__id{flex:1 1 250px;min-width:220px}
-.contact-card__label{font-size:.7rem;font-weight:800;color:var(--cyan);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem}
-.contact-card__name{font-size:1.4rem;font-weight:800;margin-bottom:.35rem;line-height:1.2}
-.contact-card__role{font-size:.85rem;color:var(--muted);line-height:1.55;margin:0}
-.contact-card__body{flex:2 1 470px;display:flex;flex-wrap:wrap;gap:.7rem;align-items:stretch}
-.contact-card__cta{display:inline-flex;margin-top:1.15rem;white-space:nowrap}
+.contact-card__id{flex:1 1 330px;min-width:260px}
+.contact-card__label{font-size:.7rem;font-weight:800;color:var(--cyan);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.55rem}
+.contact-card__name{font-size:1.42rem;font-weight:800;margin-bottom:.4rem;line-height:1.2;text-wrap:balance}
+.contact-card__role{font-size:.86rem;color:var(--muted);line-height:1.55;margin:0;text-wrap:balance;max-width:30ch}
+.contact-card__cta{display:inline-flex;margin-top:1.2rem;white-space:nowrap}
+.contact-card__body{flex:1 1 420px;display:flex;flex-direction:column;gap:.6rem}
 .contact-link{
-  display:flex;flex-direction:column;justify-content:center;gap:3px;flex:1 1 170px;
+  display:flex;flex-direction:row;align-items:center;gap:1.1rem;
   color:#fff;line-height:1.4;
-  padding:.7rem .95rem;border-radius:var(--radius-sm);
+  padding:.78rem 1.1rem;border-radius:var(--radius-sm);
   background:rgba(255,255,255,.04);border:1px solid var(--border-sub);
   transition:border-color var(--t),background var(--t),transform var(--t);
 }
-.contact-link:hover{border-color:var(--border);background:rgba(0,212,255,.08);transform:translateY(-2px)}
-.contact-link__k{font-size:.64rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--cyan)}
-.contact-link__v{font-size:.9rem;color:rgba(255,255,255,.92)}
-.contact-link--nav{flex:1 1 230px;flex-direction:row;align-items:center;justify-content:space-between;gap:.8rem}
-.contact-link--nav .contact-link__v{display:flex;flex-direction:column;gap:1px}
-.contact-link--nav .contact-link__v strong{color:#fff;font-weight:700;font-size:.92rem}
-.contact-link--nav .contact-link__v span{color:var(--muted);font-size:.78rem}
-.contact-link__arrow{flex-shrink:0;color:var(--cyan);font-weight:700;font-size:1.15rem}
+.contact-link:hover{border-color:var(--border);background:rgba(0,212,255,.08);transform:translateX(3px)}
+.contact-link__k{flex:0 0 132px;font-size:.64rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--cyan)}
+.contact-link__v{flex:1;min-width:0;font-size:.92rem;color:rgba(255,255,255,.92);word-break:break-word}
+.contact-link--nav{justify-content:space-between}
+.contact-link--nav .contact-link__v{display:flex;flex-direction:column;gap:2px;flex:1}
+.contact-link--nav .contact-link__v strong{color:#fff;font-weight:700;font-size:.94rem}
+.contact-link--nav .contact-link__v span{color:var(--muted);font-size:.8rem}
+.contact-link__arrow{flex:0 0 auto;color:var(--cyan);font-weight:700;font-size:1.2rem}
+.page-hero--contact{background-image:url('/images/bg-contact.svg')}
+.page-hero--contact::before{
+  background:
+    linear-gradient(100deg,rgba(7,18,35,.86) 0%,rgba(8,26,48,.6) 48%,rgba(0,46,70,.16) 100%),
+    radial-gradient(ellipse 60% 100% at 78% 38%,rgba(0,212,255,.12),transparent 70%);
+}
 @media(max-width:760px){
-  .contact-card{flex-direction:column;align-items:stretch;gap:1.1rem;padding:1.5rem 1.4rem}
-  .contact-link,.contact-link--nav{flex-basis:100%}
+  .contact-card{flex-direction:column;align-items:stretch;gap:1.2rem;padding:1.6rem 1.5rem}
+  .contact-card__role{max-width:none}
+  .contact-link__k{flex-basis:108px}
 }
 
 /* Footer */
