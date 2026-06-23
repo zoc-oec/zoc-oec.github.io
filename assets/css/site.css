@@ -874,3 +874,194 @@ html[lang="zh-CN"] .nav__logo-tagline{font-size:.78rem}
 .landmark-card:hover .landmark-card__go{color:var(--cyan)}
 @media(max-width:880px){.landmark-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.landmark-grid{grid-template-columns:1fr}}
+
+
+/* ============================================================
+   THEME TOGGLE BUTTON (works in both themes)
+   ============================================================ */
+.theme-toggle{margin-left:8px;background:transparent;border:1px solid var(--border-sub);color:#fff;border-radius:99px;width:36px;height:30px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color var(--t),color var(--t)}
+.theme-toggle:hover{border-color:var(--cyan);color:var(--cyan)}
+.theme-toggle svg{display:block}
+
+/* ============================================================
+   LIGHT (DAY) THEME — WashU-inspired: red top, gray nav, white body
+   ============================================================ */
+html[data-theme="light"]{
+  --bg:#ffffff;
+  --bg-mid:#f3f5f8;
+  --bg-soft:#e9edf2;
+  --bg-card:#ffffff;
+  --bg-card-h:#fbeef0;
+  --cyan:#9e1c30;
+  --cyan-soft:#bc2b44;
+  --cyan-dim:rgba(158,28,48,.10);
+  --cyan-glow:rgba(158,28,48,.20);
+  --muted:#5c6675;
+  --border:rgba(158,28,48,.30);
+  --border-sub:rgba(22,32,46,.13);
+  --shadow:0 14px 40px rgba(22,32,46,.12);
+  --glow-btn:0 8px 20px rgba(158,28,48,.26);
+  --glow-card:0 10px 26px rgba(22,32,46,.10);
+}
+html[data-theme="light"] body{background:#ffffff;color:#1b2533}
+html[data-theme="light"] body::before{background-image:radial-gradient(circle,rgba(22,32,46,.045) 1px,transparent 1px)}
+html[data-theme="light"] p{color:#3c4654}
+html[data-theme="light"] h1,html[data-theme="light"] h2,html[data-theme="light"] h3,html[data-theme="light"] h4{color:#141d2b}
+
+/* Nav: red top strip + light gray bar */
+html[data-theme="light"] .nav{background:rgba(248,249,251,.97);border-top:4px solid #9e1c30;border-bottom:1px solid rgba(22,32,46,.10);box-shadow:0 2px 12px rgba(22,32,46,.06)}
+html[data-theme="light"] .nav__logo{color:#141d2b}
+html[data-theme="light"] .nav__links a{color:#3c4654}
+html[data-theme="light"] .nav__links a:hover,html[data-theme="light"] .nav__links a.active{color:#9e1c30;background:var(--cyan-dim)}
+html[data-theme="light"] .nav__toggle,html[data-theme="light"] .lang-toggle,html[data-theme="light"] .theme-toggle{color:#3c4654}
+
+/* Hero: light gradient (no photo) */
+html[data-theme="light"] .hero{background:linear-gradient(135deg,#ffffff 0%,#eef1f6 60%,#e7ebf2 100%);background-color:#f3f5f8}
+html[data-theme="light"] .hero::before{background:none}
+html[data-theme="light"] .hero::after{background:radial-gradient(ellipse 54% 72% at 82% 42%,rgba(193,154,62,.11),transparent 66%)}
+html[data-theme="light"] .hero__logo{filter:none}
+html[data-theme="light"] .hero__brand{
+  background:linear-gradient(177deg,#e3b765 0%,#cf9a44 11%,#b23a43 34%,#9e1c30 60%,#7c1325 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 2px 1px rgba(255,255,255,.55)) drop-shadow(0 4px 6px rgba(120,18,36,.30));
+}
+html[data-theme="light"] .hero__kicker{color:#141d2b;-webkit-text-fill-color:#141d2b}
+html[data-theme="light"] .hero__sub{color:#454f5e}
+html[data-theme="light"] .hero__stat{background:#fff;border:1px solid rgba(22,32,46,.12);box-shadow:0 10px 30px rgba(22,32,46,.08)}
+html[data-theme="light"] .hero__stat-num{color:#15243c;text-shadow:none}
+html[data-theme="light"] .hero__stat-lbl{color:#5c6675}
+
+/* Positioning band */
+html[data-theme="light"] .pos-item{background:linear-gradient(150deg,#fff,#f6f8fa);border:1px solid rgba(22,32,46,.12);border-left:3px solid #9e1c30}
+html[data-theme="light"] .pos-item__v{color:#3c4654}
+
+/* Feature strip */
+html[data-theme="light"] .feature-item{background:#fff;border:1px solid rgba(22,32,46,.12);box-shadow:0 12px 30px rgba(22,32,46,.07)}
+html[data-theme="light"] .feature-item:last-child{border-right:1px solid rgba(22,32,46,.12)}
+html[data-theme="light"] .feature-item:hover{background:#fff;border-color:rgba(158,28,48,.4);box-shadow:0 16px 36px rgba(22,32,46,.12)}
+html[data-theme="light"] .feature-item__icon{background:rgba(193,154,62,.15);border:1px solid rgba(193,154,62,.42);color:#a9842f}
+html[data-theme="light"] .feature-item__title{color:#141d2b}
+html[data-theme="light"] .research-card__title,html[data-theme="light"] .research-card__desc{color:#fff}
+html[data-theme="light"] .feature-item__desc{color:#475061}
+
+/* Sections */
+html[data-theme="light"] .sec-title{color:#141d2b}
+html[data-theme="light"] .sec-desc{color:#5c6675}
+
+/* Buttons */
+html[data-theme="light"] .btn--primary{background:#9e1c30;color:#fff}
+html[data-theme="light"] .btn--primary:hover{background:#bc2b44;color:#fff}
+html[data-theme="light"] .btn--outline{color:#9e1c30;border:1px solid rgba(158,28,48,.45)}
+html[data-theme="light"] .btn--outline:hover{border-color:#9e1c30;color:#fff;background:#9e1c30}
+
+/* Generic cards */
+html[data-theme="light"] .card{background:#fff;border:1px solid rgba(22,32,46,.12);box-shadow:0 10px 26px rgba(22,32,46,.06)}
+html[data-theme="light"] .card:hover{border-color:rgba(158,28,48,.4)}
+
+/* Cohort cards (home) */
+html[data-theme="light"] .cohort-card__name{color:#5c6675}
+html[data-theme="light"] .cohort-card__desc{color:#475061}
+html[data-theme="light"] .cohort-card__metric .val{color:#15243c}
+html[data-theme="light"] .cohort-card__metric .lbl{color:#5c6675}
+
+/* Impact band */
+html[data-theme="light"] .info-band{background:linear-gradient(180deg,transparent,rgba(158,28,48,.05) 24%,rgba(158,28,48,.05) 76%,transparent)}
+html[data-theme="light"] .info-band__stat strong{color:#15243c;text-shadow:none}
+html[data-theme="light"] .info-band__stat span{color:#5c6675}
+
+/* Footer */
+html[data-theme="light"] .footer{background:#f3f5f8;border-top:1px solid rgba(22,32,46,.12)}
+html[data-theme="light"] .footer__logo{color:#141d2b}
+html[data-theme="light"] .footer__logo span{color:#9e1c30}
+html[data-theme="light"] .footer__blurb,html[data-theme="light"] .footer__col a{color:#5c6675}
+html[data-theme="light"] .footer__col h4{color:#141d2b}
+html[data-theme="light"] .footer__col a:hover{color:#9e1c30}
+html[data-theme="light"] .footer__bar{border-top:1px solid rgba(22,32,46,.12)}
+html[data-theme="light"] .footer__text,html[data-theme="light"] .footer__text a{color:#5c6675}
+
+/* Interior page banners */
+html[data-theme="light"] .page-hero{background:#f3f5f8;border-bottom:1px solid rgba(22,32,46,.12)}
+html[data-theme="light"] .page-hero::before{background:radial-gradient(ellipse 80% 100% at 50% 0%,rgba(158,28,48,.05),transparent 70%)}
+html[data-theme="light"] .page-hero--visual{background-image:none!important;background:linear-gradient(120deg,#f5f6f9,#eaeef4)}
+html[data-theme="light"] .page-hero--visual::before{background:linear-gradient(100deg,rgba(245,246,249,.35),transparent 60%)}
+html[data-theme="light"] .page-hero h1{color:#141d2b}
+html[data-theme="light"] .page-hero p{color:#454f5e}
+html[data-theme="light"] .hero-chip{background:#fff;border:1px solid rgba(22,32,46,.12);color:#1b2533}
+html[data-theme="light"] .hero-chip strong{color:#9e1c30}
+html[data-theme="light"] .hero-chip span{color:#5c6675}
+
+/* CTA banner */
+html[data-theme="light"] .cta-banner{background:linear-gradient(135deg,rgba(158,28,48,.06),#fff);border:1px solid rgba(158,28,48,.25)}
+html[data-theme="light"] .cta-banner h2,html[data-theme="light"] .cta-banner__title{color:#141d2b}
+html[data-theme="light"] .cta-banner p,html[data-theme="light"] .cta-banner__sub{color:#475061}
+
+/* Recent-pub device frames (home) */
+html[data-theme="light"] .pub-frame__cap h3{color:#141d2b}
+
+/* Team */
+html[data-theme="light"] .team-member,html[data-theme="light"] .faculty-card,html[data-theme="light"] .tb-card{background:#fff;border:1px solid rgba(22,32,46,.12)}
+html[data-theme="light"] .team-member__name,html[data-theme="light"] .faculty-card__name,html[data-theme="light"] .team-pi__name,html[data-theme="light"] .tb-card h3{color:#141d2b}
+html[data-theme="light"] .team-member__avatar{background:#eef1f5;color:#9e1c30}
+html[data-theme="light"] .team-pi__bio,html[data-theme="light"] .team-member__focus,html[data-theme="light"] .faculty-card__focus{color:#3c4654}
+html[data-theme="light"] .faculty-card__photo,html[data-theme="light"] .fdetail img{background:#eef1f5}
+html[data-theme="light"] .join-us{background:linear-gradient(135deg,#fff,#f5f6f9);border-color:rgba(158,28,48,.25)}
+html[data-theme="light"] .collab-item{background:#f7f8fa;border:1px solid rgba(22,32,46,.1)}
+html[data-theme="light"] .pie-note,html[data-theme="light"] .pie-legend span{color:#475061}
+html[data-theme="light"] .pie-wrap text{fill:#141d2b}
+html[data-theme="light"] .fmodal__panel{background:#fff}
+html[data-theme="light"] .fmodal__content,html[data-theme="light"] .fmodal__content p,html[data-theme="light"] .fmodal__content li{color:#3c4654}
+html[data-theme="light"] .fmodal__close{color:#141d2b}
+
+/* Cohorts page */
+html[data-theme="light"] .cohort-desc p{color:#3c4654}
+html[data-theme="light"] .cohort-overview__card{background:linear-gradient(160deg,#fff,#f6f7fa);border:1px solid rgba(22,32,46,.12)}
+html[data-theme="light"] .cohort-overview__title{color:#141d2b}
+html[data-theme="light"] .cohort-keypoint{background:#f6f7fa;border:1px solid rgba(22,32,46,.1)}
+html[data-theme="light"] .cohort-keypoint strong{color:#141d2b}
+html[data-theme="light"] .measure-pill{background:#f1f3f6;border:1px solid rgba(22,32,46,.12);color:#475061}
+html[data-theme="light"] .cohort-proof__item{background:rgba(158,28,48,.06);border:1px solid rgba(158,28,48,.18)}
+html[data-theme="light"] .highlight-box{background:linear-gradient(135deg,rgba(158,28,48,.05),#fff);border:1px solid rgba(158,28,48,.25)}
+html[data-theme="light"] .highlight-box__text{color:#3c4654}
+html[data-theme="light"] .cohort-pubs-label{color:#141d2b}
+
+/* Data access */
+html[data-theme="light"] .data-snapshot__card,html[data-theme="light"] .da-step,html[data-theme="light"] .access-panel,html[data-theme="light"] .timeline-item{background:#fff;border:1px solid rgba(22,32,46,.12)}
+html[data-theme="light"] .data-snapshot__metric strong,html[data-theme="light"] .da-step__title,html[data-theme="light"] .access-panel h3{color:#141d2b}
+html[data-theme="light"] .da-step__desc,html[data-theme="light"] .access-list li span:last-child{color:#3c4654}
+
+/* Contact */
+html[data-theme="light"] .contact-card{background:#fff;border:1px solid rgba(22,32,46,.12);box-shadow:0 8px 22px rgba(22,32,46,.06)}
+html[data-theme="light"] .contact-card--featured{background:linear-gradient(120deg,rgba(158,28,48,.06),#fff 58%);border-color:rgba(158,28,48,.3)}
+html[data-theme="light"] .contact-card__name{color:#141d2b}
+html[data-theme="light"] .contact-card__role{color:#5c6675}
+html[data-theme="light"] .contact-link{background:#f7f8fa;border:1px solid rgba(22,32,46,.12);color:#1b2533}
+html[data-theme="light"] .contact-link:hover{background:var(--cyan-dim);border-color:rgba(158,28,48,.35)}
+html[data-theme="light"] .contact-link__v{color:#1b2533}
+html[data-theme="light"] .contact-link--nav .contact-link__v strong{color:#141d2b}
+html[data-theme="light"] .contact-link--nav .contact-link__v span{color:#5c6675}
+html[data-theme="light"] .page-hero--contact{background-image:none!important}
+
+/* Publications */
+html[data-theme="light"] .filter-btn{background:#f3f5f8;border:1px solid rgba(22,32,46,.14);color:#5c6675}
+html[data-theme="light"] .filter-btn:hover{color:#141d2b;border-color:rgba(158,28,48,.4)}
+html[data-theme="light"] .filter-btn.active{background:#9e1c30;border-color:#9e1c30;color:#fff}
+html[data-theme="light"] .pub-search{background:#fff;border:1px solid rgba(22,32,46,.14);color:#141d2b}
+html[data-theme="light"] .pf-label,html[data-theme="light"] .pub-count{color:#5c6675}
+html[data-theme="light"] .pf-row{border-color:rgba(22,32,46,.08)}
+html[data-theme="light"] .chart-card{background:#fff;border:1px solid rgba(22,32,46,.12)}
+html[data-theme="light"] .chart-card h3{color:#141d2b}
+html[data-theme="light"] .chart-card .sub{color:#5c6675}
+html[data-theme="light"] .chart-card polyline{stroke:#9e1c30}
+html[data-theme="light"] .chart-card polygon{fill:rgba(158,28,48,.10)}
+html[data-theme="light"] .chart-card g circle{fill:#9e1c30}
+html[data-theme="light"] .chart-axis{fill:#5c6675}
+html[data-theme="light"] .chart-tip{background:#fff;border:1px solid #9e1c30}
+html[data-theme="light"] .chart-tip__y{color:#9e1c30}
+html[data-theme="light"] .chart-tip__v{color:#141d2b}
+html[data-theme="light"] .landmark-card{background:#fff;border:1px solid rgba(22,32,46,.12);color:#141d2b}
+html[data-theme="light"] .landmark-card__title{color:#141d2b}
+html[data-theme="light"] .landmark-card__jrnl{color:#9e1c30}
+html[data-theme="light"] .pub-item{background:#fff;border:1px solid rgba(22,32,46,.12)}
+html[data-theme="light"] .pub-item__title{color:#141d2b}
+html[data-theme="light"] .pub-item__authors,html[data-theme="light"] .pub-item__journal{color:#475061}
+html[data-theme="light"] .year-heading{color:#141d2b}
