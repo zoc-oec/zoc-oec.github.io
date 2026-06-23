@@ -1065,3 +1065,8 @@ html[data-theme="light"] .pub-item{background:#fff;border:1px solid rgba(22,32,4
 html[data-theme="light"] .pub-item__title{color:#141d2b}
 html[data-theme="light"] .pub-item__authors,html[data-theme="light"] .pub-item__journal{color:#475061}
 html[data-theme="light"] .year-heading{color:#141d2b}
+
+/* ===== Team member cards: circular photo avatars ===== */
+.team-member{text-align:center}
+.team-member__avatar{width:96px;height:96px;margin:0 auto .9rem;border-radius:50%;overflow:hidden;font-size:1.15rem}
+.team-member__avatar img{width:100%;height:100%;object-fit:cover;display:block}
