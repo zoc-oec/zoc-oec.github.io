@@ -66,9 +66,9 @@
       setIcon(t);
       try { localStorage.setItem('wl-theme', t); } catch (e) {}
     }
-    setIcon(document.documentElement.getAttribute('data-theme') || 'dark');
+    setIcon(document.documentElement.getAttribute('data-theme') || 'light');
     btn.addEventListener('click', function () {
-      var c = document.documentElement.getAttribute('data-theme') || 'dark';
+      var c = document.documentElement.getAttribute('data-theme') || 'light';
       apply(c === 'light' ? 'dark' : 'light');
     });
   })();
