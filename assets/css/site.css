@@ -358,6 +358,7 @@ p{color:rgba(255,255,255,.82)}
 .page-hero--publications{background-image:url('/images/bg-publications.svg?v=6');background-position:center}
 .page-hero--team{background-image:url('/images/team-bg.jpg');background-position:center}
 .page-hero--data{background-image:url('/images/bg-data.svg?v=6');background-position:center}
+.page-hero--news{background-image:url('/images/bg-news.svg');background-position:center}
 .page-hero__grid{
   position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) 360px;
   gap:48px;align-items:center;
@@ -916,9 +917,9 @@ html[data-theme="light"] .nav__links a:hover,html[data-theme="light"] .nav__link
 html[data-theme="light"] .nav__toggle,html[data-theme="light"] .lang-toggle,html[data-theme="light"] .theme-toggle{color:#3c4654}
 
 /* Hero: light gradient (no photo) */
-html[data-theme="light"] .hero{background:linear-gradient(135deg,#ffffff 0%,#eef1f6 60%,#e7ebf2 100%);background-color:#f3f5f8}
+html[data-theme="light"] .hero{background-image:url('/images/home-bg-light.jpg');background-size:cover;background-position:right center;background-color:#fff}
 html[data-theme="light"] .hero::before{background:none}
-html[data-theme="light"] .hero::after{background:radial-gradient(ellipse 54% 72% at 82% 42%,rgba(193,154,62,.11),transparent 66%)}
+html[data-theme="light"] .hero::after{background:linear-gradient(to bottom,transparent 70%,rgba(255,255,255,.55) 100%)}
 html[data-theme="light"] .hero__logo{filter:none}
 html[data-theme="light"] .hero__brand{
   background:linear-gradient(177deg,#e3b765 0%,#cf9a44 11%,#b23a43 34%,#9e1c30 60%,#7c1325 100%);
